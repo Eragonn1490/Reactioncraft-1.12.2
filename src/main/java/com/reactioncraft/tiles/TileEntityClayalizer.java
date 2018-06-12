@@ -196,6 +196,8 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
      */
     public static int getItemBurnTime(ItemStack stack)
     {
+        Item item = stack.getItem();
+        if (item == Items.WATER_BUCKET) return 1600;
     	int burnTime = net.minecraftforge.event.ForgeEventFactory.getItemBurnTime(stack);
         if (stack.isEmpty())
         {
@@ -204,9 +206,7 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
         else
         {
             if (burnTime >= 0) return burnTime;
-            Item item = stack.getItem();
 
-            if (item == Items.WATER_BUCKET) return 1600;
         }
 		return burnTime;
     }

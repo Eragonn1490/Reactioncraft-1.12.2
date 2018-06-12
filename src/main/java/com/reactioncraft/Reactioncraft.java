@@ -20,6 +20,7 @@ import com.reactioncraft.utils.constants;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
 import forestry.api.recipes.RecipeManagers;
+import ic2.api.info.Info;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
@@ -85,6 +86,8 @@ public class Reactioncraft
 	public static ReactioncraftConfiguration config;
 	public static ReactioncraftConfiguration millenaire;
 
+	public static boolean forestry, industrialcraft;
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent evt)
 	{
@@ -141,6 +144,19 @@ public class Reactioncraft
 				//and so on
 			}
 		});
+
+		try {
+			if(constants.forestry())
+			{
+				forestry=true;
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		if(Info.isIc2Available())
+			industrialcraft=true;
+
 	}
 
 	@Mod.EventHandler

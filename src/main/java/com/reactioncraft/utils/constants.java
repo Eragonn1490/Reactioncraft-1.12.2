@@ -30,7 +30,7 @@ public class constants
 	}
 
 	//Loaded Mods
-	public static  boolean forestry() throws ClassNotFoundException
+	public static boolean forestry() throws ClassNotFoundException
 	{
 		try{
 			Class.forName("forestry.Forestry");
