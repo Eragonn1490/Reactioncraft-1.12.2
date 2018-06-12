@@ -2,6 +2,7 @@ package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.EnumBookshelf;
+import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -16,6 +17,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 //Minecraft
@@ -43,11 +45,11 @@ public class BlockBookshelf extends BlockBase implements MetadataArray
 	@Override
 	public void getSubBlocks(CreativeTabs creativeTabs, NonNullList<ItemStack> items) {
 		items.add(new ItemStack(this,1,EnumBookshelf.EMPTY.getMetadata()));
+		items.add(new ItemStack(this,1,EnumBookshelf.WEBBED_EMPTY.getMetadata()));
+		items.add(new ItemStack(this,1,EnumBookshelf.WEBBED_FULL.getMetadata()));
 		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_EMPTY.getMetadata()));
-//		for (EnumBookshelf types : EnumBookshelf.values())
-//		{
-//			items.add(new ItemStack(this, 1, types.getMetadata()));
-//		}
+		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_WEBBED_EMPTY.getMetadata()));
+		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_WEBBED_FULL.getMetadata()));
 	}
 
     @Override
@@ -77,6 +79,56 @@ public class BlockBookshelf extends BlockBase implements MetadataArray
 	{
 		return new BlockStateContainer(this, TYPE);
 	}
+	
+	@Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+        //Logger.info("Called GetDrops");//For Debugging
+		EnumBookshelf type = state.getValue(TYPE);
+ 
+        super.getDrops(drops, world, pos, state, fortune); 
+ 
+        if(type == EnumBookshelf.FULL){
+        	drops.clear();
+            drops.add(new ItemStack(Items.BOOK, 3, 0));
+            //Logger.info("Dropped", drops);//For Debugging
+        }
+        
+        if(type == EnumBookshelf.TWO_THIRDS){
+        	drops.clear();
+        	drops.add(new ItemStack(Items.BOOK, 2, 0));
+            //Logger.info("Dropped", drops);//For Debugging
+        } 
+        
+        if(type == EnumBookshelf.ONE_THIRD){
+        	drops.clear();
+        	drops.add(new ItemStack(Items.BOOK, 1, 0));
+            //Logger.info("Dropped", drops);//For Debugging
+        } 
+        
+        /** Scroll Case Drops **/
+        if(type == EnumBookshelf.SCROLLCASE_FULL){
+        	drops.clear();
+            drops.add(new ItemStack(ItemIndex.scroll, 3, 0));
+            //Logger.info("Dropped", drops);//For Debugging
+        }
+        
+        if(type == EnumBookshelf.SCROLLCASE_TWO_THIRDS){
+        	drops.clear();
+        	drops.add(new ItemStack(ItemIndex.scroll, 2, 0));
+            //Logger.info("Dropped", drops);//For Debugging
+        } 
+        
+        if(type == EnumBookshelf.SCROLLCASE_ONE_THIRD){
+        	drops.clear();
+        	drops.add(new ItemStack(ItemIndex.scroll, 1, 0));
+            //Logger.info("Dropped", drops);//For Debugging
+        } 
+ 
+        else {
+            drops.add(new ItemStack(Items.AIR));
+            //Logger.info("Dropped Nothing");//For Debugging
+        }
+    }
 
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {

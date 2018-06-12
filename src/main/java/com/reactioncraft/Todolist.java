@@ -4,22 +4,28 @@ public class Todolist
 {
 	//This Class is just here as a list of things to fix
 	/*
-	 * bookshelf needs to drop empty shelf and 3 books
-	 * scrollshelf needs to drop empty scrollshelf and 3 books
 	 * Return Bucket From Freezer.. New GUI or Throw on ground??? TBD
 	 * Fix Freezer Recipes & TE
 	 * Fix Clayalizer Recipes & TE
-	 * 
 	 * Fix Skinny Colum Recipes
 	 * Advancements
-	 * Support for Millenaire Trading
-	 * Reactioncraft Items can be sold to Millenaire Villagers
-	 * Add Cherry Door iCON
-	 * Rename Enums
-	 * Desert Coal Macerated into 2 Coal (v6.2.2)
-	 * Desert Coal now drops coal instead of block (v6.2.2)
+	 * rename Enums
 	 * Putting Out Mining Helmet if you get wet or right click water blocks.
 	 * Fix Net Getting uses
+	 * Drawbridge? Portcullis but vertical 
+	 * Wireless Redstone Item (either on command Typed or right click power a related block with redstone)
+	 * New Corn Item Textures
+	 * Add Block Hardness & set forge tool classes
+	 * Add can Silk touch to desert coal core and gems
+	 * Edit Pixels on Ingot Mould
+	 * Add Names to Coins
+	 * Recipe for Kingly Armour
+	 * Add Villager for NBT (Removes Profession if caught with net)
+	 * Add Names to Villager Types
+	 * Finish Vanilla Villager Trades
+	 * Lever , Chest, 
+	 * Treasure Piles? (Maybe)
+	 * Make the Scroll Act like a book.
 	 */
 	
 	
@@ -45,10 +51,13 @@ public class Todolist
 	 * Mining Helmet Functionality (v6.2.3)
 	 * Fix Chisel Recipes for Items & Columns (Spawns 2 instead of damaging the chisel, caused by .json formatting bug) (v6.2.4)
 	 * Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1)
-	 * Added Bones Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1)
+	 * Added Bones Drop to Millenaire Villagers (v6.3.1)
+	 * Support for Millenaire Trading (v6.3.1)
+	 * Automatically Create Files for Millenaire Trading (v6.4)
 	 */
 	
 	/* Fixed
+	 * 
 	 * Ancient Plant: Grows, looks correct, Drops Fixed
 	 * Bookshelf Fixed Transformations
 	 * Bookshelf Door Drops Fixed
@@ -62,10 +71,20 @@ public class Todolist
 	 * Fixed Hammer Recipe (v0.6)
 	 * Caught Item now names mob correctly (v6.2.4)
 	 * Fix Net crashing upon being crafted, uses not working (v6.2.4) 
-	 *  Ingot & Coin Moulds spawn with 0 uses (v6.2.4)
+	 * Ingot & Coin Moulds spawn with 0 uses (v6.2.4)
+	 * Rename  Desert Block Enums (v6.4.1)
+	 * Desert Coal now drops coal instead of block (v6.4.1)
+	 * Desert Gems now drop Uncut Gems instead of block (v6.4.1)
+	 * scrollshelf now correctly drops 1 scroll per scroll actually inside (v6.4.1)
+	 * bookshelf   now correctly drops 1 book per book actually inside (v6.4.1)
+	 * Scrollshelf & Bookshelf Webbed & Webbed Full Versions added to creative tabs (v6.4.1)
+	 * Add Cherry Door iCONs (v6.4.1)
+	 * Desert Coal Macerated into 2 Coal (v6.4.1)
+	 * Desert Gems & Dragonstone Gems now crafted correctly with chisel (v6.4.1)
 	 */
 	 
 	/* Changed
+	 * 
 	 * Nerfed Crawling Creature Spawn Rate
 	 * Crawling Skeletons dont like zombies
 	 */

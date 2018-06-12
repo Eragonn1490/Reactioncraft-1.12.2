@@ -14,5 +14,6 @@ public class TileEntityRegistry
         GameRegistry.registerTileEntity(TileEntityBrickOven.class,  Reactioncraft.MODID+":brickoven");
         GameRegistry.registerTileEntity(TileEntityClayalizer.class, Reactioncraft.MODID+":clayalizer");
         //GameRegistry.registerTileEntity(TileEntityExtendedPiston.class, Reactioncraft.MODID+":piston");
+        GameRegistry.registerTileEntity(TileEntityReprogrammer.class, Reactioncraft.MODID+":reprogrammer");
 	}
 }

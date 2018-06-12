@@ -53,7 +53,7 @@ public class EntitySkeletonCrawling extends EntityMob
     @Override
     public void writeEntityToNBT(NBTTagCompound compound) {
         compound.setByte(TYPE,getSkeletonVariation());
-        //compound.setString(TYPE1, "TEST");
+        //compound.setString(TYPE1, "TEST"); //Used to Test saving nbt to an entity
 
         //Logger.info("TEST1: i have the tag", TYPE1);
         super.writeEntityToNBT(compound);
@@ -63,7 +63,7 @@ public class EntitySkeletonCrawling extends EntityMob
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
         dataManager.set(skeletonVariation,compound.getByte(TYPE));
-        //Logger.info("TEST2: i have the tag", TYPE1);
+        //Logger.info("TEST2: i have the tag", TYPE1);  //Used to Test saving nbt to an entity
     }
 
     public byte getSkeletonVariation()

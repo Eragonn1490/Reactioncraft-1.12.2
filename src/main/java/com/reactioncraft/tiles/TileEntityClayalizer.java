@@ -1,7 +1,6 @@
 package com.reactioncraft.tiles;
 
 import com.reactioncraft.api.ClayalizerRecipes;
-<<<<<<< HEAD
 import com.reactioncraft.api.FreezerRecipes;
 import com.reactioncraft.itemhandlers.ClaylizerItemHandler;
 import com.reactioncraft.registration.instances.BlockIndex;
@@ -10,13 +9,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-=======
-import com.reactioncraft.blocks.machines.BlockBrickOven;
-import com.reactioncraft.blocks.machines.BlockClayalizer;
-import com.reactioncraft.itemhandlers.ClaylizerItemHandler;
-import com.reactioncraft.registration.instances.BlockIndex;
-import net.minecraft.block.state.IBlockState;
->>>>>>> f0aef18053091300e96805a3fdf8b31fad47382e
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -57,7 +49,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     public ItemHandler outputHandler=new ItemHandler(1,this);
 
 
-<<<<<<< HEAD
 
 
 
@@ -69,8 +60,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
         return this.hasCustomName() ? this.customName : "Freezer";
     }
 
-=======
->>>>>>> f0aef18053091300e96805a3fdf8b31fad47382e
     /**
      * Returns true if this thing is named
      */
@@ -87,7 +76,7 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     @Nullable
     @Override
     public ITextComponent getDisplayName() {
-        return hasCustomName() ? new TextComponentString(customName) : new TextComponentString("Claylizer");
+        return new TextComponentString("Claylizer");
     }
 
     public void readFromNBT(NBTTagCompound compound)
@@ -126,6 +115,12 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     }
 
 
+    @SideOnly(Side.CLIENT)
+    public static boolean isBurning(IInventory inventory)
+    {
+        return inventory.getField(0) > 0;
+    }
+
     /**
      * Like the old updateEntity(), except more generic.
      */
@@ -134,12 +129,11 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
 
         if(!world.isRemote)
         {
-            IBlockState machineState=world.getBlockState(pos);
             ItemStack fuel=itemHandler.getStackInSlot(1);
             if(!fuel.isEmpty())
             {
                 fuelburnTime =getItemBurnTime(fuel);
-                world.addBlockEvent(pos, BlockIndex.claylizer,0, fuelburnTime);
+                world.addBlockEvent(pos, BlockIndex.clayalizerIdle,0, fuelburnTime);
             }
 
             ItemStack input=itemHandler.getStackInSlot(0);
@@ -160,25 +154,15 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
                                 totalCookTime=0;
                             }
                         }
-                        world.addBlockEvent(pos,BlockIndex.claylizer,1,totalCookTime);
+                        world.addBlockEvent(pos,BlockIndex.clayalizerIdle,1,totalCookTime);
                         currentItemBurnTime--;
-                        if(currentItemBurnTime>0 && !machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,true));
                     }
                     else{
-                        if(!fuel.isEmpty()) {
-                            currentItemBurnTime = getItemBurnTime(fuel);
-                            fuel.shrink(1);
-                        }
-                        if(currentItemBurnTime>0) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,true));
-                        else {
-                            if(machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,false));
-                        }
+                        currentItemBurnTime=getItemBurnTime(fuel);
+                        fuel.shrink(1);
                     }
-                    world.addBlockEvent(pos,BlockIndex.claylizer,2,currentItemBurnTime);
+                    world.addBlockEvent(pos,BlockIndex.clayalizerIdle,2,currentItemBurnTime);
                 }
-            }
-            else{
-                if(machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,false));
             }
 
         }
@@ -205,11 +189,7 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
         return super.receiveClientEvent(id, type);
     }
 
-<<<<<<< HEAD
     
-=======
-
->>>>>>> f0aef18053091300e96805a3fdf8b31fad47382e
     /**
      * Returns the number of ticks that the supplied fuel item will keep the furnace burning, or 0 if the item isn't
      * fuel

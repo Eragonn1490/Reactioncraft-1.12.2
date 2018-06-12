@@ -3,10 +3,7 @@ package com.reactioncraft.registration;
 import com.reactioncraft.common.events.ButcherEventClass;
 import com.reactioncraft.common.events.EntityAIEventClass;
 import com.reactioncraft.common.events.EventContainerClass;
-import com.reactioncraft.craftinghandlers.CraftablesCraftingHandler;
-import com.reactioncraft.craftinghandlers.HammerCraftingHandler;
-import com.reactioncraft.craftinghandlers.MachinesCraftingHandler;
-import com.reactioncraft.craftinghandlers.NetCraftingHandler;
+import com.reactioncraft.craftinghandlers.*;
 import com.reactioncraft.world.BiomeHandler;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -22,6 +19,7 @@ public class EventRegistry
 		MinecraftForge.EVENT_BUS.register(new MachinesCraftingHandler());
 		MinecraftForge.EVENT_BUS.register(new CraftablesCraftingHandler());
 		MinecraftForge.EVENT_BUS.register(new HammerCraftingHandler());
+		MinecraftForge.EVENT_BUS.register(new TransmitterCraftingHandler());
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 	}
 }

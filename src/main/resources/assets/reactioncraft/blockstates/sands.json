@@ -5,7 +5,7 @@
     },
     "variants": {
         "type": {
-            "0": {
+            "one1": {
                 "textures": {
                     "all": "reactioncraft:blocks/sand"
                 }

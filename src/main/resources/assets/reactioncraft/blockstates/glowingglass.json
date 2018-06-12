@@ -5,82 +5,82 @@
     },
     "variants": {
         "type": {
-            "0": {
+            "one1": {
                 "textures": {
                     "all": "blocks/glass_white"
                 }
             },
-            "1": {
+            "one2": {
                 "textures": {
                     "all": "blocks/glass_orange"
                 }
             },
-             "2": {
+             "one3": {
                 "textures": {
                     "all": "blocks/glass_magenta"
                 }
             },
-             "3": {
+             "two1": {
                 "textures": {
                     "all": "blocks/glass_light_blue"
                 }
             },
-             "4": {
+             "two2": {
                 "textures": {
                     "all": "blocks/glass_yellow"
                 }
             },
-             "5": {
+             "two3": {
                 "textures": {
                     "all": "blocks/glass_lime"
                 }
             },
-             "6": {
+             "three1": {
                 "textures": {
                     "all": "blocks/glass_pink"
                 }
             },
-             "7": {
+             "three2": {
                 "textures": {
                     "all": "blocks/glass_gray"
                 }
             },
-             "8": {
+             "three3": {
                 "textures": {
                     "all": "blocks/glass_silver"
                 }
             },
-             "9": {
+             "four1": {
                 "textures": {
                     "all": "blocks/glass_cyan"
                 }
             },
-             "10": {
+             "four2": {
                 "textures": {
                     "all": "blocks/glass_purple"
                 }
             },
-            "11": {
+            "four3": {
                 "textures": {
                     "all": "blocks/glass_blue"
                 }
             },
-             "12": {
+             "five1": {
                 "textures": {
                     "all": "blocks/glass_brown"
                 }
             },
-             "13": {
+             "five2": {
                 "textures": {
                     "all": "blocks/glass_green"
                 }
             },
-             "14": {
+             "five3": {
                 "textures": {
                     "all": "blocks/glass_red"
                 }
             },
-            "15": {
+            "six1": {
                 "textures": {
                     "all": "blocks/glass_black"
                 }

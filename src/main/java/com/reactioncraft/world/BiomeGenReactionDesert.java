@@ -40,7 +40,7 @@ public class BiomeGenReactionDesert extends BiomeDesert
         {
             if (primer.getBlockState(localZ, y, localX).getBlock() == Blocks.STONE) 
             {
-            	primer.setBlockState(localZ, y, localX , BlockIndex.desertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2));
+            	primer.setBlockState(localZ, y, localX , BlockIndex.desertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.Darkstone));
             }
         }
     }

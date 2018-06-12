@@ -5,12 +5,10 @@ import com.reactioncraft.items.*;
 import com.reactioncraft.items.chisels.ItemBaseChisel;
 import com.reactioncraft.items.tools.*;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemEnderEye;
 import net.minecraft.item.ItemSeeds;
 
 public class ItemIndex
 {
-
 	//Food Weapons
 	public static ItemBase meat_cleaver;
 	public static ItemKnife knife;
@@ -95,7 +93,7 @@ public class ItemIndex
     public static ItemBaseHammer hammer;
     public static ItemTossable mapinabottle;
     public static ItemTossable shipinabottle;
-    public static ItemEndEye rcendereye;
+    public static ItemBase rcendereye;
     public static ItemBaseHammer bloodstoneHammer;
     public static ItemBaseDoor woodenBookcasedoor;
     public static ItemBaseDoor ironBookcasedoor;
@@ -175,4 +173,7 @@ public class ItemIndex
     public static ItemBase unbindedSword;
     public static ItemBlackdiamondPick bloodstoneDiamondPick;
     public static ItemBase bat;
+    
+    //Wireless Transmitter
+    public static ItemWirelessTransmitter wirelessTransmitter;
 }

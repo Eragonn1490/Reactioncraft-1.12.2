@@ -17,7 +17,7 @@ public class NetCraftingHandler
 		if (event.crafting.getItem().equals(ItemIndex.complete_net))
 		{
 			event.crafting.setTagCompound(new NBTTagCompound());
-			ItemStack hilt = null;
+			ItemStack hilt = new ItemStack(ItemIndex.hilt);
 			ItemStack net = new ItemStack(ItemIndex.net);
 
 			for (int i = 0; i < event.craftMatrix.getSizeInventory(); ++i)

@@ -17,5 +17,6 @@ public class RecipesManager
     	RecipeRegistry.loadDesertRecipes();
     	RecipeRegistry.forestry();
     	RecipeRegistry.ic2();
+    	RecipeRegistry.reactioncraftMachines();
 	}
 }

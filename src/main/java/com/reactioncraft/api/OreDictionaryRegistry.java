@@ -18,7 +18,7 @@ public class OreDictionaryRegistry
         OreDictionary.registerOre("ingotBronze", new ItemStack(ItemIndex.ingotBronze, 1, 0));
         OreDictionary.registerOre("ingotCopper", new ItemStack(ItemIndex.ingotCopper, 1, 0));
         OreDictionary.registerOre("gemRuby", ItemIndex.ruby);
-        OreDictionary.registerOre("oreDesertCoal", new ItemStack(BlockIndex.desertBlocks, 1, 0));
+        OreDictionary.registerOre("oreDesertCoal", new ItemStack(BlockIndex.surfaceOres, 1, 0));
         OreDictionary.registerOre("DarkCobble", new ItemStack(BlockIndex.desertBlocks, 1, 1));
         OreDictionary.registerOre("DarkStone",  new ItemStack(BlockIndex.desertBlocks, 1, 7));
         OreDictionary.registerOre("oreDesertGold", new ItemStack(BlockIndex.desertBlocks, 1, 10));

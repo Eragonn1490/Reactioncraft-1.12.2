@@ -27,6 +27,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventContainerClass
 {
+	static final String culture ="Variation";
+	
 	public static double rand;
 	
 	@SuppressWarnings("unused")
@@ -141,6 +143,11 @@ public class EventContainerClass
 			}
 
 			if (event.getEntityLiving() instanceof EntityZombie && rand < 1.0D)
+			{
+				event.getEntityLiving().dropItem(ItemIndex.bones, 1);
+			}
+			
+			if(event.getEntity().getEntityData().getCompoundTag(culture) != null && rand < 1.0D)
 			{
 				event.getEntityLiving().dropItem(ItemIndex.bones, 1);
 			}

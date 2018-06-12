@@ -8,70 +8,70 @@
     },
     "variants": {
         "type": {
-            "0": {
+            "one1": {
                 "textures": {
                     "all": "reactioncraft:blocks/MutiBrick"
                 }
             },
-            "1": {
+            "one2": {
                 "textures": {
                     "all": "reactioncraft:blocks/Chiseled1"
                 }
             },
-             "2": {
+             "one3": {
                 "textures": {
                     "all": "reactioncraft:blocks/css"
                 }
             },
-             "3": {
+             "two1": {
                 "textures": {
                     "all": "reactioncraft:blocks/limestone"
                 }
             },
-             "4": {
+             "two2": {
                 "textures": {
                     "all": "reactioncraft:blocks/MudBrick"
                 }
             },
-             "5": {
+             "two3": {
                 "textures": {
                     "all": "reactioncraft:blocks/mossydsbrick"
                 }
             },
-             "6": {
+             "three1": {
                 "textures": {
                     "all": "reactioncraft:blocks/SandBrick"
                 }
             },
-             "7": {
+             "three2": {
                 "textures": {
                     "all": "reactioncraft:blocks/SandStone"
                 }
             },
-             "8": {
+             "three3": {
                 "textures": {
                     "all": "reactioncraft:blocks/Quartz"
                 }
             },
-          "9": {
+          "four1": {
 
           },
-          "10": {
+          "four2": {
 
           },
-          "11": {
+          "four3": {
 
           },
-          "12": {
+          "five1": {
 
           },
-          "13" :{
+          "five2" :{
 
           },
-          "14" : {
+          "five3" : {
 
           },
-          "15" : {
+          "six1" : {
 
           }
         }

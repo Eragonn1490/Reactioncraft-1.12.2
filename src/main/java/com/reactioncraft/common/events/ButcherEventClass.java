@@ -62,6 +62,7 @@ public class ButcherEventClass
 				}
 			}
 			
+			//Checks for a specifc nbttag and if its not null drop item
 			if (event.getSource().getTrueSource() instanceof EntityPlayer)
 			{
 				ItemStack e = ((EntityLivingBase)event.getSource().getTrueSource()).getHeldItemMainhand();
