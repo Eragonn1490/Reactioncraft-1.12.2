@@ -29,8 +29,7 @@ public class ClayalizerRecipes
 
     private ClayalizerRecipes()
     {
-        //test recipe
-    	this.addSmeltingRecipeForBlock(BlockIndex.dark_sand, new ItemStack(ItemIndex.sandStonePaste, 0, 4),0.3f);
+
     }
 
     /**
