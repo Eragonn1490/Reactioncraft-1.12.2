@@ -162,7 +162,7 @@ public class ModelBee extends ModelBase
         newangle = MathHelper.cos(f2 * 1.1F * this.wingspeed) * (float)Math.PI * 0.3F;
         this.WingLeft.rotateAngleZ = -1.745F - newangle;
         this.WingRight.rotateAngleZ = 1.754F + newangle;
-        newangle = MathHelper.cos(f2 * 0.3F * this.wingspeed) * (float)Math.PI * 0.1F;
+//        newangle = MathHelper.cos(f2 * 0.3F * this.wingspeed) * (float)Math.PI * 0.1F;
         newangle = MathHelper.cos(f2 * 0.21F * this.wingspeed) * (float)Math.PI * 0.06F;
         this.LA1.rotateAngleX = 0.261F + newangle;
         this.LA2.rotateAngleX = 0.436F + newangle;

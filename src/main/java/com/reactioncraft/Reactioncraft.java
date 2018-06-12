@@ -86,7 +86,7 @@ public class Reactioncraft
         MinecraftForge.EVENT_BUS.register(new BlockRegistry());
         MinecraftForge.EVENT_BUS.register(new ItemRegistry());
         MinecraftForge.EVENT_BUS.register(new BiomeHandler());
-        MinecraftForge.EVENT_BUS.register(new LootTableHandler());
+//        MinecraftForge.EVENT_BUS.register(new LootTableHandler());
 
         TileEntityRegistry.registerTileEntities();
 

@@ -31,10 +31,7 @@ public class BlockBaseDoor extends BlockDoor
         return this == BlockIndex.ironBookcasedoor ? ItemIndex.ironBookcasedoor : (this == BlockIndex.woodenBookcase ? ItemIndex.woodenBookcasedoor : (this == BlockIndex.cherrydoor ? ItemIndex.cherry_door : ItemIndex.cherry_door));
     }
 
-    public BlockRenderLayer getBlockLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
+
 
 
     /**

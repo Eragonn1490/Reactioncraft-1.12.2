@@ -55,8 +55,8 @@ public class BlockCherryTreeLeaves extends BlockLeaves
 
     @Override
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        IBlockState sideste=blockAccess.getBlockState(pos.offset(side));
-        return sideste.getBlock() != Blocks.AIR.getDefaultState();
+        IBlockState sidestate=blockAccess.getBlockState(pos.offset(side));
+        return sidestate.getBlock() != Blocks.AIR.getDefaultState();
     }
 
     @Override
