@@ -159,7 +159,10 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
                     }
                     else{
                         currentItemBurnTime=getItemBurnTime(fuel);
+                        ItemStack container=fuel.getItem().getContainerItem(fuel);
                         fuel.shrink(1);
+                        if(!container.isEmpty())
+                            itemHandler.insertItem(1,container,false);
                     }
                     world.addBlockEvent(pos,BlockIndex.clayalizerIdle,2,currentItemBurnTime);
                 }
