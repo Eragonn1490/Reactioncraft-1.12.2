@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "reactioncraft:items/item_cherry_door"
+        "layer0": "reactioncraft:items/door_cherry"
     }
 }

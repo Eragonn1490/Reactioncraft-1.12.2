@@ -1,17 +1,17 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.blocks.BlockBase;
+import com.reactioncraft.blocks.MetadataArray;
 import com.reactioncraft.common.EnumDesertBlocks;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-
-import java.util.Random;
 
 public class BlockDesertMulti extends BlockBase implements MetadataArray
 {
@@ -20,34 +20,26 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
     public BlockDesertMulti(Material materialIn)
     {
         super(materialIn);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumDesertBlocks.one1));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumDesertBlocks.DESERT_Bricks));
         this.setCreativeTab(Reactioncraft.Reactioncraft);
     }
 
     /**
-     * Gets the metadata of the item this Block can drop. This method is called when the block gets destroyed. It
-     * returns the metadata of the dropped item based on the old metadata of the block.
-     */
-    public int damageDropped(IBlockState state)
-    {
-    	if (state.getValue(BlockDesertMulti.TYPE) == EnumDesertBlocks.one1)
+	 * Gets the metadata of the item this Block can drop. This method is called when the block gets destroyed. It
+	 * returns the metadata of the dropped item based on the old metadata of the block.
+	 */
+	@Override
+	public int damageDropped(IBlockState state)
+	{
+		if (state.getValue(BlockDesertMulti.TYPE) == EnumDesertBlocks.Darkstone)
 		{
-    		//ItemStack coal = new ItemStack(Items.COAL);
-    		//return this.coal;
-    		return (state.getValue(TYPE)).getMetadata();
+			return 1;
 		}
-    	else
-    	{
-    		return (state.getValue(TYPE)).getMetadata();
-    	}
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        EnumDesertBlocks desertBlocks=state.getValue(BlockDesertMulti.TYPE);
-//        if(desertBlocks==EnumDesertBlocks.)
-        return super.getItemDropped(state, rand, fortune);
-    }
+		else
+		{
+			return (state.getValue(TYPE)).getMetadata();
+		}
+	}
 
     @Override
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
@@ -73,7 +65,6 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
     {
         return (state.getValue(TYPE)).getMetadata();
     }
-    
 
     protected BlockStateContainer createBlockState()
     {

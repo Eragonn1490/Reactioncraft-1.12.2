@@ -20,12 +20,16 @@ public class Villagers {
 
     public static void register(IForgeRegistry<VillagerRegistry.VillagerProfession> registry)
     {
+    	//TODO set trades
         VillagerRegistry.VillagerProfession regular=new VillagerRegistry.VillagerProfession(Reactioncraft.MODID+":regular",Reactioncraft.MODID+":textures/entity/rc_villager.png",Reactioncraft.MODID+":textures/entity/zombie_villager/zombie_rc_villager.png");
         VillagerRegistry.VillagerCareer career=new VillagerRegistry.VillagerCareer(regular,"career1");
         career.addTrade(1, new EntityVillager.ITradeList() {
             @Override
             public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
                 recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,20+random.nextInt(4)),new ItemStack(ItemIndex.coinMould)));
+                recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,20+random.nextInt(4)),new ItemStack(ItemIndex.ingotmould)));
+                recipeList.add(new MerchantRecipe(new ItemStack(ItemIndex.coins,5+random.nextInt(4), 12),new ItemStack(ItemIndex.coinMould)));
+                recipeList.add(new MerchantRecipe(new ItemStack(ItemIndex.coins,5+random.nextInt(4), 12),new ItemStack(ItemIndex.ingotmould)));
             }
         });
         registry.register(regular);
@@ -41,6 +45,7 @@ public class Villagers {
                 //and so on
             }
         });
+        
         //when villager's level goes up, new trades are unlocked
         villagerCareer.addTrade(2, new EntityVillager.ITradeList() {
             @Override
