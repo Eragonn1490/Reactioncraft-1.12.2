@@ -1,6 +1,6 @@
 {
   "parent":"reactioncraft:block/column",
   "textures":{
-    "all": "blocks/stone_slab_side"
+    "all": "reactioncraft:blocks/goldsymbols2"
   }
 }
