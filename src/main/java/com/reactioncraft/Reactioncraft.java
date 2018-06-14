@@ -4,23 +4,17 @@ package com.reactioncraft;
 import com.reactioncraft.api.ExclusionList;
 import com.reactioncraft.api.OreDictionaryRegistry;
 import com.reactioncraft.common.events.LootTableHandler;
-import com.reactioncraft.core.Logger;
-import com.reactioncraft.core.ServerProxy;
-import com.reactioncraft.creativetabs.RCBlockTab;
-import com.reactioncraft.creativetabs.RCFoodTab;
-import com.reactioncraft.creativetabs.RCItemTab;
-import com.reactioncraft.entities.EntityBee;
-import com.reactioncraft.entities.EntityHydrolisc;
-import com.reactioncraft.entities.EntitySkeletonCrawling;
-import com.reactioncraft.entities.EntityZombieCrawling;
+import com.reactioncraft.core.*;
+import com.reactioncraft.creativetabs.*;
+import com.reactioncraft.entities.*;
 import com.reactioncraft.registration.*;
-import com.reactioncraft.registration.instances.ItemIndex;
-import com.reactioncraft.utils.ReactioncraftConfiguration;
-import com.reactioncraft.utils.constants;
+import com.reactioncraft.registration.instances.*;
+import com.reactioncraft.utils.*;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
+import com.reactioncraft.world.village.*;
+
 import forestry.api.recipes.RecipeManagers;
-import ic2.api.info.Info;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
@@ -46,6 +40,8 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.server.FMLServerHandler;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -86,16 +82,15 @@ public class Reactioncraft
 	public static ReactioncraftConfiguration config;
 	public static ReactioncraftConfiguration millenaire;
 
-	public static boolean forestry, industrialcraft;
-
 	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent evt)
+	public void preInit(FMLPreInitializationEvent event)
 	{
-		Logger.setLogger(evt.getModLog());
+		Logger.setLogger(event.getModLog());
 		Logger.info("Reactioncraft Pre-initialization started");
 
-		config = new ReactioncraftConfiguration(new File(evt.getModConfigurationDirectory(), "Reactioncraft/Basemod.wizim"));
-		millenaire = new ReactioncraftConfiguration(new File(Minecraft.getMinecraft().mcDataDir,  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
+		config = new ReactioncraftConfiguration(new File(event.getModConfigurationDirectory(), "Reactioncraft/Basemod.wizim"));
+		
+		clientorserver(event);
 
 		try {
 			config.load();
@@ -114,6 +109,10 @@ public class Reactioncraft
 		MinecraftForge.EVENT_BUS.register(new ItemRegistry());
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 		MinecraftForge.EVENT_BUS.register(new LootTableHandler());
+		
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftHouseHandler());
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftFarmHandler());
+		Villagers.registerVillageComponents();
 
 		TileEntityRegistry.registerTileEntities();
 
@@ -144,19 +143,18 @@ public class Reactioncraft
 				//and so on
 			}
 		});
+	}
 
-		try {
-			if(constants.forestry())
-			{
-				forestry=true;
-			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+	private void clientorserver(FMLPreInitializationEvent event) 
+	{
+		if(event.getSide() == Side.CLIENT)
+		{
+			millenaire = new ReactioncraftConfiguration(new File(Minecraft.getMinecraft().mcDataDir,  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
 		}
-
-		if(Info.isIc2Available())
-			industrialcraft=true;
-
+		if(event.getSide() == Side.SERVER)
+		{
+			millenaire = new ReactioncraftConfiguration(new File(FMLServerHandler.instance().getServer().getDataDirectory(),  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
+		}
 	}
 
 	@Mod.EventHandler
@@ -178,8 +176,17 @@ public class Reactioncraft
 		try
 		{
 			if(constants.millenaire())
-			{
-				constants.configmillenaire();
+			{	
+				if(evt.getSide() == Side.CLIENT)
+				{
+					File file = (Minecraft.getMinecraft().mcDataDir);
+					constants.configmillenaire(file);
+				}
+				if(evt.getSide() == Side.SERVER)
+				{
+					File file = FMLServerHandler.instance().getServer().getDataDirectory().getAbsoluteFile();
+					constants.configmillenaire(file);
+				}
 				
 				try {
 					millenaire.load();

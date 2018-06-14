@@ -6,10 +6,13 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -102,26 +105,55 @@ public class EntitySkeletonCrawling extends EntityMob
     {
         return EnumCreatureAttribute.UNDEAD;
     }
+    
+    /**
+     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+     * use this to react to sunlight and start to burn.
+     */
+    public void onLivingUpdate()
+    {
+        if (this.world.isDaytime() && !this.world.isRemote && !this.isChild() && this.shouldBurnInDay())
+        {
+            float f = this.getBrightness();
+
+            if (f > 0.5F && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.world.canSeeSky(new BlockPos(this.posX, this.posY + (double)this.getEyeHeight(), this.posZ)))
+            {
+                boolean flag = true;
+                ItemStack itemstack = this.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
+
+                if (!itemstack.isEmpty())
+                {
+                    if (itemstack.isItemStackDamageable())
+                    {
+                        itemstack.setItemDamage(itemstack.getItemDamage() + this.rand.nextInt(2));
+
+                        if (itemstack.getItemDamage() >= itemstack.getMaxDamage())
+                        {
+                            this.renderBrokenItemStack(itemstack);
+                            this.setItemStackToSlot(EntityEquipmentSlot.HEAD, ItemStack.EMPTY);
+                        }
+                    }
+
+                    flag = false;
+                }
+
+                if (flag)
+                {
+                    this.setFire(8);
+                }
+            }
+        }
+
+        super.onLivingUpdate();
+    }
+    
+    protected boolean shouldBurnInDay()
+    {
+        return true;
+    }
 
     @Override
     protected void dropFewItems(boolean wasRecentlyHit, int lootingModifier) {
         super.dropFewItems(wasRecentlyHit, lootingModifier);
     }
-
-    //    public void dropRareDrop(int par1)
-//    {
-//        switch (this.rand.nextInt(3))
-//        {
-//            case 0:
-//                this.entityDropItem(new ItemStack(Items.SKULL, 1, 0), 0.0F);
-//                break;
-//
-//            case 1:
-//                this.entityDropItem(new ItemStack(Items.SKULL, 1, 0), 0.0F);
-//                break;
-//
-//            case 2:
-//                this.entityDropItem(new ItemStack(Items.SKULL, 1, 0), 0.0F);
-//        }
-//    }
 }
