@@ -15,14 +15,14 @@
         "age=1": {
             "model": "reactioncraft:ancientplant1"
         },
-        "age=0": {
-            "model": "reactioncraft:ancientplant0"
-        },
         "age=7": {
             "model": "reactioncraft:ancientplant7"
         },
         "age=6": {
             "model": "reactioncraft:ancientplant6"
+        },
+        "age=0" : {
+            "model" : "reactioncraft:ancientplant0"
         }
     }
 }

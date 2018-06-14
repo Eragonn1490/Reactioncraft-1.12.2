@@ -2,27 +2,34 @@ package com.reactioncraft.registration;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.blocks.*;
-import com.reactioncraft.blocks.machines.BlockBrickOven;
-import com.reactioncraft.blocks.machines.BlockClayalizer;
-import com.reactioncraft.blocks.machines.BlockFreezer;
-import com.reactioncraft.blocks.ores.BlockEndOre;
-import com.reactioncraft.blocks.ores.BlockNetherOre;
-import com.reactioncraft.blocks.ores.BlockSurfaceOre;
+import com.reactioncraft.blocks.machines.*;
+import com.reactioncraft.blocks.ores.*;
 import com.reactioncraft.core.Logger;
 import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.registration.instances.BlockIndex;
+import com.reactioncraft.vanillareplacements.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockEndPortal;
+import net.minecraft.block.BlockFence;
+import net.minecraft.block.BlockPistonBase;
+import net.minecraft.block.BlockPistonExtension;
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class BlockRegistry
 {
+	//Vanilla Overrides
+	public static Block BOOKSHELF = null;
+	
 	public static ItemBlock registerBlockItem(Block block, RegistryEvent.Register<Item> registryEvent)
     {
         if(block==null)
@@ -69,48 +76,46 @@ public class BlockRegistry
 	@SubscribeEvent
 	public void registerBlockItems(RegistryEvent.Register<Item> registryEvent)
 	{
-		//TODO
-//        registerBlockItem(AncientPlant,registryEvent);
-
+		//Vanilla Replacements
+		registerBlockItem(Blocks.BOOKSHELF, registryEvent);
+		Logger.info("Reactioncraft has successfully Replaced the bookshelf!");
+		
+		//Reactioncraft Blocks
 		registerBlockItem(BlockIndex.bloodstonebricks,registryEvent);
 		registerBlockItem(BlockIndex.cherryPlanks,registryEvent);
 		Item sand=registerBlockItem(BlockIndex.dark_sand,registryEvent);
 		Reactioncraft.proxy.registerItemRenderer(sand,0,sand.getRegistryName().getResourcePath());
 
-		ItemBlock bcitem= registerBlockItem(BlockIndex.bookcases,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(bcitem,12);
-		ItemBlock dbitem=registerBlockItem(BlockIndex.desertBlocks,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(dbitem,9);
+		registerBlockItem(BlockIndex.bookcases,registryEvent);
+		registerBlockItem(BlockIndex.desertBlocks,registryEvent);
+//		Reactioncraft.proxy.registerItemBlockRenderer(itemBlock,0);
+//		ItemMulti itemMulti=new ItemMulti(BlockIndex.desertBlocks);
+//		itemMulti.setRegistryName(BlockIndex.desertBlocks.getRegistryName());
+//		registryEvent.getRegistry().register(itemMulti);
+//		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(itemMulti,"one1","one2");
 
-		ItemBlock gitem=registerBlockItem(BlockIndex.glowingGlass,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(gitem,16);
-
-		ItemBlock hitem= registerBlockItem(BlockIndex.hieroglyph,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(hitem,13);
-
-		ItemBlock soitem= registerBlockItem(BlockIndex.surfaceOres,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(soitem,6);
-
-		ItemBlock noitem= registerBlockItem(BlockIndex.netherOres,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(noitem,5);
-
-		ItemBlock eoitem= registerBlockItem(BlockIndex.endOres,registryEvent);
-		Reactioncraft.proxy.registerBlockItemRenderer(eoitem,2);
-
-		registerBlockItem(BlockIndex.enderportalframe,registryEvent);
-
+		registerBlockItem(BlockIndex.glowingGlass,registryEvent);
+		registerBlockItem(BlockIndex.hieroglyph,registryEvent);
+		registerBlockItem(BlockIndex.surfaceOres,registryEvent);
+		registerBlockItem(BlockIndex.netherOres,registryEvent);
+		registerBlockItem(BlockIndex.endOres,registryEvent);
 		registerBlockItem(BlockIndex.cherrywood,registryEvent);
 		registerBlockItem(BlockIndex.cherryTreeLeaves,registryEvent);
 		registerBlockItem(BlockIndex.rchive,registryEvent);
 
 
-		registerBlockItem(BlockIndex.freezer,registryEvent);
-		registerBlockItem(BlockIndex.brickOven,registryEvent);
-		registerBlockItem(BlockIndex.claylizer,registryEvent);
+		registerBlockItem(BlockIndex.freezerIdle,registryEvent);
+		registerBlockItem(BlockIndex.freezerActive,registryEvent);
+		registerBlockItem(BlockIndex.brickOvenIdle,registryEvent);
+		registerBlockItem(BlockIndex.brickOvenActive,registryEvent);
+		registerBlockItem(BlockIndex.clayalizerIdle,registryEvent);
+		registerBlockItem(BlockIndex.clayalizerActive,registryEvent);
 		registerBlockItem(BlockIndex.chainladder,registryEvent);
 		ItemMulti columnItem=new ItemMulti(BlockIndex.column);
 		columnItem.setRegistryName(BlockIndex.column.getRegistryName());
 		registryEvent.getRegistry().register(columnItem);
+		
+		
 		//NOTICE there must exist json item model for each block-item
 		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(columnItem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 
@@ -121,15 +126,32 @@ public class BlockRegistry
 
 		registerBlockItem(BlockIndex.redCactus,registryEvent);
 		registerBlockItem(BlockIndex.greenCactus,registryEvent);
-		registerBlockItem(BlockIndex.newSponge,registryEvent);
 
 		registerBlockItem(BlockIndex.cherryTreeSapling,registryEvent);
+		
+		registerBlockItem(BlockIndex.cornTall, registryEvent);
+		
+		//Longer Piston
+		//registerBlockItem(BlockIndex.extendedPiston, registryEvent);
+		//registerBlockItem(BlockIndex.extendedPistonsticky, registryEvent);
+		
+		//Gate
+		registerBlockItem(BlockIndex.gate, registryEvent);
+		registerBlockItem(BlockIndex.fence, registryEvent);
+		
+		//Transmitter Blocks
+		registerBlockItem(BlockIndex.transmitter, registryEvent);
+		registerBlockItem(BlockIndex.reprogrammer, registryEvent);
 	}
 
-
+	
+	
 	public void init(IForgeRegistry<Block> forgeRegistry)
-	{		
-		/* Metadata Blocks **/
+	{	
+		//Vanilla Block Replacements
+		BOOKSHELF = (ModifiedBlockBookshelf) register(new ModifiedBlockBookshelf(),"bookshelf",forgeRegistry);
+		
+		/** Metadata Blocks **/
 		BlockIndex.column = (BlockColumn) register((new BlockColumn(Material.ROCK)).setHardness(3.0F),"columnReg",forgeRegistry);
 		BlockIndex.miniColumn = (BlockMiniColumn) register ((new BlockMiniColumn(Material.ROCK)).setHardness(3.0F),"ColumnMini",forgeRegistry);
 		//Turn Desert Plants Into Metadata Blocks ^^
@@ -156,7 +178,6 @@ public class BlockRegistry
 
 		//Wooden Blocks
 		BlockIndex.cherryPlanks = (BlockBase) register(new BlockBase(Material.WOOD).setCreativeTab(Reactioncraft.Reactioncraft),"cherryplanks",forgeRegistry);
-//		BlockIndex.Cherrywood= (BlockTree) register(new BlockTree(),"cherry_wood",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
 		BlockIndex.cherrywood = (BlockCherryTreeLog) register(new BlockCherryTreeLog(),"cherry_wood",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
 		BlockIndex.cherryTreeLeaves = (BlockCherryTreeLeaves) register(new BlockCherryTreeLeaves(),"cherry_leaves",forgeRegistry);
 
@@ -170,35 +191,51 @@ public class BlockRegistry
 		BlockIndex.woodenBookcase = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"doorWbookcase",forgeRegistry).setHardness(3.0F);
 		BlockIndex.ironBookcasedoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.IRON),"doorIbookcase",forgeRegistry).setHardness(3.0F);
 		BlockIndex.cherrydoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"cherry_door",forgeRegistry).setHardness(3.0F);
+		
+		/* Special Regular Blocks **/
+		//Machine Blocks
 
-
-		BlockIndex.freezer = (BlockFreezer) (new BlockFreezer(false))  .setHardness(3.5F);
-		register(BlockIndex.freezer,"freezer",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
-
-		BlockIndex.brickOven = ((BlockBrickOven)     (new BlockBrickOven(false))  .setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
-        register(BlockIndex.brickOven,"brickoven",forgeRegistry);
-
-		BlockIndex.claylizer = ((BlockClayalizer)   (new BlockClayalizer(false)).setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
-		register(BlockIndex.claylizer,"claylizer",forgeRegistry);
+		BlockIndex.freezerIdle = (BlockFreezer) (new BlockFreezer(false))  .setHardness(3.5F);
+		register(BlockIndex.freezerIdle,"freezeridle",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
+		BlockIndex.freezerActive = ((BlockFreezer)       (new BlockFreezer(true))  .setHardness(3.5F).setLightLevel(0.875F));
+		register(BlockIndex.freezerActive,"freezeractive",forgeRegistry);
+		BlockIndex.brickOvenIdle = ((BlockBrickOven)     (new BlockBrickOven(false))  .setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
+        register(BlockIndex.brickOvenIdle,"brickovenidle",forgeRegistry);
+		BlockIndex.brickOvenActive = ((BlockBrickOven)   (new BlockBrickOven(true))  .setHardness(3.5F).setLightLevel(0.875F));
+        register(BlockIndex.brickOvenActive,"brickovenactive",forgeRegistry);
+		BlockIndex.clayalizerIdle = ((BlockClayalizer)   (new BlockClayalizer(false)).setHardness(3.5F).setCreativeTab(Reactioncraft.Reactioncraft));
+		register(BlockIndex.clayalizerIdle,"clayalizeridle",forgeRegistry);
+		BlockIndex.clayalizerActive = ((BlockClayalizer) (new BlockClayalizer(true)) .setHardness(3.5F).setLightLevel(0.875F));
+		register(BlockIndex.clayalizerActive,"clayalizeractive",forgeRegistry);
 
 		BlockIndex.rchive= (BlockHive) register( new BlockHive(),"hive",forgeRegistry);
 
 		BlockIndex.cherryTreeSapling = (BlockCherryTreeSapling) register(new BlockCherryTreeSapling(),"cherry_tree_sapling",forgeRegistry);
 
-		BlockIndex.ancientPlant= (BlockAncientPlant) register(new BlockAncientPlant(),"ancientplant",forgeRegistry);
+		BlockIndex.ancientPlant = (BlockAncientPlant) register(new BlockAncientPlant(),"ancientplant",forgeRegistry);
 		BlockIndex.cornBlock= (BlockCornPlant) register(new BlockCornPlant(),"corn",forgeRegistry);
-
-		BlockIndex.newSponge= (BlockNewSponge) register(new BlockNewSponge(16),"sponge",forgeRegistry);
+		
+		BlockIndex.cornTall = (BlockCornTall) register(new BlockCornTall(), "tallcorn", forgeRegistry);
 
 		BlockIndex.chainladder= (BlockChainLadder) register(new BlockChainLadder(),"chain_ladder",forgeRegistry);
 
 		BlockIndex.redCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus1",forgeRegistry);
 		BlockIndex.greenCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus2",forgeRegistry);
-
-		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.Reactioncraft),"end_portal_frame",forgeRegistry);
+		
+		//Longer Piston
+		//BlockIndex.extendedPiston = (BlockExtendedPiston) register(new BlockExtendedPiston(false), "pistonBase", forgeRegistry);
+		//BlockIndex.extendedPistonsticky = (BlockExtendedPiston) register(new BlockExtendedPiston(true), "pistonStickyBase", forgeRegistry);
+		//BlockIndex.extendedPistonHead = (BlockExtendedPistonHead) register(new BlockExtendedPistonHead(), "pistonBase", forgeRegistry);
+		
+		//Gate
+		BlockIndex.gate = (BlockGate) register(new BlockGate().setCreativeTab(Reactioncraft.Reactioncraft), "gate", forgeRegistry);
+		BlockIndex.fence = (BlockCustomFence) register(new BlockCustomFence(Material.IRON, BlockPlanks.EnumType.OAK.getMapColor()).setBlockUnbreakable().setCreativeTab(null), "fence", forgeRegistry);
+		
+		//Transmitter
+		BlockIndex.transmitter = (BlockTransmitter) register(new BlockTransmitter(Material.ROCK).setHardness(3.0F).setCreativeTab(Reactioncraft.Reactioncraft),"transmitter",forgeRegistry);
+		BlockIndex.reprogrammer = (BlockReprogrammer) register(new BlockReprogrammer(Material.ROCK).setHardness(3.0F).setCreativeTab(Reactioncraft.Reactioncraft),"reprogrammer",forgeRegistry);
 	}
 	
-
 	/**Registers a block and sets unlocalized name*/
 	private static Block register(Block block,String identifier,IForgeRegistry<Block> forgeRegistry )
 	{

@@ -147,7 +147,7 @@ public final class BlockGate extends BlockBase
 				//Logger.info("on");
 				for(int x = 1; x < 90 && worldIn.getBlockState(pos.down(x)).getBlock() != Blocks.COBBLESTONE && worldIn.getBlockState(pos.down(x)).getBlock() == Blocks.AIR; x = x++) 
 				{
-//					worldIn.setBlockState(pos.down(x++), BlockIndex.fence.getDefaultState());
+					worldIn.setBlockState(pos.down(x++), BlockIndex.fence.getDefaultState());
 					worldIn.playSound((EntityPlayer)null, pos.down(x), SoundEvents.BLOCK_PISTON_EXTEND, SoundCategory.BLOCKS, 0.5F, worldIn.rand.nextFloat() * 0.25F + 0.6F);
 					//System.out.print("value of x : " + x );  //For Debugging Height
 					//System.out.print("\n");
@@ -162,10 +162,10 @@ public final class BlockGate extends BlockBase
 			if (isPowered == state.getValue(POWERED)) 
 			{
 				//Logger.info("off");
-//				for(int x = 1; x < 90 && worldIn.getBlockState(pos.down(x)).getBlock() == BlockIndex.fence; x = x++)
+				for(int x = 1; x < 90 && worldIn.getBlockState(pos.down(x)).getBlock() == BlockIndex.fence; x = x++) 
 				{
-//					worldIn.setBlockState(pos.down(x), Blocks.AIR.getDefaultState());
-//					worldIn.playSound((EntityPlayer)null, pos.down(x++), SoundEvents.BLOCK_PISTON_EXTEND, SoundCategory.BLOCKS, 0.5F, worldIn.rand.nextFloat() * 0.25F + 0.6F);
+					worldIn.setBlockState(pos.down(x), Blocks.AIR.getDefaultState());
+					worldIn.playSound((EntityPlayer)null, pos.down(x++), SoundEvents.BLOCK_PISTON_EXTEND, SoundCategory.BLOCKS, 0.5F, worldIn.rand.nextFloat() * 0.25F + 0.6F);
 					//System.out.print("value of x : " + x ); //For Debugging Height
 					//System.out.print("\n");
 				}

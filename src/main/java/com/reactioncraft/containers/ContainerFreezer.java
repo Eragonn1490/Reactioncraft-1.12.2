@@ -8,20 +8,23 @@ import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.SlotItemHandler;
 
 import javax.annotation.Nullable;
 
 public class ContainerFreezer extends Container
 {
-    private final TileEntityFreezer freezer;
+    private final IInventory freezer;
+    private int cookTime;
+    private int totalCookTime;
+    private int furnaceBurnTime;
+    private int currentItemBurnTime;
 
-    public ContainerFreezer(InventoryPlayer playerInventory, TileEntityFreezer furnaceInventory)
+    public ContainerFreezer(InventoryPlayer playerInventory, IInventory furnaceInventory)
     {
         this.freezer = furnaceInventory;
-        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.itemHandler, 0, 56, 17));
-        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.itemHandler, 1, 56, 53));
-        this.addSlotToContainer(new SlotItemHandler(furnaceInventory.bottomHandler, 0, 116, 35));
+        this.addSlotToContainer(new Slot(furnaceInventory, 0, 56, 17));
+        this.addSlotToContainer(new SlotFurnaceFuel(furnaceInventory, 1, 56, 53));
+        this.addSlotToContainer(new SlotFurnaceOutput(playerInventory.player, furnaceInventory, 2, 116, 35));
 
         for (int i = 0; i < 3; ++i)
         {
@@ -37,6 +40,11 @@ public class ContainerFreezer extends Container
         }
     }
 
+    public void addListener(IContainerListener listener)
+    {
+        super.addListener(listener);
+        listener.sendAllWindowProperties(this, this.freezer);
+    }
 
     /**
      * Looks for changes made in the container, sends them to every listener.
@@ -44,11 +52,47 @@ public class ContainerFreezer extends Container
     public void detectAndSendChanges()
     {
         super.detectAndSendChanges();
+
+        for (int i = 0; i < this.listeners.size(); ++i)
+        {
+            IContainerListener icontainerlistener = this.listeners.get(i);
+
+            if (this.cookTime != this.freezer.getField(2))
+            {
+                icontainerlistener.sendWindowProperty(this, 2, this.freezer.getField(2));
+            }
+
+            if (this.furnaceBurnTime != this.freezer.getField(0))
+            {
+                icontainerlistener.sendWindowProperty(this, 0, this.freezer.getField(0));
+            }
+
+            if (this.currentItemBurnTime != this.freezer.getField(1))
+            {
+                icontainerlistener.sendWindowProperty(this, 1, this.freezer.getField(1));
+            }
+
+            if (this.totalCookTime != this.freezer.getField(3))
+            {
+                icontainerlistener.sendWindowProperty(this, 3, this.freezer.getField(3));
+            }
+        }
+
+        this.cookTime = this.freezer.getField(2);
+        this.furnaceBurnTime = this.freezer.getField(0);
+        this.currentItemBurnTime = this.freezer.getField(1);
+        this.totalCookTime = this.freezer.getField(3);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void updateProgressBar(int id, int data)
+    {
+        this.freezer.setField(id, data);
     }
 
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        return true;
+        return this.freezer.isUsableByPlayer(playerIn);
     }
 
     /**

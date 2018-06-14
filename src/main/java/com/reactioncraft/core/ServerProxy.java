@@ -5,7 +5,6 @@ import com.reactioncraft.containers.ContainerClayalizer;
 import com.reactioncraft.containers.ContainerFreezer;
 import com.reactioncraft.tiles.TileEntityBrickOven;
 import com.reactioncraft.tiles.TileEntityClayalizer;
-import com.reactioncraft.tiles.TileEntityFreezer;
 import com.reactioncraft.ui.GuiBrickoven;
 import com.reactioncraft.ui.GuiClayalizer;
 import com.reactioncraft.ui.GuiFreezer;
@@ -22,6 +21,10 @@ import javax.annotation.Nullable;
 
 public class ServerProxy implements IGuiHandler
 {
+	public void registerItemBlockRenderer(ItemBlock itemBlock,int meta)
+	{
+
+	}
 
 	public void registerItemRenderer(Item item, int meta, String id) 
 	{
@@ -36,12 +39,8 @@ public class ServerProxy implements IGuiHandler
 	{
 	}
 
-	/**
-	 *
-	 * @param item block item
-	 * @param metadataRange 1-16
-	 */
-	public void registerBlockItemRenderer(ItemBlock item, int metadataRange){}
+
+	public void registerItemBlockRenderer(Item item, int range){}
 
     public enum GuiIDs
     {
@@ -60,7 +59,7 @@ public class ServerProxy implements IGuiHandler
 				case BRICK_OVEN:
 					return new ContainerBrickOven(player.inventory, (TileEntityBrickOven) tileEntity);
 				case FREEZER:
-					return new ContainerFreezer(player.inventory, (TileEntityFreezer) tileEntity);
+					return new ContainerFreezer(player.inventory, (IInventory) tileEntity);
 				case CLAYLISER:
 					return new ContainerClayalizer(player.inventory, (TileEntityClayalizer) tileEntity);
 			}
@@ -81,7 +80,7 @@ public class ServerProxy implements IGuiHandler
 					return new GuiBrickoven(player.inventory, (TileEntityBrickOven) tileEntity);
 				}
 				case CLAYLISER:return new GuiClayalizer(player.inventory, (TileEntityClayalizer) tileEntity);
-				case FREEZER:return new GuiFreezer(player.inventory, (TileEntityFreezer) tileEntity);
+				case FREEZER:return new GuiFreezer(player.inventory, (IInventory) tileEntity);
 			}
 		}
 		return null;

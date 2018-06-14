@@ -47,16 +47,16 @@ public class ItemMiningHelmUL extends ItemExtraCrowns
 		ItemStack stack = player.getHeldItem(hand);
 		IBlockState blockState = worldIn.getBlockState(pos);
 
-//		if(stack.getItem() == ItemIndex.miningHelmUnlit)
-//		{
-//			if(blockState.getBlock() == Blocks.TORCH)
-//			{
-//				ItemStack lit = new ItemStack(ItemIndex.miningHelmLit);
-//				player.addItemStackToInventory(lit);
-//				player.inventory.deleteStack(player.getHeldItem(hand));
-//				return EnumActionResult.PASS;
-//			}
-//		}
+		if(stack.getItem() == ItemIndex.miningHelmUnlit)
+		{
+			if(blockState.getBlock() == Blocks.TORCH)
+			{
+				ItemStack lit = new ItemStack(ItemIndex.miningHelmLit);
+				player.addItemStackToInventory(lit);
+				player.inventory.deleteStack(player.getHeldItem(hand));
+				return EnumActionResult.PASS;
+			}
+		}
 		return EnumActionResult.PASS;
 	}
 

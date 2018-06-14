@@ -4,7 +4,11 @@ import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.ServerProxy;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.tiles.TileEntityBrickOven;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +20,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -24,13 +27,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockBrickOven extends BlockHorizontalMachine
+public class BlockBrickOven extends BlockContainer
 {
+    public static final PropertyDirection FACING = BlockHorizontal.FACING;
     private final boolean isBurning;
-
+    private static boolean keepInventory;
+    
     public BlockBrickOven(boolean isBurning)
     {
         super(Material.ROCK);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.isBurning = isBurning;
     }
 
@@ -40,26 +46,52 @@ public class BlockBrickOven extends BlockHorizontalMachine
     @Nullable
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(BlockIndex.brickOven);
+        return Item.getItemFromBlock(BlockIndex.brickOvenIdle);
     }
 
-    @Override
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-        TileEntityBrickOven brickOven= (TileEntityBrickOven) worldIn.getTileEntity(pos);
-        InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),brickOven.itemHandler.getStackInSlot(0));
-        InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),brickOven.itemHandler.getStackInSlot(1));
-        InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),brickOven.outputHandler.getStackInSlot(0));
-        super.breakBlock(worldIn, pos, state);
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+    {
+        this.setDefaultFacing(worldIn, pos, state);
     }
 
+    private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!worldIn.isRemote)
+        {
+            IBlockState iblockstate = worldIn.getBlockState(pos.north());
+            IBlockState iblockstate1 = worldIn.getBlockState(pos.south());
+            IBlockState iblockstate2 = worldIn.getBlockState(pos.west());
+            IBlockState iblockstate3 = worldIn.getBlockState(pos.east());
+            EnumFacing enumfacing = state.getValue(FACING);
+
+            if (enumfacing == EnumFacing.NORTH && iblockstate.isFullBlock() && !iblockstate1.isFullBlock())
+            {
+                enumfacing = EnumFacing.SOUTH;
+            }
+            else if (enumfacing == EnumFacing.SOUTH && iblockstate1.isFullBlock() && !iblockstate.isFullBlock())
+            {
+                enumfacing = EnumFacing.NORTH;
+            }
+            else if (enumfacing == EnumFacing.WEST && iblockstate2.isFullBlock() && !iblockstate3.isFullBlock())
+            {
+                enumfacing = EnumFacing.EAST;
+            }
+            else if (enumfacing == EnumFacing.EAST && iblockstate3.isFullBlock() && !iblockstate2.isFullBlock())
+            {
+                enumfacing = EnumFacing.WEST;
+            }
+
+            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
+        }
+    }
 
     @SideOnly(Side.CLIENT)
     @SuppressWarnings("incomplete-switch")
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (stateIn.getValue(STATE))
+        if (this.isBurning)
         {
-            EnumFacing enumfacing = stateIn.getValue(FACING);
+            EnumFacing enumfacing = (EnumFacing)stateIn.getValue(FACING);
             double d0 = (double)pos.getX() + 0.5D;
             double d1 = (double)pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
             double d2 = (double)pos.getZ() + 0.5D;
@@ -92,6 +124,32 @@ public class BlockBrickOven extends BlockHorizontalMachine
         }
     }
 
+    public static void setState(boolean active, World worldIn, BlockPos pos)
+    {
+        IBlockState iblockstate = worldIn.getBlockState(pos);
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+        keepInventory = true;
+
+        if (active)
+        {
+            worldIn.setBlockState(pos, BlockIndex.brickOvenActive.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockIndex.brickOvenActive.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        }
+        else
+        {
+            worldIn.setBlockState(pos, BlockIndex.brickOvenIdle.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockIndex.brickOvenIdle.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        }
+
+        keepInventory = false;
+
+        if (tileentity != null)
+        {
+            tileentity.validate();
+            worldIn.setTileEntity(pos, tileentity);
+        }
+    }
+
     /**
      * Returns a new instance of a block's tile entity class. Called on placing the block.
      */
@@ -106,7 +164,7 @@ public class BlockBrickOven extends BlockHorizontalMachine
      */
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
-        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()));
+        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 
         if (stack.hasDisplayName())
         {
@@ -117,6 +175,26 @@ public class BlockBrickOven extends BlockHorizontalMachine
                 ((TileEntityBrickOven)tileentity).setCustomInventoryName(stack.getDisplayName());
             }
         }
+    }
+
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!keepInventory)
+        {
+            TileEntity tileentity = worldIn.getTileEntity(pos);
+
+            if (tileentity instanceof TileEntityBrickOven)
+            {
+
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),((TileEntityBrickOven) tileentity).outputHandler.getStackInSlot(0));
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),((TileEntityBrickOven) tileentity).itemHandler.getStackInSlot(0));
+                InventoryHelper.spawnItemStack(worldIn,pos.getX(),pos.getY(),pos.getZ(),((TileEntityBrickOven) tileentity).itemHandler.getStackInSlot(1));
+
+                worldIn.updateComparatorOutputLevel(pos, this);
+            }
+        }
+
+        super.breakBlock(worldIn, pos, state);
     }
 
     public boolean hasComparatorInputOverride(IBlockState state)
@@ -131,13 +209,64 @@ public class BlockBrickOven extends BlockHorizontalMachine
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(BlockIndex.brickOven);
+        return new ItemStack(BlockIndex.brickOvenIdle);
     }
 
-    @Override
-    public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos) {
-        return state.getValue(STATE) ? 15 : 0;
+    /**
+     * The type of render function called. 3 for standard block models, 2 for TESR's, 1 for liquids, -1 is no render
+     */
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
     }
+
+    /**
+     * Convert the given metadata into a BlockState for this Block
+     */
+    public IBlockState getStateFromMeta(int meta)
+    {
+        EnumFacing enumfacing = EnumFacing.getFront(meta);
+
+        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+        {
+            enumfacing = EnumFacing.NORTH;
+        }
+
+        return this.getDefaultState().withProperty(FACING, enumfacing);
+    }
+
+    /**
+     * Convert the BlockState into the correct metadata value
+     */
+    public int getMetaFromState(IBlockState state)
+    {
+        return (state.getValue(FACING)).getIndex();
+    }
+
+    /**
+     * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
+     * blockstate.
+     */
+    public IBlockState withRotation(IBlockState state, Rotation rot)
+    {
+        return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
+    }
+
+    /**
+     * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
+     * blockstate.
+     */
+    public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
+    {
+        return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
+    }
+
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, FACING);
+    }
+    
+
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {

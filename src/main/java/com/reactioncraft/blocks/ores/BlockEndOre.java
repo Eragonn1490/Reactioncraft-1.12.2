@@ -3,7 +3,6 @@ package com.reactioncraft.blocks.ores;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.blocks.BlockBase;
 import com.reactioncraft.blocks.MetadataArray;
-import com.reactioncraft.common.EnumEndOres;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;

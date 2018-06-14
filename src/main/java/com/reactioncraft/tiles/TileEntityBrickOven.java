@@ -1,13 +1,8 @@
 package com.reactioncraft.tiles;
 
-import com.reactioncraft.ItemHandler;
 import com.reactioncraft.api.BrickOvenRecipes;
-import com.reactioncraft.blocks.machines.BlockBrickOven;
-import com.reactioncraft.blocks.machines.BlockFreezer;
-import com.reactioncraft.blocks.machines.BlockHorizontalMachine;
 import com.reactioncraft.itemhandlers.BrickOvenItemHandler;
 import com.reactioncraft.registration.instances.BlockIndex;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityFurnace;
@@ -96,11 +91,11 @@ public class TileEntityBrickOven extends TileEntityBase implements ITickable
 
         if (!this.world.isRemote)
         {
-            IBlockState machineState=world.getBlockState(pos);
+
             ItemStack fuel= itemHandler.getStackInSlot(1);
             if(!fuel.isEmpty()) {
                 burnTime=getItemBurnTime(fuel);
-                world.addBlockEvent(pos,BlockIndex.brickOven,2,burnTime);
+                world.addBlockEvent(pos,BlockIndex.brickOvenIdle,2,burnTime);
             }
             ItemStack input=itemHandler.getStackInSlot(0);
             if(!input.isEmpty() )
@@ -117,25 +112,15 @@ public class TileEntityBrickOven extends TileEntityBase implements ITickable
                                 totalCookTime = 0;
                             }
                         }
-                        world.addBlockEvent(pos, BlockIndex.brickOven, 0, totalCookTime);
+                        world.addBlockEvent(pos, BlockIndex.brickOvenIdle, 0, totalCookTime);
                         currentItemBurnTime--;
-                        if(currentItemBurnTime>0 && !machineState.getValue(BlockBrickOven.STATE)) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,true));
                     }
                     else{
-                        if(!fuel.isEmpty()) {
-                            currentItemBurnTime = getItemBurnTime(fuel);
-                            fuel.shrink(1);
-                        }
-                        if(currentItemBurnTime>0) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,true));
-                        else {
-                            if(machineState.getValue(BlockBrickOven.STATE)) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,false));
-                        }
+                        currentItemBurnTime=getItemBurnTime(fuel);
+                        fuel.shrink(1);
                     }
-                    world.addBlockEvent(pos,BlockIndex.brickOven,1,currentItemBurnTime);
+                    world.addBlockEvent(pos,BlockIndex.brickOvenIdle,1,currentItemBurnTime);
                 }
-            }
-            else{
-                if(machineState.getValue(BlockBrickOven.STATE)) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,false));
             }
 
         }
@@ -149,6 +134,30 @@ public class TileEntityBrickOven extends TileEntityBase implements ITickable
         return new TextComponentString("Brick Oven");
     }
 
+//    /**
+//     * Turn one item from the furnace source stack into the appropriate smelted item in the furnace result stack
+//     */
+//    public void smeltItem()
+//    {
+//        if (this.canSmelt())
+//        {
+//            ItemStack input= itemHandler.getStackInSlot(0), output= outputHandler.getStackInSlot(2);
+//            ItemStack result = BrickOvenRecipes.instance().getSmeltingResult(input);
+//
+//            if (Tools.areItemTypesEqual(output, result))
+//            {
+//                output.setCount(output.getCount()+result.getCount());
+//                // Forge BugFix: Results may have multiple items
+//            }
+//
+//            if (input.getItem() == Item.getItemFromBlock(Blocks.SPONGE) && input.getMetadata() == 1 && itemHandler.getStackInSlot(1).getItem() == Items.BUCKET)
+//            {
+//                itemHandler.setStackInSlot(1,new ItemStack(Items.WATER_BUCKET));
+//            }
+//           input.shrink(1);
+//        }
+//    }
+
 
     public static int getItemBurnTime(ItemStack stack)
     {
@@ -157,6 +166,7 @@ public class TileEntityBrickOven extends TileEntityBase implements ITickable
 
     public static boolean isItemFuel(ItemStack stack)
     {
+
         return getItemBurnTime(stack) > 0;
     }
 
@@ -190,9 +200,9 @@ public class TileEntityBrickOven extends TileEntityBase implements ITickable
     public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, net.minecraft.util.EnumFacing facing)
     {
         if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            if (facing == EnumFacing.DOWN)
-                return (T) outputHandler;
-            else return (T) itemHandler;
+            if (facing == EnumFacing.UP)
+                return (T) itemHandler;
+            else if (facing == EnumFacing.DOWN) return (T) outputHandler;
         }
         return super.getCapability(capability, facing);
     }
