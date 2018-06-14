@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "reactioncraft:blocks/sandbrick",
+        "front": "reactioncraft:blocks/cai",
+        "side": "reactioncraft:blocks/sandbrick"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TTT",
+        "T T",
+        "TTT"
+    ],
+    "key": {
+        "T": {
+            "item": "minecraft:map",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:wirelessTransmitter",
+        "data": 0
+    }
+}
