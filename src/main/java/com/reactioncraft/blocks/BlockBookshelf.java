@@ -1,7 +1,7 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.blocks.enums.EnumBookshelf;
+import com.reactioncraft.common.EnumBookshelf;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.block.material.Material;
@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 
 public class BlockBookshelf extends BlockBase implements MetadataArray
 {
-	public static final PropertyEnum<EnumBookshelf> TYPE = PropertyEnum.<com.reactioncraft.blocks.enums.EnumBookshelf>create("type", EnumBookshelf.class);
+	public static final PropertyEnum<EnumBookshelf> TYPE = PropertyEnum.<EnumBookshelf>create("type", EnumBookshelf.class);
 
 	public BlockBookshelf(Material materialIn)
 	{

@@ -4,33 +4,30 @@ package com.reactioncraft;
 import com.reactioncraft.api.ExclusionList;
 import com.reactioncraft.api.OreDictionaryRegistry;
 import com.reactioncraft.common.events.LootTableHandler;
-import com.reactioncraft.core.Logger;
-import com.reactioncraft.core.ServerProxy;
+import com.reactioncraft.core.*;
 import com.reactioncraft.creativetabs.*;
-import com.reactioncraft.mobs.common.entities.*;
+import com.reactioncraft.entities.*;
 import com.reactioncraft.registration.*;
-import com.reactioncraft.utils.ReactioncraftConfiguration;
-import com.reactioncraft.utils.constants;
+import com.reactioncraft.registration.instances.*;
+import com.reactioncraft.utils.*;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
+import com.reactioncraft.world.village.*;
 
-//API
 import forestry.api.recipes.RecipeManagers;
-import ic2.api.info.Info;
-
-//Minecraft
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.util.RecipeBookClient;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.*;
-
-//Forge
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeOcean;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -48,30 +45,32 @@ import net.minecraftforge.fml.server.FMLServerHandler;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
-//Java
 import java.awt.*;
 import java.io.File;
 import java.util.List;
 
-//import com.reactioncraft.core.Remapper;
-//Minecraft Imports
-
-@Mod(modid = constants.MODID, name = constants.BaseID, version = constants.VERSION, acceptedMinecraftVersions = "[1.12]")
+@Mod(modid = Reactioncraft.MODID, name = Reactioncraft.NAME, version = Reactioncraft.VERSION, acceptedMinecraftVersions = Reactioncraft.MCVersion)
 @SuppressWarnings("unused")
 public class Reactioncraft
 {
+	public static final String NAME = constants.BaseID;
+	public static final String MODID = constants.MODID;
+	public static final String VERSION = constants.VERSION;
+	public static final String MCVersion = constants.MCVersion;
+
+
 	//Proxies
 	@SidedProxy(serverSide = "com.reactioncraft.core.ServerProxy", clientSide = "com.reactioncraft.core.ClientProxy")
 	public static ServerProxy proxy;
 
 	//Instance
-	@Mod.Instance(constants.MODID)
+	@Mod.Instance(MODID)
 	public static com.reactioncraft.Reactioncraft instance;
 
 	//Creative Tabs
-	public static CreativeTabs Reactioncraft      = new RCBlockTab(constants.MODID);
-	public static CreativeTabs ReactioncraftItems = new RCItemTab (constants.MODID+" items");
-	public static CreativeTabs Reactioncraftfood  = new RCFoodTab (constants.MODID+" food");
+	public static CreativeTabs Reactioncraft      = new RCBlockTab(MODID);
+	public static CreativeTabs ReactioncraftItems = new RCItemTab(MODID+" items");
+	public static CreativeTabs Reactioncraftfood  = new RCFoodTab(MODID+" food");
 
 	//Exclusion List of Entities
 	public static ExclusionList exclusionList=new ExclusionList();
@@ -79,22 +78,18 @@ public class Reactioncraft
 	//For Wild_Card Values (Replace as it pops up)
 	public static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
 
-	//Check if mods are loaded
-	public static boolean IC2, Forestry, millenaire;
-
-	//Setup Config Files
-	public static ReactioncraftConfiguration config, millenaireC;
+	//Config
+	public static ReactioncraftConfiguration config;
+	public static ReactioncraftConfiguration millenaire;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-
 		Logger.setLogger(event.getModLog());
-		Logger.info("Pre-initialization started");
+		Logger.info("Reactioncraft Pre-initialization started");
 
 		config = new ReactioncraftConfiguration(new File(event.getModConfigurationDirectory(), "Reactioncraft/Basemod.wizim"));
-
-		//Setup Config File Based Upon Side
+		
 		clientorserver(event);
 
 		try {
@@ -114,36 +109,32 @@ public class Reactioncraft
 		MinecraftForge.EVENT_BUS.register(new ItemRegistry());
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 		MinecraftForge.EVENT_BUS.register(new LootTableHandler());
+		
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftHouseHandler());
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftFarmHandler());
+		Villagers.registerVillageComponents();
 
 		TileEntityRegistry.registerTileEntities();
 
 		int eid=0;
 		//NOTICE the colors can be changed as needed. First is shell color, second is spot color
 		//FIXME some entities can hang the game
-		//EntityRegistry.registerModEntity(new ResourceLocation(constants.MODID,"bee"), EntityBee.class,"bee",eid++,instance,60,3,true,new Color(1,1,1).getRGB(),new Color(1,1,1).getRGB());
-		//EntitySpawnPlacementRegistry.setPlacementType(EntityBee.class, EntityLiving.SpawnPlacementType.ON_GROUND);
-		
-		//
-		EntityRegistry.registerModEntity(new ResourceLocation(constants.MODID,"hydrolisc"), EntityHydrolisc.class,"hydrolisc",eid++,instance,60,3,true,new Color(1,1,1).getRGB(),new Color(1,1,1).getRGB());
+		EntityRegistry.registerModEntity(new ResourceLocation(MODID,"hydrolisc"), EntityHydrolisc.class,"hydrolisc",eid++,instance,60,3,true,new Color(1,1,1).getRGB(),new Color(1,1,1).getRGB());
 		EntitySpawnPlacementRegistry.setPlacementType(EntityHydrolisc.class, EntityLiving.SpawnPlacementType.ON_GROUND);
-		
 		//
 		//        EntityRegistry.registerModEntity(new ResourceLocation(MODID,"sea_creeper"), EntitySeaCreeper.class,"sea_creeper",2,instance,60,3,true,new Color(1,1,1).getRGB(),new Color(1,1,1).getRGB());
 		//        EntitySpawnPlacementRegistry.setPlacementType(EntitySeaCreeper.class, EntityLiving.SpawnPlacementType.IN_WATER);
-		
-		//
-		EntityRegistry.registerModEntity(new ResourceLocation(constants.MODID,"crawling_skeleton"), EntitySkeletonCrawling.class,"crawling_skeleton",eid++,instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,1,1).getRGB());
+		EntityRegistry.registerModEntity(new ResourceLocation(MODID,"crawling_skeleton"), EntitySkeletonCrawling.class,"crawling_skeleton",eid++,instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,1,1).getRGB());
 		EntitySpawnPlacementRegistry.setPlacementType(EntitySkeletonCrawling.class, EntityLiving.SpawnPlacementType.ON_GROUND);
 
-		//
-		EntityRegistry.registerModEntity(new ResourceLocation(constants.MODID,"crawling_zombie"),EntityZombieCrawling.class,"crawling_zombie",eid++,instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,150,1).getRGB());
+		EntityRegistry.registerModEntity(new ResourceLocation(MODID,"crawling_zombie"),EntityZombieCrawling.class,"crawling_zombie",eid++,instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,150,1).getRGB());
 		EntitySpawnPlacementRegistry.setPlacementType(EntityZombieCrawling.class, EntityLiving.SpawnPlacementType.ON_GROUND);
 
 
 
 		//TODO biomes to spawn in
 		ForgeRegistries.BIOMES.forEach(biome -> {
-			if(!(biome instanceof BiomeOcean) || !(biome instanceof BiomeHell) || !(biome instanceof BiomeEnd))
+			if(!(biome instanceof BiomeOcean))
 			{
 				List<Biome.SpawnListEntry> listEntries= biome.getSpawnableList(EnumCreatureType.MONSTER);
 				//100 is the max weight
@@ -152,27 +143,19 @@ public class Reactioncraft
 				//and so on
 			}
 		});
-
-		if(Info.isIc2Available())
-			IC2=true;
-		if(Loader.isModLoaded("forestry"))
-			Forestry=true;
-		if(Loader.isModLoaded("millenaire"))
-			Forestry=true;
 	}
 
 	private void clientorserver(FMLPreInitializationEvent event) 
 	{
 		if(event.getSide() == Side.CLIENT)
 		{
-			millenaireC = new ReactioncraftConfiguration(new File(Minecraft.getMinecraft().mcDataDir,  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
+			millenaire = new ReactioncraftConfiguration(new File(Minecraft.getMinecraft().mcDataDir,  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
 		}
 		if(event.getSide() == Side.SERVER)
 		{
-			millenaireC = new ReactioncraftConfiguration(new File(FMLServerHandler.instance().getServer().getDataDirectory(),  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
+			millenaire = new ReactioncraftConfiguration(new File(FMLServerHandler.instance().getServer().getDataDirectory(),  "/mods/millenaire-custom/mods/Reactioncraft-Mill/reactioncraft_placeholder.txt"));
 		}
 	}
-
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event)
@@ -180,6 +163,7 @@ public class Reactioncraft
 		OreDictionaryRegistry.registerOres();
 		EventRegistry.eventInit();
 
+		//NOTICE
 		GameRegistry.registerWorldGenerator(new Worldgen(), 3);
 
 		RecipesManager.registerRecipes();
@@ -187,7 +171,7 @@ public class Reactioncraft
 
 	@Mod.EventHandler
 	public void modsLoaded(FMLPostInitializationEvent evt)
-	{
+	{		
 		//millenaire integration
 		try
 		{
@@ -202,6 +186,13 @@ public class Reactioncraft
 				{
 					File file = FMLServerHandler.instance().getServer().getDataDirectory().getAbsoluteFile();
 					constants.configmillenaire(file);
+				}
+				
+				try {
+					millenaire.load();
+				}
+				finally {
+					if (millenaire.hasChanged()) { millenaire.save(); }
 				}
 			}
 			System.out.println("Millenaire integration loaded !");
@@ -235,5 +226,8 @@ public class Reactioncraft
 	}
 
 	@SubscribeEvent
-	public void onMissingMappings(RegistryEvent.MissingMappings missingMappings){}
+	public void onMissingMappings(RegistryEvent.MissingMappings missingMappings)
+	{
+
+	}
 }

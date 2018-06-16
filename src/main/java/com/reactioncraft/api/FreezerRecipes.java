@@ -1,9 +1,8 @@
 package com.reactioncraft.api;
 
 import com.google.common.collect.Maps;
+import com.reactioncraft.Tools;
 import com.reactioncraft.core.Logger;
-import com.reactioncraft.itemhandlers.Tools;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -30,7 +29,7 @@ public class FreezerRecipes
     private FreezerRecipes()
     {
     	//test recipe
-        //addSmelting(Items.GOLD_INGOT,new ItemStack(Blocks.GOLD_BLOCK),1);
+        addSmelting(Items.GOLD_INGOT,new ItemStack(Blocks.GOLD_BLOCK),1);
     }
 
     /**

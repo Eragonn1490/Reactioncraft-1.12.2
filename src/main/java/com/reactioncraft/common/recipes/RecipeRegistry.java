@@ -9,7 +9,6 @@ import com.reactioncraft.core.Logger;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
 
-import com.reactioncraft.utils.constants;
 import forestry.api.recipes.RecipeManagers;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
@@ -54,8 +53,8 @@ public class RecipeRegistry
 
 			hiltIs.getTagCompound().setInteger("str1", i + 1);
 			netIs.getTagCompound() .setInteger("str2", i + 1);
-			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"net"+i),null,hiltIs,hiltRec);
-			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"hilt"+i),null,netIs,netRec);
+			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"net"+i),null,hiltIs,hiltRec);
+			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"hilt"+i),null,netIs,netRec);
 		}
 		
 		//GameRegistry.addShapelessRecipe(new ItemStack(ItemIndex.complete_net), new Object[] {ItemIndex.hilt, ItemIndex.net});
@@ -224,7 +223,6 @@ public class RecipeRegistry
 		FreezerRecipes.instance().addSmelting(Items.WATER_BUCKET,new ItemStack(ItemIndex.iceBucket),1);
 		FreezerRecipes.instance().addSmelting(Items.LAVA_BUCKET, new ItemStack(ItemIndex.obsidianBucket), 1);
 		FreezerRecipes.instance().addSmelting(ItemIndex.superheatedironingot, new ItemStack(Items.IRON_INGOT), 1);
-		
-		ClayalizerRecipes.instance().addSmeltingRecipeForBlock(BlockIndex.dark_sand, new ItemStack(ItemIndex.sandStonePaste, 4),0.3f);
+		ClayalizerRecipes.instance().addSmeltingRecipeForBlock(BlockIndex.dark_sand, new ItemStack(ItemIndex.sandStonePaste, 0, 4),0.3f);
 	}
 }

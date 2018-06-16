@@ -2,7 +2,6 @@ package com.reactioncraft.items.tools;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.utils.constants;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -25,8 +24,8 @@ public class ItemBaseHammer extends ItemSword implements ItemModelProvider
         this.myReturnedAmt = myReturnedAmt;
         this.setMaxDamage(myReturnedAmt);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
-        this.setRegistryName(new ResourceLocation(constants.MODID, name));
-		this.setUnlocalizedName(constants.MODID + "." + name);
+        this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + name);
     }
     
     @Override

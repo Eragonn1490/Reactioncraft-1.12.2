@@ -3,7 +3,7 @@ package com.reactioncraft.common.events;
 import javax.annotation.Nullable;
 
 import com.reactioncraft.blocks.BlockBookshelf;
-import com.reactioncraft.blocks.enums.EnumBookshelf;
+import com.reactioncraft.common.EnumBookshelf;
 import com.reactioncraft.core.Logger;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;

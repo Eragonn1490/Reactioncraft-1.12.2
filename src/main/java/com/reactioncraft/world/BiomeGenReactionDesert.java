@@ -1,8 +1,8 @@
 package com.reactioncraft.world;
 
 import com.reactioncraft.blocks.BlockDesertMulti;
-import com.reactioncraft.blocks.enums.EnumDesertBlocks;
-import com.reactioncraft.mobs.common.entities.EntityHydrolisc;
+import com.reactioncraft.common.EnumDesertBlocks;
+import com.reactioncraft.entities.EntityHydrolisc;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
@@ -18,7 +18,6 @@ import java.util.Random;
 
 public class BiomeGenReactionDesert extends BiomeDesert
 {		
-	//private static final IBlockState Ore = IntegratedBlocks.DesertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2);
 	public static WorldGenTrees cherryTrees=new WorldGenTrees(true,5,BlockIndex.cherrywood.getDefaultState().withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y),BlockIndex.cherryTreeLeaves.getDefaultState(),false);
     private CactusGenerator cactusGenerator =new CactusGenerator();
 

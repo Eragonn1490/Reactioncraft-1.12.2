@@ -1,20 +1,20 @@
-package com.reactioncraft.blocks.enums;
+package com.reactioncraft.common;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum EnumEndOres implements IStringSerializable
+public enum EnumSands implements IStringSerializable
 {
-    WIZIMITE(0, 0,     "0",    "0"),
-    VENTITNITE(1, 1,   "1",    "1");
+    one1		(0, 0,   "one1",       "one1"),
+     ;
 
-    private static final EnumEndOres[] META_LOOKUP = new EnumEndOres[values().length];
-    private static final EnumEndOres[] DYE_DMG_LOOKUP = new EnumEndOres[values().length];
+    private static final EnumSands[] META_LOOKUP = new EnumSands[values().length];
+    private static final EnumSands[] DYE_DMG_LOOKUP = new EnumSands[values().length];
     private final int meta;
     private final int dyeDamage;
     private final String name;
     private final String unlocalizedName;
 
-    EnumEndOres(int meta, int dyeDamage, String name, String unlocalizedName)
+    EnumSands(int meta, int dyeDamage, String name, String unlocalizedName)
     {
         this.meta = meta;
         this.dyeDamage = dyeDamage;
@@ -38,7 +38,7 @@ public enum EnumEndOres implements IStringSerializable
         return this.unlocalizedName;
     }
 
-    public static EnumEndOres byDyeDamage(int damage)
+    public static EnumSands byDyeDamage(int damage)
     {
         if (damage < 0 || damage >= DYE_DMG_LOOKUP.length)
         {
@@ -48,7 +48,7 @@ public enum EnumEndOres implements IStringSerializable
         return DYE_DMG_LOOKUP[damage];
     }
 
-    public static EnumEndOres byMetadata(int meta)
+    public static EnumSands byMetadata(int meta)
     {
         if (meta < 0 || meta >= META_LOOKUP.length)
         {
@@ -71,7 +71,7 @@ public enum EnumEndOres implements IStringSerializable
     
     static
     {
-        for (EnumEndOres type : values())
+        for (EnumSands type : values())
         {
             META_LOOKUP[type.getMetadata()] = type;
             DYE_DMG_LOOKUP[type.getDyeDamage()] = type;

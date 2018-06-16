@@ -2,9 +2,8 @@ package com.reactioncraft.items;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.mobs.common.entities.EntityMap;
+import com.reactioncraft.entities.EntityMap;
 import com.reactioncraft.registration.instances.ItemIndex;
-import com.reactioncraft.utils.constants;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityEgg;
 import net.minecraft.init.SoundEvents;
@@ -22,8 +21,8 @@ public class ItemTossable extends Item implements ItemModelProvider
     {
         this.maxStackSize = 16;
         this.name = name;
-		this.setRegistryName(new ResourceLocation(constants.MODID, this.name));
-		this.setUnlocalizedName(constants.MODID + "." + this.name);
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, this.name));
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + this.name);
 		this.setCreativeTab(Reactioncraft.ReactioncraftItems);
     }
 

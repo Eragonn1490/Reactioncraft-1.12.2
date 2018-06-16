@@ -2,7 +2,6 @@ package com.reactioncraft.items.chisels;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.utils.constants;
 import net.minecraft.item.ItemSword;
 
 public class ItemBaseChisel extends ItemSword implements ItemModelProvider
@@ -21,7 +20,7 @@ public class ItemBaseChisel extends ItemSword implements ItemModelProvider
 
     @Override
     public String getUnlocalizedName() {
-        return "item."+constants.MODID+"."+getRegistryName().getResourcePath();
+        return "item."+Reactioncraft.MODID+"."+getRegistryName().getResourcePath();
     }
 
     /**

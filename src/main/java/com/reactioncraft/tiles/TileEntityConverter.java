@@ -2,21 +2,19 @@ package com.reactioncraft.tiles;
 
 import javax.annotation.Nonnull;
 
-//import buildcraft.api.mj.IMjConnector;
-//import buildcraft.api.mj.IMjReceiver;
-//import buildcraft.api.mj.MjAPI;
-//import buildcraft.api.mj.MjCapabilityHelper;
-//import cofh.redstoneflux.api.IEnergyConnection;
-//import cofh.redstoneflux.api.IEnergyHandler;
-//import cofh.redstoneflux.api.IEnergyProvider;
-//import cofh.redstoneflux.api.IEnergyReceiver;
+import buildcraft.api.mj.IMjConnector;
+import buildcraft.api.mj.IMjReceiver;
+import buildcraft.api.mj.MjAPI;
+import buildcraft.api.mj.MjCapabilityHelper;
+import cofh.redstoneflux.api.IEnergyConnection;
+import cofh.redstoneflux.api.IEnergyHandler;
+import cofh.redstoneflux.api.IEnergyProvider;
+import cofh.redstoneflux.api.IEnergyReceiver;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class TileEntityConverter extends TileEntity //implements IEnergyConnection, IEnergyHandler, IEnergyReceiver, IEnergyProvider,IMjConnector, IMjReceiver
+public class TileEntityConverter extends TileEntity implements IEnergyConnection, IEnergyHandler, IEnergyReceiver, IEnergyProvider,IMjConnector, IMjReceiver
 {	
-	/**
-	 * 
 	private final MjCapabilityHelper mjCaps = new MjCapabilityHelper(this);
 	private long lastReceived;
 	private long totalReceived;
@@ -69,5 +67,4 @@ public class TileEntityConverter extends TileEntity //implements IEnergyConnecti
 	{
 		return 10;
 	}
-		 */
 }

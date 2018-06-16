@@ -1,8 +1,7 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.blocks.enums.EnumSands;
-
+import com.reactioncraft.common.EnumSands;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;
@@ -25,8 +24,8 @@ public class BlockDarkSand extends BlockFalling
     
     public BlockDarkSand(Material materialIn)
     {
-        super(materialIn);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumSands.DARKER_SAND));
+        super();
+        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumSands.one1));
         this.setCreativeTab(Reactioncraft.Reactioncraft);
     }
     

@@ -1,11 +1,11 @@
 package com.reactioncraft.world;
 
 import com.reactioncraft.blocks.BlockDesertMulti;
-import com.reactioncraft.blocks.enums.EnumDesertBlocks;
 import com.reactioncraft.blocks.ores.BlockNetherOre;
 import com.reactioncraft.blocks.ores.BlockSurfaceOre;
 import com.reactioncraft.blocks.ores.EnumNetherOres;
 import com.reactioncraft.blocks.ores.EnumSurfaceOres;
+import com.reactioncraft.common.EnumDesertBlocks;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;

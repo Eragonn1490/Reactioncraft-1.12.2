@@ -37,9 +37,7 @@ public class BlockCornPlant extends BlockReactionPlant
                 }
             }
         }
-        
-        // >= should fix issue where if you bone meal it wont switch over
-        if(i >= this.getMaxAge())
+        if(i == this.getMaxAge())
         {
         	BlockPos pos1 = pos.down();
         	worldIn.setBlockState(pos, BlockIndex.cornTall.getDefaultState());

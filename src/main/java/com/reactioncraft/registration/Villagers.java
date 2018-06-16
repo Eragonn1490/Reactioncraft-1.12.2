@@ -4,7 +4,7 @@ import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.Logger;
 import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.world.village.*;
-import com.reactioncraft.utils.constants;
+
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
@@ -25,6 +25,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.List;
 import java.util.Random;
+
 import javax.annotation.Nullable;
 
 /**
@@ -40,7 +41,7 @@ public class Villagers {
 	{
 
 		//TODO set trades
-		/** VillagerRegistry.VillagerProfession **/ mherr = new VillagerRegistry.VillagerProfession(constants.MODID+":regular",constants.MODID+":textures/entity/rc_villager.png",constants.MODID+":textures/entity/zombie_villager/zombie_rc_villager.png");
+		/** VillagerRegistry.VillagerProfession **/ mherr = new VillagerRegistry.VillagerProfession(Reactioncraft.MODID+":regular",Reactioncraft.MODID+":textures/entity/rc_villager.png",Reactioncraft.MODID+":textures/entity/zombie_villager/zombie_rc_villager.png");
 		VillagerRegistry.VillagerCareer career      = new VillagerRegistry.VillagerCareer(mherr,"career1");
 		career.addTrade(1, new EntityVillager.ITradeList() {
 			@Override
@@ -54,7 +55,7 @@ public class Villagers {
 		registry.register(mherr);
 
 		//TODO set trades
-		/** VillagerRegistry.VillagerProfession **/  banker =new VillagerRegistry.VillagerProfession(constants.MODID+":banker",constants.MODID+":textures/entity/banker.png","");
+		/** VillagerRegistry.VillagerProfession **/  banker =new VillagerRegistry.VillagerProfession(Reactioncraft.MODID+":banker",Reactioncraft.MODID+":textures/entity/banker.png","");
 		VillagerRegistry.VillagerCareer villagerCareer=new VillagerRegistry.VillagerCareer(banker,"career1");
 		villagerCareer.addTrade(1, new EntityVillager.ITradeList() {
 			@Override

@@ -3,7 +3,6 @@ package com.reactioncraft.ui;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.containers.ContainerBrickOven;
 import com.reactioncraft.tiles.TileEntityBrickOven;
-import com.reactioncraft.utils.constants;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiBrickoven extends UIContainerBase
 {
-    private static final ResourceLocation BRICK_OVEN_TEXTURE = new ResourceLocation(constants.MODID,"textures/gui/brickoven.png");
+    private static final ResourceLocation BRICK_OVEN_TEXTURE = new ResourceLocation(Reactioncraft.MODID,"textures/gui/brickoven.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
     private final TileEntityBrickOven brickoven;

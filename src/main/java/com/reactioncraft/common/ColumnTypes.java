@@ -1,4 +1,4 @@
-package com.reactioncraft.blocks.enums;
+package com.reactioncraft.common;
 
 import net.minecraft.util.IStringSerializable;
 

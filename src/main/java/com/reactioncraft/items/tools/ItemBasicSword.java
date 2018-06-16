@@ -2,7 +2,6 @@ package com.reactioncraft.items.tools;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.utils.constants;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
@@ -17,8 +16,8 @@ public class ItemBasicSword extends ItemSword implements ItemModelProvider
     {
         super(var2);
         this.name = var1;
-		this.setRegistryName(new ResourceLocation(constants.MODID, name));
-        this.setUnlocalizedName(constants.MODID+"."+name);
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
+        this.setUnlocalizedName(Reactioncraft.MODID+"."+name);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
     }
     

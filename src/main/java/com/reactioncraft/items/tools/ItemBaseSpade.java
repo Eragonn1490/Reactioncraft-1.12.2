@@ -2,7 +2,6 @@ package com.reactioncraft.items.tools;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.utils.constants;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.util.ResourceLocation;
 
@@ -13,7 +12,7 @@ public class ItemBaseSpade extends ItemSpade implements ItemModelProvider
     {
         super(var2);
         this.name = var1;
-		this.setRegistryName(new ResourceLocation(constants.MODID, name));
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
         this.setUnlocalizedName(name);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
     }

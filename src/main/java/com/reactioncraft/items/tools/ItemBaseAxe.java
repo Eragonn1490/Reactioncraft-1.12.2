@@ -3,7 +3,6 @@ package com.reactioncraft.items.tools;
 import com.google.common.collect.Sets;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.utils.constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -26,7 +25,7 @@ public class ItemBaseAxe extends ItemTool implements ItemModelProvider
     {
         super(material, EFFECTIVE_ON);
         this.name = var1;
-		this.setRegistryName(new ResourceLocation(constants.MODID, name));
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
         this.setUnlocalizedName(name);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
     }

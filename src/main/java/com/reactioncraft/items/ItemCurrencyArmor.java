@@ -3,7 +3,6 @@ package com.reactioncraft.items;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
 import com.reactioncraft.registration.instances.ItemIndex;
-import com.reactioncraft.utils.constants;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -27,8 +26,8 @@ public class ItemCurrencyArmor extends ItemArmor implements ItemModelProvider
         this.material = par2EnumArmorMaterial;
         this.enchantability = 30;
         this.name = name;
-		this.setRegistryName(new ResourceLocation(constants.MODID, this.name));
-		this.setUnlocalizedName(constants.MODID + "." + this.name);
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, this.name));
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + this.name);
     }
     
     @Override

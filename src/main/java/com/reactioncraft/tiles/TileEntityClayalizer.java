@@ -1,10 +1,10 @@
 package com.reactioncraft.tiles;
 
+import com.reactioncraft.ItemHandler;
 import com.reactioncraft.api.ClayalizerRecipes;
 import com.reactioncraft.blocks.machines.BlockBrickOven;
 import com.reactioncraft.blocks.machines.BlockClayalizer;
 import com.reactioncraft.itemhandlers.ClaylizerItemHandler;
-import com.reactioncraft.itemhandlers.ItemHandler;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.inventory.IInventory;

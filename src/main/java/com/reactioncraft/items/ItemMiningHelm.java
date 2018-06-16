@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.registration.instances.ItemIndex;
-import com.reactioncraft.utils.constants;
 
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -36,7 +35,7 @@ public class ItemMiningHelm extends ItemExtraCrowns
         this.material = par2EnumArmorMaterial;
         this.enchantability = 30;
         this.name = name;
-		this.setUnlocalizedName(constants.MODID + "." + this.name);
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + this.name);
 		this.setMaxStackSize(1);
     }
     

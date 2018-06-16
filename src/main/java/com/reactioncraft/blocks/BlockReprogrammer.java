@@ -66,30 +66,30 @@ public class BlockReprogrammer extends BlockBase
 		//TileEntity tileentity = world.getTileEntity(pos);
 
 		TileEntityReprogrammer tileentity = (TileEntityReprogrammer) world.getTileEntity(pos);
-//		if(item.getItem() == ItemIndex.)
-//		{
-//			world.setTileEntity(pos, tileentity);
-//
-//			item.getTagCompound().getInteger("Channel");
-//
-//			Logger.info("Frequency: " + item.getTagCompound().getInteger("Channel"));
-//
-//			NBTTagCompound storedchannel = new NBTTagCompound();
-//
-//			int test = item.getTagCompound().getInteger("Channel");
-//
-//			tileentity.writeToNBT(storedchannel);
-//			storedchannel.setInteger("Stored", test);
-//
-//			Logger.info("Test :", TileEntityReprogrammer.channel);
-//
-//			return true;
-//
-//		}
-//		else
-//		{
+		if(item.getItem() == ItemIndex.wirelessTransmitter)
+		{		
+			world.setTileEntity(pos, tileentity);
+
+			item.getTagCompound().getInteger("Channel");	
+
+			Logger.info("Frequency: " + item.getTagCompound().getInteger("Channel"));
+
+			NBTTagCompound storedchannel = new NBTTagCompound();
+
+			int test = item.getTagCompound().getInteger("Channel");
+
+			tileentity.writeToNBT(storedchannel);
+			storedchannel.setInteger("Stored", test);
+
+			Logger.info("Test :", TileEntityReprogrammer.channel);
+
+			return true;
+
+		}
+		else
+		{
 			return false;
-//		}
+		}
 	
 
 	/** ATTEMPT 2 #failed

@@ -1,9 +1,10 @@
-package com.reactioncraft.mobs.common.entities;
+package com.reactioncraft.entities;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
+import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,13 +28,14 @@ public class EntityZombieCrawling extends EntityMob
 
 //        this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIBreakDoor(this));
-        this.tasks.addTask(2, new EntityAIAttackMelee(this,1,  false));
+        this.tasks.addTask(1, new EntityAIWanderAvoidWater(this, 8.0F));
+        this.tasks.addTask(2, new EntityAIBreakDoor(this));
+        this.tasks.addTask(3, new EntityAIAttackMelee(this,1,  false));
         this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(5, new EntityAIMoveThroughVillage(this, 1.0D, false));
         this.tasks.addTask(6, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(7, new EntityAILookIdle(this));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, false, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityVillager.class, false, false));
@@ -143,19 +145,33 @@ public class EntityZombieCrawling extends EntityMob
 	{
 		return EnumCreatureAttribute.UNDEAD;
 	}
+	
+	/**
+     * Called when the mob's health reaches 0.
+     */
+    public void onDeath(DamageSource cause)
+    {
+        super.onDeath(cause);
 
-//	public void dropRareDrop(int par1)
-//	{
-//		switch (this.rand.nextInt(3))
-//		{
-//		case 0:
-//			this.entityDropItem(new ItemStack(Items.SKULL, 1, 2), 0.0F);
-//			break;
-//		case 1:
-//			this.entityDropItem(new ItemStack(Items.SKULL, 1, 2), 0.0F);
-//			break;
-//		case 2:
-//			this.entityDropItem(new ItemStack(Items.SKULL, 1, 2), 0.0F);
-//		}
-//	}
+        if (cause.getTrueSource() instanceof EntityCreeper)
+        {
+            EntityCreeper entitycreeper = (EntityCreeper)cause.getTrueSource();
+
+            if (entitycreeper.getPowered() && entitycreeper.ableToCauseSkullDrop())
+            {
+                entitycreeper.incrementDroppedSkulls();
+                ItemStack itemstack = this.getSkullDrop();
+
+                if (!itemstack.isEmpty())
+                {
+                    this.entityDropItem(itemstack, 0.0F);
+                }
+            }
+        }
+    }
+
+	protected ItemStack getSkullDrop()
+    {
+        return new ItemStack(Items.SKULL, 1, 2);
+    }
 }

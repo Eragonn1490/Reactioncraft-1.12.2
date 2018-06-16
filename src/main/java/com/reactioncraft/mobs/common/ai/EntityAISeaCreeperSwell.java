@@ -1,7 +1,6 @@
 package com.reactioncraft.mobs.common.ai;
 
-import com.reactioncraft.mobs.common.entities.EntitySeaCreeper;
-
+import com.reactioncraft.entities.EntitySeaCreeper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 

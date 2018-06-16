@@ -12,7 +12,6 @@ import com.reactioncraft.core.Logger;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
 
-import com.reactioncraft.utils.constants;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,7 +32,7 @@ public class ItemWirelessTransmitter extends ItemBase
 	public ItemWirelessTransmitter(String name) 
 	{
 		super(name);
-		this.setUnlocalizedName(constants.MODID + "." +name);
+		this.setUnlocalizedName(Reactioncraft.MODID + "." +name);
 		this.setMaxStackSize(1);
 	}
 

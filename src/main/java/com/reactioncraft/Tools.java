@@ -1,4 +1,4 @@
-package com.reactioncraft.itemhandlers;
+package com.reactioncraft;
 
 
 import net.minecraft.item.ItemStack;

@@ -107,11 +107,5 @@ public class Todolist
 	 * Nerfed Crawling Creature Spawn Rate
 	 * Crawling Skeletons dont like zombies
 	 * Chain Loops now give 2 instead of one (v6.4.9)
-	 * Rewrite of alot of code & reorganization of files (v6.4.9)
-	 * Alexiy Fixed Machines and Rewrote (v6.4.9)
-	 * Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v6.4.9)
-	 * Moved Popcorn Kernel over to Food tab (v6.4.9)
-	 * Moved Bag of popcorn over to Food tab (v6.4.9)
-	 * Fixed Corn Plant not swapping over correctly if bone meal was used to grow (v6.4.9)
 	 */
 }

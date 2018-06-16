@@ -1,13 +1,12 @@
 package com.reactioncraft.mobs.common.renders;
 
+import com.reactioncraft.entities.EntitySeaCreeper;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
-
-import com.reactioncraft.mobs.common.entities.EntitySeaCreeper;
 
 
 

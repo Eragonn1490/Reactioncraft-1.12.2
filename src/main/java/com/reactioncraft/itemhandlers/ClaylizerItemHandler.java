@@ -4,6 +4,8 @@ import net.minecraft.tileentity.TileEntity;
 
 import javax.annotation.Nullable;
 
+import com.reactioncraft.tiles.ItemHandler;
+
 /**
  * Created on 1/1/18.
  */

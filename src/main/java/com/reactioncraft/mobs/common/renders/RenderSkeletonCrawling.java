@@ -1,5 +1,6 @@
 package com.reactioncraft.mobs.common.renders;
 
+import com.reactioncraft.entities.EntitySkeletonCrawling;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -8,8 +9,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
-
-import com.reactioncraft.mobs.common.entities.EntitySkeletonCrawling;
 
 import javax.annotation.Nullable;
 

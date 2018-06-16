@@ -1,12 +1,11 @@
 package com.reactioncraft.mobs.common.renders;
 
+import com.reactioncraft.entities.EntityZombieCrawling;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
-
-import com.reactioncraft.mobs.common.entities.EntityZombieCrawling;
 
 public class RenderZombieCrawling extends RenderLiving<EntityZombieCrawling>
 {																				///assets/rcmobs/textures/entity/quadzombie.png

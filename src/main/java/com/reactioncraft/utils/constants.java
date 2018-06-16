@@ -2,27 +2,45 @@ package com.reactioncraft.utils;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Paths;
+
+import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.core.Logger;
+import com.reactioncraft.registration.instances.PropertyIndex;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.MinecraftServer;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.server.FMLServerHandler;
 
 public class constants 
 {
 	//Mod Info
 	public static final String BaseID    = "Reactioncraft 3: Rebirth";
 	public static final String MODID     = "reactioncraft";
-	public static final String VERSION   = "0.6.4.9";
+	public static final String VERSION   = "0.6.4.8";
 	public static final String MCVersion = "1.12.2";
-
+	
 	//Booleans for checking mods
 	//Loaded Mods
-	public static boolean millenaire() throws ClassNotFoundException
+	public static boolean millenaire() throws ClassNotFoundException 
 	{
 		try{
 			Class.forName("org.millenaire.common.forge.Mill");
 		}
-		catch (NoClassDefFoundError ex)
+		catch (NoClassDefFoundError ex) 
 		{
 			return false ;
 		}
@@ -30,12 +48,12 @@ public class constants
 	}
 
 	//Loaded Mods
-	public static boolean forestry() throws ClassNotFoundException
+	public static  boolean forestry() throws ClassNotFoundException 
 	{
 		try{
 			Class.forName("forestry.Forestry");
 		}
-		catch (NoClassDefFoundError ex)
+		catch (NoClassDefFoundError ex) 
 		{
 			return false ;
 		}

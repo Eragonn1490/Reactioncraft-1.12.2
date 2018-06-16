@@ -1,4 +1,4 @@
-package com.reactioncraft.mobs.common.entities;
+package com.reactioncraft.entities;
 
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.entity.Entity;

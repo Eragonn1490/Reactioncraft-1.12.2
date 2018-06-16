@@ -2,7 +2,6 @@ package com.reactioncraft.items.tools;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.utils.constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.SoundType;
@@ -24,8 +23,8 @@ public class ItemBaseDoor extends ItemDoor implements ItemModelProvider
     	super(block);
         this.block = block;
         this.name = name;
-		this.setRegistryName(new ResourceLocation(constants.MODID, this.name));
-		this.setUnlocalizedName(constants.MODID + "." + name);
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, this.name));
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + name);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
     }
     
