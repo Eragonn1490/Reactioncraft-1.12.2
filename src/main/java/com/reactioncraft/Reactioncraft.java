@@ -17,6 +17,7 @@ import com.reactioncraft.registration.*;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
 import forestry.api.recipes.RecipeManagers;
+import ic2.api.info.Info;
 import net.minecraft.client.util.RecipeBookClient;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
@@ -27,6 +28,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeOcean;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -73,6 +75,8 @@ public class Reactioncraft
 
     //For Wild_Card Values (Replace as it pops up)
     public static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
+
+    public static boolean IC2,Forestry;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
@@ -122,6 +126,11 @@ public class Reactioncraft
                 //and so on
             }
         });
+
+        if(Info.isIc2Available())
+            IC2=true;
+        if(Loader.isModLoaded("forestry"))
+            Forestry=true;
     }
 
     @Mod.EventHandler
