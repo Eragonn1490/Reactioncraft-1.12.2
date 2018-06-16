@@ -3,6 +3,7 @@ package com.reactioncraft.items;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
 import com.reactioncraft.common.OreDictionaryInterface;
+import com.reactioncraft.utils.constants;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.util.ResourceLocation;
@@ -15,8 +16,8 @@ public class ItemFoodBase extends ItemFood implements ItemModelProvider, OreDict
     {
         super(amount, saturation, isWolfFood);
 
-        this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
-        this.setUnlocalizedName(Reactioncraft.MODID + "." + name);
+        this.setRegistryName(new ResourceLocation(constants.MODID, name));
+        this.setUnlocalizedName(constants.MODID + "." + name);
         this.setCreativeTab(Reactioncraft.Reactioncraftfood);
     }
 

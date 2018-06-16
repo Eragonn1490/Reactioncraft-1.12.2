@@ -11,6 +11,7 @@ import com.reactioncraft.blocks.ores.BlockSurfaceOre;
 import com.reactioncraft.core.Logger;
 import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.registration.instances.BlockIndex;
+import com.reactioncraft.utils.constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockEndPortal;
@@ -202,8 +203,8 @@ public class BlockRegistry
 	/**Registers a block and sets unlocalized name*/
 	private static Block register(Block block,String identifier,IForgeRegistry<Block> forgeRegistry )
 	{
-			block.setRegistryName(Reactioncraft.MODID,identifier);
-			block.setUnlocalizedName(Reactioncraft.MODID+"."+identifier);
+			block.setRegistryName(constants.MODID,identifier);
+			block.setUnlocalizedName(constants.MODID+"."+identifier);
 			forgeRegistry.register(block);
 			return block;
 	}

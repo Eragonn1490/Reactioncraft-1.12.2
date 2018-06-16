@@ -1,6 +1,7 @@
 package com.reactioncraft.items;
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.utils.constants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -55,7 +56,7 @@ public class ItemCoin extends Item
 //			setContainerItem(IntegratedItems.Sack);
 //		}
 		
-		return "item."+Reactioncraft.MODID + ".coin." + names[i];
+		return "item."+constants.MODID + ".coin." + names[i];
 	}
 
 

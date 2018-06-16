@@ -3,6 +3,7 @@ package com.reactioncraft.ui;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.containers.ContainerClayalizer;
 import com.reactioncraft.tiles.TileEntityClayalizer;
+import com.reactioncraft.utils.constants;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -12,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiClayalizer extends UIContainerBase
 {
-    private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation(Reactioncraft.MODID,"textures/gui/clayalizer.png");
+    private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation(constants.MODID,"textures/gui/clayalizer.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
     private final TileEntityClayalizer claylizer;

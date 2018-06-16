@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
 import com.reactioncraft.registration.instances.ItemIndex;
+import com.reactioncraft.utils.constants;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -33,8 +34,8 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		//damageVsEntity = 0.0F;
 		//attackSpeed = 0.0F;
 		this.name = name;
-		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
-		this.setUnlocalizedName(Reactioncraft.MODID + "." + name);
+		this.setRegistryName(new ResourceLocation(constants.MODID, name));
+		this.setUnlocalizedName(constants.MODID + "." + name);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(Reactioncraft.ReactioncraftItems);
 	}

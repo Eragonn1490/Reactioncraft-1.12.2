@@ -9,6 +9,7 @@ import com.reactioncraft.core.Logger;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
 
+import com.reactioncraft.utils.constants;
 import forestry.api.recipes.RecipeManagers;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
@@ -53,8 +54,8 @@ public class RecipeRegistry
 
 			hiltIs.getTagCompound().setInteger("str1", i + 1);
 			netIs.getTagCompound() .setInteger("str2", i + 1);
-			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"net"+i),null,hiltIs,hiltRec);
-			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"hilt"+i),null,netIs,netRec);
+			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"net"+i),null,hiltIs,hiltRec);
+			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"hilt"+i),null,netIs,netRec);
 		}
 		
 		//GameRegistry.addShapelessRecipe(new ItemStack(ItemIndex.complete_net), new Object[] {ItemIndex.hilt, ItemIndex.net});

@@ -3,6 +3,7 @@ package com.reactioncraft.ui;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.containers.ContainerFreezer;
 import com.reactioncraft.tiles.TileEntityFreezer;
+import com.reactioncraft.utils.constants;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
@@ -13,7 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiFreezer extends UIContainerBase
 {
-    private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation(Reactioncraft.MODID,"textures/gui/freezer.png");
+    private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation(constants.MODID,"textures/gui/freezer.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
     private final TileEntityFreezer freezer;

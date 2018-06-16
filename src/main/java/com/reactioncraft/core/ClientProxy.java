@@ -8,6 +8,7 @@ import com.reactioncraft.mobs.common.models.ModelHydrolisc;
 import com.reactioncraft.mobs.common.models.ModelSeaCreeper;
 import com.reactioncraft.mobs.common.models.ModelZombieCrawling;
 import com.reactioncraft.mobs.common.renders.*;
+import com.reactioncraft.utils.constants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -23,7 +24,7 @@ public class ClientProxy extends ServerProxy
     {
     	if (!(item instanceof ItemMulti))
     	{
-    		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Reactioncraft.MODID + ":" + id, "inventory"));
+    		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(constants.MODID + ":" + id, "inventory"));
     	}
     }
 
@@ -31,7 +32,7 @@ public class ClientProxy extends ServerProxy
 	public void setItemBlockWithMetadataInventoryModel(ItemBlock itemBlock, String... variants) {
 		int m=0;
 		for (String variant : variants) {
-			ModelLoader.setCustomModelResourceLocation(itemBlock,m++,new ModelResourceLocation(Reactioncraft.MODID+":"+itemBlock.getRegistryName().getResourcePath()+variant,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemBlock,m++,new ModelResourceLocation(constants.MODID+":"+itemBlock.getRegistryName().getResourcePath()+variant,"inventory"));
 		}
 	}
 

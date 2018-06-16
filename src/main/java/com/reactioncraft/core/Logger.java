@@ -1,12 +1,13 @@
 package com.reactioncraft.core;
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.utils.constants;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
 public class Logger {
-	public static final Marker MOD_MARKER = MarkerManager.getMarker(Reactioncraft.MODID);
+	public static final Marker MOD_MARKER = MarkerManager.getMarker(constants.MODID);
 
 	private static org.apache.logging.log4j.Logger logger;
 

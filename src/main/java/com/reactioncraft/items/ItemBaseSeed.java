@@ -1,6 +1,7 @@
 package com.reactioncraft.items;
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.utils.constants;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemSeeds;
 
@@ -15,6 +16,6 @@ public class ItemBaseSeed extends ItemSeeds {
 
     @Override
     public String getUnlocalizedName() {
-        return Reactioncraft.MODID+"."+super.getUnlocalizedName();
+        return constants.MODID+"."+super.getUnlocalizedName();
     }
 }

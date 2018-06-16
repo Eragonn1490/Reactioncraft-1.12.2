@@ -3,6 +3,7 @@ package com.reactioncraft.registration;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.registration.instances.BlockIndex;
 import com.reactioncraft.registration.instances.ItemIndex;
+import com.reactioncraft.utils.constants;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -28,8 +29,8 @@ public class RecipeRegistry
 
 			hiltIs.getTagCompound().setInteger("str1", i + 1);
 			netIs.getTagCompound() .setInteger("str2", i + 1);
-			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"net"+i),null,hiltIs,hiltRec);
-			GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"hilt"+i),null,netIs,netRec);
+			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"net"+i),null,hiltIs,hiltRec);
+			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"hilt"+i),null,netIs,netRec);
 		}
 	}
 

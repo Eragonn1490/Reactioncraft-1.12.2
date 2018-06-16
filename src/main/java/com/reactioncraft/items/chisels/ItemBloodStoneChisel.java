@@ -2,6 +2,7 @@ package com.reactioncraft.items.chisels;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
+import com.reactioncraft.utils.constants;
 import net.minecraft.util.ResourceLocation;
 
 
@@ -14,7 +15,7 @@ public class ItemBloodStoneChisel extends ItemBaseChisel implements ItemModelPro
         this.setMaxDamage(4200);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
         this.setUnlocalizedName(unlocalizedName);
-        this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, unlocalizedName));
+        this.setRegistryName(new ResourceLocation(constants.MODID, unlocalizedName));
     }
     
     @Override
