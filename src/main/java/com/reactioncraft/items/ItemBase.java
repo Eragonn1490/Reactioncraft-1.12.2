@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class ItemBase extends Item implements ItemModelProvider
 {
+
 	public ItemBase(String name) 
 	{
 		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));

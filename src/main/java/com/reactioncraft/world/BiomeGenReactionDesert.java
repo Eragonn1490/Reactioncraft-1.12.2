@@ -18,6 +18,7 @@ import java.util.Random;
 
 public class BiomeGenReactionDesert extends BiomeDesert
 {		
+	//private static final IBlockState Ore = IntegratedBlocks.DesertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2);
 	public static WorldGenTrees cherryTrees=new WorldGenTrees(true,5,BlockIndex.cherrywood.getDefaultState().withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y),BlockIndex.cherryTreeLeaves.getDefaultState(),false);
     private CactusGenerator cactusGenerator =new CactusGenerator();
 
@@ -40,7 +41,7 @@ public class BiomeGenReactionDesert extends BiomeDesert
         {
             if (primer.getBlockState(localZ, y, localX).getBlock() == Blocks.STONE) 
             {
-            	primer.setBlockState(localZ, y, localX , BlockIndex.desertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.Darkstone));
+            	primer.setBlockState(localZ, y, localX , BlockIndex.desertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2));
             }
         }
     }

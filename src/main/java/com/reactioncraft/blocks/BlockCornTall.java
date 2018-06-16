@@ -50,7 +50,7 @@ public class BlockCornTall extends BlockReed implements net.minecraftforge.commo
 
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		if (worldIn.getBlockState(pos.down()).getBlock() == BlockIndex.cornTall || this.checkForDrop(worldIn, pos, state))
+		if (worldIn.getBlockState(pos.down()).getBlock() == BlockIndex.cornStalk || this.checkForDrop(worldIn, pos, state))
 		{
 			if (worldIn.isAirBlock(pos.up()))
 			{

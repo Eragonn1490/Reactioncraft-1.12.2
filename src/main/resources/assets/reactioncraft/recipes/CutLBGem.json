@@ -1,21 +1,16 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "XY"
-    ],
-    "result": {
-        "item": "reactioncraft:CutLBGem",
-        "count": 1,
-        "data": 0
-    },
-    "key": {
-        "X": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
             "item": "reactioncraft:UncutLBGem",
             "data": 0
         },
-        "Y": {
+        {
             "type": "forge:ore_dict",
             "ore": "chisel"
         }
+    ],
+    "result": {
+        "item": "reactioncraft:CutLBGem"
     }
 }

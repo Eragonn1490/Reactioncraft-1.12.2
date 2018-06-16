@@ -7,12 +7,12 @@
     ],
     "result": {
         "item": "reactioncraft:columnReg",
-        "count": 3,
+        "count": 1,
         "data": 9
     },
     "key": {
         "X": {
-            "item": "minecraft:brick_block",
+            "item": "reactioncraft:desertblocks",
             "data": 0
         },
         "Y": {

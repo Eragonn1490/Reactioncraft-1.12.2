@@ -223,6 +223,6 @@ public class RecipeRegistry
 		FreezerRecipes.instance().addSmelting(Items.WATER_BUCKET,new ItemStack(ItemIndex.iceBucket),1);
 		FreezerRecipes.instance().addSmelting(Items.LAVA_BUCKET, new ItemStack(ItemIndex.obsidianBucket), 1);
 		FreezerRecipes.instance().addSmelting(ItemIndex.superheatedironingot, new ItemStack(Items.IRON_INGOT), 1);
-		ClayalizerRecipes.instance().addSmeltingRecipeForBlock(BlockIndex.dark_sand, new ItemStack(ItemIndex.sandStonePaste, 0, 4),0.3f);
+		ClayalizerRecipes.instance().addSmeltingRecipeForBlock(BlockIndex.dark_sand, new ItemStack(ItemIndex.sandStonePaste, 4),0.3f);
 	}
 }

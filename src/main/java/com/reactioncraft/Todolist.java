@@ -14,6 +14,7 @@ public class Todolist
 	 * Fix Net Getting uses
 	 * Drawbridge? Portcullis but vertical 
 	 * Wireless Redstone Item (either on command Typed or right click power a related block with redstone)
+	 * New Corn Item Textures
 	 * Add Block Hardness & set forge tool classes
 	 * Add can Silk touch to desert coal core and gems
 	 * Edit Pixels on Ingot Mould
@@ -25,8 +26,6 @@ public class Todolist
 	 * Lever , Chest, 
 	 * Treasure Piles? (Maybe)
 	 * Make the Scroll Act like a book.
-	 * Redesign corn item textures!
-	 * Make sure Banker Villager can Spawn in Bank House
 	 */
 	
 	
@@ -55,10 +54,6 @@ public class Todolist
 	 * Added Bones Drop to Millenaire Villagers (v6.3.1)
 	 * Support for Millenaire Trading (v6.3.1)
 	 * Automatically Create Files for Millenaire Trading (v6.4)
-	 * Way for mods to add bone drops internally (Needs to be tested (v6.4.6)
-	 * Add Corn Plant Plot to Vanilla Villages in Farm House
-	 * Added Reactioncraft Villager House (v6.4.6)
-	 * 
 	 */
 	
 	/* Fixed
@@ -86,11 +81,6 @@ public class Todolist
 	 * Add Cherry Door iCONs (v6.4.1)
 	 * Desert Coal Macerated into 2 Coal (v6.4.1)
 	 * Desert Gems & Dragonstone Gems now crafted correctly with chisel (v6.4.1)
-	 * Server Crash Fixed Stopped using invalid directory method(v6.4.3)
-	 * confirmed fixed server crash (v6.4.4)
-	 * fixed mobs dropping 2 bones instead of one (v6.4.5) (finish 6/13/18)
-	 * fixed crawling skeletons not burning in sunlight (v6.4.6)
-	 * crawling skeletons & zombies dropping mob skulls (v6.4.6)
 	 */
 	 
 	/* Changed

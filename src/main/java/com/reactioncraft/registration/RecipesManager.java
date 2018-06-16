@@ -1,6 +1,8 @@
 package com.reactioncraft.registration;
 
+import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.recipes.RecipeRegistry;
+import com.reactioncraft.utils.constants;
 
 public class RecipesManager
 {
@@ -15,8 +17,10 @@ public class RecipesManager
     	RecipeRegistry.currencyRecipesInit();
     	RecipeRegistry.miscRecipesInit();
     	RecipeRegistry.loadDesertRecipes();
-    	RecipeRegistry.forestry();
-    	RecipeRegistry.ic2();
+//		if(Reactioncraft.forestry)
+				RecipeRegistry.forestry();
+//		if(Reactioncraft.industrialcraft)
+			RecipeRegistry.ic2();
     	RecipeRegistry.reactioncraftMachines();
 	}
 }

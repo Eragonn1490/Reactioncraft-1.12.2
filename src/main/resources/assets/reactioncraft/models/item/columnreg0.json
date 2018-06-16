@@ -1,6 +1,6 @@
 {
   "parent":"reactioncraft:block/column",
   "textures":{
-    "all": "reactioncraft:blocks/css"
+    "all": "reactioncraft:blocks/BrownSymbol1"
   }
 }

@@ -22,7 +22,7 @@ public class ReactionSurfaceGenMinable extends WorldGenerator
 
     public ReactionSurfaceGenMinable(IBlockState state, int blockCount)
     {
-        this(state, blockCount, BlockStateMatcher.forBlock(BlockIndex.desertBlocks).where(BlockDesertMulti.TYPE, v->v==EnumDesertBlocks.Darkstone));
+        this(state, blockCount, BlockStateMatcher.forBlock(BlockIndex.desertBlocks).where(BlockDesertMulti.TYPE, v->v==EnumDesertBlocks.three2));
     }
 
     public ReactionSurfaceGenMinable(IBlockState state, int blockCount, Predicate<IBlockState> p_i45631_3_)

@@ -1,6 +1,6 @@
 {
   "parent":"reactioncraft:block/columnmini",
   "textures":{
-    "all": "blocks/diamond_block"
+    "all": "reactioncraft:blocks/lightbluesymbol1"
   }
 }
