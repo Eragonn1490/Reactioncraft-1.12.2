@@ -3,9 +3,8 @@ package com.reactioncraft.vanillareplacements;
 import java.util.Random;
 
 import com.reactioncraft.blocks.BlockBase;
-import com.reactioncraft.common.EnumBookshelf;
+import com.reactioncraft.blocks.enums.EnumBookshelf;
 import com.reactioncraft.registration.instances.ItemIndex;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;

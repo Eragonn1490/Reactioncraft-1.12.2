@@ -1,7 +1,8 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.EnumDesertBlocks;
+import com.reactioncraft.blocks.enums.EnumDesertBlocks;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -20,7 +21,7 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
     public BlockDesertMulti(Material materialIn)
     {
         super(materialIn);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumDesertBlocks.one1));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumDesertBlocks.DESERT_Bricks));
         this.setCreativeTab(Reactioncraft.Reactioncraft);
     }
 
@@ -30,11 +31,9 @@ public class BlockDesertMulti extends BlockBase implements MetadataArray
      */
     public int damageDropped(IBlockState state)
     {
-    	if (state.getValue(BlockDesertMulti.TYPE) == EnumDesertBlocks.one1)
+    	if (state.getValue(BlockDesertMulti.TYPE) == EnumDesertBlocks.Darkstone)
 		{
-    		//ItemStack coal = new ItemStack(Items.COAL);
-    		//return this.coal;
-    		return (state.getValue(TYPE)).getMetadata();
+    		return 2;
 		}
     	else
     	{

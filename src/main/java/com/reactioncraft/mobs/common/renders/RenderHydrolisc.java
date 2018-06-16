@@ -1,7 +1,7 @@
 package com.reactioncraft.mobs.common.renders;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.entities.EntityHydrolisc;
+import com.reactioncraft.mobs.common.entities.EntityHydrolisc;
 import com.reactioncraft.mobs.common.models.ModelHydrolisc;
 import com.reactioncraft.utils.constants;
 import net.minecraft.client.renderer.entity.RenderLiving;

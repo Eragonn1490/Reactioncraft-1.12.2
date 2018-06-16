@@ -1,6 +1,5 @@
 package com.reactioncraft.itemhandlers;
 
-import com.reactioncraft.ItemHandler;
 import net.minecraft.tileentity.TileEntity;
 
 import javax.annotation.Nullable;

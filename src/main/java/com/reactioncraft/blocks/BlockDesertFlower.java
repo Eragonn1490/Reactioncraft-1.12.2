@@ -1,7 +1,8 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.EnumHieroGlyphs;
+import com.reactioncraft.blocks.enums.EnumHieroGlyphs;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;

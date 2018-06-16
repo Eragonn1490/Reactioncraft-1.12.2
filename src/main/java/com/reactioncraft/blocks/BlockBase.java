@@ -19,7 +19,7 @@ public class BlockBase extends Block
 
 	public void registerItemModel(ItemBlock itemBlock)
 	{
-		Reactioncraft.proxy.registerItemRenderer(itemBlock, 0, getRegistryName().getResourcePath());
+		Reactioncraft.proxy.registerItemRenderer(itemBlock, 0, this.getRegistryName().getResourcePath());
 	}
 
 	@Override

@@ -1,10 +1,11 @@
-package com.reactioncraft.mobs;
+package com.reactioncraft.mobs.common.ai;
 
-import com.reactioncraft.entities.EntitySeaCreeper;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
+
+import com.reactioncraft.mobs.common.entities.EntitySeaCreeper;
 
 /**
  * Do not use - not finished

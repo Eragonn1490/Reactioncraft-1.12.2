@@ -1,7 +1,8 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.ColumnTypes;
+import com.reactioncraft.blocks.enums.ColumnTypes;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;

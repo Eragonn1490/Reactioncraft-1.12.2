@@ -22,17 +22,19 @@ import javax.annotation.Nullable;
 
 public class ServerProxy implements IGuiHandler
 {
-
 	public void registerItemRenderer(Item item, int meta, String id) 
 	{
 	}
 
 	public void setItemBlockWithMetadataInventoryModel(ItemBlock itemBlock, String... variants)
 	{
-
 	}
 
 	public void registerRenderInformation() 
+	{
+	}
+	
+	public void registerItemBlockRenderer(ItemBlock itemBlock, int meta) 
 	{
 	}
 

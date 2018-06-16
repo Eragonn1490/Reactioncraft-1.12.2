@@ -1,7 +1,7 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.entities.EntityBee;
+import com.reactioncraft.entities.*;
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.block.state.IBlockState;
@@ -43,19 +43,19 @@ public class BlockHive extends BlockDragonEgg
 	public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state) {
 		if (!world.isRemote)
 		{
-			EntityBee entitysilverfish  = new EntityBee(world);
-			EntityBee entitysilverfish1 = new EntityBee(world);
-			EntityBee entitysilverfish2 = new EntityBee(world);
-			EntityBee entitysilverfish3 = new EntityBee(world);
-			int par2=pos.getX(), par3=pos.getY(), par4=pos.getZ();
-			entitysilverfish.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
-			entitysilverfish1.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
-			entitysilverfish2.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
-			entitysilverfish3.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
-			world.spawnEntity(entitysilverfish);
-			world.spawnEntity(entitysilverfish1);
-			world.spawnEntity(entitysilverfish2);
-			world.spawnEntity(entitysilverfish3);
+			//EntityBee entitysilverfish  = new EntityBee(world);
+			//EntityBee entitysilverfish1 = new EntityBee(world);
+			//EntityBee entitysilverfish2 = new EntityBee(world);
+			//EntityBee entitysilverfish3 = new EntityBee(world);
+//			int par2=pos.getX(), par3=pos.getY(), par4=pos.getZ();
+//			entitysilverfish.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
+//			entitysilverfish1.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
+//			entitysilverfish2.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
+//			entitysilverfish3.setLocationAndAngles((double)par2 + 0.5D, (double)par3, (double)par4 + 0.5D, 0.0F, 0.0F);
+//			world.spawnEntity(entitysilverfish);
+//			world.spawnEntity(entitysilverfish1);
+//			world.spawnEntity(entitysilverfish2);
+//			world.spawnEntity(entitysilverfish3);
 		}
 		super.onBlockDestroyedByPlayer(world, pos, state);
 	}

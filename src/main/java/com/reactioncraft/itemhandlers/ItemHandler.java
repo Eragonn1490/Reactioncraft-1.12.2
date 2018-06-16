@@ -1,4 +1,4 @@
-package com.reactioncraft;
+package com.reactioncraft.itemhandlers;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;

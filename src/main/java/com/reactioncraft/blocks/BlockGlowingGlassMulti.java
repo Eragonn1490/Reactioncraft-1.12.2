@@ -1,7 +1,8 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.EnumGlass;
+import com.reactioncraft.blocks.enums.EnumGlass;
+
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -30,9 +31,9 @@ public class BlockGlowingGlassMulti extends BlockGlass implements MetadataArray
         this.setCreativeTab(Reactioncraft.Reactioncraft);
     }
     
-    public void registerItemModel(ItemBlock itemBlock) 
+    public void registerItemModel(ItemBlock itemBlock)
 	{
-		Reactioncraft.proxy.registerItemRenderer(itemBlock, 0, name);
+		Reactioncraft.proxy.registerItemRenderer(itemBlock, 0, getRegistryName().getResourcePath());
 	}
     
     @SideOnly(Side.CLIENT)

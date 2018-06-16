@@ -1,4 +1,4 @@
-package com.reactioncraft.entities;
+package com.reactioncraft.mobs.common.entities;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;

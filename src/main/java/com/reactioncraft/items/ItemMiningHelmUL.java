@@ -4,8 +4,8 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.registration.instances.ItemIndex;
-
 import com.reactioncraft.utils.constants;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -48,16 +48,16 @@ public class ItemMiningHelmUL extends ItemExtraCrowns
 		ItemStack stack = player.getHeldItem(hand);
 		IBlockState blockState = worldIn.getBlockState(pos);
 
-//		if(stack.getItem() == ItemIndex.miningHelmUnlit)
-//		{
-//			if(blockState.getBlock() == Blocks.TORCH)
-//			{
-//				ItemStack lit = new ItemStack(ItemIndex.miningHelmLit);
-//				player.addItemStackToInventory(lit);
-//				player.inventory.deleteStack(player.getHeldItem(hand));
-//				return EnumActionResult.PASS;
-//			}
-//		}
+		if(stack.getItem() == ItemIndex.miningHelmUnlit)
+		{
+			if(blockState.getBlock() == Blocks.TORCH)
+			{
+				ItemStack lit = new ItemStack(ItemIndex.miningHelmLit);
+				player.addItemStackToInventory(lit);
+				player.inventory.deleteStack(player.getHeldItem(hand));
+				return EnumActionResult.PASS;
+			}
+		}
 		return EnumActionResult.PASS;
 	}
 

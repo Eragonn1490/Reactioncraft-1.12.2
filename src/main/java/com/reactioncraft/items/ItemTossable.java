@@ -2,7 +2,7 @@ package com.reactioncraft.items;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.entities.EntityMap;
+import com.reactioncraft.mobs.common.entities.EntityMap;
 import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.constants;
 import net.minecraft.entity.player.EntityPlayer;

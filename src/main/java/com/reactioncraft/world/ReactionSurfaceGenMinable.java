@@ -2,7 +2,7 @@ package com.reactioncraft.world;
 
 import com.google.common.base.Predicate;
 import com.reactioncraft.blocks.BlockDesertMulti;
-import com.reactioncraft.common.EnumDesertBlocks;
+import com.reactioncraft.blocks.enums.EnumDesertBlocks;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockStateMatcher;
@@ -22,7 +22,7 @@ public class ReactionSurfaceGenMinable extends WorldGenerator
 
     public ReactionSurfaceGenMinable(IBlockState state, int blockCount)
     {
-        this(state, blockCount, BlockStateMatcher.forBlock(BlockIndex.desertBlocks).where(BlockDesertMulti.TYPE, v->v==EnumDesertBlocks.three2));
+        this(state, blockCount, BlockStateMatcher.forBlock(BlockIndex.desertBlocks).where(BlockDesertMulti.TYPE, v->v==EnumDesertBlocks.Darkstone));
     }
 
     public ReactionSurfaceGenMinable(IBlockState state, int blockCount, Predicate<IBlockState> p_i45631_3_)

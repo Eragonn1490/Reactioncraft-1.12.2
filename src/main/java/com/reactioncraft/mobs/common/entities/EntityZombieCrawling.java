@@ -1,4 +1,4 @@
-package com.reactioncraft.entities;
+package com.reactioncraft.mobs.common.entities;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;

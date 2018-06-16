@@ -9,92 +9,92 @@
     },
     "variants": {
         "type": {
-            "0": {
+            "one1": {
                
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/brownsymbol1"
                 }
             },
-            "1": {
+            "one2": {
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/brownsymbol2"
                 }
             },
-             "2": {
+             "one3": {
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/brownsymbol3"
                 }
             },
-             "3": {
+             "two1": {
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/darkbluesymbol1"
                 }
             },
-             "4": {
+             "two2": {
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/darkbluesymbol2"
                 }
             },
-             "5": {
+             "two3": {
                 "textures": {
                      "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/darkbluesymbol3"
                 }
             },
-             "6": {
+             "three1": {
                 "textures": {
                      "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/lightbluesymbol1"
                 }
             },
-             "7": {
+             "three2": {
                 "textures": {
                      "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/lightbluesymbol2"
                 }
             },
-             "8": {
+             "three3": {
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/lightbluesymbol3"
                 }
             },
-             "9": {
+             "four1": {
                 "textures": {
                      "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/goldsymbols1"
                 }
             },
-             "10": {
+             "four2": {
                 "textures": {
                      "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/goldsymbols2"
                 }
             },
-            "11": {
+            "four3": {
                 "textures": {
                      "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/goldsymbols3"
                 }
             },
-            "12": {
+            "five1": {
                 "textures": {
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/weathered"
                 }
             },
-          "13" : {
+          "five2" : {
 
           },
-          "14" : {
+          "five3" : {
 
           },
-          "15" : {
+          "six1" : {
 
           }
         }

@@ -1,6 +1,7 @@
-package com.reactioncraft.entities;
+package com.reactioncraft.mobs.common.entities;
 
-import com.reactioncraft.mobs.common.EntityAISeaCreeperSwell;
+import com.reactioncraft.mobs.common.ai.EntityAISeaCreeperSwell;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;

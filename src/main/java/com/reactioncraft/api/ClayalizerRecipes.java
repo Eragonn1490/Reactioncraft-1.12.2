@@ -1,7 +1,8 @@
 package com.reactioncraft.api;
 
 import com.google.common.collect.Maps;
-import com.reactioncraft.Tools;
+import com.reactioncraft.itemhandlers.Tools;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;

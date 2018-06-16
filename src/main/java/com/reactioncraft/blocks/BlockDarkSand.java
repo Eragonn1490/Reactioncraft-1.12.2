@@ -1,7 +1,8 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.EnumSands;
+import com.reactioncraft.blocks.enums.EnumSands;
+
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;

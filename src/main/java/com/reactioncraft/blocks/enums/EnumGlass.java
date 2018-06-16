@@ -1,25 +1,25 @@
-package com.reactioncraft.common;
+package com.reactioncraft.blocks.enums;
 
 import net.minecraft.util.IStringSerializable;
 
 public enum EnumGlass implements IStringSerializable
 {
-    WHITE(0, 0,   "0", "one1"),
-    ORANGE(1, 1,   "1", "one2"),
-    MAGENTA(2, 2,   "2",  "one3"),
-    LIGHT_BLUE(3, 3,   "3", "two1"),
-    YELLOW(4, 4,   "4", "two2"),
-    LIME(5, 5,   "5",   "two3"),
-    PINK(6, 6,   "6",  "three1"),
-    GRAY(7, 7,   "7",   "three2"),
-    SILVER(8, 8,   "8", "three3"),
-    CYAN(9, 9, 	 "9",  "four1"),
-    PURPLE(10, 10, "10",   "four2"),
-    BLUE(11, 11, "11",  "four3"),
-    BROWN(12, 12, "12",  "five1"),
-    GREEN(13, 13, "13",  "five2"),
-    RED	(14, 14, "14","five3"),
-    BLACK(15, 15, "15","six1");
+    WHITE(0, 0,       "0",  "0"),
+    ORANGE(1, 1,      "1",  "1"),
+    MAGENTA(2, 2,     "2",  "one3"),
+    LIGHT_BLUE(3, 3,  "3",  "two1"),
+    YELLOW(4, 4,      "4",  "two2"),
+    LIME(5, 5,        "5",  "two3"),
+    PINK(6, 6,        "6",  "three1"),
+    GRAY(7, 7,        "7",  "three2"),
+    SILVER(8, 8,      "8",  "three3"),
+    CYAN(9, 9, 	      "9",  "four1"),
+    PURPLE(10, 10,   "10",  "four2"),
+    BLUE(11, 11,     "11",  "four3"),
+    BROWN(12, 12,    "12",  "five1"),
+    GREEN(13, 13,    "13",  "five2"),
+    RED	(14, 14,     "14",  "five3"),
+    BLACK(15, 15,    "15",  "six1");
 
     private static final EnumGlass[] META_LOOKUP = new EnumGlass[values().length];
     private static final EnumGlass[] DYE_DMG_LOOKUP = new EnumGlass[values().length];

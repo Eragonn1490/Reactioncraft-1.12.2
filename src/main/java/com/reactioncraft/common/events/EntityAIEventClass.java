@@ -1,12 +1,14 @@
 package com.reactioncraft.common.events;
 
+import com.reactioncraft.mobs.common.ai.EntityAIEatGrassMate;
+
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.ai.EntityAIEatGrass;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-//Replace with Reactioncraft Tracker Jacker
+//Make EntityAnimals eat grass and reproduce
 
 public class EntityAIEventClass
 {
@@ -14,10 +16,10 @@ public class EntityAIEventClass
 	@SubscribeEvent
     public void onEntityJoinWorld(EntityJoinWorldEvent event)
     {
-        if (event.getEntity() instanceof EntityVillager)
+        if (event.getEntity() instanceof EntityAnimal)
         {
-            EntityVillager flee = (EntityVillager)event.getEntity();
-            flee.tasks.addTask(1, new EntityAIAvoidEntity<>(flee, EntitySheep.class, 2.0F, 0.8D, 1.33D));
-        }															//Remember to Replace with Tracker Jacker.
+        	EntityAnimal flee = (EntityAnimal)event.getEntity();
+            flee.tasks.addTask(1, new EntityAIEatGrassMate(flee));
+        }	
     }
 }

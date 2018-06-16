@@ -1,20 +1,23 @@
-package com.reactioncraft.common;
+package com.reactioncraft.blocks.enums;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum EnumSands implements IStringSerializable
+public enum EnumNetherOres implements IStringSerializable
 {
-    DARKER_SAND(0, 0,   "0",       "one1"),
-     ;
+    BLACKDIAMOND(0, 0,   "0",       "0"),
+    DIAMOND(1, 1,   "1",       "1"),
+    DRAGONSTONE(2, 2,   "2",       "2"),
+    GOLD(3, 3,   "3",       "3"),
+    BLOODSTONE(4, 4,   "4", 	   "4");
 
-    private static final EnumSands[] META_LOOKUP = new EnumSands[values().length];
-    private static final EnumSands[] DYE_DMG_LOOKUP = new EnumSands[values().length];
+    private static final EnumNetherOres[] META_LOOKUP = new EnumNetherOres[values().length];
+    private static final EnumNetherOres[] DYE_DMG_LOOKUP = new EnumNetherOres[values().length];
     private final int meta;
     private final int dyeDamage;
     private final String name;
     private final String unlocalizedName;
 
-    EnumSands(int meta, int dyeDamage, String name, String unlocalizedName)
+    EnumNetherOres(int meta, int dyeDamage, String name, String unlocalizedName)
     {
         this.meta = meta;
         this.dyeDamage = dyeDamage;
@@ -38,7 +41,7 @@ public enum EnumSands implements IStringSerializable
         return this.unlocalizedName;
     }
 
-    public static EnumSands byDyeDamage(int damage)
+    public static EnumNetherOres byDyeDamage(int damage)
     {
         if (damage < 0 || damage >= DYE_DMG_LOOKUP.length)
         {
@@ -48,7 +51,7 @@ public enum EnumSands implements IStringSerializable
         return DYE_DMG_LOOKUP[damage];
     }
 
-    public static EnumSands byMetadata(int meta)
+    public static EnumNetherOres byMetadata(int meta)
     {
         if (meta < 0 || meta >= META_LOOKUP.length)
         {
@@ -71,7 +74,7 @@ public enum EnumSands implements IStringSerializable
     
     static
     {
-        for (EnumSands type : values())
+        for (EnumNetherOres type : values())
         {
             META_LOOKUP[type.getMetadata()] = type;
             DYE_DMG_LOOKUP[type.getDyeDamage()] = type;

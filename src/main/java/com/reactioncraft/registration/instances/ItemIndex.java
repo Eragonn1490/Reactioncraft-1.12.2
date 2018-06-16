@@ -171,4 +171,11 @@ public class ItemIndex
     public static ItemBase unbindedSword;
     public static ItemBlackdiamondPick bloodstoneDiamondPick;
     public static ItemBase bat;
+    
+    //Mining Helmets
+    public static ItemMiningHelmUL miningHelmUnlit;
+    public static ItemMiningHelm   miningHelmLit;
+    
+    //Wireless Transmitter
+    public static ItemWirelessTransmitter wirelessTransmitter;
 }

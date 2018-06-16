@@ -1,11 +1,11 @@
 package com.reactioncraft.tiles;
 
-import com.reactioncraft.ItemHandler;
 import com.reactioncraft.api.BrickOvenRecipes;
 import com.reactioncraft.blocks.machines.BlockBrickOven;
 import com.reactioncraft.blocks.machines.BlockFreezer;
 import com.reactioncraft.blocks.machines.BlockHorizontalMachine;
 import com.reactioncraft.itemhandlers.BrickOvenItemHandler;
+import com.reactioncraft.itemhandlers.ItemHandler;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;

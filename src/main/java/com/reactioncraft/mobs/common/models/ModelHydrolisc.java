@@ -1,6 +1,7 @@
 package com.reactioncraft.mobs.common.models;
 
-import com.reactioncraft.entities.EntityHydrolisc;
+import com.reactioncraft.mobs.common.entities.EntityHydrolisc;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

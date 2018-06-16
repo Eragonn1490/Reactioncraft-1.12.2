@@ -1,8 +1,8 @@
 package com.reactioncraft.world;
 
 import com.reactioncraft.blocks.BlockDesertMulti;
-import com.reactioncraft.common.EnumDesertBlocks;
-import com.reactioncraft.entities.EntityHydrolisc;
+import com.reactioncraft.blocks.enums.EnumDesertBlocks;
+import com.reactioncraft.mobs.common.entities.EntityHydrolisc;
 import com.reactioncraft.registration.instances.BlockIndex;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
@@ -41,7 +41,7 @@ public class BiomeGenReactionDesert extends BiomeDesert
         {
             if (primer.getBlockState(localZ, y, localX).getBlock() == Blocks.STONE) 
             {
-            	primer.setBlockState(localZ, y, localX , BlockIndex.desertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2));
+            	primer.setBlockState(localZ, y, localX , BlockIndex.desertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.Darkstone));
             }
         }
     }

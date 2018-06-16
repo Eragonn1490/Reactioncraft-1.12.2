@@ -9,13 +9,11 @@ public class Todolist
 	 * Fix Clayalizer Recipes & TE
 	 * Fix Skinny Colum Recipes
 	 * Advancements
-	 * rename Enums
 	 * Putting Out Mining Helmet if you get wet or right click water blocks.
 	 * Fix Net Getting uses
 	 * Drawbridge? Portcullis but vertical 
 	 * Wireless Redstone Item (either on command Typed or right click power a related block with redstone)
-	 * New Corn Item Textures
-	 * Add Block Hardness & set forge tool classes
+	 * set forge tool classes
 	 * Add can Silk touch to desert coal core and gems
 	 * Edit Pixels on Ingot Mould
 	 * Add Names to Coins
@@ -26,6 +24,12 @@ public class Todolist
 	 * Lever , Chest, 
 	 * Treasure Piles? (Maybe)
 	 * Make the Scroll Act like a book.
+	 * Redesign corn item textures!
+	 * Make sure Banker Villager can Spawn in Bank House
+	 * EU - TO RF- To - MJ converter block.
+	 * Redstone Rail - cart over rail stops redstone current until it passes  (to allow "tripwire" rail)
+	 * Make Entity in love from EntityAiEatGrassMate last longer
+	 * Fix Meatcleaver, Knife, Bat
 	 */
 	
 	
@@ -54,6 +58,12 @@ public class Todolist
 	 * Added Bones Drop to Millenaire Villagers (v6.3.1)
 	 * Support for Millenaire Trading (v6.3.1)
 	 * Automatically Create Files for Millenaire Trading (v6.4)
+	 * Way for mods to add bone drops internally (Needs to be tested (v6.4.6)
+	 * Add Corn Plant Plot to Vanilla Villages in Farm House
+	 * Added Reactioncraft Villager House (v6.4.6)
+	 * Entity Animals now Self Populate.. (v6.4.8)  (seems to be hit or miss depending on there distance from each other, might tweak in a later version)
+	 * All Vanilla Iron Items Except Horse Armor drop iron shavings when crafted IF you have a hammer in your inventory (v6.4.9)
+	 * 
 	 */
 	
 	/* Fixed
@@ -81,11 +91,27 @@ public class Todolist
 	 * Add Cherry Door iCONs (v6.4.1)
 	 * Desert Coal Macerated into 2 Coal (v6.4.1)
 	 * Desert Gems & Dragonstone Gems now crafted correctly with chisel (v6.4.1)
+	 * Server Crash Fixed Stopped using invalid directory method(v6.4.3)
+	 * confirmed fixed server crash (v6.4.4)
+	 * fixed mobs dropping 2 bones instead of one (v6.4.5) (finish 6/13/18)
+	 * fixed crawling skeletons not burning in sunlight (v6.4.6)
+	 * crawling skeletons & zombies dropping mob skulls (v6.4.6)
+	 * fixed diamond colum recipe (typo v6.4.7)
+	 * Fix Broken Bone drops Again, now actually drops and no longer drops 2 (v6.4.8)
+	 * Added Hardness' to Blocks, and tweaked some (v6.4.9)
+	 * 
 	 */
 	 
 	/* Changed
 	 * 
 	 * Nerfed Crawling Creature Spawn Rate
 	 * Crawling Skeletons dont like zombies
+	 * Chain Loops now give 2 instead of one (v6.4.9)
+	 * Rewrite of alot of code & reorganization of files (v6.4.9)
+	 * Alexiy Fixed Machines and Rewrote (v6.4.9)
+	 * Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v6.4.9)
+	 * Moved Popcorn Kernel over to Food tab (v6.4.9)
+	 * Moved Bag of popcorn over to Food tab (v6.4.9)
+	 * Fixed Corn Plant not swapping over correctly if bone meal was used to grow (v6.4.9)
 	 */
 }
