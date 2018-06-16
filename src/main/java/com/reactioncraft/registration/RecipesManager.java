@@ -18,9 +18,9 @@ public class RecipesManager
     	RecipeRegistry.miscRecipesInit();
     	RecipeRegistry.loadDesertRecipes();
 //		if(Reactioncraft.forestry)
-				RecipeRegistry.forestry();
+//				RecipeRegistry.forestry();
 //		if(Reactioncraft.industrialcraft)
-			RecipeRegistry.ic2();
+//			RecipeRegistry.ic2();
     	RecipeRegistry.reactioncraftMachines();
 	}
 }

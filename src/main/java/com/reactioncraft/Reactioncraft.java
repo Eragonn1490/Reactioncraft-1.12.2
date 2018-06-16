@@ -16,6 +16,8 @@ import com.reactioncraft.entities.EntityZombieCrawling;
 import com.reactioncraft.registration.*;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
+import forestry.api.recipes.RecipeManagers;
+import net.minecraft.client.util.RecipeBookClient;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
@@ -131,16 +133,7 @@ public class Reactioncraft
         //NOTICE
         GameRegistry.registerWorldGenerator(new Worldgen(), 3);
 
-        RecipeRegistry.netrecipyInit();
-        RecipeRegistry.oreSmelting();
-        RecipeRegistry.glassRecipesInit();
-        RecipeRegistry.loadRecipesforVanilla();
-        RecipeRegistry.foodRecipesInit();
-        RecipeRegistry.loadORES();
-        RecipeRegistry.currencyRecipesInit();
-        RecipeRegistry.loadCore();
-        RecipeRegistry.loadDesertRecipes();
-        RecipeRegistry.miscRecipesInit();
+        RecipesManager.registerRecipes();
     }
 
     @Mod.EventHandler
