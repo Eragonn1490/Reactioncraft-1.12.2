@@ -4,7 +4,7 @@ itemGroup.reactioncraft=Reactioncraft Blocks
 itemGroup.reactioncraft food=Reactioncraft Foods
 
 #Blocks
-tile.reactioncraft.sands.Block.name=Sand
+tile.reactioncraft.sands.name=Dark Sand
 tile.reactioncraft.desertblocks.0.name=Sand Bricks
 tile.reactioncraft.desertblocks.1.name=Dark Cobblestone
 tile.reactioncraft.desertblocks.2.name=Chiseled Darkstone
