@@ -1,15 +1,20 @@
-package com.reactioncraft.items.tools;
+package com.reactioncraft.items;
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.items.tools.ItemBasicSword;
 import com.reactioncraft.registration.instances.ItemIndex;
+
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class ItemBloodstoneShovel extends ItemBaseSpade
+
+public class ItemMeatCleaver extends ItemBasicSword
 {
-    public ItemBloodstoneShovel(String var1, ToolMaterial var2)
+    public ItemMeatCleaver(String var1, ToolMaterial var2)
     {
         super(var1, var2);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
+        this.setMaxStackSize(1);
     }
 
     /**
@@ -18,6 +23,6 @@ public class ItemBloodstoneShovel extends ItemBaseSpade
     @Override
 	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
 	{
-        return par2ItemStack.getItem() == ItemIndex.ingotbloodstone || super.getIsRepairable(par1ItemStack, par2ItemStack);
+        return par2ItemStack.getItem() == Items.IRON_INGOT || super.getIsRepairable(par1ItemStack, par2ItemStack);
     }
 }

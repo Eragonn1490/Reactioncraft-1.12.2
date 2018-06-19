@@ -10,9 +10,8 @@ import net.minecraft.item.ItemSeeds;
 
 public class ItemIndex
 {
-
 	//Food Weapons
-	public static ItemBase meat_cleaver;
+	public static ItemMeatCleaver meat_cleaver;
 	public static ItemKnife knife;
 	
 	//Food Drops

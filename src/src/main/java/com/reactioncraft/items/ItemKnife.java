@@ -17,7 +17,6 @@ public class ItemKnife extends ItemBaseSword implements ItemModelProvider
         this.setMaxDamage(25);
         this.setCreativeTab(Reactioncraft.ReactioncraftItems);
         this.setNoRepair();
-        
     }
 
     /**

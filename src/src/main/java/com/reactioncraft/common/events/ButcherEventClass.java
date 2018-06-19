@@ -11,6 +11,7 @@ import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -38,7 +39,7 @@ public class ButcherEventClass
 			.put(EntityChicken.class, ItemIndex.chicken_head)
 			.put(EntityCow.class,     ItemIndex.beef_chunk)
 			.put(EntityHorse.class,   ItemIndex.raw_horse)
-			.put(EntityPlayer.class,  ItemIndex.raw_human)
+			.put(EntityPlayerMP.class,  ItemIndex.raw_human)
 
 			//End of adding new mob drops.
 			.build();

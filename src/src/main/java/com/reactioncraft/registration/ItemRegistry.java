@@ -14,6 +14,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemEnderEye;
 import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.event.RegistryEvent;
@@ -33,7 +34,7 @@ public class ItemRegistry
     public static void init(IForgeRegistry<Item> forgeRegistry)
     {
         //Food Related Weapons
-        ItemIndex.meat_cleaver = register(new ItemBase("meat_cleaver")  .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.meat_cleaver = (ItemMeatCleaver) register(new ItemMeatCleaver("meat_cleaver", ToolMaterial.IRON)          .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.knife = (ItemKnife) register(new ItemKnife("Knife")         .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
 
         //Bone Drop
@@ -216,7 +217,7 @@ public class ItemRegistry
         ItemIndex.rcendereye=register((ItemEndEye) new ItemEndEye().setCreativeTab(Reactioncraft.ReactioncraftItems).setRegistryName("end_eye").setUnlocalizedName("reactioncraft.end_eye"),forgeRegistry);
         Reactioncraft.proxy.registerItemRenderer(ItemIndex.rcendereye,0,"end_eye");
         
-      //Mining Helmets
+        //Mining Helmets
         ItemIndex.miningHelmLit         = (ItemMiningHelm)     register(new ItemMiningHelm("miningHelmLit",          MaterialIndex.EnumArmorMaterialCrown6, 0, EntityEquipmentSlot.HEAD)   .setCreativeTab(null),forgeRegistry);
         ItemIndex.miningHelmUnlit       = (ItemMiningHelmUL)   register(new ItemMiningHelmUL("miningHelmUnlit",      MaterialIndex.EnumArmorMaterialCrown7, 0, EntityEquipmentSlot.HEAD)   .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         
