@@ -18,6 +18,15 @@ public class ItemMeatCleaver extends ItemBasicSword
     }
 
     /**
+     * Returns true if players can use this item to affect the world (e.g. placing blocks, placing ender eyes in portal)
+     * when not in creative
+     */
+    public boolean canItemEditBlocks()
+    {
+        return false;
+    }
+    
+    /**
      * Return whether this item is repairable in an anvil.
      */
     @Override

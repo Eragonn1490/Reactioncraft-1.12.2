@@ -1,7 +1,6 @@
 package com.reactioncraft.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.entities.*;
 import com.reactioncraft.registration.instances.ItemIndex;
 import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.block.state.IBlockState;

@@ -1,7 +1,6 @@
 package com.reactioncraft.core;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.entities.*;
 import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.mobs.common.entities.*;
 import com.reactioncraft.mobs.common.models.*;

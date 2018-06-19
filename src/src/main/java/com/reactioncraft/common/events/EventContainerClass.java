@@ -101,5 +101,10 @@ public class EventContainerClass
 			event.getEntityLiving().dropItem(ItemIndex.bones, 1);
 			event.hasResult();
 		}
+		
+		else
+		{
+			event.isCanceled();
+		}
 	}
 }
