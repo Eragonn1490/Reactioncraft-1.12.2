@@ -1,0 +1,90 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "glass"
+    },
+    "variants": {
+        "type": {
+            "0": {
+                "textures": {
+                    "all": "blocks/glass_white"
+                }
+            },
+            "1": {
+                "textures": {
+                    "all": "blocks/glass_orange"
+                }
+            },
+             "2": {
+                "textures": {
+                    "all": "blocks/glass_magenta"
+                }
+            },
+             "3": {
+                "textures": {
+                    "all": "blocks/glass_light_blue"
+                }
+            },
+             "4": {
+                "textures": {
+                    "all": "blocks/glass_yellow"
+                }
+            },
+             "5": {
+                "textures": {
+                    "all": "blocks/glass_lime"
+                }
+            },
+             "6": {
+                "textures": {
+                    "all": "blocks/glass_pink"
+                }
+            },
+             "7": {
+                "textures": {
+                    "all": "blocks/glass_gray"
+                }
+            },
+             "8": {
+                "textures": {
+                    "all": "blocks/glass_silver"
+                }
+            },
+             "9": {
+                "textures": {
+                    "all": "blocks/glass_cyan"
+                }
+            },
+             "10": {
+                "textures": {
+                    "all": "blocks/glass_purple"
+                }
+            },
+            "11": {
+                "textures": {
+                    "all": "blocks/glass_blue"
+                }
+            },
+             "12": {
+                "textures": {
+                    "all": "blocks/glass_brown"
+                }
+            },
+             "13": {
+                "textures": {
+                    "all": "blocks/glass_green"
+                }
+            },
+             "14": {
+                "textures": {
+                    "all": "blocks/glass_red"
+                }
+            },
+            "15": {
+                "textures": {
+                    "all": "blocks/glass_black"
+                }
+            }
+        }
+    }
+}

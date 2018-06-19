@@ -1,0 +1,93 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_all",
+        "textures" : {
+          "all" : "reactioncraft:blocks/clear"
+        }
+    },
+    "variants": {
+        "type": {
+            "0": {
+                "textures": {
+                    "all": "reactioncraft:blocks/endore"
+                }
+            },
+            "1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/endventinite"
+                }
+            },
+             "2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/desertgemstone2"
+                }
+            },
+             "3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/desertgold"
+                }
+            },
+             "4": {
+                "textures": {
+                    "all": "reactioncraft:blocks/silverOre"
+                }
+            },
+             "5": {
+                "textures": {
+                    "all": "reactioncraft:blocks/Ventinite"
+                }
+            },
+             "three1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/lightbluesymbol1"
+                }
+            },
+             "three2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/lightbluesymbol2"
+                }
+            },
+             "three3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/lightbluesymbol3"
+                }
+            },
+             "four1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/GoldSymbols1"
+                }
+            },
+             "four2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/GoldSymbols2"
+                }
+            },
+            "four3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/GoldSymbols3"
+                }
+            },
+            "weathered1": {
+                "inventory": {
+                    "model": "cube_all"
+                },
+                "textures": {
+                    "all": "reactioncraft:blocks/weathered"
+                }
+            },
+          "five1": {
+
+          },
+          "five2" :{
+
+          },
+          "five3" : {
+
+          },
+          "six1" : {
+
+          }
+        }
+    }
+}

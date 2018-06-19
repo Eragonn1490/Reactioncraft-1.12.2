@@ -1,0 +1,99 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_column",
+      "textures" : {
+        "end" : "reactioncraft:blocks/clear",
+        "side" : "reactioncraft:blocks/clear"
+      }
+    },
+    "variants": {
+        "type": {
+            "0": {
+                "textures": {
+                    "end": "blocks/planks_oak",
+                    "side": "reactioncraft:blocks/empty"
+                }
+            },
+            "1": {
+                "textures": {
+                    "end": "blocks/planks_oak",
+                    "side": "reactioncraft:blocks/web"
+                }
+            },
+             "2": {
+                "textures": {
+                    "end": "blocks/planks_oak",
+                   "side": "reactioncraft:blocks/web2"
+                }
+            },
+             "3": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                   "side": "reactioncraft:blocks/scrollcase_empty"
+                }
+            },
+             "4": {
+                "textures": {
+                    "end": "blocks/planks_oak",
+                   "side": "reactioncraft:blocks/partialFilledBookcase1"
+                }
+            },
+             "5": {
+                "textures": {
+                    "end": "blocks/planks_oak",
+                   "side": "reactioncraft:blocks/partialFilledBookcase2"
+                }
+            },
+             "6": {
+                "textures": {
+                   "end": "blocks/planks_oak",
+                   "side": "reactioncraft:blocks/partialFilledBookcase3"
+                }
+            },
+          "7": {
+                "textures": {
+                   "end": "reactioncraft:blocks/css",
+                   "side": "reactioncraft:blocks/shelf1"
+                }
+            },
+          "8" : {
+            "textures": {
+                   "end": "reactioncraft:blocks/css",
+                   "side": "reactioncraft:blocks/shelf2"
+                }
+          },
+          "9": {
+                "textures": {
+                   "end": "reactioncraft:blocks/css",
+                   "side": "reactioncraft:blocks/shelf3"
+                }
+            },
+          "10": {
+                "textures": {
+                   "end": "reactioncraft:blocks/css",
+                   "side": "reactioncraft:blocks/shelfemptywebbed"
+                }
+            },
+          "11": {
+            "textures": {
+              "end": "reactioncraft:blocks/css",
+              "side": "reactioncraft:blocks/shelfwebbed"
+            }
+          },
+
+          "five1": {
+
+          },
+          "five2" :{
+
+          },
+          "five3" : {
+
+          },
+          "six1" : {
+
+          }
+        }
+    }
+}

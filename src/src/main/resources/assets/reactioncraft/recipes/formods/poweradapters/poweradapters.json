@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "III",
+        "IXI",
+        "III"
+    ],
+    "result": {
+        "item": "poweradapters:mj"
+    },
+    "key": {
+        "I": {
+            "type": "forge:ore_dict",
+            "ore": "oreBloodstone"
+        },
+        "X": {
+            "item": "minecraft:nether_star"
+        }
+    }
+}

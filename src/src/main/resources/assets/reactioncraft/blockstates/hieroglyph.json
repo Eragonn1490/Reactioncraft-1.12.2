@@ -1,0 +1,102 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_column",
+      "textures" : {
+        "end" : "reactioncraft:blocks/clear",
+        "side" : "reactioncraft:blocks/clear"
+      }
+    },
+    "variants": {
+        "type": {
+            "0": {
+               
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/brownsymbol1"
+                }
+            },
+            "1": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/brownsymbol2"
+                }
+            },
+             "2": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/brownsymbol3"
+                }
+            },
+             "3": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/darkbluesymbol1"
+                }
+            },
+             "4": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/darkbluesymbol2"
+                }
+            },
+             "5": {
+                "textures": {
+                     "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/darkbluesymbol3"
+                }
+            },
+             "6": {
+                "textures": {
+                     "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/lightbluesymbol1"
+                }
+            },
+             "7": {
+                "textures": {
+                     "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/lightbluesymbol2"
+                }
+            },
+             "8": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/lightbluesymbol3"
+                }
+            },
+             "9": {
+                "textures": {
+                     "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/goldsymbols1"
+                }
+            },
+             "10": {
+                "textures": {
+                     "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/goldsymbols2"
+                }
+            },
+            "11": {
+                "textures": {
+                     "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/goldsymbols3"
+                }
+            },
+            "12": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/weathered"
+                }
+            },
+          "five2" : {
+
+          },
+          "five3" : {
+
+          },
+          "six1" : {
+
+          }
+        }
+    }
+}
