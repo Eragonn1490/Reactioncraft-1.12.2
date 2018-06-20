@@ -1,8 +1,6 @@
 package com.reactioncraft.registration;
 
-import com.reactioncraft.common.events.ButcherEventClass;
-import com.reactioncraft.common.events.EntityAIEventClass;
-import com.reactioncraft.common.events.EventContainerClass;
+import com.reactioncraft.common.events.*;
 import com.reactioncraft.craftinghandlers.*;
 import com.reactioncraft.world.BiomeHandler;
 import net.minecraftforge.common.MinecraftForge;

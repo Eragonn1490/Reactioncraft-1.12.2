@@ -115,16 +115,24 @@ public class BlockRegistry
 		
 		
 		/** Metadata Blocks **/
-		registerBlockItem(BlockIndex.hieroglyph,registryEvent);
-		//Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(columnItem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti hieroglyph = new ItemMulti(BlockIndex.hieroglyph);
+		hieroglyph.setRegistryName(BlockIndex.hieroglyph.getRegistryName());
+		registryEvent.getRegistry().register(hieroglyph);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(hieroglyph ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 
-		registerBlockItem(BlockIndex.surfaceOres,registryEvent);
-		//Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(columnItem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti surfaceOres = new ItemMulti(BlockIndex.surfaceOres);
+		surfaceOres.setRegistryName(BlockIndex.surfaceOres.getRegistryName());
+		registryEvent.getRegistry().register(surfaceOres);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(surfaceOres ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 
-		registerBlockItem(BlockIndex.netherOres,registryEvent);
-		//Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(columnItem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti netherOres = new ItemMulti(BlockIndex.netherOres);
+		netherOres.setRegistryName(BlockIndex.netherOres.getRegistryName());
+		registryEvent.getRegistry().register(netherOres);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(netherOres ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 
-		/** Metadata Blocks **/
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti sands =new ItemMulti(BlockIndex.dark_sand);
 		sands.setRegistryName(BlockIndex.dark_sand.getRegistryName());

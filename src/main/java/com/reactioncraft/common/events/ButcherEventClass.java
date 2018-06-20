@@ -94,8 +94,8 @@ public class ButcherEventClass
 
 						if (e.getItem() == ItemIndex.meat_cleaver && rand < 1.0D)
 						{
-							ItemStack drop = new ItemStack((Item)dropMap.get(deadEntity.getClass()));
-							deadEntity.entityDropItem(drop, 0.0F);
+							ItemStack drop = new ItemStack(ItemIndex.raw_human);
+							event.getEntityLiving().entityDropItem(drop, 0.0F);
 						}
 					}
 				}
