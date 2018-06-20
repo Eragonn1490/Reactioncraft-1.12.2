@@ -169,7 +169,7 @@ public class ItemIndex
     public static ItemBase goldenSwordFragment;
     public static ItemBase unbindedSword;
     public static ItemBlackdiamondPick bloodstoneDiamondPick;
-    public static ItemBase bat;
+    public static ItemBat bat;
     
     //Mining Helmets
     public static ItemMiningHelmUL miningHelmUnlit;

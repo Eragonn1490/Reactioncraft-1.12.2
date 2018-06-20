@@ -183,7 +183,7 @@ public class ItemRegistry
         ItemIndex.bloodstoneboots   = register((ItemBloodStoneArmor) new ItemBloodStoneArmor(3,EntityEquipmentSlot.FEET) .setCreativeTab(Reactioncraft.ReactioncraftItems).setRegistryName(constants.MODID,"bloodstoneboots").setUnlocalizedName(constants.MODID+".bloodstoneboots"),forgeRegistry);
 
         //Weapons
-        ItemIndex.bat = register(new ItemBase("Bat")                   .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.bat = (ItemBat) register(new ItemBat("Bat", ToolMaterial.WOOD).setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.obbySword = register(new ItemObsidanSword("ObbySword", MaterialIndex.EnumToolMaterialObby),forgeRegistry);
         ItemIndex.obbyPick = (ItemObsidanPick)  register(new ItemObsidanPick("ObbyPick", MaterialIndex.EnumToolMaterialObby)                              .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.obbyShovel = (ItemObsidianShovel) register(new ItemObsidianShovel("ObbyShovel", MaterialIndex.EnumToolMaterialObby)                       .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);

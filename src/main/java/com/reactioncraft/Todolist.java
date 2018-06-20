@@ -4,14 +4,12 @@ public class Todolist
 {
 	//This Class is just here as a list of things to fix
 	/*
-	 * Return Bucket From Freezer.. New GUI or Throw on ground??? TBD
 	 * Fix Clayalizer Recipes & TE
 	 * Advancements
 	 * Putting Out Mining Helmet if you get wet or right click water blocks.
 	 * Fix Net Getting uses
 	 * Drawbridge? Portcullis but vertical 
 	 * Wireless Redstone Item (either on command Typed or right click power a related block with redstone)
-	 * set forge tool classes
 	 * Add can Silk touch to desert coal core and gems
 	 * Edit Pixels on Ingot Mould
 	 * Add Names to Coins
@@ -27,7 +25,7 @@ public class Todolist
 	 * EU - TO RF- To - MJ converter block.
 	 * Redstone Rail - cart over rail stops redstone current until it passes  (to allow "tripwire" rail)
 	 * Make Entity in love from EntityAiEatGrassMate last longer
-	 * Fix Meatcleaver, Knife, Bat
+	 * Hireoglyph Recipes Changed to using machine
 	 */
 	
 	
@@ -61,8 +59,6 @@ public class Todolist
 	 * Added Reactioncraft Villager House (v6.4.6)
 	 * Entity Animals now Self Populate.. (v6.4.8)  (seems to be hit or miss depending on there distance from each other, might tweak in a later version)
 	 * All Vanilla Iron Items Except Horse Armor drop iron shavings when crafted IF you have a hammer in your inventory (v6.4.9)
-	 * Hireoglyph Recipes Changed to using machine
-	 * 
 	 */
 	
 	/* Fixed
@@ -100,7 +96,9 @@ public class Todolist
 	 * Added Hardness' to Blocks, and tweaked some (v6.4.9)
 	 * Freezer, Brick Oven Fixed (v7.0.0)
 	 * Crawling Skeletons now burn in sunlight (v7.0.0)
-	 *
+	 * Fixed Bone Drops No longer drops from spiders(v7.0.0) 
+	 * Fix Meat cleaver, Knife, Bat they are now weapons (v7.0.0)
+	 * Recipe for PowerAdapters Mod Block With Bloodstone *Until custom converter block is finished* (v7.0.0)
 	 */
 	 
 	/* Changed
@@ -115,5 +113,6 @@ public class Todolist
 	 * Moved Bag of popcorn over to Food tab (v6.4.9)
 	 * Fixed Corn Plant not swapping over correctly if bone meal was used to grow (v6.4.9)
 	 * Gold & Gem Hireoglyphics now return material used to make them if they are not regular
+	 * set forge tool classes for blocks (v6.5.0)
 	 */
 }
