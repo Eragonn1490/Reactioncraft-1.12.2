@@ -27,7 +27,6 @@ public class ItemMulti extends ItemBlock
      */
     public String getUnlocalizedName(ItemStack par1ItemStack)
     {
-        String[] types = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
-        return super.getUnlocalizedName() + "." + types[par1ItemStack.getItemDamage()];
+        return super.getUnlocalizedName() + "." + par1ItemStack.getItemDamage();
     }
 }
