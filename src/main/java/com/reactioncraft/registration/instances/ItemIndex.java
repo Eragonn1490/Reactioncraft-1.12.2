@@ -167,7 +167,7 @@ public class ItemIndex
     public static ItemBloodstoneHoe bloodstoneHoe;
     public static ItemBase bloodstoneBlade;
     public static ItemBase goldenSwordFragment;
-    public static ItemBase unbindedSword;
+    public static ItemTossInLiquid unbindedSword;
     public static ItemBlackdiamondPick bloodstoneDiamondPick;
     public static ItemBat bat;
     

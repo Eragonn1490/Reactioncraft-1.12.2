@@ -32,6 +32,8 @@ public class Todolist
 	 * Fix Boreheads for Railcraft (When it updates to 1.12.2)
 	 * Make Frame Useful for forestry again?
 	 * Add bee species? that uses honeycomb and pollen comb?
+	 * Re-Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1, Broken v6.5.0)
+	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)
 	 *	
 	 *
 	 */
@@ -41,13 +43,11 @@ public class Todolist
 	 * Fixed Rotation of Meat cleaver 
 	 * Fixed Rotation of paint brush 
 	 * Fix Smallest Column Model & Block Bounds 
-	 * Fix Clayalizer TE
+	 * Fix Claylizer TE
 	 * Way for mods to add bone drops
 	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
 	 * Creative net breaks after one use (shouldn't)
 	 * fix raw human drop with meat cleaver
-	 * Re-Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1, Broken v6.5.0)
-	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)
 	 * Add Statues and fix block bounds
 	 * Add Block's & Models to Bag of Coins (for future treasure update)
 	 * Add Jellyfish

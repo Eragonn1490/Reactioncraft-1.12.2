@@ -199,7 +199,7 @@ public class ItemRegistry
         //Weapon Parts
         ItemIndex.bloodstoneBlade = register(new ItemBase("BloodstoneBlade")       .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.goldenSwordFragment = register(new ItemBase("GoldenSwordFragment")   .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
-        ItemIndex.unbindedSword = register(new ItemBase("UnbindedSword")         .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.unbindedSword = (ItemTossInLiquid) register(new ItemTossInLiquid("UnbindedSword")         .setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
 
 
         //Ores

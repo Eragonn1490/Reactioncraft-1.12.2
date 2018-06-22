@@ -78,8 +78,8 @@ public class ItemWirelessTransmitter extends ItemBase
     public void addInformation(ItemStack itemStack, @Nullable World worldIn, List<String> list, ITooltipFlag flagIn) {
         if (itemStack.getTagCompound() != null)
         {
-            list.add("Frequency: " + itemStack.getTagCompound().getString("Frequency"));
-            list.add("Frequency: " + itemStack.getTagCompound().getInteger("Channel"));
+            list.add("Frequency: " + itemStack.getTagCompound().getString("Frequency")); //for debgging only
+            list.add("" + itemStack.getTagCompound().getInteger("Channel"));
         }
         else { list.add("Please craft to see results"); }
     }
