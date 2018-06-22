@@ -7,81 +7,97 @@
 		"type": {
 			"0": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/css",
 					"all": "reactioncraft:blocks/css"
 				}
 			},
 			"1": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/Quartz",
 					"all": "reactioncraft:blocks/Quartz"
 				}
 			},
 			"2": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/SandBrick",
 					"all": "reactioncraft:blocks/SandBrick"
 				}
 			},
 			"3": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/MutiBrick",
 					"all": "reactioncraft:blocks/MutiBrick"
 				}
 			},
 			"4": {
 				"textures": {
+				    "particle": "blocks/cobblestone",
 					"all": "blocks/cobblestone"
 				}
 			},
 			"5": {
 				"textures": {
+				    "particle": "blocks/stone",
 					"all": "blocks/stone"
 				}
 			},
 			"6": {
 				"textures": {
+				    "particle": "blocks/diamond_block",
 					"all": "blocks/diamond_block"
 				}
 			},
 			"7": {
 				"textures": {
+				    "particle": "blocks/stonebrick",
 					"all": "blocks/stonebrick"
 				}
 			},
 			"8": {
 				"textures": {
+				    "particle": "blocks/gold_block",
 					"all": "blocks/gold_block"
 				}
 			},
 			"9": {
 				"textures": {
+				    "particle": "blocks/brick",
 					"all": "blocks/brick"
 				}
 			},
 			"10": {
 				"textures": {
+				    "particle": "blocks/stone_slab_side",
                     "all": "blocks/stone_slab_side"
                 }
 			},
 			"11": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/bloodstonebricks",
 					"all": "reactioncraft:blocks/bloodstonebricks"
 				}
 			},
 			"12": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/css",
 					"all": "reactioncraft:blocks/weathered"
 				}
 			},
 			"13": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/css",
 					"all": "reactioncraft:blocks/mutibrick"
 				}
 			},
 			"14": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/css",
 					"all": "reactioncraft:blocks/css"
 				}
 			},
 			"15": {
 				"textures": {
+				    "particle": "reactioncraft:blocks/sandbrick",
 					"all": "reactioncraft:blocks/sandbrick"
 				}
 			}

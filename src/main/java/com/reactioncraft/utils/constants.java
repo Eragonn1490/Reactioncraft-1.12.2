@@ -6,6 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 
 public class constants 
 {

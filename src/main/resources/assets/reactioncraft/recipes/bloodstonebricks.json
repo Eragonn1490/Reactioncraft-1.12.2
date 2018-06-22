@@ -10,8 +10,8 @@
     },
     "key": {
         "T": {
-            "item": "reactioncraft:ingotbloodstone",
-            "data": 0
+            "item": "reactioncraft:netherOres",
+            "data": 4
         }
     }
 }

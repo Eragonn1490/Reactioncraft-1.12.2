@@ -39,6 +39,4 @@ public class ItemBaseHammer extends ItemSword implements ItemModelProvider
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add("Uses: " + myReturnedAmt);
     }
-
-
 }

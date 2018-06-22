@@ -6,13 +6,14 @@
         "XXX"
     ],
     "result": {
-        "item": "reactioncraft:brickovenidle",
+        "item": "reactioncraft:brickoven",
+        "count": 1,
         "data" : 0
     },
     "key": {
         "X": {
             "item": "reactioncraft:desertblocks",
-            "data": 3
+            "data": 2
         }
     }
 }

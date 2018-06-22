@@ -223,6 +223,16 @@ public class ItemRegistry
         
         //Wireless Transmitter
         ItemIndex.wirelessTransmitter = register(new ItemWirelessTransmitter("wirelessTransmitter").setCreativeTab(Reactioncraft.ReactioncraftItems), forgeRegistry);
+        
+        //Paint Items
+        ItemIndex.bowlwater = (ItemBase) register(new ItemBase("bowlwater").setMaxStackSize(1).setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.paints = (ItemPaints) register(new ItemPaints()    .setCreativeTab(Reactioncraft.ReactioncraftItems).setRegistryName("paints"),forgeRegistry);
+
+        for (int i = 0; i < 16; i++) {
+            Reactioncraft.proxy.registerItemRenderer(ItemIndex.paints,i,"paints"+i);
+        }
+        
+        ItemIndex.paintbrush = (ItemBrush) register(new ItemBrush("paintbrush").setMaxStackSize(1).setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
     }
 
    

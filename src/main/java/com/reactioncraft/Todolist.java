@@ -4,7 +4,7 @@ public class Todolist
 {
 	//This Class is just here as a list of things to fix
 	/*
-	 * Fix Clayalizer Recipes & TE
+	 * 
 	 * Advancements
 	 * Putting Out Mining Helmet if you get wet or right click water blocks.
 	 * Fix Net Getting uses
@@ -14,7 +14,6 @@ public class Todolist
 	 * Edit Pixels on Ingot Mould
 	 * Add Names to Coins
 	 * Recipe for Kingly Armour
-	 * Add Villager for NBT (Removes Profession if caught with net)
 	 * Add Names to Villager Types
 	 * Finish Vanilla Villager Trades
 	 * Lever , Chest, 
@@ -26,6 +25,19 @@ public class Todolist
 	 * Redstone Rail - cart over rail stops redstone current until it passes  (to allow "tripwire" rail)
 	 * Make Entity in love from EntityAiEatGrassMate last longer
 	 * Hireoglyph Recipes Changed to using machine
+	 * 
+	 **/
+	
+	/*   Important Things
+	 * 
+	 * Fixed Rotation of Meat cleaver 
+	 * Fixed Rotation of paint brush 
+	 * Fix Smallest Column Model & Block Bounds 
+	 * Fix Clayalizer TE
+	 * Way for mods to add bone drops
+	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
+	 * Creative net breaks after one use (shouldnt)
+	 * 
 	 */
 	
 	
@@ -54,11 +66,12 @@ public class Todolist
 	 * Added Bones Drop to Millenaire Villagers (v6.3.1)
 	 * Support for Millenaire Trading (v6.3.1)
 	 * Automatically Create Files for Millenaire Trading (v6.4)
-	 * Way for mods to add bone drops internally (Needs to be tested (v6.4.6)
 	 * Add Corn Plant Plot to Vanilla Villages in Farm House
 	 * Added Reactioncraft Villager House (v6.4.6)
 	 * Entity Animals now Self Populate.. (v6.4.8)  (seems to be hit or miss depending on there distance from each other, might tweak in a later version)
 	 * All Vanilla Iron Items Except Horse Armor drop iron shavings when crafted IF you have a hammer in your inventory (v6.4.9)
+	 * Paint Brush, Paint Colors, Bowl of Water (v7.0.0)
+	 * 
 	 */
 	
 	/* Fixed
@@ -99,6 +112,9 @@ public class Todolist
 	 * Fixed Bone Drops No longer drops from spiders(v7.0.0) 
 	 * Fix Meat cleaver, Knife, Bat they are now weapons (v7.0.0)
 	 * Recipe for PowerAdapters Mod Block With Bloodstone *Until custom converter block is finished* (v7.0.0)
+	 * Fixed Purple Particles on Column blocks (v7.0.0)
+	 * Villager Professions now have names (v7.0.0)
+	 * 
 	 */
 	 
 	/* Changed
@@ -114,5 +130,6 @@ public class Todolist
 	 * Fixed Corn Plant not swapping over correctly if bone meal was used to grow (v6.4.9)
 	 * Gold & Gem Hireoglyphics now return material used to make them if they are not regular
 	 * set forge tool classes for blocks (v6.5.0)
+	 *
 	 */
 }

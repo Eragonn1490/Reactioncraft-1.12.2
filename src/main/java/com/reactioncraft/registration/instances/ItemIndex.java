@@ -177,4 +177,9 @@ public class ItemIndex
     
     //Wireless Transmitter
     public static ItemWirelessTransmitter wirelessTransmitter;
+    
+    //Brush & Paint
+    public static ItemBrush paintbrush;
+    public static ItemPaints paints;
+    public static ItemBase bowlwater;
 }

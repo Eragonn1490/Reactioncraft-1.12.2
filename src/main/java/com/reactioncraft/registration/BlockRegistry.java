@@ -112,9 +112,15 @@ public class BlockRegistry
 		registerBlockItem(BlockIndex.bloodstoneEnergyBlock, registryEvent);
 
 		registerBlockItem(BlockIndex.enderportalframe,registryEvent);
-		
-		
+
+
 		/** Metadata Blocks **/
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti desertpatterns = new ItemMulti(BlockIndex.desertpatterns);
+		desertpatterns.setRegistryName(BlockIndex.desertpatterns.getRegistryName());
+		registryEvent.getRegistry().register(desertpatterns);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(desertpatterns ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti hieroglyph = new ItemMulti(BlockIndex.hieroglyph);
 		hieroglyph.setRegistryName(BlockIndex.hieroglyph.getRegistryName());
@@ -138,13 +144,13 @@ public class BlockRegistry
 		sands.setRegistryName(BlockIndex.dark_sand.getRegistryName());
 		registryEvent.getRegistry().register(sands);
 		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(sands ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
-		
+
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti glowingglass =new ItemMulti(BlockIndex.glowingGlass);
 		glowingglass.setRegistryName(BlockIndex.glowingGlass.getRegistryName());
 		registryEvent.getRegistry().register(glowingglass);
 		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(glowingglass ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
-		
+
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti bookcases =new ItemMulti(BlockIndex.bookcases);
 		bookcases.setRegistryName(BlockIndex.bookcases.getRegistryName());
@@ -175,6 +181,12 @@ public class BlockRegistry
 		minicolumnitem.setRegistryName(BlockIndex.miniColumn.getRegistryName());
 		registryEvent.getRegistry().register(minicolumnitem);
 		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(minicolumnitem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti smallestColumn=new ItemMulti(BlockIndex.smallestColumn);
+		smallestColumn.setRegistryName(BlockIndex.smallestColumn.getRegistryName());
+		registryEvent.getRegistry().register(smallestColumn);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(smallestColumn ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 	}
 
 
@@ -187,6 +199,7 @@ public class BlockRegistry
 		//Columns
 		BlockIndex.column = (BlockColumn) register((new BlockColumn(Material.ROCK)).setHardness(3.0F),"columnReg",forgeRegistry);
 		BlockIndex.miniColumn = (BlockMiniColumn) register ((new BlockMiniColumn(Material.ROCK)).setHardness(3.0F),"ColumnMini",forgeRegistry);
+		BlockIndex.smallestColumn = (BlockSmallestColumn) register ((new BlockSmallestColumn(Material.ROCK)).setHardness(3.0F),"smallestColumn",forgeRegistry);
 
 		//Ore Blocks
 		BlockIndex.surfaceOres = (BlockSurfaceOre) register(new BlockSurfaceOre(Material.ROCK),"surfaceOres",forgeRegistry).setHardness(3.0F);
@@ -195,6 +208,7 @@ public class BlockRegistry
 
 		//Desert Blocks
 		BlockIndex.desertBlocks = (BlockDesertMulti) register(new BlockDesertMulti(Material.ROCK), "desertblocks",forgeRegistry).setHardness(3.0F);
+		BlockIndex.desertpatterns = (BlockPaintedDarkstone) register(new BlockPaintedDarkstone(Material.ROCK), "desertpatterns",forgeRegistry).setHardness(3.0F);
 
 		//Turn Desert Plants Into Metadata Blocks ^^
 
@@ -211,6 +225,8 @@ public class BlockRegistry
 
 		//Wooden Blocks
 		BlockIndex.cherryPlanks = (BlockBase) register(new BlockBase(Material.WOOD).setHardness(2.0F).setResistance(5.0F).setCreativeTab(Reactioncraft.Reactioncraft),"cherryplanks",forgeRegistry);
+		BlockIndex.cherryPlanks.setHarvestLevel("axe", 0); //Ensures that its breakable by the axe correctly
+
 		BlockIndex.cherrywood = (BlockCherryTreeLog) register(new BlockCherryTreeLog(),"cherry_wood",forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft);
 		BlockIndex.cherryTreeLeaves = (BlockCherryTreeLeaves) register(new BlockCherryTreeLeaves(),"cherry_leaves",forgeRegistry);
 

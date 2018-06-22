@@ -1,0 +1,96 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_column",
+        "textures" : {
+          "end" : "reactioncraft:blocks/clear",
+          "side" : "reactioncraft:blocks/clear"
+        }
+    },
+    "variants": {
+        "type": {
+            "0": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern0"
+                }
+            },
+            "1": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern1"
+                }
+            },
+             "2": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern2"
+                }
+            },
+             "3": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern3"
+                }
+            },
+             "4": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern4"
+                }
+            },
+             "5": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern5"
+                }
+            },
+             "6": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern6"
+                }
+            },
+             "7": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern7"
+                }
+            },
+             "8": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern8"
+                }
+            },
+             "9": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern9"
+                }
+            },
+             "10": {
+                "textures": {
+                    "end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/pattern10"
+                }
+            },
+            "four3": {             
+            },
+            "weathered1": {
+            },
+          "five1": {
+
+          },
+          "five2" :{
+
+          },
+          "five3" : {
+
+          },
+          "six1" : {
+
+          }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"end": "reactioncraft:blocks/css",
+		"side": "reactioncraft:blocks/pattern5"
+	}
+}

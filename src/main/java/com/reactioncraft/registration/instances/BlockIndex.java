@@ -3,9 +3,7 @@ package com.reactioncraft.registration.instances;
 import com.reactioncraft.blocks.*;
 import com.reactioncraft.blocks.machines.*;
 import com.reactioncraft.blocks.ores.*;
-
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockEndPortal;
+import net.minecraft.block.*;
 
 
 public class BlockIndex
@@ -20,6 +18,7 @@ public class BlockIndex
     public static BlockDarkSand dark_sand;
     public static BlockBase bookcases;
     public static BlockDesertMulti desertBlocks;
+    public static BlockPaintedDarkstone desertpatterns;
     public static BlockGlowingGlassMulti glowingGlass;
     public static BlockHieroglyphMulti hieroglyph;
     public static BlockBase surfaceOres;
@@ -38,6 +37,7 @@ public class BlockIndex
     public static BlockBase leverbookcase;
     public static BlockColumn column;
     public static BlockMiniColumn miniColumn;
+    public static BlockSmallestColumn smallestColumn;
     public static BlockBush redCactus;
     public static BlockBush greenCactus;
     public static BlockCherryTreeLeaves cherryTreeLeaves;

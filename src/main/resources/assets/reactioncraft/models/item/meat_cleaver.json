@@ -2,5 +2,47 @@
     "parent": "item/handheld",
     "textures": {
         "layer0": "reactioncraft:items/meat_cleaver"
+    },
+    "display": {
+
+    "thirdperson_righthand": {
+
+      "rotation": [ -25, 90, 70 ],
+
+      "translation": [ 0.00, 3.00, 1.00 ],
+
+      "scale": [ 0.55, 0.55, 0.55 ]
+
+    },
+
+    "thirdperson_lefthand": {
+
+      "rotation": [ -25, 90, 70 ],
+
+      "translation": [ 0.00, 3.00, 1.00 ],
+
+      "scale": [ 0.55, 0.55, 0.55 ]
+
+    },
+
+    "firstperson_righthand": {
+
+      "rotation": [ -25, 90, 70 ],
+
+      "translation": [ 1.13, 3.20, 1.13 ],
+
+      "scale": [ 0.68, 0.68, 0.68 ]
+
+    },
+
+    "firstperson_lefthand": {
+
+      "rotation": [ -25, 90, 70 ],
+
+      "translation": [ 1.13, 3.20, 1.13 ],
+
+      "scale": [ 0.68, 0.68, 0.68 ]
+
     }
+  }
 }

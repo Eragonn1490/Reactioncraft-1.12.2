@@ -285,7 +285,7 @@ public class VillageReactioncraftFarm extends StructureVillagePieces.House1
 
 		Block ground = Blocks.FARMLAND;
 		if (structureType == 1) { // desert
-			ground = BlockIndex.dark_sand;
+			ground = Blocks.FARMLAND;
 		}
 
 		for (int i = 1; i <= 8; i++) {

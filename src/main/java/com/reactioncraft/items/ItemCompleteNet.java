@@ -3,10 +3,13 @@ package com.reactioncraft.items;
 import com.google.common.collect.ImmutableSet;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
+import com.reactioncraft.core.Logger;
 import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.constants;
+
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -24,15 +27,12 @@ import java.util.Set;
 
 public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 {
-	public int retunedAmt;
-	public int myReturnedAmt;
+	public int returnedAmt;
 	protected final String name;
 
 	public ItemCompleteNet(String name, ToolMaterial mat)
 	{
 		super(mat);
-		//damageVsEntity = 0.0F;
-		//attackSpeed = 0.0F;
 		this.name = name;
 		this.setRegistryName(new ResourceLocation(constants.MODID, name));
 		this.setUnlocalizedName(constants.MODID + "." + name);
@@ -50,6 +50,8 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	{
 		if (!player.world.isRemote && entity instanceof EntityLiving && !Reactioncraft.exclusionList.isExcluded(entity))
 		{
+				String entityId = entity.getName().toString();
+
 				NBTTagCompound entityTag = new NBTTagCompound();
 				entity.writeToNBTOptional(entityTag);
 				entityTag.removeTag("Pos");
@@ -61,12 +63,17 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 				entityTag.removeTag("HurtTime");
 				entityTag.removeTag("DeathTime");
 				entityTag.removeTag("AttackTime");
-
+				entityTag.setString("name", entityId);
+				
 				ItemStack is = new ItemStack(ItemIndex.caught);
 				NBTTagCompound nbt = new NBTTagCompound();
 				nbt.setTag("EntityData", entityTag);
+				nbt.setString("name", entityId);
+
+				
 				is.setTagCompound(nbt);
 				 player.dropItem(is, false);
+				 
 				if(!this.name.equals("creative_net")) stack.attemptDamageItem(1,itemRand, (EntityPlayerMP) player);
 				entity.setDead();
 
@@ -93,24 +100,48 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
         return true;
     }
 	
-	@Override
 	public int getMaxDamage(ItemStack stack)
 	{
 		NBTTagCompound compound = stack.getTagCompound();
 		try
 		{
-			int e = compound.getInteger("hilt");
+			int hiltLevel = compound.getInteger("hilt");
 			int netLevel = compound.getInteger("net");
-			retunedAmt = (e * 10 + netLevel * 10);
-			myReturnedAmt = retunedAmt;
-			return retunedAmt;
+			returnedAmt = (10 * (hiltLevel + netLevel));
+			this.setMaxDamage(returnedAmt);
+			Logger.info("returnedAmt=", returnedAmt);
+			return returnedAmt;
 		}
 		catch (NullPointerException var5)
 		{
-			retunedAmt = 20;
-			return retunedAmt;
+			int exception = 1;
+			this.setMaxDamage(exception);
+			return exception;
 		}
 	}
+	
+	/**
+     * Set the damage for this itemstack. Note, this method is responsible for zero checking.
+     * @param stack the stack
+     * @param damage the new damage value
+     */
+    public void setDamage(ItemStack stack, int damage)
+    {
+    	NBTTagCompound compound = stack.getTagCompound();
+		try
+		{
+			int hiltLevel = compound.getInteger("hilt");
+			int netLevel = compound.getInteger("net");
+			damage = (10 * (hiltLevel + netLevel));
+			this.setMaxDamage(damage);
+			return;
+		}
+		catch (NullPointerException var5)
+		{
+			this.setMaxDamage(1);
+			return;
+		}
+    }
 
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
@@ -119,7 +150,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		{
 			tooltip.add("Hilt Level: " + stack.getTagCompound().getInteger("hilt"));
 			tooltip.add("Net Level: "  + stack.getTagCompound().getInteger("net"));
-			tooltip.add("Uses: " + myReturnedAmt);
+			tooltip.add("Uses: " + returnedAmt);
 		}
 		else
 		{
@@ -127,7 +158,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 			{
 				tooltip.add("Hilt Level: " + stack.getTagCompound().getInteger("hilt"));
 				tooltip.add("Net Level: "  + stack.getTagCompound().getInteger("net"));
-				tooltip.add("Uses: " + myReturnedAmt);
+				tooltip.add("Uses: " + returnedAmt);
 			}
 		}
 		super.addInformation(stack, worldIn, tooltip, flagIn);

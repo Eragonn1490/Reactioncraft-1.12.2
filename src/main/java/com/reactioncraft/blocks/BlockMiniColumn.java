@@ -8,8 +8,8 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockMiniColumn extends BlockColumn
 {
-
 	static final AxisAlignedBB BOUNDING_BOX=new AxisAlignedBB(0.1875,0,0.1875,0.8125,1,0.8125);
+	
 	public BlockMiniColumn(Material material)
 	{
 		super(material);
@@ -20,5 +20,4 @@ public class BlockMiniColumn extends BlockColumn
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 		return BOUNDING_BOX;
 	}
-
 }

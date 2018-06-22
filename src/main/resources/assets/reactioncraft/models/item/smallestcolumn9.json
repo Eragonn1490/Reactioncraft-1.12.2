@@ -1,0 +1,6 @@
+{
+  "parent":"reactioncraft:block/smallestcolumn",
+  "textures":{
+    "all": "blocks/brick"
+  }
+}

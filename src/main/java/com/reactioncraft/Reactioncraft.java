@@ -13,6 +13,7 @@ import com.reactioncraft.utils.ReactioncraftConfiguration;
 import com.reactioncraft.utils.constants;
 import com.reactioncraft.world.BiomeHandler;
 import com.reactioncraft.world.Worldgen;
+import com.reactioncraft.world.village.*;
 
 //API
 import forestry.api.recipes.RecipeManagers;
@@ -53,8 +54,6 @@ import java.awt.*;
 import java.io.File;
 import java.util.List;
 
-//import com.reactioncraft.core.Remapper;
-//Minecraft Imports
 
 @Mod(modid = constants.MODID, name = constants.BaseID, version = constants.VERSION, acceptedMinecraftVersions = "[1.12]")
 @SuppressWarnings("unused")
@@ -114,8 +113,12 @@ public class Reactioncraft
 		MinecraftForge.EVENT_BUS.register(new ItemRegistry());
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 		MinecraftForge.EVENT_BUS.register(new LootTableHandler());
-
 		TileEntityRegistry.registerTileEntities();
+		
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftHouseHandler());
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftFarmHandler());
+		VillagerRegistry.instance().registerVillageCreationHandler(new ReactioncraftBankHandler());
+		Villagers.registerVillageComponents();
 
 		int eid=0;
 		//NOTICE the colors can be changed as needed. First is shell color, second is spot color

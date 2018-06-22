@@ -55,7 +55,7 @@ public class Villagers {
 
 		//TODO set trades
 		/** VillagerRegistry.VillagerProfession **/  banker =new VillagerRegistry.VillagerProfession(constants.MODID+":banker",constants.MODID+":textures/entity/banker.png","");
-		VillagerRegistry.VillagerCareer villagerCareer=new VillagerRegistry.VillagerCareer(banker,"career1");
+		VillagerRegistry.VillagerCareer villagerCareer=new VillagerRegistry.VillagerCareer(banker,"career2");
 		villagerCareer.addTrade(1, new EntityVillager.ITradeList() {
 			@Override
 			public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {

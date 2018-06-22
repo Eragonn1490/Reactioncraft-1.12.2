@@ -2,6 +2,10 @@
 reactioncraft.energybridge.stored=Energy Stored:
 reactioncraft.energybridge.max=Maximum Energy Stored:
 
+#Villager Names
+entity.Villager.career1=Mherr
+entity.Villager.career2=Banker
+
 #Creativetabs
 itemGroup.reactioncraft items=Reactioncraft Items
 itemGroup.reactioncraft=Reactioncraft Blocks
@@ -78,7 +82,7 @@ tile.reactioncraft.cherry_leaves.name=Cherry Leaves
 tile.reactioncraft.hive.name=Hive
 tile.reactioncraft.cherry_wood.name=Cherry Wood
 tile.reactioncraft.brickoven.name=Brick Oven
-tile.reactioncraft.clayalizer.name=Clayalizer
+tile.reactioncraft.claylizer.name=Clayalizer
 tile.reactioncraft.freezer.name=Freezer
 tile.reactioncraft.columnReg.0.name=Darkstone Column
 tile.reactioncraft.columnReg.1.name=Granite Column

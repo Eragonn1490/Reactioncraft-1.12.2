@@ -13,53 +13,18 @@ public class ItemCoin extends Item
 	{
 		super();
 		this.setHasSubtypes(true);
-
 	}
-
 
 
 	private static final String[] names = new String[] { "0", "1","2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
 
 
-
 	public String getUnlocalizedName(ItemStack par1ItemStack)
 	{	
-		int i =getMetadata(par1ItemStack); //MathHelper.clamp(par1ItemStack.getItemDamage(), 0, 15);
-//
-//		if(par1ItemStack.getItemDamage() == 15)
-//		{
-//			setContainerItem(IntegratedItems.Bag);
-//		}
-//
-//		if(par1ItemStack.getItemDamage() == 14)
-//		{
-//			setContainerItem(IntegratedItems.Sack);
-//		}
-//
-//		if(par1ItemStack.getItemDamage() == 10)
-//		{
-//			setContainerItem(IntegratedItems.Bag);
-//		}
-//
-//		if(par1ItemStack.getItemDamage() == 9)
-//		{
-//			setContainerItem(IntegratedItems.Sack);
-//		}
-//
-//		if(par1ItemStack.getItemDamage() == 5)
-//		{
-//			setContainerItem(IntegratedItems.Bag);
-//		}
-//
-//		if(par1ItemStack.getItemDamage() == 4)
-//		{
-//			setContainerItem(IntegratedItems.Sack);
-//		}
+		int i =getMetadata(par1ItemStack);
 		
 		return "item."+constants.MODID + ".coin." + names[i];
 	}
-
-
 
 
 	@Override
@@ -75,6 +40,4 @@ public class ItemCoin extends Item
 			}
 		}
 	}
-
-
 }
