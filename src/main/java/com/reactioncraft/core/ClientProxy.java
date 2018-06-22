@@ -1,10 +1,12 @@
 package com.reactioncraft.core;
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.entities.EntityMap;
 import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.mobs.common.entities.*;
 import com.reactioncraft.mobs.common.models.*;
 import com.reactioncraft.mobs.common.renders.*;
+import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.constants;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -101,5 +103,7 @@ public class ClientProxy extends ServerProxy
 //        RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class, new RenderStalker(new ModelCreeper(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZombieCrawling.class,manager -> new RenderZombieCrawling(manager,new ModelZombieCrawling(),0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonCrawling.class,manager -> new RenderSkeletonCrawling(manager,new ModelZombieCrawling(),0.5f));
+		
+		//RenderingRegistry.registerEntityRenderingHandler(EntityMap.class, new RenderMap(null, ItemIndex.mapinabottle, null));
     }
 }

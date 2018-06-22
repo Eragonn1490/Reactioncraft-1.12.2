@@ -2,8 +2,9 @@ package com.reactioncraft;
 
 public class Todolist 
 {
-	//This Class is just here as a list of things to fix
-	/*
+	/** This Class is just here as a list of things to fix **/
+	
+	/* New Things / Things to get to
 	 * 
 	 * Advancements
 	 * Putting Out Mining Helmet if you get wet or right click water blocks.
@@ -25,10 +26,17 @@ public class Todolist
 	 * Redstone Rail - cart over rail stops redstone current until it passes  (to allow "tripwire" rail)
 	 * Make Entity in love from EntityAiEatGrassMate last longer
 	 * Hireoglyph Recipes Changed to using machine
-	 * 
-	 **/
+	 * Villager drop with meat cleaver
+	 * Longer Piston?
+	 * Breaker Rail (allows redstone current to pass through, stops temporarily when a car is over the block or a connected breaker block)
+	 * Fix Boreheads for Railcraft (When it updates to 1.12.2)
+	 * Make Frame Useful for forestry again?
+	 * Add bee species? that uses honeycomb and pollen comb?
+	 *	
+	 *
+	 */
 	
-	/*   Important Things
+	/*   Important Things to fix for 7.0.0
 	 * 
 	 * Fixed Rotation of Meat cleaver 
 	 * Fixed Rotation of paint brush 
@@ -36,7 +44,14 @@ public class Todolist
 	 * Fix Clayalizer TE
 	 * Way for mods to add bone drops
 	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
-	 * Creative net breaks after one use (shouldnt)
+	 * Creative net breaks after one use (shouldn't)
+	 * fix raw human drop with meat cleaver
+	 * Re-Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1, Broken v6.5.0)
+	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)
+	 * Add Statues and fix block bounds
+	 * Add Block's & Models to Bag of Coins (for future treasure update)
+	 * Add Jellyfish
+	 * remove unused columns from creative tabs for (v7.0.0)
 	 * 
 	 */
 	
@@ -62,8 +77,6 @@ public class Todolist
 	 * Mining Helmet ON/OFF Items (v6.2.2)
 	 * Mining Helmet Functionality (v6.2.3)
 	 * Fix Chisel Recipes for Items & Columns (Spawns 2 instead of damaging the chisel, caused by .json formatting bug) (v6.2.4)
-	 * Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1)
-	 * Added Bones Drop to Millenaire Villagers (v6.3.1)
 	 * Support for Millenaire Trading (v6.3.1)
 	 * Automatically Create Files for Millenaire Trading (v6.4)
 	 * Add Corn Plant Plot to Vanilla Villages in Farm House
@@ -130,6 +143,6 @@ public class Todolist
 	 * Fixed Corn Plant not swapping over correctly if bone meal was used to grow (v6.4.9)
 	 * Gold & Gem Hireoglyphics now return material used to make them if they are not regular
 	 * set forge tool classes for blocks (v6.5.0)
-	 *
+	 * Double Tall Grass now cooks in furnace to straw (v7.0.0)
 	 */
 }

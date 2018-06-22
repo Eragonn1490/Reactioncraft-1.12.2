@@ -91,6 +91,7 @@ public class RecipeRegistry
 	public static void miscRecipesInit() 
 	{	
 		GameRegistry.addSmelting(Blocks.TALLGRASS, new ItemStack(ItemIndex.straw), 0.5F);
+		GameRegistry.addSmelting(Blocks.DOUBLE_PLANT, new ItemStack(ItemIndex.straw), 0.5F);
 		GameRegistry.addSmelting(BlockIndex.dark_sand, new ItemStack(Blocks.GLASS), 0.5F);
 		GameRegistry.addSmelting(ItemIndex.goldrod, new ItemStack(Items.GOLD_INGOT, 2), 0.5F);
 		GameRegistry.addSmelting(Blocks.OBSIDIAN, new ItemStack(ItemIndex.obsidianingot), 0.5F);

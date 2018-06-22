@@ -10,6 +10,7 @@ entity.Villager.career2=Banker
 itemGroup.reactioncraft items=Reactioncraft Items
 itemGroup.reactioncraft=Reactioncraft Blocks
 itemGroup.reactioncraft food=Reactioncraft Foods
+itemGroup.reactioncraft testing area=Reactioncraft Testing Area
 
 #Blocks
 tile.reactioncraft.sands.0.name=Dark Sand

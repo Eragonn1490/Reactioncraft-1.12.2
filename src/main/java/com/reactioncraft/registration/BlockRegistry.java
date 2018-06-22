@@ -112,6 +112,9 @@ public class BlockRegistry
 		registerBlockItem(BlockIndex.bloodstoneEnergyBlock, registryEvent);
 
 		registerBlockItem(BlockIndex.enderportalframe,registryEvent);
+		
+		//tripwire rail
+		registerBlockItem(BlockIndex.tripwirerail, registryEvent);
 
 
 		/** Metadata Blocks **/
@@ -277,13 +280,15 @@ public class BlockRegistry
 		BlockIndex.fence = (BlockCustomFence) register(new BlockCustomFence(Material.IRON, BlockPlanks.EnumType.OAK.getMapColor()) .setHardness(3.5F).setBlockUnbreakable().setCreativeTab(null), "fence", forgeRegistry);
 
 		//Transmitter
-		BlockIndex.transmitter = (BlockTransmitter) register(new BlockTransmitter(Material.ROCK).setHardness(3.0F).setCreativeTab(Reactioncraft.Reactioncraft),"transmitter",forgeRegistry);
-		BlockIndex.reprogrammer = (BlockReprogrammer) register(new BlockReprogrammer(Material.ROCK).setHardness(3.0F).setCreativeTab(Reactioncraft.Reactioncraft),"reprogrammer",forgeRegistry);
+		BlockIndex.transmitter = (BlockTransmitter) register(new BlockTransmitter(Material.ROCK).setHardness(3.0F),"transmitter",forgeRegistry);
+		BlockIndex.reprogrammer = (BlockReprogrammer) register(new BlockReprogrammer(Material.ROCK).setHardness(3.0F),"reprogrammer",forgeRegistry);
 
 		//
-		BlockIndex.bloodstoneEnergyBlock = (BlockBloodstoneConverter) register(new BlockBloodstoneConverter(Material.ROCK).setHardness(3.0F).setCreativeTab(Reactioncraft.Reactioncraft),"bloodstoneEnergyBlock",forgeRegistry);
+		BlockIndex.bloodstoneEnergyBlock = (BlockBloodstoneConverter) register(new BlockBloodstoneConverter(Material.ROCK).setHardness(3.0F),"bloodstoneEnergyBlock",forgeRegistry);
 
 		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.Reactioncraft),"end_portal_frame",forgeRegistry);
+		
+		BlockIndex.tripwirerail = (BlockTripwirerail) register(new BlockTripwirerail(Material.ROCK),"tripwirerail",forgeRegistry);
 	}
 
 

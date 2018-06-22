@@ -23,7 +23,7 @@ public class BlockBloodstoneConverter extends BlockBase implements ITileEntityPr
 	public BlockBloodstoneConverter(Material material) 
 	{
 		super(material);
-		this.setCreativeTab(Reactioncraft.Reactioncraft);
+		this.setCreativeTab(Reactioncraft.ReactioncraftTest);
 	}
 
 	@Override

@@ -66,9 +66,13 @@ public class BlockIndex
 
   	//Lever & Chest Bookcases & Scrollshelfs
   	public static BlockBookcaseLever leverScrollshelf;
+  	public static BlockBookcaseChest leverscrollshelf;
   	public static BlockBookcaseChest chestbookshelf;
   	public static BlockBookcaseChest scrollshelfchest;
 
   	//BC IC2 RF Converter
   	public static BlockBloodstoneConverter bloodstoneEnergyBlock;
+  	
+  	//Tripwire Rail
+  	public static BlockTripwirerail tripwirerail;
 }

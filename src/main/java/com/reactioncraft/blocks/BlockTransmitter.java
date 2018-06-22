@@ -23,6 +23,7 @@ public class BlockTransmitter extends BlockBase
 	public BlockTransmitter(Material material)
 	{
 		super(material);
+		this.setCreativeTab(Reactioncraft.ReactioncraftTest);
 	}
 
 	public void registerItemModel(ItemBlock itemBlock)

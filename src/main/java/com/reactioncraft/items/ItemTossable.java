@@ -2,7 +2,7 @@ package com.reactioncraft.items;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.ItemModelProvider;
-import com.reactioncraft.mobs.common.entities.EntityMap;
+import com.reactioncraft.entities.*;
 import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.constants;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,7 +41,7 @@ public class ItemTossable extends Item implements ItemModelProvider
             itemStackIn.shrink(1);
         }
 
-        worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_EGG_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+        worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
         if (!worldIn.isRemote)
         {
@@ -53,11 +53,11 @@ public class ItemTossable extends Item implements ItemModelProvider
                 entityMap.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
                 worldIn.spawnEntity(entityMap);
             }
-            else {
-
-                EntityEgg entityegg = new EntityEgg(worldIn, playerIn);
-                entityegg.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
-                worldIn.spawnEntity(entityegg);
+            if(itemStackIn.getItem()==ItemIndex.shipinabottle)
+            {
+                EntityShipBottled entityship = new EntityShipBottled(worldIn, playerIn);
+                entityship.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+                worldIn.spawnEntity(entityship);
             }
         }
 

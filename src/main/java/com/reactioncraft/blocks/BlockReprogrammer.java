@@ -29,6 +29,7 @@ public class BlockReprogrammer extends BlockBase
 	public BlockReprogrammer(Material material)
 	{
 		super(material);
+		this.setCreativeTab(Reactioncraft.ReactioncraftTest);
 	}
 
 	public void registerItemModel(ItemBlock itemBlock)
