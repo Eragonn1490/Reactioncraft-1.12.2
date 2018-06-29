@@ -4,11 +4,11 @@ import net.minecraft.util.IStringSerializable;
 
 public enum EnumNetherOres implements IStringSerializable
 {
-    BLACKDIAMOND(0, 0,   "0",       "0"),
-    DIAMOND(1, 1,   "1",       "1"),
-    DRAGONSTONE(2, 2,   "2",       "2"),
-    GOLD(3, 3,   "3",       "3"),
-    BLOODSTONE(4, 4,   "4", 	   "4");
+    BLACKDIAMOND  (0, 0,   "0",       "0"),
+    DIAMOND       (1, 1,   "1",       "1"),
+    DRAGONSTONE   (2, 2,   "2",       "2"),
+    GOLD          (3, 3,   "3",       "3"),
+    BLOODSTONE    (4, 4,   "4", 	  "4");
 
     private static final EnumNetherOres[] META_LOOKUP = new EnumNetherOres[values().length];
     private static final EnumNetherOres[] DYE_DMG_LOOKUP = new EnumNetherOres[values().length];

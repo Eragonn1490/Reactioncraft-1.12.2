@@ -1,12 +1,19 @@
 package com.reactioncraft.registration;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.blocks.*;
-import com.reactioncraft.blocks.BlockBookshelf;
+
+//Has to be imported directly due to similar name to BlockCactus
 import com.reactioncraft.blocks.BlockCactus;
+import com.reactioncraft.blocks.BlockBookshelf;
+
+//Regular Imports
+import com.reactioncraft.blocks.*;
+import com.reactioncraft.blocks.*;
 import com.reactioncraft.blocks.machines.*;
 import com.reactioncraft.blocks.ores.*;
+import com.reactioncraft.blocks.rails.*;
 import com.reactioncraft.vanillareplacements.*;
+import com.reactioncraft.core.Generator;
 import com.reactioncraft.core.Logger;
 import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.registration.instances.BlockIndex;
@@ -59,15 +66,12 @@ public class BlockRegistry
 		return itemBlock;
 	}
 
-	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public void registerBlocks(RegistryEvent.Register<Block> registryEvent)
 	{
 		init(registryEvent.getRegistry());
 	}
 
-	//now the items must be registered separately
-	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public void registerBlockItems(RegistryEvent.Register<Item> registryEvent)
 	{
@@ -112,41 +116,53 @@ public class BlockRegistry
 		registerBlockItem(BlockIndex.bloodstoneEnergyBlock, registryEvent);
 
 		registerBlockItem(BlockIndex.enderportalframe,registryEvent);
-		
+
 		//tripwire rail
 		registerBlockItem(BlockIndex.tripwirerail, registryEvent);
 
 
 		/** Metadata Blocks **/
 		//NOTICE there must exist json item model for each block-item
+		ItemMulti levers = new ItemMulti(BlockIndex.leverbookcase);
+		levers.setRegistryName(BlockIndex.leverbookcase.getRegistryName());
+		registryEvent.getRegistry().register(levers);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(levers , "0","1");//"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti statues = new ItemMulti(BlockIndex.statues);
+		statues.setRegistryName(BlockIndex.statues.getRegistryName());
+		registryEvent.getRegistry().register(statues);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(statues ,"0","1","2","3","4","5","6","7","8");//,"9","10","11","12","13","14","15");
+
+		//NOTICE there must exist json item model for each block-item
 		ItemMulti desertpatterns = new ItemMulti(BlockIndex.desertpatterns);
 		desertpatterns.setRegistryName(BlockIndex.desertpatterns.getRegistryName());
 		registryEvent.getRegistry().register(desertpatterns);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(desertpatterns ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(desertpatterns ,"0","1","2","3","4","5","6","7","8","9","10");//,"11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti hieroglyph = new ItemMulti(BlockIndex.hieroglyph);
 		hieroglyph.setRegistryName(BlockIndex.hieroglyph.getRegistryName());
 		registryEvent.getRegistry().register(hieroglyph);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(hieroglyph ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(hieroglyph ,"0","1","2","3","4","5","6","7","8","9","10","11","12");//,"13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti surfaceOres = new ItemMulti(BlockIndex.surfaceOres);
 		surfaceOres.setRegistryName(BlockIndex.surfaceOres.getRegistryName());
 		registryEvent.getRegistry().register(surfaceOres);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(surfaceOres ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(surfaceOres ,"0","1","2","3","4","5");//,"6","7","8","9","10","11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti netherOres = new ItemMulti(BlockIndex.netherOres);
 		netherOres.setRegistryName(BlockIndex.netherOres.getRegistryName());
 		registryEvent.getRegistry().register(netherOres);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(netherOres ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(netherOres ,"0","1","2","3","4");//,"5","6","7","8","9","10","11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti sands =new ItemMulti(BlockIndex.dark_sand);
 		sands.setRegistryName(BlockIndex.dark_sand.getRegistryName());
 		registryEvent.getRegistry().register(sands);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(sands ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(sands ,"0");//,"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti glowingglass =new ItemMulti(BlockIndex.glowingGlass);
@@ -158,38 +174,38 @@ public class BlockRegistry
 		ItemMulti bookcases =new ItemMulti(BlockIndex.bookcases);
 		bookcases.setRegistryName(BlockIndex.bookcases.getRegistryName());
 		registryEvent.getRegistry().register(bookcases);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(bookcases ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(bookcases ,"0","1","2","3","4","5","6","7","8","9","10","11");//,"12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti endores =new ItemMulti(BlockIndex.endOres);
 		endores.setRegistryName(BlockIndex.endOres.getRegistryName());
 		registryEvent.getRegistry().register(endores);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(endores ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(endores ,"0","1");//,"2","3","4","5","6","7","8","9","10","11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti desertblocks = new ItemMulti(BlockIndex.desertBlocks);
 		desertblocks.setRegistryName(BlockIndex.desertBlocks.getRegistryName());
 		registryEvent.getRegistry().register(desertblocks);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(desertblocks ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(desertblocks ,"0","1","2","3","4","5","6","7","8");//,"9","10","11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti columnItem =new ItemMulti(BlockIndex.column);
 		columnItem.setRegistryName(BlockIndex.column.getRegistryName());
 		registryEvent.getRegistry().register(columnItem);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(columnItem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(columnItem ,"0","1","2","3","4","5","6","7","8","9","10","11","12");//,"13","14","15");
 
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti minicolumnitem=new ItemMulti(BlockIndex.miniColumn);
 		minicolumnitem.setRegistryName(BlockIndex.miniColumn.getRegistryName());
 		registryEvent.getRegistry().register(minicolumnitem);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(minicolumnitem ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(minicolumnitem ,"0","1","2","3","4","5","6","7","8","9","10","11","12");//,"13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti smallestColumn=new ItemMulti(BlockIndex.smallestColumn);
 		smallestColumn.setRegistryName(BlockIndex.smallestColumn.getRegistryName());
 		registryEvent.getRegistry().register(smallestColumn);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(smallestColumn ,"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(smallestColumn ,"0","1","2","3","4","5","6","7","8","9","10","11","12");//,"13","14","15");
 	}
 
 
@@ -213,6 +229,12 @@ public class BlockRegistry
 		BlockIndex.desertBlocks = (BlockDesertMulti) register(new BlockDesertMulti(Material.ROCK), "desertblocks",forgeRegistry).setHardness(3.0F);
 		BlockIndex.desertpatterns = (BlockPaintedDarkstone) register(new BlockPaintedDarkstone(Material.ROCK), "desertpatterns",forgeRegistry).setHardness(3.0F);
 
+		BlockIndex.statues = (BlockStatues) register(new BlockStatues(Material.ROCK), "statues", forgeRegistry).setCreativeTab(Reactioncraft.ReactioncraftTest).setHardness(3.0F);
+		
+		BlockIndex.leverbookcase = (BlockBookcaseLever) register(new BlockBookcaseLever(Material.ROCK), "levers", forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft).setHardness(3.0F);
+		
+		//Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "levers", BlockIndex.leverbookcase); //Debug Only
+		
 		//Turn Desert Plants Into Metadata Blocks ^^
 
 		//Sand Blocks
@@ -282,13 +304,15 @@ public class BlockRegistry
 		//Transmitter
 		BlockIndex.transmitter = (BlockTransmitter) register(new BlockTransmitter(Material.ROCK).setHardness(3.0F),"transmitter",forgeRegistry);
 		BlockIndex.reprogrammer = (BlockReprogrammer) register(new BlockReprogrammer(Material.ROCK).setHardness(3.0F),"reprogrammer",forgeRegistry);
-
+		
+	
 		//
 		BlockIndex.bloodstoneEnergyBlock = (BlockBloodstoneConverter) register(new BlockBloodstoneConverter(Material.ROCK).setHardness(3.0F),"bloodstoneEnergyBlock",forgeRegistry);
-
-		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.Reactioncraft),"end_portal_frame",forgeRegistry);
 		
-		BlockIndex.tripwirerail = (BlockTripwirerail) register(new BlockTripwirerail(Material.ROCK),"tripwirerail",forgeRegistry);
+		
+		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.ReactioncraftTest),"end_portal_frame",forgeRegistry);
+
+		BlockIndex.tripwirerail = (BlockTripwirerail) register(new BlockTripwirerail(),"tripwire_rail",forgeRegistry);
 	}
 
 

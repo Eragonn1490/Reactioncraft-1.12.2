@@ -185,7 +185,7 @@ public class TileEntityBrickOven extends TileEntityBase implements ITickable
         return capability== CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
     }
 
-    @SuppressWarnings("unchecked")
+    //@SuppressWarnings("unchecked")
     @Override
     public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, net.minecraft.util.EnumFacing facing)
     {

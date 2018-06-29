@@ -15,7 +15,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class LootTableHandler
 {
-    @SuppressWarnings("unused")
     @SubscribeEvent
     public void addLoot(LootTableLoadEvent lootTableLoadEvent)
     {

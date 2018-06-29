@@ -13,13 +13,7 @@ public enum EnumDesertBlocks implements IStringSerializable
     Brick		       (6, 6,   "6",     "6"),
     Darkstone          (7, 7,   "7",     "7"),
     Chiseled_Granite   (8, 8,   "8",     "8");
-//    four1		(9, 9, 	 "four1",      "four1"),
-//    four2		(10, 10, "four2",      "four2"),
-//    four3		(11, 11, "four3",      "four3"),
-//    five1       (12, 12, "five1",      "five1"),
-//	five2		(13, 13, "five2",      "five2"),
-//	five3		(14, 14, "five3",      "five3"),
-//	six1		(15, 15, "six1",       "six1");
+
 
     private static final EnumDesertBlocks[] META_LOOKUP = new EnumDesertBlocks[values().length];
     private static final EnumDesertBlocks[] DYE_DMG_LOOKUP = new EnumDesertBlocks[values().length];

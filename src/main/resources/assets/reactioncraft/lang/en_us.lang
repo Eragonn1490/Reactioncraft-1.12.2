@@ -1,6 +1,6 @@
 #Energy Converter
-reactioncraft.energybridge.stored=Energy Stored:
-reactioncraft.energybridge.max=Maximum Energy Stored:
+reactioncraft.energybridge.stored=Energy Stored: %s
+reactioncraft.info.set.new=Frequency is set to %s
 
 #Villager Names
 entity.Villager.career1=Mherr
@@ -85,6 +85,28 @@ tile.reactioncraft.cherry_wood.name=Cherry Wood
 tile.reactioncraft.brickoven.name=Brick Oven
 tile.reactioncraft.claylizer.name=Clayalizer
 tile.reactioncraft.freezer.name=Freezer
+tile.reactioncraft.chain_ladder.name=Chain Ladder
+tile.reactioncraft.cactus1.name=Green Cactus
+tile.reactioncraft.cactus2.name=Red Cactus
+tile.reactioncraft.cherry_tree_sapling.name=Cherry Sapling
+tile.reactioncraft.gate.name=Portcullis
+tile.reactioncraft.fence.name=Portcullis
+tile.reactioncraft.desertpatterns.0.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.1.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.2.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.3.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.4.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.5.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.6.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.7.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.8.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.9.name=Painted Darkstone
+tile.reactioncraft.desertpatterns.10.name=Painted Darkstone
+tile.reactioncraft.tripwire_rail.name=Tripwire Rail
+tile.reactioncraft.levers.0.name=Lever Bookshelf
+tile.reactioncraft.levers.1.name=Lever Scrollshelf
+#Column Blocks
+##Regular
 tile.reactioncraft.columnReg.0.name=Darkstone Column
 tile.reactioncraft.columnReg.1.name=Granite Column
 tile.reactioncraft.columnReg.2.name=Darkstone Brick Column
@@ -98,13 +120,7 @@ tile.reactioncraft.columnReg.9.name=Brick Column
 tile.reactioncraft.columnReg.10.name=Stone Slab Column
 tile.reactioncraft.columnReg.11.name=Bloodstone Brick Column
 tile.reactioncraft.columnReg.12.name=Weathered Column
-tile.reactioncraft.chain_ladder.name=Chain Ladder
-tile.reactioncraft.cactus1.name=Green Cactus
-tile.reactioncraft.cactus2.name=Red Cactus
-tile.reactioncraft.cherry_tree_sapling.name=Cherry Sapling
-tile.reactioncraft.gate.name=Portcullis
-tile.reactioncraft.fence.name=Portcullis
-
+##3/4 Size
 tile.reactioncraft.ColumnMini.0.name=Darkstone Column
 tile.reactioncraft.ColumnMini.1.name=Granite Column
 tile.reactioncraft.ColumnMini.2.name=Darkstone Brick Column
@@ -118,6 +134,21 @@ tile.reactioncraft.ColumnMini.9.name=Brick Column
 tile.reactioncraft.ColumnMini.10.name=Stone Slab Column
 tile.reactioncraft.ColumnMini.11.name=Bloodstone Brick Column
 tile.reactioncraft.ColumnMini.12.name=Weathered Mini Column
+##Smallest
+tile.reactioncraft.smallestColumn.0.name=Darkstone Column
+tile.reactioncraft.smallestColumn.1.name=Granite Column
+tile.reactioncraft.smallestColumn.2.name=Darkstone Brick Column
+tile.reactioncraft.smallestColumn.3.name=Sand Brick Column
+tile.reactioncraft.smallestColumn.4.name=Cobblestone Column
+tile.reactioncraft.smallestColumn.5.name=Stone Column
+tile.reactioncraft.smallestColumn.6.name=Diamond Column
+tile.reactioncraft.smallestColumn.7.name=Stone Brick Column
+tile.reactioncraft.smallestColumn.8.name=Gold Column
+tile.reactioncraft.smallestColumn.9.name=Brick Column
+tile.reactioncraft.smallestColumn.10.name=Stone Slab Column
+tile.reactioncraft.smallestColumn.11.name=Bloodstone Column
+tile.reactioncraft.smallestColumn.12.name=Weathered Column
+
 
 #Items
 item.reactioncraft.caught.name=Caught
@@ -275,6 +306,43 @@ item.CornSeed.name=Corn Kernel
 item.AncientSeeds.name=Ancient Seeds
 
 item.reactioncraft.wirelessTransmitter.name=Wireless Transmitter
+
+item.reactioncraft.bowlwater.name=Bowl of Water
+item.reactioncraft.paintbrush.name=Paint Brush
+##Paints
+item.reactioncraft.paints.0.name=Paint
+item.reactioncraft.paints.1.name=Paint
+item.reactioncraft.paints.2.name=Paint
+item.reactioncraft.paints.3.name=Paint
+item.reactioncraft.paints.4.name=Paint
+item.reactioncraft.paints.5.name=Paint
+item.reactioncraft.paints.6.name=Paint
+item.reactioncraft.paints.7.name=Paint
+item.reactioncraft.paints.8.name=Paint
+item.reactioncraft.paints.9.name=Paint
+item.reactioncraft.paints.10.name=Paint
+item.reactioncraft.paints.11.name=Paint
+item.reactioncraft.paints.12.name=Paint
+item.reactioncraft.paints.13.name=Paint
+item.reactioncraft.paints.14.name=Paint
+item.reactioncraft.paints.15.name=Paint
+##Coins
+item.reactioncraft.coin.0.name=Paint
+item.reactioncraft.coin.1.name=Paint
+item.reactioncraft.coin.2.name=Paint
+item.reactioncraft.coin.3.name=Paint
+item.reactioncraft.coin.4.name=Paint
+item.reactioncraft.coin.5.name=Bronze Bag
+item.reactioncraft.coin.6.name=Paint
+item.reactioncraft.coin.7.name=Paint
+item.reactioncraft.coin.8.name=Paint
+item.reactioncraft.coin.9.name=Paint
+item.reactioncraft.coin.10.name=Silver Bag
+item.reactioncraft.coin.11.name=Paint
+item.reactioncraft.coin.12.name=Paint
+item.reactioncraft.coin.13.name=Paint
+item.reactioncraft.coin.14.name=Paint
+item.reactioncraft.coin.15.name=Gold Bag
 
 #Entities
 entity.hydrolisc.name=Hydrolisc

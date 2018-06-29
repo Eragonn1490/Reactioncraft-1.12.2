@@ -8,11 +8,10 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 
 public class NetCraftingHandler 
 {
-	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public void onCrafting(ItemCraftedEvent event)
 	{
-		if (event.crafting.getItem().equals(ItemIndex.complete_net))
+		if (event.crafting.getItem() == (ItemIndex.complete_net))
 		{
 			event.crafting.setTagCompound(new NBTTagCompound());
 			ItemStack hilt = null;
@@ -26,18 +25,18 @@ public class NetCraftingHandler
 					if (is.getItem() == ItemIndex.hilt)
 					{
 						hilt = is;
+						event.crafting.getTagCompound().setInteger("hilt", hilt.getTagCompound().getInteger("str1"));
+					}
+					if(is.getItem() == ItemIndex.net)
+					{
+						net = is;
+						event.crafting.getTagCompound().setInteger("net",  net.getTagCompound().getInteger("str2"));
 					}
 					else
 					{
 						net = is;
 					}
 
-			}
-
-			if (hilt != null && net != null)
-			{
-				event.crafting.getTagCompound().setInteger("hilt", hilt.getTagCompound().getInteger("str1"));
-				event.crafting.getTagCompound().setInteger("net",  net.getTagCompound() .getInteger("str2"));
 			}
 		}
 	}

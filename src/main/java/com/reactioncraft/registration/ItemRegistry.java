@@ -24,7 +24,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class ItemRegistry
 {
-    @SuppressWarnings("unused")
     @SubscribeEvent
     public void registerItems(RegistryEvent.Register<Item> registryEvent)
     {
@@ -80,8 +79,8 @@ public class ItemRegistry
         //Net Items
         ItemIndex.hilt         = register(new ItemPieceHilt("piece_hilt"),forgeRegistry);
         ItemIndex.net          = register(new ItemPieceNet("piece_net"),forgeRegistry);
-        ItemIndex.complete_net = register(new ItemCompleteNet("complete_net", MaterialIndex.EnumToolMaterialNet),forgeRegistry);
-        ItemIndex.creative_net = register(new ItemCompleteNet("creative_net", MaterialIndex.EnumToolMaterialNet),forgeRegistry);
+        ItemIndex.complete_net = (ItemCompleteNet) register(new ItemCompleteNet("complete_net", MaterialIndex.EnumToolMaterialNet),forgeRegistry);
+        ItemIndex.creative_net = (ItemCompleteNet) register(new ItemCompleteNet("creative_net", MaterialIndex.EnumToolMaterialNet),forgeRegistry);
         ItemIndex.caught       = register(new ItemCaughtEntity("caught"),forgeRegistry)       .setCreativeTab(null);
 
         //Desert Items
@@ -225,7 +224,7 @@ public class ItemRegistry
         ItemIndex.wirelessTransmitter = register(new ItemWirelessTransmitter("wirelessTransmitter").setCreativeTab(Reactioncraft.ReactioncraftItems), forgeRegistry);
         
         //Paint Items
-        ItemIndex.bowlwater = (ItemBase) register(new ItemBase("bowlwater").setMaxStackSize(1).setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
+        ItemIndex.bowlwater = (ItemBase) register(new ItemBase("bowlwater").setContainerItem(Items.BOWL).setMaxStackSize(1).setCreativeTab(Reactioncraft.ReactioncraftItems),forgeRegistry);
         ItemIndex.paints = (ItemPaints) register(new ItemPaints()    .setCreativeTab(Reactioncraft.ReactioncraftItems).setRegistryName("paints"),forgeRegistry);
 
         for (int i = 0; i < 16; i++) {

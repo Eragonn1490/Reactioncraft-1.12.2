@@ -1,0 +1,203 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "particle": "reactioncraft:blocks/css"
+    },
+    "elements": [
+        {
+            "name": "blazeSticks6",
+            "from": [ 6.509539, 14.801089, 14.839483 ], 
+            "to": [ 8.509539, 22.80109, 16.839483 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks5",
+            "from": [ 12.949747, 14.41608, 12.949747 ], 
+            "to": [ 14.949747, 22.41608, 14.949747 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks8",
+            "from": [ 2.4012246, 14.936468, 3.798368 ], 
+            "to": [ 4.4012246, 22.936468, 5.798368 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks7",
+            "from": [ 1.4395628, 14.98999, 10.441446 ], 
+            "to": [ 3.4395628, 22.98999, 12.441446 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks9",
+            "from": [ 12.455076, 4.039837, 10.269867 ], 
+            "to": [ 14.455076, 12.039837, 12.269867 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeHead",
+            "from": [ 4.0, 20.0, 4.0 ], 
+            "to": [ 12.0, 28.0, 12.0 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks10",
+            "from": [ 8.497241, 4.106991, 12.975214 ], 
+            "to": [ 10.497241, 12.106991, 14.975214 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks11",
+            "from": [ 4.0822754, 4.65329, 11.106675 ], 
+            "to": [ 6.0822754, 12.65329, 13.106675 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks12",
+            "from": [ 3.2691636, 5.3856926, 6.38161 ], 
+            "to": [ 5.2691636, 13.385693, 8.38161 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks2",
+            "from": [ 12.862995, 17.12241, 15.573063 ], 
+            "to": [ 14.862995, 25.12241, 17.573063 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks1",
+            "from": [ 17.0, 17.0, 8.0 ], 
+            "to": [ 19.0, 25.0, 10.0 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks4",
+            "from": [ -0.9099159, 17.929209, 9.270195 ], 
+            "to": [ 1.0900841, 25.929209, 11.270195 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "blazeSticks3",
+            "from": [ 4.255272, 17.459667, 16.183949 ], 
+            "to": [ 6.255272, 25.459667, 18.183949 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "shape15",
+            "from": [ 8.0, 0.0, 8.0 ], 
+            "to": [ 9.0, 20.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        },
+        {
+            "name": "shape16",
+            "from": [ 6.0, 0.0, 6.0 ], 
+            "to": [ 11.0, 1.0, 11.0 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "east": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "south": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "west": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "up": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#all", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        }
+    ]
+}

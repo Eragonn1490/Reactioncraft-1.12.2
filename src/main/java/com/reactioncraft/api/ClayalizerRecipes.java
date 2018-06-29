@@ -1,6 +1,8 @@
 package com.reactioncraft.api;
 
 import com.google.common.collect.Maps;
+import com.reactioncraft.registration.instances.BlockIndex;
+import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.Tools;
 
 import net.minecraft.block.Block;
@@ -27,8 +29,7 @@ public class ClayalizerRecipes
 
     private ClayalizerRecipes()
     {
-        //test recipe
-        addSmeltingRecipeForBlock(Blocks.STONE,new ItemStack(Blocks.MELON_BLOCK),0.3f);
+        addSmeltingRecipeForBlock(BlockIndex.dark_sand,new ItemStack(ItemIndex.sandStonePaste, 2, 0),0.3f);
     }
 
     /**
@@ -72,6 +73,4 @@ public class ClayalizerRecipes
 
         return ItemStack.EMPTY;
     }
-
-
 }

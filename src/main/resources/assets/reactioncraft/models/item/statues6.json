@@ -1,0 +1,6 @@
+{
+  "parent":"reactioncraft:block/bagmodel",
+  "textures":{
+    "all": "reactioncraft:blocks/css"
+  }
+}

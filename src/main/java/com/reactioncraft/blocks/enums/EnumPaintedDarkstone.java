@@ -15,11 +15,7 @@ public enum EnumPaintedDarkstone implements IStringSerializable
     pattern8   (8, 8,   "8",      "8"),
 	pattern9   (9, 9, 	"9",      "9"),
 	pattern10  (10, 10, "10",     "10");
-//    four3		(11, 11, "four3",      "four3"),
-//    five1       (12, 12, "five1",      "five1"),
-//	five2		(13, 13, "five2",      "five2"),
-//	five3		(14, 14, "five3",      "five3"),
-//	six1		(15, 15, "six1",       "six1");
+
 
     private static final EnumPaintedDarkstone[] META_LOOKUP = new EnumPaintedDarkstone[values().length];
     private static final EnumPaintedDarkstone[] DYE_DMG_LOOKUP = new EnumPaintedDarkstone[values().length];

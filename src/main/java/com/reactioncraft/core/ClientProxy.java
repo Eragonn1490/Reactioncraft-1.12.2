@@ -103,7 +103,7 @@ public class ClientProxy extends ServerProxy
 //        RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class, new RenderStalker(new ModelCreeper(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZombieCrawling.class,manager -> new RenderZombieCrawling(manager,new ModelZombieCrawling(),0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonCrawling.class,manager -> new RenderSkeletonCrawling(manager,new ModelZombieCrawling(),0.5f));
-		
-		//RenderingRegistry.registerEntityRenderingHandler(EntityMap.class, new RenderMap(null, ItemIndex.mapinabottle, null));
+
+		//RenderingRegistry.registerEntityRenderingHandler(EntityMap.class,manager -> new RenderMap(manager, ItemIndex.mapinabottle, null));
     }
 }

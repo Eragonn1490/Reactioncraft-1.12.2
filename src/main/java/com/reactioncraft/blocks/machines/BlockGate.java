@@ -124,7 +124,6 @@ public final class BlockGate extends BlockBase
 
 
 	@Override
-
 	public boolean hasTileEntity(IBlockState state) 
 	{
 		return state.getValue(POWERED);

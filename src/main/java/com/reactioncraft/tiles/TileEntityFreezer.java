@@ -180,7 +180,6 @@ public class TileEntityFreezer extends TileEntityBase implements ITickable
 
     public static boolean isItemFuel(ItemStack stack)
     {
-
         return getItemBurnTime(stack) > 0;
     }
 
@@ -196,7 +195,6 @@ public class TileEntityFreezer extends TileEntityBase implements ITickable
         return super.hasCapability(capability, facing);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, net.minecraft.util.EnumFacing facing)
     {

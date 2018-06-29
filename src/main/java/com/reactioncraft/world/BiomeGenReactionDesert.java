@@ -18,7 +18,6 @@ import java.util.Random;
 
 public class BiomeGenReactionDesert extends BiomeDesert
 {		
-	//private static final IBlockState Ore = IntegratedBlocks.DesertBlocks.getDefaultState().withProperty(BlockDesertMulti.TYPE, EnumDesertBlocks.three2);
 	public static WorldGenTrees cherryTrees=new WorldGenTrees(true,5,BlockIndex.cherrywood.getDefaultState().withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y),BlockIndex.cherryTreeLeaves.getDefaultState(),false);
     private CactusGenerator cactusGenerator =new CactusGenerator();
 
@@ -59,7 +58,6 @@ public class BiomeGenReactionDesert extends BiomeDesert
             if (rand.nextInt(64)==1 && !cherryTrees.generate(worldIn, rand, offset.up())) {
 
 //                    System.out.println(offset);
-
             }
             else{
                 if(!cactusGenerator.generate(worldIn, rand, offset.up()))
@@ -68,6 +66,5 @@ public class BiomeGenReactionDesert extends BiomeDesert
                     super.decorate(worldIn, rand, pos);
                 };
             }
-
     }
 }

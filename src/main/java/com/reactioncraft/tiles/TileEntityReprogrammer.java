@@ -5,7 +5,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 
-public class TileEntityReprogrammer extends TileEntity implements ITickable
+public class TileEntityReprogrammer extends TileEntityBase implements ITickable
 {
 	public static int channel;
 	

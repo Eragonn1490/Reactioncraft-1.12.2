@@ -1,9 +1,13 @@
 package com.reactioncraft.mobs.common.ai;
 
+import java.util.UUID;
+
 import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import com.mojang.authlib.GameProfile;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.state.IBlockState;
@@ -17,9 +21,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.util.FakePlayer;
 
-@SuppressWarnings("unused")
 public class EntityAIEatGrassMate extends EntityAIEatGrass
 {
     private static final Predicate<IBlockState> IS_TALL_GRASS = BlockStateMatcher.forBlock(Blocks.TALLGRASS).where(BlockTallGrass.TYPE, Predicates.equalTo(BlockTallGrass.EnumType.GRASS));
@@ -29,9 +34,15 @@ public class EntityAIEatGrassMate extends EntityAIEatGrass
     private final World entityWorld;
     /** Number of ticks since the entity started to eat grass */
     int eatingGrassTimer;
+	
+    /** Fake player to simulate a player triggering isInLove **/
+    WorldServer worldServer = DimensionManager.getWorld(0); // default world
+    GameProfile gameProfile = new GameProfile(UUID.randomUUID(), "FakePlayer");
+    FakePlayer fakePlayer = new FakePlayer(worldServer, gameProfile);
+
     
     @Nullable
-	EntityPlayer player = null;
+	EntityPlayer player = fakePlayer;
     
 
     
@@ -61,10 +72,11 @@ public class EntityAIEatGrassMate extends EntityAIEatGrass
 				if(!this.grassEaterEntity.isChild())
 				{
 					((EntityAnimal)grassEaterEntity).setInLove(player);
+					((EntityAnimal)grassEaterEntity).setInLove(player);
 				}
 				if (this.grassEaterEntity.isChild())
 		        {
-		            ((EntityAgeable) this.grassEaterEntity).addGrowth(60);
+		            ((EntityAgeable) this.grassEaterEntity).addGrowth(30);
 		        }
                 return true;
             }

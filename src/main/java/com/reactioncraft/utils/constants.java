@@ -4,12 +4,25 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.UUID;
 
+import com.mojang.authlib.GameProfile;
+import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.api.BoneDropMap;
+import com.reactioncraft.registration.instances.ItemIndex;
+
+import ic2.api.info.Info;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.fml.common.Loader;
 
 public class constants 
 {
@@ -18,42 +31,29 @@ public class constants
 	public static final String MODID     = "reactioncraft";
 	public static final String VERSION   = "0.6.5.0";
 	public static final String MCVersion = "1.12.2";
+	
+	//config constants
+	public static double distance;
+	public static int MaxEnergy;
+	public static boolean deleteWaterBlock;
 
-	//Booleans for checking mods
-	//Loaded Mods
-	public static boolean millenaire() throws ClassNotFoundException
-	{
-		try{
-			Class.forName("org.millenaire.common.forge.Mill");
-		}
-		catch (NoClassDefFoundError ex)
-		{
-			return false ;
-		}
-		return true ;
-	}
+	//Check if mods are loaded
+	public static boolean IC2, Forestry, millenaire, Buildcraft, loadedRf;
 
-	//Loaded Mods
-	public static boolean forestry() throws ClassNotFoundException
-	{
-		try{
-			Class.forName("forestry.Forestry");
-		}
-		catch (NoClassDefFoundError ex)
-		{
-			return false ;
-		}
-		return true ;
-	}
+	/** Fake Player **/
+	WorldServer worldServer = DimensionManager.getWorld(0); // default world
+	GameProfile gameProfile = new GameProfile(UUID.randomUUID(), "FakePlayer");
+	FakePlayer fakePlayer = new FakePlayer(worldServer, gameProfile);
+	MinecraftServer minecraftServer = fakePlayer.mcServer;
 
-
-	@SuppressWarnings("resource")
 	public static void config()
 	{
 		//Add Reactioncraft Config Stuff here
+		MaxEnergy = Reactioncraft.config.getInt("Energy", "Maximum Energy", 100000, 0, Integer.MAX_VALUE, "This is the max value of energy stored in the energy block");
+		distance  = Reactioncraft.config.getInt("Distance", "Maximum Distance", 10, 5, 32, "The range for activating the transceiver block");
+		deleteWaterBlock = Reactioncraft.config.getBoolean("Water", "Delete Water?", false, "Should right clicking water with a bowl drain the block?");
 	}
 
-	@SuppressWarnings("resource")
 	public static void configmillenaire(File file)
 	{	
 		new File( file + "/mods/millenaire-custom/mods/Reactioncraft-Mill/goals/genericcooking/").mkdirs();
@@ -143,5 +143,19 @@ public class constants
 			bw.write(content);
 			bw.close();
 		} catch (IOException e) { e.printStackTrace(); }
+	}
+
+	public static void init() 
+	{
+		if(Info.isIc2Available())
+			IC2=true;
+		if(Loader.isModLoaded("forestry"))
+			Forestry=true;
+		if(Loader.isModLoaded("millenaire"))
+			millenaire=true;
+		if(Loader.isModLoaded("buildcraftcore"))
+			Buildcraft = true;
+		if(Loader.isModLoaded("redstoneflux"));
+			loadedRf = true;
 	}
 }

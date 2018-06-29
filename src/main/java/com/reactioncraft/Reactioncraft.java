@@ -56,7 +56,8 @@ import java.util.List;
 
 
 @Mod(modid = constants.MODID, name = constants.BaseID, version = constants.VERSION, acceptedMinecraftVersions = "[1.12]")
-@SuppressWarnings("unused")
+
+
 public class Reactioncraft
 {
 	//Proxies
@@ -69,8 +70,8 @@ public class Reactioncraft
 
 	//Creative Tabs
 	public static CreativeTabs Reactioncraft      = new RCBlockTab(constants.MODID);
-	public static CreativeTabs ReactioncraftItems = new RCItemTab (constants.MODID+" items");
-	public static CreativeTabs Reactioncraftfood  = new RCFoodTab (constants.MODID+" food");
+	public static CreativeTabs ReactioncraftItems = new RCItemTab (constants.MODID + " items");
+	public static CreativeTabs Reactioncraftfood  = new RCFoodTab (constants.MODID + " food");
 	public static CreativeTabs ReactioncraftTest  = new RCTestTab (constants.MODID + " testing area");
 
 	//Exclusion List of Entities
@@ -79,16 +80,12 @@ public class Reactioncraft
 	//For Wild_Card Values (Replace as it pops up)
 	public static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
 
-	//Check if mods are loaded
-	public static boolean IC2, Forestry, millenaire, Buildcraft, loadedRf;
-
 	//Setup Config Files
 	public static ReactioncraftConfiguration config, millenaireC;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-
 		Logger.setLogger(event.getModLog());
 		Logger.info("Pre-initialization started");
 
@@ -115,21 +112,11 @@ public class Reactioncraft
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 		MinecraftForge.EVENT_BUS.register(new LootTableHandler());
 		TileEntityRegistry.registerTileEntities();
-		
+
 		EntityRCRegistry.registerVillagers();
 		EntityRCRegistry.registerMobs();
 		EntityRCRegistry.registerThrowableEntites();
-
-		if(Info.isIc2Available())
-			IC2=true;
-		if(Loader.isModLoaded("forestry"))
-			Forestry=true;
-		if(Loader.isModLoaded("millenaire"))
-			Forestry=true;
-		if(Loader.isModLoaded("buildcraftcore"))
-			Buildcraft = true;
-		if(Loader.isModLoaded("redstoneflux"));
-		loadedRf = true;
+		constants.init();
 	}	
 
 	private void clientorserver(FMLPreInitializationEvent event) 
@@ -159,38 +146,30 @@ public class Reactioncraft
 	@Mod.EventHandler
 	public void modsLoaded(FMLPostInitializationEvent evt)
 	{
-		//millenaire integration
-		try
-		{
-			if(constants.millenaire())
-			{	
-				if(evt.getSide() == Side.CLIENT)
-				{
-					File file = (Minecraft.getMinecraft().mcDataDir);
-					constants.configmillenaire(file);
-				}
-				if(evt.getSide() == Side.SERVER)
-				{
-					File file = FMLServerHandler.instance().getServer().getDataDirectory().getAbsoluteFile();
-					constants.configmillenaire(file);
-				}
+		if(constants.millenaire == true)
+		{	
+			if(evt.getSide() == Side.CLIENT)
+			{
+				File file = (Minecraft.getMinecraft().mcDataDir);
+				constants.configmillenaire(file);
+			}
+			if(evt.getSide() == Side.SERVER)
+			{
+				File file = FMLServerHandler.instance().getServer().getDataDirectory().getAbsoluteFile();
+				constants.configmillenaire(file);
 			}
 			System.out.println("Millenaire integration loaded !");
 		}
-		catch (ClassNotFoundException e)
+		else
 		{
 			System.out.println("Reactioncraft did not find millenaire, added recipes disabled!");
 		}
 
-		//Forestry integration
-		try
+		if(constants.Forestry == true)
 		{
-			if(constants.forestry())
-			{
-				System.out.println("Forestry integration loaded !");
-			}
+			System.out.println("Forestry integration loaded !");
 		}
-		catch (ClassNotFoundException e)
+		else
 		{
 			System.out.println("Reactioncraft did not find Forestry, added recipes disabled!");
 		}

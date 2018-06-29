@@ -16,10 +16,6 @@ public enum EnumBookshelf implements IStringSerializable
 	SCROLLCASE_FULL        (9, 2, 	 "9",       "9"),
 	SCROLLCASE_WEBBED_EMPTY(10, 1,   "10",      "10"),
 	SCROLLCASE_WEBBED_FULL (11, 0,   "11",      "11"),
-	//five1       (12, 12, "five1",      "five1");
-	//GREEN		(13, 13, "green",      "green"),
-	//RED		(14, 14, "red",        "red"),
-	//BLACK		(15, 15, "black",      "black");
 	;
 
 	private static final EnumBookshelf[] META_LOOKUP = new EnumBookshelf[values().length];

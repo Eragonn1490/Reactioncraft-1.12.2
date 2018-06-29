@@ -87,16 +87,7 @@
                     "end": "reactioncraft:blocks/css",
                     "side": "reactioncraft:blocks/weathered"
                 }
-            },
-          "five2" : {
-
-          },
-          "five3" : {
-
-          },
-          "six1" : {
-
-          }
+            }
         }
     }
 }

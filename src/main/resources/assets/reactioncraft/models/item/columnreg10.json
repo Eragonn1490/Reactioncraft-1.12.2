@@ -1,6 +1,7 @@
 {
-  "parent":"reactioncraft:block/column",
-  "textures":{
-    "all": "blocks/stone_slab_side"
-  }
+	"parent": "reactioncraft:block/column_sided",
+	"textures": {
+		"end": "blocks/stone_slab_top",
+		"all": "blocks/stone_slab_side"
+	}
 }

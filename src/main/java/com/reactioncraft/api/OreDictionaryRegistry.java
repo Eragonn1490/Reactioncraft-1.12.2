@@ -8,6 +8,8 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryRegistry
 {
+	//This Class is Included so that anyone interested in using the oredictionary name can find out how they are registered in Reactioncraft Easily.
+	//Do not Edit this class, might cause un-expected results
     public static void registerOres()
     {
         OreDictionary.registerOre("darkclay", new ItemStack(ItemIndex.sandStonePaste));
@@ -28,16 +30,6 @@ public class OreDictionaryRegistry
         OreDictionary.registerOre("plankWood", new ItemStack(BlockIndex.cherryPlanks));
         OreDictionary.registerOre("cherryWood", new ItemStack(BlockIndex.cherrywood));
         OreDictionary.registerOre("scroll", new ItemStack(ItemIndex.scroll));
-        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.flintChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.copperChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.goldChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.diamondChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel1", new ItemStack(ItemIndex.goldChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel1", new ItemStack(ItemIndex.diamondChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel1", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel2", new ItemStack(ItemIndex.diamondChisel, 1, Reactioncraft.WILDCARD_VALUE));
-        OreDictionary.registerOre("chisel2", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
         OreDictionary.registerOre("rawCorn", new ItemStack(ItemIndex.rawcorn));
         OreDictionary.registerOre("cheese", new ItemStack(ItemIndex.cheese));
         OreDictionary.registerOre("goldRod", new ItemStack(ItemIndex.goldrod));
@@ -54,12 +46,25 @@ public class OreDictionaryRegistry
         OreDictionary.registerOre("bones", new ItemStack(ItemIndex.bones));
         OreDictionary.registerOre("wrappedCorn", new ItemStack(ItemIndex.wrappedcorn));
         
-        //fixed Below
+        //Nether Ores
         OreDictionary.registerOre("oreBloodstone", new ItemStack(BlockIndex.netherOres, 1, 4));
         OreDictionary.registerOre("oreNetherBlackDiamond", new ItemStack(BlockIndex.netherOres, 1, 0));
         OreDictionary.registerOre("oreNetherDragonstone", new ItemStack(BlockIndex.netherOres, 1, 2));
         OreDictionary.registerOre("oreNetherDiamondOre", new ItemStack(BlockIndex.netherOres, 1, 1));
         OreDictionary.registerOre("oreNetherGoldOre", new ItemStack(BlockIndex.netherOres, 1, 3));
+        
+        //Chisels
+        // "chisel" are the base teir
+        // "chiselT2" are the ones capable of cutting anything harder then diamond
+        // "chiselT3" are the only ones capable of cutting bloodstone
+        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.flintChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.copperChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.goldChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.diamondChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chisel", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chiselT2", new ItemStack(ItemIndex.diamondChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chiselT2", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
+        OreDictionary.registerOre("chiselT3", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
         
         //For IC2 Macerator
         //OreDictionary.registerOre("oreGold", new ItemStack(BlockIndex.netherOres, 1, 3));

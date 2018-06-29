@@ -1,4 +1,6 @@
-package com.reactioncraft.core;
+package com.reactioncraft.entities.render;
+
+import com.reactioncraft.mobs.common.entities.EntityHydrolisc;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
@@ -66,8 +68,9 @@ public class RenderMap<T extends Entity> extends Render<T>
     /**
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
      */
-    protected ResourceLocation getEntityTexture(Entity entity)
+    @Override
+    protected ResourceLocation getEntityTexture(Entity par1Entity)
     {
-        return TextureMap.LOCATION_BLOCKS_TEXTURE;
+    	return (new ResourceLocation("reactioncraft:textures/items/mapinbottle.png"));
     }
 }

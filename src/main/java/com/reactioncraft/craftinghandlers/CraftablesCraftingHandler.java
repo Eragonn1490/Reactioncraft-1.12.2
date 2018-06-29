@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 
 public class CraftablesCraftingHandler
 {
-    @SuppressWarnings("unused")
 	@SubscribeEvent
     public void onCrafting(ItemCraftedEvent event)
     {

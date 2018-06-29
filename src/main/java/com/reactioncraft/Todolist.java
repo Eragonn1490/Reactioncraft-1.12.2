@@ -4,55 +4,44 @@ public class Todolist
 {
 	/** This Class is just here as a list of things to fix **/
 	
-	/* New Things / Things to get to
+	/* Wishlist
 	 * 
 	 * Advancements
 	 * Putting Out Mining Helmet if you get wet or right click water blocks.
-	 * Fix Net Getting uses
 	 * Drawbridge? Portcullis but vertical 
-	 * Wireless Redstone Item (either on command Typed or right click power a related block with redstone)
 	 * Add can Silk touch to desert coal core and gems
-	 * Edit Pixels on Ingot Mould
 	 * Add Names to Coins
 	 * Recipe for Kingly Armour
 	 * Add Names to Villager Types
 	 * Finish Vanilla Villager Trades
-	 * Lever , Chest, 
+	 * Chest, 
 	 * Treasure Piles? (Maybe)
 	 * Make the Scroll Act like a book.
 	 * Redesign corn item textures!
 	 * Make sure Banker Villager can Spawn in Bank House
 	 * EU - TO RF- To - MJ converter block.
-	 * Redstone Rail - cart over rail stops redstone current until it passes  (to allow "tripwire" rail)
-	 * Make Entity in love from EntityAiEatGrassMate last longer
-	 * Hireoglyph Recipes Changed to using machine
+	 * Hireoglyph Recipes Changed to using machine?
 	 * Villager drop with meat cleaver
 	 * Longer Piston?
-	 * Breaker Rail (allows redstone current to pass through, stops temporarily when a car is over the block or a connected breaker block)
 	 * Fix Boreheads for Railcraft (When it updates to 1.12.2)
 	 * Make Frame Useful for forestry again?
 	 * Add bee species? that uses honeycomb and pollen comb?
-	 * Re-Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1, Broken v6.5.0)
-	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)
+	 * Desert Portcullis (Possibly Change Gate to use the Rail Model)
 	 *	
 	 *
 	 */
 	
-	/*   Important Things to fix for 7.0.0
-	 * 
-	 * Fixed Rotation of Meat cleaver 
-	 * Fixed Rotation of paint brush 
-	 * Fix Smallest Column Model & Block Bounds 
-	 * Fix Claylizer TE
+	/* Important Things to fix for 7.0.0
 	 * Way for mods to add bone drops
 	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
-	 * Creative net breaks after one use (shouldn't)
 	 * fix raw human drop with meat cleaver
+
+	 * fix statues block bounds
 	 * Add Statues and fix block bounds
 	 * Add Block's & Models to Bag of Coins (for future treasure update)
 	 * Add Jellyfish
-	 * remove unused columns from creative tabs for (v7.0.0)
-	 * 
+	 * Claylizer now correctly returns buckets, Bowls, Glass Bottles (v7.0.0)
+	 * Brick Oven, Freezer don't return lava buckets
 	 */
 	
 	
@@ -84,6 +73,19 @@ public class Todolist
 	 * Entity Animals now Self Populate.. (v6.4.8)  (seems to be hit or miss depending on there distance from each other, might tweak in a later version)
 	 * All Vanilla Iron Items Except Horse Armor drop iron shavings when crafted IF you have a hammer in your inventory (v6.4.9)
 	 * Paint Brush, Paint Colors, Bowl of Water (v7.0.0)
+	 * Lever Bookcase & Scrollshelf (With Possibility to add more) (v7.0.0)
+	 * Tripwire Rail - if a cart is over this rail stops outputting redstone current until it passes  (to allow "tripwire" rail) (v7.0.0)
+	 * Bag of Coins now has a custom block model (v7.0.0)
+	 * Wireless Redstone Transmitter (v7.0.0)
+	 * Wireless Redstone Reciever Block (v7.0.0)
+	 * Wireless Redstone Zeroizer Item (v7.0.0)
+	 * Wireless Redstone Reconfigurer Block (v7.0.0)
+	 * Added Statues (6/26/18) (v7.0.0)
+	 * Fixed Cup Statue Bounds (6/27/18) (v7.0.0)
+	 * Fixed Bag of Coins Bounds (6/27/18) (v7.0.0)
+	 * When you right click water with an empty Bowl, you get a bowl of water (6/28/18) (v7.0.0)
+	 * Added Config Option for consuming water when you right click with an empty bowl (6/28/18) (v7.0.0)
+	 * Disallowed capturing millenaire villagers (city forcibly respawns them anyway)
 	 * 
 	 */
 	
@@ -127,7 +129,19 @@ public class Todolist
 	 * Recipe for PowerAdapters Mod Block With Bloodstone *Until custom converter block is finished* (v7.0.0)
 	 * Fixed Purple Particles on Column blocks (v7.0.0)
 	 * Villager Professions now have names (v7.0.0)
-	 * 
+	 * Fix Smallest Column Model & Block Bounds (v7.0.0)
+	 * remove unused columns from creative tabs for (v7.0.0)
+	 * EntityAiEatGrassMate now makes animals eat grass and then go into love mode (v7.0.0) Removed for now, can make things laggy
+	 * remove unused columns from creative tabs for (v7.0.0)
+	 * Fixed all Errored Block Model Except things that are being worked on (v7.0.0)
+	 * Edit Pixels on Ingot Mould (v7.0.0)
+	 * Fixed Creative Net having unlimited Uses (v7.0.0)
+	 * Fixed Survival Net having correct amount of uses (old json file set them to 32765 uses on accident) (v7.0.0)
+	 * Fixed Rotation of Meat cleaver (v7.0.0)
+	 * Fixed Rotation of paint brush (v7.0.0)
+	 * Re-Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1, Broken v6.5.0) (Fixed For-real this time v7.0.0)
+	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)   (Fixed For-real this time v7.0.0)
+	 * Fix Claylizer TE (6/28/18) (v7.0.0)
 	 */
 	 
 	/* Changed
@@ -144,5 +158,7 @@ public class Todolist
 	 * Gold & Gem Hireoglyphics now return material used to make them if they are not regular
 	 * set forge tool classes for blocks (v6.5.0)
 	 * Double Tall Grass now cooks in furnace to straw (v7.0.0)
+	 * Stone Slab Column now correctly mirrors stone double slabs (v7.0.0)
+	 * Actually Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v7.0.0)
 	 */
 }

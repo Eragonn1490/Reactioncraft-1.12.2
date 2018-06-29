@@ -41,7 +41,6 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 
 	private int averageGroundLevel = -1;
 
-	@SuppressWarnings("unused")
 	public VillageReactioncraftBank() {  }
 
 	public VillageReactioncraftBank(StructureVillagePieces.Start startPiece, int componentType, Random random, StructureBoundingBox boundingBox, EnumFacing facing) {

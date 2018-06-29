@@ -17,7 +17,7 @@
         },
         "Y": {
             "type": "forge:ore_dict",
-            "ore": "chisel"
+            "ore": "chiselT3"
         }
     }
 }

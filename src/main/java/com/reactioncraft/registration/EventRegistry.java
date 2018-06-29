@@ -7,7 +7,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class EventRegistry 
 {
-	//All Events Registered Here
+	//Events are Registered Here
 	public static void eventInit() 
 	{
 		MinecraftForge.EVENT_BUS.register(new ButcherEventClass());
@@ -17,7 +17,6 @@ public class EventRegistry
 		MinecraftForge.EVENT_BUS.register(new MachinesCraftingHandler());
 		MinecraftForge.EVENT_BUS.register(new CraftablesCraftingHandler());
 		MinecraftForge.EVENT_BUS.register(new HammerCraftingHandler());
-		MinecraftForge.EVENT_BUS.register(new TransmitterCraftingHandler());
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 	}
 }

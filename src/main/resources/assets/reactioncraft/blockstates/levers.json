@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "powered=false,type=0":  { "model": "reactioncraft:lever_book" },
+        "powered=true,type=0":   { "model": "reactioncraft:lever_book" },
+        
+        "powered=false,type=1":  { "model": "reactioncraft:lever_scroll" },
+        "powered=true,type=1":   { "model": "reactioncraft:lever_scroll" }
+    }
+}

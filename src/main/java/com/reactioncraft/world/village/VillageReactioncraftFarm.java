@@ -41,7 +41,7 @@ public class VillageReactioncraftFarm extends StructureVillagePieces.House1
 
 	private int averageGroundLevel = -1;
 
-	@SuppressWarnings("unused")
+	
 	public VillageReactioncraftFarm() {  }
 
 	public VillageReactioncraftFarm(StructureVillagePieces.Start startPiece, int componentType, Random random, StructureBoundingBox boundingBox, EnumFacing facing) {

@@ -4,13 +4,13 @@ import java.awt.Color;
 import java.util.List;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.core.RenderMap;
 import com.reactioncraft.entities.*;
 import com.reactioncraft.mobs.common.entities.*;
 import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.constants;
 import com.reactioncraft.world.village.*;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EnumCreatureType;
@@ -62,10 +62,10 @@ public class EntityRCRegistry {
 
 
 
-		//TODO biomes to spawn in
+		//biomes to spawn in
 		ForgeRegistries.BIOMES.forEach(biome -> 
 		{
-			if((biome instanceof BiomeOcean) || (biome instanceof BiomeHell) || (biome instanceof BiomeEnd))
+			if(!(biome instanceof BiomeOcean) || !(biome instanceof BiomeHell) || !(biome instanceof BiomeEnd))
 			{
 				List<Biome.SpawnListEntry> listEntries= biome.getSpawnableList(EnumCreatureType.MONSTER);
 				//100 is the max weight
@@ -77,14 +77,15 @@ public class EntityRCRegistry {
 			{
 				List<Biome.SpawnListEntry> listEntries= biome.getSpawnableList(EnumCreatureType.MONSTER);
 				//100 is the max weight
-				listEntries.add(new Biome.SpawnListEntry(EntitySkeletonCrawling.class,25,1,2));
-				listEntries.add(new Biome.SpawnListEntry(EntityZombieCrawling.class,  25,1,2));
+				//listEntries.add(new Biome.SpawnListEntry(EntitySkeletonCrawling.class,25,1,2));
+				//listEntries.add(new Biome.SpawnListEntry(EntityZombieCrawling.class,  25,1,2));
 			}
 		});
 	}
 
 	public static void registerThrowableEntites()
 	{
-		
+		int teid=0;
+		//EntityRegistry.registerModEntity(new ResourceLocation(constants.MODID,"Thrown_Map"),EntityMap.class,"Thrown Map", teid++, Reactioncraft.instance,60,2,true,new Color(1,1,1).getRGB(),new Color(1,150,1).getRGB());
 	}
 }

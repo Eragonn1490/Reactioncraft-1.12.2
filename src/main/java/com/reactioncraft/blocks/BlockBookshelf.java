@@ -47,6 +47,7 @@ public class BlockBookshelf extends BlockBase implements MetadataArray
 		items.add(new ItemStack(this,1,EnumBookshelf.EMPTY.getMetadata()));
 		items.add(new ItemStack(this,1,EnumBookshelf.WEBBED_EMPTY.getMetadata()));
 		items.add(new ItemStack(this,1,EnumBookshelf.WEBBED_FULL.getMetadata()));
+		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_FULL.getMetadata()));
 		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_EMPTY.getMetadata()));
 		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_WEBBED_EMPTY.getMetadata()));
 		items.add(new ItemStack(this,1,EnumBookshelf.SCROLLCASE_WEBBED_FULL.getMetadata()));

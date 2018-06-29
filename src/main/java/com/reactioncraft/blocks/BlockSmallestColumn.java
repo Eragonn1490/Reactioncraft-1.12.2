@@ -8,16 +8,44 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockSmallestColumn extends BlockColumn
 {
-	static final AxisAlignedBB BOUNDING_BOX=new AxisAlignedBB(0.1875,0,0.1875,0.8125,1,0.8125);
-	
+	//Left Right
+	static double x1 = 0.7;
+	static double x2 = 0.301;
+
+	//up Down
+	static double y1 = 0;
+	static double y2 = 1.0;
+
+	//Z axis
+	static double z1 = 0.301;
+	static double z2 = 0.7;
+
+	static final AxisAlignedBB BOUNDING_BOX=new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
+
 	public BlockSmallestColumn(Material material)
 	{
 		super(material);
-		//this.setCreativeTab(null);//Needs to Fix Bounding Box
 	}
 
 	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
+	{
 		return BOUNDING_BOX;
+	}
+
+	@Override
+	@Deprecated
+	public boolean isOpaqueCube(IBlockState state) 
+	{
+		return false;
+	}
+
+
+
+	@Override
+	@Deprecated
+	public boolean isFullCube(IBlockState state) 
+	{
+		return false;
 	}
 }

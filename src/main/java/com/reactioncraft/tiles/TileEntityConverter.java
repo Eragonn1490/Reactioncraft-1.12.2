@@ -1,73 +1,79 @@
 package com.reactioncraft.tiles;
 
-import javax.annotation.Nonnull;
+import com.reactioncraft.utils.EnergyBase;
 
-//import buildcraft.api.mj.IMjConnector;
-//import buildcraft.api.mj.IMjReceiver;
-//import buildcraft.api.mj.MjAPI;
-//import buildcraft.api.mj.MjCapabilityHelper;
-//import cofh.redstoneflux.api.IEnergyConnection;
-//import cofh.redstoneflux.api.IEnergyHandler;
-//import cofh.redstoneflux.api.IEnergyProvider;
-//import cofh.redstoneflux.api.IEnergyReceiver;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 
-public class TileEntityConverter extends TileEntity //implements IEnergyConnection, IEnergyHandler, IEnergyReceiver, IEnergyProvider,IMjConnector, IMjReceiver
-{	
-	/**
-	 * 
-	private final MjCapabilityHelper mjCaps = new MjCapabilityHelper(this);
-	private long lastReceived;
-	private long totalReceived;
+public class TileEntityConverter extends TileEntityBase implements ITickable 
+{
+	public final EnergyBase container;
 
-
-	@Override
-	public boolean canConnectEnergy(EnumFacing from) 
+	public TileEntityConverter() 
 	{
-		return true;
+		this.container = new EnergyBase();
 	}
 
 	@Override
-	public boolean canConnect(IMjConnector other) 
+	public void update() 
 	{
-		return true;
+		if(this.container.getEnergyStored() <= this.container.getMaxEnergyStored())
+		{
+			this.container.receiveEnergy(10, false);
+
+			System.out.println(this.container.getEnergyStored());
+		}
 	}
-	
+
 	@Override
-	public int getEnergyStored(EnumFacing from) 
+	public void readFromNBT(NBTTagCompound compound) 
 	{
-		return (int) totalReceived;
+		super.readFromNBT(compound);
+		this.container.deserializeNBT(compound.getCompoundTag("StoredJAE"));
 	}
 
 	@Override
-	public int getMaxEnergyStored(EnumFacing from) 
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) 
 	{
-		return 100000;
+		compound.setTag("StoredJAE", this.container.serializeNBT());
+		return super.writeToNBT(compound);
 	}
 
 	@Override
-	public int extractEnergy(EnumFacing from, int maxExtract, boolean simulate) {
-		return 10;
-	}
-
-	@Override
-	public int receiveEnergy(EnumFacing from, int maxReceive, boolean simulate) {
-		return 10;
-	}
-
-
-
-	@Override
-	public long getPowerRequested() {
-		return 100000 * MjAPI.MJ;
-	}
-
-	
-	@Override
-	public long receivePower(long microJoules, boolean simulate) 
+	public SPacketUpdateTileEntity getUpdatePacket() 
 	{
-		return 10;
+		return super.getUpdatePacket();
 	}
-		 */
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) 
+	{
+		super.onDataPacket(net, pkt);
+		this.readFromNBT(pkt.getNbtCompound());
+	}
+
+	@Override
+	public <T> T getCapability(Capability<T> capability, EnumFacing facing) 
+	{
+		if(facing == EnumFacing.DOWN && capability == CapabilityEnergy.ENERGY)
+			return (T) this.container;
+
+		return super.getCapability(capability, facing);
+	}
+
+	@Override
+	public boolean hasCapability(Capability<?> capability, EnumFacing facing) 
+	{
+		if(facing == EnumFacing.DOWN && capability == CapabilityEnergy.ENERGY)
+			return true;
+
+		return super.hasCapability(capability, facing);
+	}
 }

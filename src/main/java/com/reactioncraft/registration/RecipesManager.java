@@ -17,10 +17,11 @@ public class RecipesManager
     	RecipeRegistry.currencyRecipesInit();
     	RecipeRegistry.miscRecipesInit();
     	RecipeRegistry.loadDesertRecipes();
-		if(Reactioncraft.Forestry)
-				RecipeRegistry.forestry();
-		if(Reactioncraft.IC2)
-			RecipeRegistry.ic2();
     	RecipeRegistry.reactioncraftMachines();
+    	
+		if(constants.Forestry == true)
+				RecipeRegistry.forestry();
+		if(constants.IC2 == true)
+				RecipeRegistry.ic2();
 	}
 }

@@ -3,6 +3,8 @@ package com.reactioncraft.registration.instances;
 import com.reactioncraft.blocks.*;
 import com.reactioncraft.blocks.machines.*;
 import com.reactioncraft.blocks.ores.*;
+import com.reactioncraft.blocks.rails.*;
+
 import net.minecraft.block.*;
 
 
@@ -24,6 +26,7 @@ public class BlockIndex
     public static BlockBase surfaceOres;
     public static BlockBase netherOres;
     public static BlockEndOre endOres;
+    public static BlockStatues statues;
     
     public static BlockCherryTreeLog cherrywood;
     public static BlockNewSponge newSponge;
@@ -34,7 +37,6 @@ public class BlockIndex
     public static BlockBaseDoor woodenBookcase;
     public static BlockBaseDoor ironBookcasedoor;
     public static BlockBaseDoor cherrydoor;
-    public static BlockBase leverbookcase;
     public static BlockColumn column;
     public static BlockMiniColumn miniColumn;
     public static BlockSmallestColumn smallestColumn;
@@ -65,8 +67,7 @@ public class BlockIndex
   	public static BlockReprogrammer reprogrammer;
 
   	//Lever & Chest Bookcases & Scrollshelfs
-  	public static BlockBookcaseLever leverScrollshelf;
-  	public static BlockBookcaseChest leverscrollshelf;
+    public static BlockBookcaseLever leverbookcase;
   	public static BlockBookcaseChest chestbookshelf;
   	public static BlockBookcaseChest scrollshelfchest;
 

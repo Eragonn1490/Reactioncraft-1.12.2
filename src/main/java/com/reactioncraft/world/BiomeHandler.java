@@ -12,8 +12,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class BiomeHandler
 {
-
-	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public void registerBiomes(RegistryEvent.Register<Biome> registryEvent)
 	{
@@ -31,11 +29,9 @@ public class BiomeHandler
 				.setRainDisabled());
 		reactionDesert.setRegistryName("reaction_desert");
 		biomes.register(reactionDesert);
-		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(reactionDesert, 1000));
+		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(reactionDesert, 1000));//1000 is weight to spawn?
 		BiomeManager.addSpawnBiome(reactionDesert);
 		BiomeDictionary.addTypes(reactionDesert, Type.DRY);
 	    BiomeManager.addVillageBiome(reactionDesert, true);
-
-
 	}
 }

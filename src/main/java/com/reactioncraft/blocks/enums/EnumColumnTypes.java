@@ -5,7 +5,7 @@ import net.minecraft.util.IStringSerializable;
 /**
  * Created on 12/29/17.
  */
-public enum EnumColumnTypes implements IStringSerializable{
+public enum EnumColumnTypes implements IStringSerializable {
     BROWN1("0"),
     BROWN2("1"),
     BROWN3("2"),
@@ -19,15 +19,10 @@ public enum EnumColumnTypes implements IStringSerializable{
     GOLD2("10"),
     GOLD3("11"),
     WEATHERED("12"),
-    MULTI_BRICK("13"),
-    CHISELED1("14"),
-//    CHISELED2("15"),
-    BRICK("15"),
-//    MOSSY_BRICK("17")
     ;
 
+	
     //NOTICE Can't exceed metadata limit of 16
-
     String unlocalizedName;
     EnumColumnTypes(String unlocalizedName_)
     {

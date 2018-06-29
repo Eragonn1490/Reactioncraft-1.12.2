@@ -58,10 +58,6 @@ public class RecipeRegistry
 			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"net"+i),null,hiltIs,hiltRec);
 			GameRegistry.addShapedRecipe(new ResourceLocation(constants.MODID,"hilt"+i),null,netIs,netRec);
 		}
-		
-		//GameRegistry.addShapelessRecipe(new ItemStack(ItemIndex.complete_net), new Object[] {ItemIndex.hilt, ItemIndex.net});
-		//Object[] netREC = new Object[] {" X", "I ", 'I', ItemIndex.hilt, 'X', ItemIndex.net};
-		//GameRegistry.addShapedRecipe(new ResourceLocation(Reactioncraft.MODID,"complete_net"),null,null, netREC);
 	}
 	
 	public static void loadRecipesforVanilla()
@@ -136,33 +132,8 @@ public class RecipeRegistry
 		GameRegistry.addSmelting(BlockIndex.greenCactus, new ItemStack(Items.DYE, 1, 2), 0.15F);
 	}
 
-	public static void loadCurrency()
-	{
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.Bag, 1), new Object[] {"TTT", "T T", "TTT", 'T', IntegratedItems.Straw});
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.Sack, 1), new Object[] {"TTT", "TTT", 'T', IntegratedItems.Straw});
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.KinglyChest, 1), new Object[] {"T T", "TTT", "TTT", 'T', Blocks.WOOL});
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.KinglyLegs, 1), new Object[] {"TTT", "T T", "T T", 'T',  Blocks.WOOL});
-//	done	GameRegistry.addRecipe(new ItemStack(IntegratedItems.KinglyBoots, 1), new Object[] {"T T", "T T", 'T',        Blocks.WOOL});
-//
-//		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedItems.Metadatacoin, 2, 0), new Object[] {new ItemStack(IntegratedItems.moltencopper), new ItemStack(IntegratedItems.CoinMould, 1, Reactioncraft.WILDCARD_VALUE)});
-//		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedItems.Metadatacoin, 2, 1), new Object[] {new ItemStack(IntegratedItems.moltenbronze), new ItemStack(IntegratedItems.CoinMould, 1, Reactioncraft.WILDCARD_VALUE)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 2), new Object[] {"###", "###", "###", '#', new ItemStack(IntegratedItems.Metadatacoin, 1, 1)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 3), new Object[] {"DDD", 'D', new ItemStack(IntegratedItems.Metadatacoin, 1, 2)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 4), new Object[] {"###", "###", " D ", '#', new ItemStack(IntegratedItems.Metadatacoin, 1, 3), 'D', IntegratedItems.Sack});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 5), new Object[] {"###", " D ", '#', new ItemStack(IntegratedItems.Metadatacoin, 1, 4), 'D', IntegratedItems.Bag});
-//		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedItems.Metadatacoin, 2, 6), new Object[] {new ItemStack(IntegratedItems.moltensilver), new ItemStack(IntegratedItems.CoinMould, 1, Reactioncraft.WILDCARD_VALUE)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 7), new Object[] {"###", "###", "###", '#', new ItemStack(IntegratedItems.Metadatacoin, 1, 6)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 8), new Object[] {"DDD", 'D', new ItemStack(IntegratedItems.Metadatacoin, 1, 7)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 9), new Object[] {"###", "###", " D ", '#', new ItemStack(IntegratedItems.Metadatacoin, 1, 8), 'D', IntegratedItems.Sack});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 10), new Object[] {"###", " D ", '#', new ItemStack(IntegratedItems.Metadatacoin, 1, 9), 'D', IntegratedItems.Bag});
-//		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedItems.Metadatacoin, 2, 11), new Object[] {new ItemStack(IntegratedItems.moltengold), new ItemStack(IntegratedItems.CoinMould, 1, Reactioncraft.WILDCARD_VALUE)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 12), new Object[] {"###", "###", "###", '#', new ItemStack(IntegratedItems.Metadatacoin, 2, 11)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 13), new Object[] {"DDD", 'D', new ItemStack(IntegratedItems.Metadatacoin, 2, 12)});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 14), new Object[] {"###", "###", " D ", '#', new ItemStack(IntegratedItems.Metadatacoin, 2, 13), 'D', IntegratedItems.Sack});
-//		GameRegistry.addRecipe(new ItemStack(IntegratedItems.Metadatacoin, 1, 15), new Object[] {"###", " D ", '#', new ItemStack(IntegratedItems.Metadatacoin, 2, 14), 'D', IntegratedItems.Bag});
-	}
+	public static void loadCurrency() {/** Removed all 1.6.4 Code **/}
 
-	@SuppressWarnings("unchecked")
 	@Nullable
 	public static void forestry()
 	{
@@ -184,8 +155,6 @@ public class RecipeRegistry
 		//RecipeManagers.fabricatorSmeltingManager.addSmelting(new ItemStack(Blocks.SAND), FluidRegistry.getFluidStack(1000, 3000);
 	}
 
-	@SuppressWarnings("unchecked")
-	@Nullable
 	public static void ic2() 
 	{
 		//Bloodstone block to bloodstone dust
@@ -226,7 +195,6 @@ public class RecipeRegistry
 		FreezerRecipes.instance().addSmelting(Items.WATER_BUCKET,new ItemStack(ItemIndex.iceBucket),1);
 		FreezerRecipes.instance().addSmelting(Items.LAVA_BUCKET, new ItemStack(ItemIndex.obsidianBucket), 1);
 		FreezerRecipes.instance().addSmelting(ItemIndex.superheatedironingot, new ItemStack(Items.IRON_INGOT), 1);
-		ClayalizerRecipes.instance().addSmeltingRecipeForBlock(BlockIndex.dark_sand, new ItemStack(ItemIndex.sandStonePaste, 0, 4),0.3f);
 		BrickOvenRecipes.instance().addSmelting(ItemIndex.sandStonePaste, new ItemStack(BlockIndex.desertBlocks, 1, 7), 0.2F);
 	}
 }

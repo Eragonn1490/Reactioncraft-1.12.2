@@ -66,9 +66,11 @@
 				}
 			},
 			"10": {
+			    "model": "reactioncraft:column_sided",
 				"textures": {
 				    "particle": "blocks/stone_slab_side",
-                    "all": "blocks/stone_slab_side"
+                     "end": "blocks/stone_slab_top",
+                     "all": "blocks/stone_slab_side"
                 }
 			},
 			"11": {
@@ -81,24 +83,6 @@
 				"textures": {
 				    "particle": "reactioncraft:blocks/css",
 					"all": "reactioncraft:blocks/weathered"
-				}
-			},
-			"13": {
-				"textures": {
-				    "particle": "reactioncraft:blocks/css",
-					"all": "reactioncraft:blocks/mutibrick"
-				}
-			},
-			"14": {
-				"textures": {
-				    "particle": "reactioncraft:blocks/css",
-					"all": "reactioncraft:blocks/css"
-				}
-			},
-			"15": {
-				"textures": {
-				    "particle": "reactioncraft:blocks/sandbrick",
-					"all": "reactioncraft:blocks/sandbrick"
 				}
 			}
 		}

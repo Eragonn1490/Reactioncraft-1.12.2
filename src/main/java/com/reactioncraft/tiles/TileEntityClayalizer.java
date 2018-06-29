@@ -1,20 +1,24 @@
 package com.reactioncraft.tiles;
 
 import com.reactioncraft.api.ClayalizerRecipes;
-import com.reactioncraft.blocks.machines.BlockBrickOven;
 import com.reactioncraft.blocks.machines.BlockClayalizer;
-import com.reactioncraft.itemhandlers.ClaylizerItemHandler;
-import com.reactioncraft.itemhandlers.ItemHandler;
-import com.reactioncraft.registration.instances.BlockIndex;
+import com.reactioncraft.itemhandlers.*;
+import com.reactioncraft.registration.instances.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockSponge;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.*;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -24,8 +28,6 @@ import javax.annotation.Nullable;
 
 public class TileEntityClayalizer extends TileEntityBase implements ITickable
 {
-
-
     /** The number of ticks that the furnace will keep burning */
     public int fuelburnTime;
     /** The number of ticks that a fresh copy of the currently-burning item would keep the furnace burning for */
@@ -55,7 +57,8 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
 
     @Nullable
     @Override
-    public ITextComponent getDisplayName() {
+    public ITextComponent getDisplayName() 
+    {
         return hasCustomName() ? new TextComponentString(customName) : new TextComponentString("Claylizer");
     }
 
@@ -90,7 +93,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
         {
             compound.setString("CustomName", this.customName);
         }
-
         return compound;
     }
 
@@ -100,7 +102,6 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
      */
     public void update()
     {
-
         if(!world.isRemote)
         {
             IBlockState machineState=world.getBlockState(pos);
@@ -137,8 +138,9 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
                         if(!fuel.isEmpty()) {
                             currentItemBurnTime = getItemBurnTime(fuel);
                             fuel.shrink(1);
+                            //This is where the magic needs to happen
                         }
-                        if(currentItemBurnTime>0) world.setBlockState(pos,machineState.withProperty(BlockBrickOven.STATE,true));
+                        if(currentItemBurnTime>0) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,true));
                         else {
                             if(machineState.getValue(BlockClayalizer.STATE)) world.setBlockState(pos,machineState.withProperty(BlockClayalizer.STATE,false));
                         }
@@ -155,7 +157,8 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
 
 
     @Override
-    public boolean receiveClientEvent(int id, int type) {
+    public boolean receiveClientEvent(int id, int type) 
+    {
         if(id==0)
         {
             fuelburnTime =type;
@@ -181,7 +184,44 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
      */
     public static int getItemBurnTime(ItemStack stack)
     {
-        return TileEntityFurnace.getItemBurnTime(stack);
+    	ItemStack waterBottle = PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER);
+    	 
+    	if (stack.isEmpty())
+        {
+            return 0;
+        }
+        else
+        {
+            Item item = stack.getItem();
+
+            IBlockState state;
+            
+			ItemStack wetsponge = new ItemStack(Blocks.SPONGE, 1, 0);
+            
+			if (item == ItemIndex.bowlwater)
+            {
+                return 150;
+            }
+            else if (item == Items.WATER_BUCKET)
+            {
+                return 300;
+            }
+            
+            else if (item == waterBottle.getItem())
+            {
+                return 75;
+            }
+            
+            else if (item == wetsponge.getItem())
+            {
+                return 150;
+            }
+            
+            else
+            {
+            	return 0;
+            }
+        }
     }
 
     public static boolean isItemFuel(ItemStack stack)
@@ -194,11 +234,12 @@ public class TileEntityClayalizer extends TileEntityBase implements ITickable
     }
 
     @Override
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) 
+    {
         return facing!=null && capability== CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
     }
 
-    @SuppressWarnings("unchecked")
+
     @Override
     public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, net.minecraft.util.EnumFacing facing)
     {

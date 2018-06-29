@@ -1,0 +1,6 @@
+{
+  "parent":"reactioncraft:block/player_statue",
+  "textures":{
+    "all": "reactioncraft:blocks/css"
+  }
+}
