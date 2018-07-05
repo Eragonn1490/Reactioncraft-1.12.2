@@ -3,16 +3,12 @@ package com.reactioncraft;
 public class Todolist 
 {
 	/** This Class is just here as a list of things to fix **/
-	
 	/* Wishlist
 	 * 
 	 * Advancements
-	 * Putting Out Mining Helmet if you get wet or right click water blocks.
 	 * Drawbridge? Portcullis but vertical 
 	 * Add can Silk touch to desert coal core and gems
-	 * Add Names to Coins
 	 * Recipe for Kingly Armour
-	 * Add Names to Villager Types
 	 * Finish Vanilla Villager Trades
 	 * Chest, 
 	 * Treasure Piles? (Maybe)
@@ -27,21 +23,23 @@ public class Todolist
 	 * Make Frame Useful for forestry again?
 	 * Add bee species? that uses honeycomb and pollen comb?
 	 * Desert Portcullis (Possibly Change Gate to use the Rail Model)
-	 *	
+	 * Fix Jellyfish Movement
+	 * Way for mods to add bone drops
 	 *
 	 */
 	
 	/* Important Things to fix for 7.0.0
-	 * Way for mods to add bone drops
 	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
-	 * fix raw human drop with meat cleaver
-
-	 * fix statues block bounds
-	 * Add Statues and fix block bounds
-	 * Add Block's & Models to Bag of Coins (for future treasure update)
-	 * Add Jellyfish
-	 * Claylizer now correctly returns buckets, Bowls, Glass Bottles (v7.0.0)
-	 * Brick Oven, Freezer don't return lava buckets
+	 * Brick Oven, Freezer don't return buckets
+	 * Dis-allow capturing millenaire villagers (city forcibly respawns them anyway)
+	 * 
+	 */
+	
+	
+	/*
+	 * Coming in MC 1.13
+	 *  Columns and other Blocks that are not full will render as if inside of the fluid surrounding them!
+	 *  Sea-creepers!
 	 */
 	
 	
@@ -85,7 +83,9 @@ public class Todolist
 	 * Fixed Bag of Coins Bounds (6/27/18) (v7.0.0)
 	 * When you right click water with an empty Bowl, you get a bowl of water (6/28/18) (v7.0.0)
 	 * Added Config Option for consuming water when you right click with an empty bowl (6/28/18) (v7.0.0)
-	 * Disallowed capturing millenaire villagers (city forcibly respawns them anyway)
+	 * Re-Added Jellyfish (v7.0.0)
+	 * Added Statues (v7.0.0)
+	 * Added Compressed Gold Statue to Banker House (v7.0.0)
 	 * 
 	 */
 	
@@ -120,7 +120,7 @@ public class Todolist
 	 * fixed crawling skeletons not burning in sunlight (v6.4.6)
 	 * crawling skeletons & zombies dropping mob skulls (v6.4.6)
 	 * fixed diamond colum recipe (typo v6.4.7)
-	 * Fix Broken Bone drops Again, now actually drops and no longer drops 2 (v6.4.8)
+	 * Fixed Broken Bone drops Again, now actually drops and no longer drops 2 (v6.4.8)
 	 * Added Hardness' to Blocks, and tweaked some (v6.4.9)
 	 * Freezer, Brick Oven Fixed (v7.0.0)
 	 * Crawling Skeletons now burn in sunlight (v7.0.0)
@@ -129,7 +129,7 @@ public class Todolist
 	 * Recipe for PowerAdapters Mod Block With Bloodstone *Until custom converter block is finished* (v7.0.0)
 	 * Fixed Purple Particles on Column blocks (v7.0.0)
 	 * Villager Professions now have names (v7.0.0)
-	 * Fix Smallest Column Model & Block Bounds (v7.0.0)
+	 * Fixed Smallest Column Model & Block Bounds (v7.0.0)
 	 * remove unused columns from creative tabs for (v7.0.0)
 	 * EntityAiEatGrassMate now makes animals eat grass and then go into love mode (v7.0.0) Removed for now, can make things laggy
 	 * remove unused columns from creative tabs for (v7.0.0)
@@ -141,7 +141,9 @@ public class Todolist
 	 * Fixed Rotation of paint brush (v7.0.0)
 	 * Re-Added Food Drop to Millenaire Villagers (If you kill with a meat cleaver, you get a human leg.. (v6.3.1, Broken v6.5.0) (Fixed For-real this time v7.0.0)
 	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)   (Fixed For-real this time v7.0.0)
-	 * Fix Claylizer TE (6/28/18) (v7.0.0)
+	 * Fixed Claylizer TE (6/28/18) (v7.0.0)
+	 * Fixed raw human drop with meat cleaver (v7.0.0)
+	 * 
 	 */
 	 
 	/* Changed
@@ -160,5 +162,6 @@ public class Todolist
 	 * Double Tall Grass now cooks in furnace to straw (v7.0.0)
 	 * Stone Slab Column now correctly mirrors stone double slabs (v7.0.0)
 	 * Actually Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v7.0.0)
+	 * 
 	 */
 }

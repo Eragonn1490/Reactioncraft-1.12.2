@@ -5,9 +5,13 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
+
+import javax.annotation.Nullable;
+
 import org.lwjgl.opengl.GL11;
 
 import com.reactioncraft.mobs.common.entities.EntityJellyfish;
+import com.reactioncraft.mobs.common.entities.EntitySkeletonCrawling;
 
 
 public class RenderJellyfish extends RenderLiving<EntityJellyfish>
@@ -33,34 +37,15 @@ public class RenderJellyfish extends RenderLiving<EntityJellyfish>
     
     /**
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
-     */
+     */  
+    @Nullable
     @Override
-    protected ResourceLocation getEntityTexture(EntityJellyfish par1Entity)
-    {
-        return this.func_110902_a((EntityJellyfish)par1Entity);
+    protected ResourceLocation getEntityTexture(EntityJellyfish entity) {
+        switch (entity.getTexture())
+        {
+             case 0: return new ResourceLocation("reactioncraft:textures/entity/Jellyfish.png");
+             case 1: return new ResourceLocation("reactioncraft:textures/entity/Jellyfish2.png");
+            default: return new ResourceLocation("reactioncraft:textures/entity/Jellyfish.png");
+        }
     }
-    
-    protected ResourceLocation func_110902_a(EntityJellyfish par1EntityVillager)
-    {
-//        switch (par1EntityVillager.getProfession())
-//        {
-//            case 0:
-//                return (new ResourceLocation("reactioncraft::textures/entity/Jellyfish.png"));
-//            case 1:
-//                return (new ResourceLocation("reactioncraft::textures/entity/Jellyfish2.png"));
-/*            case 2:
-                return priestVillagerTextures;
-            case 3:
-                return smithVillagerTextures;
-            case 4:
-                return butcherVillagerTextures;*/
-//            default:
-                return (new ResourceLocation("reactioncraft:textures/entity/Jellyfish.png"));
-//        }
-    }
-    
-//    protected ResourceLocation getEntityTexture(Entity par1Entity)
-//    {
-//    	return (new ResourceLocation("reactioncraft:textures/entity/Jellyfish.png"));
-//    }
 }

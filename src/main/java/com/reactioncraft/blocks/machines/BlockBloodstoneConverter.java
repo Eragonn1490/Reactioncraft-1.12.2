@@ -44,7 +44,7 @@ public class BlockBloodstoneConverter extends BlockBase implements ITileEntityPr
 				double amount = ((TileEntityConverter) te).container.getMaxEnergyStored();
 
 				//playerIn.sendStatusMessage(new TextComponentTranslation(constants.MODID + ".energybridge.stored", Math.round(amount)), true);
-				playerIn.sendStatusMessage(new TextComponentTranslation(constants.MODID + ".energybridge.max",    Math.round(amount)), true);
+				//playerIn.sendStatusMessage(new TextComponentTranslation(constants.MODID, ".energybridge.max",    Math.round(amount)), true);
 			}
 		}
 		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, side, hitX, hitY, hitZ);

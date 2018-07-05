@@ -17,7 +17,7 @@ public class TileEntityRegistry
         //GameRegistry.registerTileEntity(TileEntityExtendedPiston.class, constants.MODID+":piston");
         GameRegistry.registerTileEntity(TileEntityReprogrammer.class, constants.MODID+":reprogrammer");
         GameRegistry.registerTileEntity(TileEntityConverter.class, constants.MODID+":Converter");
-        GameRegistry.registerTileEntity(TileEntityBookcasechest.class, constants.MODID+ ":bookcasechest");
+        GameRegistry.registerTileEntity(TileEntityBookcaseChest.class, constants.MODID+ ":bookcasechest");
         //GameRegistry.registerTileEntity(TileEntityMJ.class, constants.MODID+":mj");
 	}
 }

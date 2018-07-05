@@ -45,18 +45,16 @@ public class ItemTossable extends Item implements ItemModelProvider
 
         if (!worldIn.isRemote)
         {
-
-
             if(itemStackIn.getItem()==ItemIndex.mapinabottle)
             {
                 EntityMap entityMap = new EntityMap(worldIn, playerIn);
-                entityMap.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+                entityMap.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.0F, 1.0F);
                 worldIn.spawnEntity(entityMap);
             }
             if(itemStackIn.getItem()==ItemIndex.shipinabottle)
             {
                 EntityShipBottled entityship = new EntityShipBottled(worldIn, playerIn);
-                entityship.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+                entityship.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.0F, 1.0F);
                 worldIn.spawnEntity(entityship);
             }
         }
@@ -64,6 +62,4 @@ public class ItemTossable extends Item implements ItemModelProvider
         playerIn.addStat(StatList.getObjectUseStats(this));
         return new ActionResult<>(EnumActionResult.SUCCESS, itemStackIn);
     }
-
-
 }

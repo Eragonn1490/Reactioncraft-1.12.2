@@ -20,8 +20,13 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.VillagerRegistry;
+import net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.registries.ForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -30,6 +35,8 @@ import java.util.Set;
 public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 {
 	protected final String name;
+	static final String culture  ="culture";
+	static final String compound ="ProfessionName";
 
 	public ItemCompleteNet(String name, ToolMaterial mat)
 	{
@@ -65,7 +72,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 
 	@Override
 	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn)
-    {
+	{
 		NBTTagCompound compound = stack.getTagCompound();
 
 		if (compound != null)
@@ -77,7 +84,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 
 			ItemIndex.complete_net.setMaxDamage(returnedAmt);
 		}
-    }
+	}
 
 
 	@Override
@@ -104,15 +111,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 			entityTag.removeTag("DeathTime");
 			entityTag.removeTag("AttackTime");
 			entityTag.setString("name", entityId);
-
-			if(entity instanceof EntityVillager)
-			{
-				String professionName = ((EntityVillager) entity).getProfessionForge().getRegistryName().toString();
-				int    profession = ((EntityVillager) entity).getProfession();
-				entityTag.setInteger("Profession", profession);
-				entityTag.setString ("ProfessionName", professionName);
-			}
-
+			
 
 			ItemStack is = new ItemStack(ItemIndex.caught);
 			NBTTagCompound nbt = new NBTTagCompound();

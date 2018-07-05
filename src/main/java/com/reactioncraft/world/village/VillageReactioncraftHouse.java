@@ -262,11 +262,10 @@ public class VillageReactioncraftHouse extends StructureVillagePieces.House1
 	}
 
 	@Override
-	protected int chooseProfession(int villagerCount, int currentVillagerProfession) {
+	protected int chooseProfession(int villagerCount, int currentVillagerProfession) 
+	{
 		ForgeRegistry<VillagerRegistry.VillagerProfession> registry = (ForgeRegistry<VillagerRegistry.VillagerProfession>) ForgeRegistries.VILLAGER_PROFESSIONS;
-
 		return registry.getID(Villagers.mherr);
-
 	}
 
 	private boolean isAirBlockAtCurrentPosition(World world, BlockPos pos, StructureBoundingBox box) {

@@ -1,7 +1,8 @@
 package com.reactioncraft.core;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.entities.EntityMap;
+import com.reactioncraft.entities.*;
+import com.reactioncraft.entities.render.*;
 import com.reactioncraft.items.ItemMulti;
 import com.reactioncraft.mobs.common.entities.*;
 import com.reactioncraft.mobs.common.models.*;
@@ -9,7 +10,9 @@ import com.reactioncraft.mobs.common.renders.*;
 import com.reactioncraft.registration.instances.ItemIndex;
 import com.reactioncraft.utils.constants;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
@@ -18,16 +21,6 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 public class ClientProxy extends ServerProxy
 {
     public static String BORE_TEXTURE = "/mods/reactioncraft/textures/railcraft/";
-
-    //@Override
-
-    //public void registerItemRenderer(Item item, int meta, String id) 
-    //{
-    //	if (!(item instanceof ItemMulti))
-    //	{
-    //		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(constants.MODID + ":" + id, "inventory"));
-    //	}
-    //}
     
     @Deprecated
     @Override
@@ -93,17 +86,19 @@ public class ClientProxy extends ServerProxy
 	@Override
     public void registerRenderInformation()
     {
-
 //		RenderingRegistry.registerEntityRenderingHandler(EntityBee.class,manager -> new RenderBee(new ModelBee(1),manager,0.5f));
 //		RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class,manager -> new RenderStalker(new Model));
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityHydrolisc.class,manager -> new RenderHydrolisc(new ModelHydrolisc(0.2f),manager,1));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySeaCreeper.class,manager -> new RenderSeaCreeper(new ModelSeaCreeper(),manager,0));
+		//RenderingRegistry.registerEntityRenderingHandler(EntityJellyfish.class,manager -> new RenderJellyfish(new ModelBlockAluminium(), manager,0.5f));//Debug for Custom Blocks
+		RenderingRegistry.registerEntityRenderingHandler(EntityJellyfish.class,manager -> new RenderJellyfish(new ModelJellyfish(), manager,0.5f));
 //        RenderingRegistry.registerEntityRenderingHandler(EntitySeaCreeper.class, new RenderSeaCreeper(new ModelSeaCreeper(), 0.5F));
 //        RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class, new RenderStalker(new ModelCreeper(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityZombieCrawling.class,manager -> new RenderZombieCrawling(manager,new ModelZombieCrawling(),0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonCrawling.class,manager -> new RenderSkeletonCrawling(manager,new ModelZombieCrawling(),0.5f));
 
-		//RenderingRegistry.registerEntityRenderingHandler(EntityMap.class,manager -> new RenderMap(manager, ItemIndex.mapinabottle, null));
+		RenderingRegistry.registerEntityRenderingHandler(EntityMap.class,        manager -> new RenderSnowball(manager, ItemIndex.mapinabottle , Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityShipBottled.class,manager -> new RenderSnowball(manager, ItemIndex.shipinabottle, Minecraft.getMinecraft().getRenderItem()));
     }
 }

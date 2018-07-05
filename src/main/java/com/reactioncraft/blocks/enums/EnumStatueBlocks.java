@@ -12,7 +12,8 @@ public enum EnumStatueBlocks implements IStringSerializable
 	BAG_S    (5, 5,     "5",    "5"),
 	BAG_G    (6, 6,     "6",    "6"),
 	COIL     (7, 7,     "7",    "7"),
-	GLASS    (8, 8,     "8",    "8");
+	GLASS    (8, 8,     "8",    "8"),
+	COMPRESSED_GOLD(9, 9,     "9",    "9");
 
     private static final EnumStatueBlocks[] META_LOOKUP = new EnumStatueBlocks[values().length];
     private static final EnumStatueBlocks[] DYE_DMG_LOOKUP = new EnumStatueBlocks[values().length];

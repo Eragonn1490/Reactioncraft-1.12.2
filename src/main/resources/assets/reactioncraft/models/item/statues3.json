@@ -1,5 +1,5 @@
 {
-  "parent":"reactioncraft:block/creeper_statue",
+  "parent":"reactioncraft:block/mixer_statue",
   "textures":{
     "all": "reactioncraft:blocks/css"
   },

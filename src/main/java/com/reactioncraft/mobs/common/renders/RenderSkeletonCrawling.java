@@ -43,7 +43,6 @@ public class RenderSkeletonCrawling extends RenderLiving<EntitySkeletonCrawling>
     }
 
 
-
     @Nullable
     @Override
     protected ResourceLocation getEntityTexture(EntitySkeletonCrawling entity) {
@@ -54,6 +53,5 @@ public class RenderSkeletonCrawling extends RenderLiving<EntitySkeletonCrawling>
             case 2: return new ResourceLocation("reactioncraft:textures/entity/skeleton3.png");
         }
         return null;
-
     }
 }

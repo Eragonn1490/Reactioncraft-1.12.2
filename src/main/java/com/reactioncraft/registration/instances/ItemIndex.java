@@ -2,11 +2,9 @@ package com.reactioncraft.registration.instances;
 
 
 import com.reactioncraft.items.*;
-import com.reactioncraft.items.chisels.ItemBaseChisel;
 import com.reactioncraft.items.tools.*;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemEnderEye;
-import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.*;
+import com.reactioncraft.items.chisels.ItemBaseChisel;
 
 public class ItemIndex
 {
@@ -66,6 +64,7 @@ public class ItemIndex
     public static ItemBase uncutDBGem;
     public static ItemBase cutDBGem;
     public static ItemBase scroll;
+    public static ItemBase papyruspaper;
     public static ItemBaseChisel goldChisel;
     public static ItemBaseChisel flintChisel;
     public static ItemBaseChisel diamondChisel;
@@ -96,15 +95,19 @@ public class ItemIndex
     public static ItemTossable shipinabottle;
     public static ItemEndEye rcendereye;
     public static ItemBaseHammer bloodstoneHammer;
-    public static ItemBaseDoor woodenBookcasedoor;
-    public static ItemBaseDoor ironBookcasedoor;
-    public static ItemBaseDoor cherry_door;
     public static ItemBase ancientFlower;
     public static ItemBase wrappedcorn;
     public static ItemSeeds ancientSeeds;
     public static ItemBase sugarcaneItemBase;
     public static ItemSeeds cornSeed;
     public static ItemBase stalksItemBase;
+    
+    //Doors
+    public static ItemBaseDoor woodenBookcasedoor;
+    public static ItemBaseDoor ironBookcasedoor;
+    public static ItemBaseDoor scrollcasedoor;
+    public static ItemBaseDoor ironscrollcasedoor;
+    public static ItemBaseDoor cherry_door;
     
     //Made For Other Mods
     public static ItemBase scoop;

@@ -1,8 +1,10 @@
 package com.reactioncraft.tiles;
 
-import net.minecraft.tileentity.TileEntity;
-
-public class TileEntityBookcasechest extends TileEntityBase
+public class TileEntityBookcaseChest extends TileEntityBase 
 {
-
+	public void setCustomInventoryName(String displayName) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

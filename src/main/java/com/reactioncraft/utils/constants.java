@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -31,6 +32,8 @@ public class constants
 	public static final String MODID     = "reactioncraft";
 	public static final String VERSION   = "0.6.5.0";
 	public static final String MCVersion = "1.12.2";
+	
+	public static final ResourceLocation LOCATION_BLOCKS_TEXTURE = new ResourceLocation("textures/atlas/blocks.png");
 	
 	//config constants
 	public static double distance;

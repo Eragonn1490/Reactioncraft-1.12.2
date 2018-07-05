@@ -28,6 +28,7 @@ public class EntityJellyfish extends EntityWaterMob
     {
         this(par1World, 0);
     }
+    
 
     public EntityJellyfish(World par1World, int par2)
     {
@@ -49,6 +50,7 @@ public class EntityJellyfish extends EntityWaterMob
         this.setSize(0.3F, 0.3F);
         this.field_21080_l = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
     }
+    
 
     protected void applyEntityAttributes()
     {
@@ -56,12 +58,14 @@ public class EntityJellyfish extends EntityWaterMob
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
     }
+    
 
     protected void entityInit()
     {
         super.entityInit();
     }
 
+    
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.
      */
@@ -69,6 +73,7 @@ public class EntityJellyfish extends EntityWaterMob
     {
         super.writeEntityToNBT(par1NBTTagCompound);
     }
+    
 
     /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
@@ -78,6 +83,7 @@ public class EntityJellyfish extends EntityWaterMob
         super.readEntityFromNBT(par1NBTTagCompound);
     }
 
+    
     /**
      * Returns the volume for the sounds this mob makes.
      */
@@ -171,11 +177,11 @@ public class EntityJellyfish extends EntityWaterMob
      */
     public void moveEntityWithHeading(float f, float f1)
     {
-
 //        this.moveEntity(this.motionX, this.motionY, this.motionZ);
         move(MoverType.SELF,motionX,motionY,motionZ);
     }
 
+    
     /**
      * Checks if the entity's current position is a valid location to spawn this entity.
      */
@@ -184,10 +190,28 @@ public class EntityJellyfish extends EntityWaterMob
         return this.posY > 45.0D && this.posY < 63.0D && super.getCanSpawnHere();
     }
 
-
-
+    
     public int getSkin()
     {
-        return this.rand.nextInt(5) == 0 ? 1 : (this.rand.nextInt(5) == 1 ? 1 : 0);
+        return getTexture();
     }
+
+
+	public int getTexture()
+	{
+		int type = this.rand.nextInt(5);
+		
+		if(type == 0)
+		{
+			return 0;
+		}
+		if(type == 1)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 }

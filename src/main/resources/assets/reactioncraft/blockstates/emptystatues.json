@@ -1,0 +1,33 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_all",
+      "textures" : {
+        "all" : "reactioncraft:blocks/clear"
+      }
+    },
+    "variants": {
+        "type": {
+            "0": {
+                "textures": {
+                    "all": "reactioncraft:blocks/clear"
+                }
+            },
+            "1": {
+                "textures": {
+                    "all": "reactioncraft:blocks/clear"
+                }
+            },
+             "2": {
+                "textures": {
+                    "all": "reactioncraft:blocks/clear"
+                }
+            },
+             "3": {
+                "textures": {
+                    "all": "reactioncraft:blocks/clear"
+                }
+            }
+        }
+    }
+}

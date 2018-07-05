@@ -42,7 +42,6 @@ public class OreDictionaryRegistry
         OreDictionary.registerOre("shardDragonstone", new ItemStack(ItemIndex.dragonstoneshard));
         OreDictionary.registerOre("gemDragonstone", new ItemStack(ItemIndex.gemdragonstone));
         OreDictionary.registerOre("dyePurple", new ItemStack(ItemIndex.dragonstoneshard));
-        //OreDictionary.registerOre("oreSilver", new ItemStack(BlockIndex.surfaceOres, 1, 4));
         OreDictionary.registerOre("bones", new ItemStack(ItemIndex.bones));
         OreDictionary.registerOre("wrappedCorn", new ItemStack(ItemIndex.wrappedcorn));
         
@@ -67,7 +66,8 @@ public class OreDictionaryRegistry
         OreDictionary.registerOre("chiselT3", new ItemStack(ItemIndex.bloodstoneChisel, 1, Reactioncraft.WILDCARD_VALUE));
         
         //For IC2 Macerator
-        //OreDictionary.registerOre("oreGold", new ItemStack(BlockIndex.netherOres, 1, 3));
-        //OreDictionary.registerOre("oreGold", new ItemStack(BlockIndex.surfaceOres, 1, 3));
+        OreDictionary.registerOre("oreGold", new ItemStack(BlockIndex.netherOres, 1, 3));
+        OreDictionary.registerOre("oreGold", new ItemStack(BlockIndex.surfaceOres, 1, 3));
+        OreDictionary.registerOre("oreSilver", new ItemStack(BlockIndex.surfaceOres, 1, 4));
     }
 }

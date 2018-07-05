@@ -28,7 +28,7 @@ public class TileEntityConverter extends TileEntityBase implements ITickable
 		{
 			this.container.receiveEnergy(10, false);
 
-			System.out.println(this.container.getEnergyStored());
+			//System.out.println(this.container.getEnergyStored());
 		}
 	}
 

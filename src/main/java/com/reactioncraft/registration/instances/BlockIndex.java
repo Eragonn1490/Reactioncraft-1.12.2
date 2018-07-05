@@ -4,7 +4,6 @@ import com.reactioncraft.blocks.*;
 import com.reactioncraft.blocks.machines.*;
 import com.reactioncraft.blocks.ores.*;
 import com.reactioncraft.blocks.rails.*;
-
 import net.minecraft.block.*;
 
 
@@ -16,7 +15,7 @@ public class BlockIndex
 	//Wooden Blocks
 	public static BlockBase cherryPlanks;
     
-    //Multiple Block States
+    //Metadata Blocks
     public static BlockDarkSand dark_sand;
     public static BlockBase bookcases;
     public static BlockDesertMulti desertBlocks;
@@ -27,21 +26,22 @@ public class BlockIndex
     public static BlockBase netherOres;
     public static BlockEndOre endOres;
     public static BlockStatues statues;
+    public static BlockEmpty emptystatues;
+    public static BlockColumn column;
+    public static BlockMiniColumn miniColumn;
+    public static BlockSmallestColumn smallestColumn;
     
+    //Regular Blocks
     public static BlockCherryTreeLog cherrywood;
-    public static BlockNewSponge newSponge;
-    public static BlockBase snowBlockBase;
     public static BlockChainLadder chainladder;
     public static BlockEndPortalFrame2 enderportalframe;
     public static BlockBase Bookcasechest;
     public static BlockBaseDoor woodenBookcase;
     public static BlockBaseDoor ironBookcasedoor;
+    public static BlockBaseDoor scrollcasedoor;
+    public static BlockBaseDoor ironscrollcasedoor;
     public static BlockBaseDoor cherrydoor;
-    public static BlockColumn column;
-    public static BlockMiniColumn miniColumn;
-    public static BlockSmallestColumn smallestColumn;
-    public static BlockBush redCactus;
-    public static BlockBush greenCactus;
+    
     public static BlockCherryTreeLeaves cherryTreeLeaves;
     public static BlockCherryTreeSapling cherryTreeSapling;
     public static BlockFreezer freezer;
@@ -52,6 +52,12 @@ public class BlockIndex
     public static BlockBase sugarcaneBlockBase;
     public static BlockCornPlant cornBlock;
 	public static BlockCornTall cornTall;
+
+    //Switch to Metadata Eventually
+    public static BlockBush redCactus;
+    public static BlockBush greenCactus;
+    public static BlockBush papyrus;
+    
     
     //Longer Piston
   	//public static BlockExtendedPiston extendedPiston;

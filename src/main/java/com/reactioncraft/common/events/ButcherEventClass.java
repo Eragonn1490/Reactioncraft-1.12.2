@@ -75,16 +75,20 @@ public class ButcherEventClass
 		{
 			if (event.getSource().getDamageType().equals("player"))
 			{
-				if(((EntityLiving)deadEntity).getAttackTarget().getEntityData().getCompoundTag(culture) != null)
+				try
 				{
-					ItemStack e = ((EntityLivingBase)event.getSource().getTrueSource()).getHeldItemMainhand();
-
-					if (e.getItem() == ItemIndex.meat_cleaver && rand < 1.0D)
+					if(((EntityLiving)deadEntity).getAttackTarget().getEntityData().getCompoundTag(culture) != null)
 					{
-						ItemStack drop = new ItemStack(ItemIndex.raw_human);
-						event.getEntityLiving().entityDropItem(drop, 0.0F);
+						ItemStack e = ((EntityLivingBase)event.getSource().getTrueSource()).getHeldItemMainhand();
+
+						if (e.getItem() == ItemIndex.meat_cleaver && rand < 1.0D)
+						{
+							ItemStack drop = new ItemStack(ItemIndex.raw_human);
+							event.getEntityLiving().entityDropItem(drop, 0.0F);
+						}
 					}
 				}
+				catch (NullPointerException var6) {} //This prevents console spam when checking entities
 			}
 		}
 		else

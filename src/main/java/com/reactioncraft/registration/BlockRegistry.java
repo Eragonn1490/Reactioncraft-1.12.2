@@ -16,7 +16,7 @@ import com.reactioncraft.vanillareplacements.*;
 import com.reactioncraft.core.Generator;
 import com.reactioncraft.core.Logger;
 import com.reactioncraft.items.ItemMulti;
-import com.reactioncraft.registration.instances.BlockIndex;
+import com.reactioncraft.registration.instances.*;
 import com.reactioncraft.utils.constants;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -81,20 +81,21 @@ public class BlockRegistry
 
 		//Reactioncraft Blocks
 		registerBlockItem(BlockIndex.bloodstonebricks,registryEvent);
-		registerBlockItem(BlockIndex.cherryPlanks,registryEvent);
-		registerBlockItem(BlockIndex.cherrywood,registryEvent);
+		registerBlockItem(BlockIndex.cherryPlanks,    registryEvent);
+		registerBlockItem(BlockIndex.cherrywood,      registryEvent);
 		registerBlockItem(BlockIndex.cherryTreeLeaves,registryEvent);
-		registerBlockItem(BlockIndex.rchive,registryEvent);
+		registerBlockItem(BlockIndex.rchive,          registryEvent);
+		registerBlockItem(BlockIndex.chainladder,     registryEvent);
 
 
-		registerBlockItem(BlockIndex.freezer,registryEvent);
+		registerBlockItem(BlockIndex.freezer,  registryEvent);
 		registerBlockItem(BlockIndex.brickOven,registryEvent);
 		registerBlockItem(BlockIndex.claylizer,registryEvent);
 
-		registerBlockItem(BlockIndex.chainladder,registryEvent);
 
-		registerBlockItem(BlockIndex.redCactus,registryEvent);
+		registerBlockItem(BlockIndex.redCactus,  registryEvent);
 		registerBlockItem(BlockIndex.greenCactus,registryEvent);
+		registerBlockItem(BlockIndex.papyrus,    registryEvent);
 
 		registerBlockItem(BlockIndex.cherryTreeSapling,registryEvent);
 
@@ -105,11 +106,11 @@ public class BlockRegistry
 		//registerBlockItem(BlockIndex.extendedPistonsticky, registryEvent);
 
 		//Gate
-		registerBlockItem(BlockIndex.gate, registryEvent);
+		registerBlockItem(BlockIndex.gate,  registryEvent);
 		registerBlockItem(BlockIndex.fence, registryEvent);
 
 		//Transmitter Blocks
-		registerBlockItem(BlockIndex.transmitter, registryEvent);
+		registerBlockItem(BlockIndex.transmitter,  registryEvent);
 		registerBlockItem(BlockIndex.reprogrammer, registryEvent);
 
 		//RF-EU-MJ Converter
@@ -132,7 +133,13 @@ public class BlockRegistry
 		ItemMulti statues = new ItemMulti(BlockIndex.statues);
 		statues.setRegistryName(BlockIndex.statues.getRegistryName());
 		registryEvent.getRegistry().register(statues);
-		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(statues ,"0","1","2","3","4","5","6","7","8");//,"9","10","11","12","13","14","15");
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(statues ,"0","1","2","3","4","5","6","7","8","9");//,"10","11","12","13","14","15");
+
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti emptystatues = new ItemMulti(BlockIndex.emptystatues);
+		emptystatues.setRegistryName(BlockIndex.emptystatues.getRegistryName());
+		registryEvent.getRegistry().register(emptystatues);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(emptystatues ,"0","1","2","3");//"4");//,"5","6","7","8","9");//,"10","11","12","13","14","15");
 
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti desertpatterns = new ItemMulti(BlockIndex.desertpatterns);
@@ -229,12 +236,13 @@ public class BlockRegistry
 		BlockIndex.desertBlocks = (BlockDesertMulti) register(new BlockDesertMulti(Material.ROCK), "desertblocks",forgeRegistry).setHardness(3.0F);
 		BlockIndex.desertpatterns = (BlockPaintedDarkstone) register(new BlockPaintedDarkstone(Material.ROCK), "desertpatterns",forgeRegistry).setHardness(3.0F);
 
-		BlockIndex.statues = (BlockStatues) register(new BlockStatues(Material.ROCK), "statues", forgeRegistry).setCreativeTab(Reactioncraft.ReactioncraftTest).setHardness(3.0F);
-		
+		BlockIndex.statues      = (BlockStatues) register(new BlockStatues(Material.ROCK), "statues",     forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft).setHardness(3.0F);
+		BlockIndex.emptystatues = (BlockEmpty)   register(new BlockEmpty  (Material.ROCK), "emptystatues",forgeRegistry).setCreativeTab(null).setHardness(3.0F);
+
 		BlockIndex.leverbookcase = (BlockBookcaseLever) register(new BlockBookcaseLever(Material.ROCK), "levers", forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft).setHardness(3.0F);
-		
+
 		//Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "levers", BlockIndex.leverbookcase); //Debug Only
-		
+
 		//Turn Desert Plants Into Metadata Blocks ^^
 
 		//Sand Blocks
@@ -264,6 +272,8 @@ public class BlockRegistry
 		//Doors
 		BlockIndex.woodenBookcase = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"doorWbookcase",forgeRegistry).setHardness(1.5F);
 		BlockIndex.ironBookcasedoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.IRON),"doorIbookcase",forgeRegistry).setHardness(5.0F);
+		BlockIndex.scrollcasedoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"scrollcasedoor",forgeRegistry).setHardness(1.5F);
+		BlockIndex.ironscrollcasedoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.IRON),"ironscrollcasedoor",forgeRegistry).setHardness(5.0F);
 		BlockIndex.cherrydoor = (BlockBaseDoor) register(new BlockBaseDoor(Material.WOOD),"cherry_door",forgeRegistry).setHardness(1.5F);
 
 		/* Special Regular Blocks **/
@@ -289,8 +299,9 @@ public class BlockRegistry
 
 		BlockIndex.chainladder= (BlockChainLadder) register(new BlockChainLadder(),"chain_ladder",forgeRegistry);
 
-		BlockIndex.redCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus1",forgeRegistry);
+		BlockIndex.redCactus   = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus1",forgeRegistry);
 		BlockIndex.greenCactus = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"cactus2",forgeRegistry);
+		BlockIndex.papyrus     = (BlockBush) register(new BlockCactus().setCreativeTab(Reactioncraft.Reactioncraft),"papyrus",forgeRegistry);
 
 		//Longer Piston
 		//BlockIndex.extendedPiston = (BlockExtendedPiston) register(new BlockExtendedPiston(false), "pistonBase", forgeRegistry);
@@ -304,12 +315,12 @@ public class BlockRegistry
 		//Transmitter
 		BlockIndex.transmitter = (BlockTransmitter) register(new BlockTransmitter(Material.ROCK).setHardness(3.0F),"transmitter",forgeRegistry);
 		BlockIndex.reprogrammer = (BlockReprogrammer) register(new BlockReprogrammer(Material.ROCK).setHardness(3.0F),"reprogrammer",forgeRegistry);
-		
-	
+
+
 		//
 		BlockIndex.bloodstoneEnergyBlock = (BlockBloodstoneConverter) register(new BlockBloodstoneConverter(Material.ROCK).setHardness(3.0F),"bloodstoneEnergyBlock",forgeRegistry);
-		
-		
+
+
 		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.ReactioncraftTest),"end_portal_frame",forgeRegistry);
 
 		BlockIndex.tripwirerail = (BlockTripwirerail) register(new BlockTripwirerail(),"tripwire_rail",forgeRegistry);

@@ -14,12 +14,10 @@ import net.minecraft.world.World;
 
 public class BlockBaseDoor extends BlockDoor
 {
-    
     public BlockBaseDoor(Material materialIn)
     {
         super(materialIn);
     }
-
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
@@ -28,14 +26,15 @@ public class BlockBaseDoor extends BlockDoor
 
     private Item getItem()
     {
-        return this == BlockIndex.ironBookcasedoor ? ItemIndex.ironBookcasedoor : (this == BlockIndex.woodenBookcase ? ItemIndex.woodenBookcasedoor : (this == BlockIndex.cherrydoor ? ItemIndex.cherry_door : ItemIndex.cherry_door));
+        return this == BlockIndex.ironBookcasedoor ? ItemIndex.ironBookcasedoor :   (this == BlockIndex.woodenBookcase ? ItemIndex.woodenBookcasedoor : 
+        	   this == BlockIndex.ironscrollcasedoor ? ItemIndex.ironBookcasedoor : (this == BlockIndex.scrollcasedoor ? ItemIndex.woodenBookcasedoor :
+        	  (this == BlockIndex.cherrydoor ? ItemIndex.cherry_door : ItemIndex.cherry_door)));
     }
 
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
-
 
     /**
      * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
@@ -45,6 +44,4 @@ public class BlockBaseDoor extends BlockDoor
     {
         return mirrorIn == Mirror.NONE ? state : state.withRotation(mirrorIn.toRotation(state.getValue(FACING))).cycleProperty(HINGE);
     }
-
-
 }

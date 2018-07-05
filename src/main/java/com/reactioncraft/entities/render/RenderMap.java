@@ -1,6 +1,6 @@
 package com.reactioncraft.entities.render;
 
-import com.reactioncraft.mobs.common.entities.EntityHydrolisc;
+import com.reactioncraft.utils.constants;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
@@ -39,7 +39,7 @@ public class RenderMap<T extends Entity> extends Render<T>
         GlStateManager.rotate(-this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GlStateManager.rotate((float)(this.renderManager.options.thirdPersonView == 2 ? -1 : 1) * this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
         GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
-        this.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+        this.bindTexture(constants.LOCATION_BLOCKS_TEXTURE);
 
         if (this.renderOutlines)
         {
@@ -68,9 +68,8 @@ public class RenderMap<T extends Entity> extends Render<T>
     /**
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
      */
-    @Override
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
+    protected ResourceLocation getEntityTexture(Entity entity)
     {
-    	return (new ResourceLocation("reactioncraft:textures/items/mapinbottle.png"));
+        return TextureMap.LOCATION_BLOCKS_TEXTURE;
     }
 }

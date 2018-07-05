@@ -1,86 +1,92 @@
 {
-    "forge_marker": 1,
-    "defaults": {
-        "model": "cube_all",
-      "textures" : {
-        "all" : "reactioncraft:blocks/clear"
-      }
-    },
-    "variants": {
-        "type": {
-            "0": {
-                "model": "reactioncraft:creeper_statue",
-                "particle": "reactioncraft:blocks/css",
-                "textures": {
-                    "all": "reactioncraft:blocks/css"
-                }
-            },
-            "1": {
-                "model": "reactioncraft:player_statue",
-                "textures": {
-                    "all": "reactioncraft:blocks/css"
-                }
-            },
-             "2": {
-                "model": "reactioncraft:blaze_statue",
-                "textures": {
-                    "all": "reactioncraft:blocks/css"
-                }
-            },
-             "3": {
-                "model": "reactioncraft:mixer_statue",
-                "textures": {
-                    "all": "reactioncraft:blocks/css"
-                }
-            },
-             "4": {
-                "model": "reactioncraft:bagmodel",
-                "textures": {
-                    "bag": "reactioncraft:blocks/css",
-                    "coins": "reactioncraft:blocks/bronze_block"
-                }
-            },
-             "5": {
-                "model": "reactioncraft:bagmodel",
-                "textures": {                  
-                    "bag": "reactioncraft:blocks/css",
-                    "coins": "reactioncraft:blocks/silver_block"
-                }
-            },
-            "6": {
-                "model": "reactioncraft:bagmodel",
-                "textures": {   
-                    "bag": "reactioncraft:blocks/css",                 
-                    "coins": "blocks/gold_block"
-                }
-            },
-            "7": {
-                "model": "reactioncraft:coppercoil",
-                "textures": {                  
-                    "all": "reactioncraft:blocks/css"
-                }
-            },
-            "8": {
-                "model": "reactioncraft:glass",
-                "textures": {                  
-                    "all": "reactioncraft:blocks/css"
-                }
-            },
-          "four3": {
-
-          },
-          "five1": {
-
-          },
-          "five2" :{
-
-          },
-          "five3" : {
-
-          },
-          "six1" : {
-
-          }
-        }
-    }
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"textures": {
+			"all": "reactioncraft:blocks/clear"
+		}
+	},
+	"variants": {
+		"type": {
+			"0": {
+				"model": "reactioncraft:creeper_statue",
+				"particle": "reactioncraft:blocks/css",
+				"textures": {
+					"all": "reactioncraft:blocks/css"
+				}
+			},
+			"1": {
+				"model": "reactioncraft:player_statue",
+				"textures": {
+					"all": "reactioncraft:blocks/css"
+				}
+			},
+			"2": {
+				"model": "reactioncraft:blaze_statue",
+				"textures": {
+					"all": "reactioncraft:blocks/css"
+				}
+			},
+			"3": {
+				"model": "reactioncraft:mixer_statue",
+				"textures": {
+					"all": "reactioncraft:blocks/css"
+				}
+			},
+			"4": {
+				"model": "reactioncraft:bagmodel",
+				"textures": {
+					"bag": "reactioncraft:blocks/css",
+					"coins": "reactioncraft:blocks/bronze_block"
+				}
+			},
+			"5": {
+				"model": "reactioncraft:bagmodel",
+				"textures": {
+					"bag": "reactioncraft:blocks/css",
+					"coins": "reactioncraft:blocks/silver_block"
+				}
+			},
+			"6": {
+				"model": "reactioncraft:bagmodel",
+				"textures": {
+					"bag": "reactioncraft:blocks/css",
+					"coins": "blocks/gold_block"
+				}
+			},
+			"7": {
+				"model": "reactioncraft:coppercoil",
+				"textures": {
+					"all": "reactioncraft:blocks/css"
+				}
+			},
+			"8": {
+				"model": "reactioncraft:glass",
+				"textures": {
+					"all": "reactioncraft:blocks/css"
+				}
+			},
+			"9": {
+				"model": "reactioncraft:modelblockaluminium",
+				"textures": {
+					"particle": "blocks/gold_block",
+					"all": "blocks/gold_block",
+					"rope": "blocks/wool_colored_black",
+					"pallet": "blocks/log_oak"
+				}
+			},
+			"five1": {
+				
+			},
+			"five2": {
+				
+			},
+			"five3": {
+				
+			},
+			"six1": {
+				
+			}
+		}
+	}
 }

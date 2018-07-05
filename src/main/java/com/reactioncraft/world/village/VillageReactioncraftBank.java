@@ -7,6 +7,8 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.blocks.BlockCherryTreeLog;
+import com.reactioncraft.blocks.BlockStatues;
+import com.reactioncraft.blocks.enums.EnumStatueBlocks;
 import com.reactioncraft.blocks.machines.BlockClayalizer;
 import com.reactioncraft.registration.Villagers;
 import com.reactioncraft.registration.instances.BlockIndex;
@@ -76,12 +78,12 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 		buildGarden(world, structBoundingBox);
 
 		// Garden fence
-		IBlockState gardenFence = Blocks.BIRCH_FENCE.getDefaultState();
+		IBlockState gardenFence = Blocks.OAK_FENCE.getDefaultState();
 		fillWithBlocks(world, structBoundingBox, 1, 1, 6, 1, 1, 10, gardenFence, gardenFence, false);
 		fillWithBlocks(world, structBoundingBox, 8, 1, 6, 8, 1, 10, gardenFence, gardenFence, false);
 		fillWithBlocks(world, structBoundingBox, 2, 1, 10, 7, 1, 10, gardenFence, gardenFence, false);
 
-		IBlockState fenceGate = Blocks.BIRCH_FENCE_GATE.getDefaultState();
+		IBlockState fenceGate = Blocks.OAK_FENCE_GATE.getDefaultState();
 		setBlockState(world, fenceGate.withProperty(BlockHorizontal.FACING, EnumFacing.EAST), 8, 1, 8, structBoundingBox);
 		setBlockState(world, fenceGate.withProperty(BlockHorizontal.FACING, EnumFacing.EAST), 1, 1, 8, structBoundingBox);
 		setBlockState(world, fenceGate.withProperty(BlockHorizontal.FACING, EnumFacing.NORTH), 4, 1, 10, structBoundingBox);
@@ -100,7 +102,7 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 		fillWithBlocks(world, structBoundingBox, 1, 0, 1, 1, 0, 4, planksFloor, planksFloor, false);
 		fillWithBlocks(world, structBoundingBox, 7, 0, 1, 7, 0, 4, planksFloor, planksFloor, false);
 
-		IBlockState cobblestoneState = Blocks.STONEBRICK.getDefaultState();
+		IBlockState cobblestoneState = Blocks.COBBLESTONE.getDefaultState();
 		fillWithBlocks(world, structBoundingBox, 0, 0, 0, 0, 2, 5, cobblestoneState, cobblestoneState, false);
 		fillWithBlocks(world, structBoundingBox, 8, 0, 0, 8, 2, 5, cobblestoneState, cobblestoneState, false);
 		fillWithBlocks(world, structBoundingBox, 1, 0, 0, 7, 1, 0, cobblestoneState, cobblestoneState, false);
@@ -165,9 +167,9 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 		setBlockState(world, glassPaneState, 5, 2, 0, structBoundingBox);
 		setBlockState(world, glassPaneState, 6, 2, 5, structBoundingBox);
 
-		// Block Clayalizer
+		// Compressed Gold
 		if (random.nextInt(2) == 0) {
-			IBlockState Clayalizer = BlockIndex.claylizer.getDefaultState().withProperty(BlockClayalizer.FACING, EnumFacing.EAST);
+			IBlockState Clayalizer = BlockIndex.statues.getDefaultState().withProperty(BlockStatues.TYPE, EnumStatueBlocks.COMPRESSED_GOLD);
 			setBlockState(world, Clayalizer, 1, 1, 3, structBoundingBox);
 		}
 
@@ -215,11 +217,11 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 	private void buildRoof(World world, StructureBoundingBox structBoundingBox) {
 		for (int z = -1; z <= 2; ++z) {
 			for (int x = 0; x <= 8; ++x) {
-				IBlockState northStairs = Blocks.STONE_BRICK_STAIRS.getDefaultState().withProperty(BlockStairs.FACING, EnumFacing.NORTH);
+				IBlockState northStairs = Blocks.OAK_STAIRS.getDefaultState().withProperty(BlockStairs.FACING, EnumFacing.NORTH);
 				northStairs.withProperty(BlockStairs.FACING, EnumFacing.NORTH);
 				setBlockState(world, northStairs, x, 4 + z, z, structBoundingBox);
 
-				IBlockState southStairs = Blocks.STONE_BRICK_STAIRS.getDefaultState().withProperty(BlockStairs.FACING, EnumFacing.SOUTH);
+				IBlockState southStairs = Blocks.OAK_STAIRS.getDefaultState().withProperty(BlockStairs.FACING, EnumFacing.SOUTH);
 				southStairs.withProperty(BlockStairs.FACING, EnumFacing.SOUTH);
 				setBlockState(world, southStairs, x, 4 + z, 5 - z, structBoundingBox);
 			}
@@ -241,32 +243,31 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 	}
 
 	private void buildMachines(World world, StructureBoundingBox box) {
-		//populateMachines(world, box, new BlockPos(3, 1, 8));
-		//populateMachines(world, box, new BlockPos(6, 1, 8));
+		populateMachines(world, box, new BlockPos(3, 1, 8));
+		populateMachines(world, box, new BlockPos(6, 1, 8));
 	}
 
-//	private void populateMachines(World world, StructureBoundingBox box, BlockPos pos) {
-//		int xCoord = getXWithOffset(pos.getX(), pos.getZ());
-//		int yCoord = getYWithOffset(pos.getY());
-//		int zCoord = getZWithOffset(pos.getX(), pos.getZ());
-//		BlockPos posNew = new BlockPos(xCoord, yCoord, zCoord);
-//
-//		if (!box.isVecInside(posNew)) {
-//			return;
-//		}
-//
-//		IBlockState blockState = world.getBlockState(posNew);
-//		if (BlockIndex.freezerIdle == blockState.getBlock() || !world.isBlockLoaded(posNew.down())) {
-//			return;
-//		}
-//	}
+	private void populateMachines(World world, StructureBoundingBox box, BlockPos pos) {
+		int xCoord = getXWithOffset(pos.getX(), pos.getZ());
+		int yCoord = getYWithOffset(pos.getY());
+		int zCoord = getZWithOffset(pos.getX(), pos.getZ());
+		BlockPos posNew = new BlockPos(xCoord, yCoord, zCoord);
+
+		if (!box.isVecInside(posNew)) {
+			return;
+		}
+
+		IBlockState blockState = world.getBlockState(posNew);
+		if (BlockIndex.statues.getDefaultState().withProperty(BlockStatues.TYPE, EnumStatueBlocks.COMPRESSED_GOLD) == blockState.getBlock() || !world.isBlockLoaded(posNew.down())) {
+			return;
+		}
+	}
 
 	@Override
 	protected int chooseProfession(int villagerCount, int currentVillagerProfession) 
 	{
 		ForgeRegistry<VillagerRegistry.VillagerProfession> registry = (ForgeRegistry<VillagerRegistry.VillagerProfession>) ForgeRegistries.VILLAGER_PROFESSIONS;
-
-		return registry.getID(Villagers.banker);		
+		return registry.getID(Villagers.banker);
 	}
 
 	private boolean isAirBlockAtCurrentPosition(World world, BlockPos pos, StructureBoundingBox box) {

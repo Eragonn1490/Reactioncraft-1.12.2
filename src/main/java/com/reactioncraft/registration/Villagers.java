@@ -9,16 +9,10 @@ import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.village.MerchantRecipe;
-import net.minecraft.village.MerchantRecipeList;
-import net.minecraft.world.gen.structure.MapGenStructureIO;
-import net.minecraft.world.gen.structure.StructureComponent;
-import net.minecraft.world.gen.structure.StructureVillagePieces;
-import net.minecraft.world.gen.structure.StructureVillagePieces.PieceWeight;
-import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
-import net.minecraft.world.gen.structure.StructureVillagePieces.Village;
+import net.minecraft.util.*;
+import net.minecraft.village.*;
+import net.minecraft.world.gen.structure.*;
+import net.minecraft.world.gen.structure.StructureVillagePieces.*;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -45,10 +39,10 @@ public class Villagers {
 		career.addTrade(1, new EntityVillager.ITradeList() {
 			@Override
 			public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
-				recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,20+random.nextInt(4)),new ItemStack(ItemIndex.coinMould)));
-				recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,20+random.nextInt(4)),new ItemStack(ItemIndex.ingotmould)));
-				recipeList.add(new MerchantRecipe(new ItemStack(ItemIndex.coins,5+random.nextInt(4), 12),new ItemStack(ItemIndex.coinMould)));
-				recipeList.add(new MerchantRecipe(new ItemStack(ItemIndex.coins,5+random.nextInt(4), 12),new ItemStack(ItemIndex.ingotmould)));
+				recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,8+random.nextInt(4)),new ItemStack(ItemIndex.coinMould)));
+				recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD,8+random.nextInt(4)),new ItemStack(ItemIndex.ingotmould)));
+				recipeList.add(new MerchantRecipe(new ItemStack(ItemIndex.coins,1+random.nextInt(4), 12),new ItemStack(ItemIndex.coinMould)));
+				recipeList.add(new MerchantRecipe(new ItemStack(ItemIndex.coins,1+random.nextInt(4), 12),new ItemStack(ItemIndex.ingotmould)));
 			}
 		});
 		registry.register(mherr);
@@ -73,7 +67,6 @@ public class Villagers {
 			}
 		});
 		registry.register(banker);
-		Logger.info("Villager Key is ",    registry.getKey(banker));
 	}
 	
 	public static void registerVillageComponents() 

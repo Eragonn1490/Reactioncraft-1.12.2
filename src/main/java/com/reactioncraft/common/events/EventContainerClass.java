@@ -46,7 +46,7 @@ public class EventContainerClass
 			.put(EntityCow.class,        ItemIndex.bones)
 			.put(EntityHorse.class,      ItemIndex.bones)
 			.put(EntityZombie.class,     ItemIndex.bones)
-			.put(EntityBat.class,        ItemIndex.bones)
+			.put(EntityBat.class,        ItemIndex.bones)//Maybe Replace with Bat Wing?
 			.put(EntityMooshroom.class,  ItemIndex.bones)
 			.put(EntityOcelot.class,     ItemIndex.bones)
 			.put(EntityRabbit.class,     ItemIndex.bones)
@@ -57,6 +57,7 @@ public class EventContainerClass
 			.put(EntityCreeper.class,    ItemIndex.bones)
 			.put(EntityPigZombie.class,  ItemIndex.bones)
 			.put(EntityWitch.class,      ItemIndex.bones)
+			.put(EntityWitherSkeleton.class, Items.AIR) //Maybe Replace with Wither Rib ?
 			//End of Vanilla mob drops.
 			.build();
 
