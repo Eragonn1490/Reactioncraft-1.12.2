@@ -5,8 +5,9 @@
  ******************************************************************************/
 package forestry.api.mail;
 
-import javax.annotation.Nullable;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 import forestry.api.core.INbtWritable;
 import net.minecraft.inventory.IInventory;

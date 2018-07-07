@@ -8,13 +8,11 @@ package forestry.api.genetics;
 import java.util.List;
 import java.util.Map;
 
+import forestry.api.gui.IElementGenetic;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import forestry.api.gui.IElementGenetic;
 
 public interface IAlyzerPlugin {
 

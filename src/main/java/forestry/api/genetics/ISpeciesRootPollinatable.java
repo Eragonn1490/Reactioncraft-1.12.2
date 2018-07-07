@@ -7,10 +7,10 @@ package forestry.api.genetics;
 
 import javax.annotation.Nullable;
 
+import com.mojang.authlib.GameProfile;
+
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import com.mojang.authlib.GameProfile;
 
 /**
  * @author Nedelosk

@@ -1,12 +1,10 @@
 package buildcraft.api.mj;
 
 import io.netty.buffer.ByteBuf;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
 import net.minecraftforge.common.util.INBTSerializable;
 
 /** Provides a basic implementation of a simple battery. Note that you should call {@link #tick(World, BlockPos)} or

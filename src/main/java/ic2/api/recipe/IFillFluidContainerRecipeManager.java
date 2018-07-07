@@ -2,12 +2,10 @@ package ic2.api.recipe;
 
 import java.util.Collection;
 
-import net.minecraft.item.ItemStack;
-
-import net.minecraftforge.fluids.FluidStack;
-
 import ic2.api.recipe.IFillFluidContainerRecipeManager.Input;
 import ic2.api.util.FluidContainerOutputMode;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 
 public interface IFillFluidContainerRecipeManager extends IMachineRecipeManager<Void, Collection<ItemStack>, Input> {
 	MachineRecipeResult<Void, Collection<ItemStack>, Input> apply(Input input, FluidContainerOutputMode outputMode, boolean acceptTest);

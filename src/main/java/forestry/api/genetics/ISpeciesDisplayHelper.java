@@ -3,7 +3,6 @@ package forestry.api.genetics;
 import java.util.Optional;
 
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

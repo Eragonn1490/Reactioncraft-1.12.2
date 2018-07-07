@@ -5,14 +5,10 @@
  ******************************************************************************/
 package forestry.api.arboriculture;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import javax.annotation.Nullable;
 
 import com.mojang.authlib.GameProfile;
 
@@ -20,6 +16,10 @@ import forestry.api.genetics.IAllele;
 import forestry.api.genetics.IChromosome;
 import forestry.api.genetics.IFruitFamily;
 import forestry.api.genetics.ISpeciesRootPollinatable;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public interface ITreeRoot extends ISpeciesRootPollinatable {
 

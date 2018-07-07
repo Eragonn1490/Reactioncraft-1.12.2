@@ -1,33 +1,19 @@
 package com.reactioncraft.common.recipes;
 
 import javax.annotation.Nullable;
-
-import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.api.BrickOvenRecipes;
-import com.reactioncraft.api.ClayalizerRecipes;
-import com.reactioncraft.api.FreezerRecipes;
-import com.reactioncraft.core.Logger;
-import com.reactioncraft.registration.instances.BlockIndex;
-import com.reactioncraft.registration.instances.ItemIndex;
-import com.reactioncraft.utils.constants;
-
+import com.reactioncraft.api.*;
+import com.reactioncraft.common.registration.instances.*;
+import com.reactioncraft.common.utils.constants;
 import forestry.api.recipes.RecipeManagers;
 import ic2.api.item.IC2Items;
 import ic2.api.recipe.Recipes;
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

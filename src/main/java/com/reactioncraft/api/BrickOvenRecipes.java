@@ -1,17 +1,12 @@
 package com.reactioncraft.api;
 
-import com.google.common.collect.Maps;
-import com.reactioncraft.core.Logger;
-import com.reactioncraft.utils.Tools;
-
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-
 import java.util.Map;
 import java.util.Map.Entry;
+import com.google.common.collect.Maps;
+import com.reactioncraft.common.utils.*;
+import net.minecraft.block.Block;
+import net.minecraft.init.*;
+import net.minecraft.item.*;
 
 public class BrickOvenRecipes
 {

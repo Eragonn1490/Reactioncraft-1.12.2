@@ -1,24 +1,28 @@
 package com.reactioncraft.common.events;
 
+import java.util.Map;
+
 import com.google.common.collect.ImmutableMap;
-import com.reactioncraft.core.Logger;
-import com.reactioncraft.registration.instances.ItemIndex;
-import com.reactioncraft.utils.constants;
-import net.minecraft.entity.*;
-import net.minecraft.entity.boss.*;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.passive.*;
-import net.minecraft.entity.player.*;
+import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.utils.Logger;
+import com.reactioncraft.common.utils.constants;
+
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
-import net.minecraft.item.*;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import java.util.Map;
-import javax.annotation.Nullable;
 
 
 public class ButcherEventClass
@@ -32,6 +36,8 @@ public class ButcherEventClass
 			.put(EntityCow.class,     ItemIndex.beef_chunk)
 			.put(EntityHorse.class,   ItemIndex.raw_horse)
 			.put(EntityPlayerMP.class,  ItemIndex.raw_human)
+			.put(EntityRabbit.class,     Items.AIR)//Replace with something?
+			.put(EntityWitherSkeleton.class, Items.AIR) //Maybe Replace with Wither Rib ?
 
 			//End of adding new mob drops.
 			.build();
@@ -85,6 +91,9 @@ public class ButcherEventClass
 						{
 							ItemStack drop = new ItemStack(ItemIndex.raw_human);
 							event.getEntityLiving().entityDropItem(drop, 0.0F);
+							Logger.info("Name 0 is " + deadEntity.getName());
+							Logger.info("Name 1 is " + deadEntity.getDisplayName());
+							Logger.info("Name 2 is " + deadEntity.getCustomNameTag());
 						}
 					}
 				}

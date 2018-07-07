@@ -5,14 +5,12 @@
  ******************************************************************************/
 package forestry.api.arboriculture;
 
+import forestry.api.core.ITextureManager;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import forestry.api.core.ITextureManager;
 
 public interface IWoodProvider {
 	@SideOnly(Side.CLIENT)

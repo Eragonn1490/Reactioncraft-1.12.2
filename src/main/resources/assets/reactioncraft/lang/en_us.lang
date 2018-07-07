@@ -2,6 +2,9 @@
 reactioncraft.energybridge.stored=Energy Stored: %s
 reactioncraft.info.set.new=Frequency is set to %s
 
+#transmitter items
+item.reactioncrafttrigger.clear.info.cleared=Cleared Frequency
+
 #Villager Names
 entity.Villager.career1=Mherr
 entity.Villager.career2=Banker

@@ -1,9 +1,5 @@
 package com.reactioncraft.common.events;
 
-import com.reactioncraft.mobs.common.ai.EntityAIEatGrassMate;
-
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAIEatGrass;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

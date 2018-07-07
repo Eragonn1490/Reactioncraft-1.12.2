@@ -1,8 +1,9 @@
 package com.reactioncraft.api;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.registration.instances.BlockIndex;
-import com.reactioncraft.registration.instances.ItemIndex;
+import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.registration.instances.ItemIndex;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 

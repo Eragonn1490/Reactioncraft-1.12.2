@@ -5,9 +5,8 @@
  ******************************************************************************/
 package forestry.api.arboriculture;
 
-import net.minecraft.item.ItemStack;
-
 import forestry.api.genetics.IGenome;
+import net.minecraft.item.ItemStack;
 
 public interface ITreeGenome extends IGenome {
 

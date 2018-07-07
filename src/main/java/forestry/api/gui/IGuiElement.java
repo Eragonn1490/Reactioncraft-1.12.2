@@ -5,9 +5,10 @@
  ******************************************************************************/
 package forestry.api.gui;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

@@ -5,10 +5,12 @@
  ******************************************************************************/
 package forestry.api.apiculture;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.mojang.authlib.GameProfile;
+
 import forestry.api.genetics.IAllele;
 import forestry.api.genetics.ISpeciesRoot;
 import net.minecraft.item.ItemStack;

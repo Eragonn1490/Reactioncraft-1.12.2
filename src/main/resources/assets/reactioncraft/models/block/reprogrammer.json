@@ -1,7 +1,6 @@
 {
-    "parent": "block/cube_column",
+    "parent": "block/cube_all",
     "textures": {
-        "end": "blocks/planks_oak",
-        "side": "reactioncraft:blocks/empty"
+        "all": "triggerblockmod:blocks/reprogrammer"
     }
 }

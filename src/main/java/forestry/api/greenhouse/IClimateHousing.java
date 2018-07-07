@@ -5,10 +5,9 @@
  ******************************************************************************/
 package forestry.api.greenhouse;
 
+import forestry.api.climate.IClimateState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import forestry.api.climate.IClimateState;
 
 public interface IClimateHousing {
 	

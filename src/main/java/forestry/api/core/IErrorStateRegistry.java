@@ -5,8 +5,9 @@
  ******************************************************************************/
 package forestry.api.core;
 
-import javax.annotation.Nullable;
 import java.util.Set;
+
+import javax.annotation.Nullable;
 
 public interface IErrorStateRegistry {
 	void registerErrorState(IErrorState state);

@@ -7,6 +7,7 @@ package forestry.api.farming;
 
 import java.util.Collection;
 
+import forestry.api.core.ForestryAPI;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.item.ItemStack;
@@ -14,11 +15,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import forestry.api.core.ForestryAPI;
 
 /**
  * The IFarmLogic is used by farm blocks and multi-blocks to cultivate and harvest crops and plants.

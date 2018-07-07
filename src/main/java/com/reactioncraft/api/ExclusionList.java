@@ -1,14 +1,11 @@
 package com.reactioncraft.api;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EntityLiving;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.reactioncraft.utils.constants;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 
 public class ExclusionList implements Iterable<String>
 {

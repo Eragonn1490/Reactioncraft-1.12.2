@@ -5,9 +5,10 @@
  ******************************************************************************/
 package forestry.api.farming;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.function.BiFunction;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.item.ItemStack;
 

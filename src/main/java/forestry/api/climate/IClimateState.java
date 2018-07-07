@@ -5,9 +5,8 @@
  ******************************************************************************/
 package forestry.api.climate;
 
-import net.minecraft.world.biome.Biome;
-
 import forestry.api.core.INbtWritable;
+import net.minecraft.world.biome.Biome;
 
 /**
  * A {@link IClimateState} is used to store and handle temperature and humidity.

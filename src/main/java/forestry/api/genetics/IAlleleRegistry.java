@@ -5,15 +5,15 @@
  ******************************************************************************/
 package forestry.api.genetics;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Map;
 
-import net.minecraft.item.ItemStack;
+import javax.annotation.Nullable;
 
 import com.mojang.authlib.GameProfile;
 
 import forestry.api.genetics.IClassification.EnumClassLevel;
+import net.minecraft.item.ItemStack;
 
 /**
  * Manages {@link ISpeciesRoot}, {@link IAllele}s, {@link IFruitFamily}s, {@link IClassification}, the blacklist and allows creation of research notes.

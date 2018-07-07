@@ -2,13 +2,11 @@ package ic2.api.tile;
 
 import static net.minecraftforge.fml.relauncher.Side.CLIENT;
 
+import ic2.api.info.Info;
 import net.minecraft.tileentity.TileEntity;
-
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import ic2.api.info.Info;
 
 /**
  * Helper class for registering {@link IRotorProvider}s to provide the default windmill renderer

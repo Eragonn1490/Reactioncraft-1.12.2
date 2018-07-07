@@ -1,9 +1,8 @@
 package ic2.api.reactor;
 
+import ic2.api.info.ILocatable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-
-import ic2.api.info.ILocatable;
 
 /**
  * Interface implemented nuclear reactors, expected to be a {@link TileEntity}, but does not have to be.

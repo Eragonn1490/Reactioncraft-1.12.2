@@ -1,24 +1,17 @@
 package com.reactioncraft.core;
 
-import com.reactioncraft.containers.ContainerBrickOven;
-import com.reactioncraft.containers.ContainerClayalizer;
-import com.reactioncraft.containers.ContainerFreezer;
-import com.reactioncraft.tiles.TileEntityBrickOven;
-import com.reactioncraft.tiles.TileEntityClayalizer;
-import com.reactioncraft.tiles.TileEntityFreezer;
-import com.reactioncraft.ui.GuiBrickoven;
-import com.reactioncraft.ui.GuiClayalizer;
-import com.reactioncraft.ui.GuiFreezer;
+import javax.annotation.Nullable;
+
+import com.reactioncraft.common.containers.*;
+import com.reactioncraft.common.tiles.*;
+import com.reactioncraft.common.ui.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
-
-import javax.annotation.Nullable;
 
 public class ServerProxy implements IGuiHandler
 {
@@ -49,7 +42,10 @@ public class ServerProxy implements IGuiHandler
     {
         BRICK_OVEN,
 		CLAYLISER,
-		FREEZER
+		FREEZER,
+		Bookcase,
+		Scrollcase,
+		reprogrammer
     }
 
     @Override
@@ -65,6 +61,12 @@ public class ServerProxy implements IGuiHandler
 					return new ContainerFreezer(player.inventory, (TileEntityFreezer) tileEntity);
 				case CLAYLISER:
 					return new ContainerClayalizer(player.inventory, (TileEntityClayalizer) tileEntity);
+				case Bookcase:
+					return new ContainerBookChest(player.inventory, (TileEntityHiddenBookChest) tileEntity, player);
+				case Scrollcase:
+					return new ContainerScrollChest(player.inventory, (TileEntityHiddenScrollChest) tileEntity, player);
+				case reprogrammer:
+					return new ContainerReprogrammer(player, (TileEntityReprogrammer) tileEntity);
 			}
 			throw new IllegalArgumentException("No gui with id " + ID);
 		}
@@ -78,12 +80,14 @@ public class ServerProxy implements IGuiHandler
 		final TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
 
 		if (tileEntity != null) {
-			switch (GuiIDs.values()[ID]) {
-				case BRICK_OVEN: {
-					return new GuiBrickoven(player.inventory, (TileEntityBrickOven) tileEntity);
-				}
-				case CLAYLISER:return new GuiClayalizer(player.inventory, (TileEntityClayalizer) tileEntity);
-				case FREEZER:return new GuiFreezer(player.inventory, (TileEntityFreezer) tileEntity);
+			switch (GuiIDs.values()[ID]) 
+			{
+				case BRICK_OVEN:   return new GuiBrickoven(player.inventory,   (TileEntityBrickOven) tileEntity);
+				case CLAYLISER:    return new GuiClayalizer (player.inventory, (TileEntityClayalizer)        tileEntity);
+				case FREEZER:      return new GuiFreezer    (player.inventory, (TileEntityFreezer)           tileEntity);
+				case Bookcase:     return new GUIBookChest( player.inventory,  (TileEntityHiddenBookChest)   tileEntity);
+				case Scrollcase:   return new GUIScrollChest(player.inventory, (TileEntityHiddenScrollChest) tileEntity);
+				case reprogrammer: return new GuiReprogramer(player,           (TileEntityReprogrammer)      tileEntity);
 			}
 		}
 		return null;

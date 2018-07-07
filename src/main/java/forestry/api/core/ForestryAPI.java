@@ -7,11 +7,6 @@ package forestry.api.core;
 
 import java.util.Set;
 
-import net.minecraft.util.ResourceLocation;
-
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import forestry.api.climate.IClimateManager;
 import forestry.api.climate.IClimateStates;
 import forestry.api.farming.IFarmRegistry;
@@ -19,6 +14,9 @@ import forestry.api.farming.IFarmable;
 import forestry.api.farming.ISimpleFarmLogic;
 import forestry.api.modules.IModuleContainer;
 import forestry.api.modules.IModuleManager;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Forestry's API is divided into several subcategories to make it easier to understand.

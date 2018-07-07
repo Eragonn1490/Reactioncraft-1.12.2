@@ -5,11 +5,11 @@
  ******************************************************************************/
 package forestry.api.arboriculture;
 
-import com.google.common.collect.ImmutableMap;
-
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+
+import com.google.common.collect.ImmutableMap;
 
 import net.minecraftforge.client.model.IModel;
 

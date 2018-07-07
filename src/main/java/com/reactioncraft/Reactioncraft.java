@@ -1,45 +1,55 @@
 package com.reactioncraft;
 
 
-import com.reactioncraft.api.*;
-import com.reactioncraft.core.*;
-import com.reactioncraft.creativetabs.*;
-import com.reactioncraft.mobs.common.entities.*;
-import com.reactioncraft.registration.*;
-import com.reactioncraft.utils.*;
-import com.reactioncraft.world.*;
-import com.reactioncraft.world.village.*;
-import com.reactioncraft.common.events.LootTableHandler;
+//Java
+import java.io.File;
 
-//API
-import forestry.api.recipes.RecipeManagers;
-import ic2.api.info.Info;
+import com.reactioncraft.api.ExclusionList;
+import com.reactioncraft.api.OreDictionaryRegistry;
+import com.reactioncraft.common.capabilities.CapabilityTriggerHz;
+import com.reactioncraft.common.creativetabs.RCBlockTab;
+import com.reactioncraft.common.creativetabs.RCFoodTab;
+import com.reactioncraft.common.creativetabs.RCItemTab;
+import com.reactioncraft.common.creativetabs.RCTestTab;
+import com.reactioncraft.common.events.LootTableHandler;
+import com.reactioncraft.common.registration.BlockRegistry;
+import com.reactioncraft.common.registration.EntityRCRegistry;
+import com.reactioncraft.common.registration.EventRegistry;
+import com.reactioncraft.common.registration.ItemRegistry;
+import com.reactioncraft.common.registration.MaterialIndex;
+import com.reactioncraft.common.registration.RecipesManager;
+import com.reactioncraft.common.registration.TileEntityRegistry;
+import com.reactioncraft.common.registration.Villagers;
+import com.reactioncraft.common.utils.Logger;
+import com.reactioncraft.common.utils.ReactioncraftConfiguration;
+import com.reactioncraft.common.utils.constants;
+import com.reactioncraft.common.world.BiomeHandler;
+import com.reactioncraft.common.world.Worldgen;
+import com.reactioncraft.core.ServerProxy;
 
 //Minecraft
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.world.biome.*;
-
 //Forge
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.*;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.server.FMLServerHandler;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
-//Java
-import java.io.File;
-
 
 @Mod(modid = constants.MODID, name = constants.BaseID, version = constants.VERSION, acceptedMinecraftVersions = "[1.12]")
-
-
+@Mod.EventBusSubscriber(modid = constants.MODID)
 public class Reactioncraft
 {
 	//Proxies
@@ -70,6 +80,7 @@ public class Reactioncraft
 	{
 		Logger.setLogger(event.getModLog());
 		Logger.info("[Reactioncraft] Pre-initialization started");
+		CapabilityTriggerHz.register();
 
 		config = new ReactioncraftConfiguration(new File(event.getModConfigurationDirectory(), "Reactioncraft/Basemod.wizim"));
 
@@ -94,7 +105,6 @@ public class Reactioncraft
 		MinecraftForge.EVENT_BUS.register(new BiomeHandler());
 		MinecraftForge.EVENT_BUS.register(new LootTableHandler());
 		TileEntityRegistry.registerTileEntities();
-
 		EntityRCRegistry.registerVillagers();
 		EntityRCRegistry.registerMobs();
 		EntityRCRegistry.registerThrowableEntites();

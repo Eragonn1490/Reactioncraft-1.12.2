@@ -5,8 +5,9 @@
  ******************************************************************************/
 package forestry.api.arboriculture;
 
-import javax.annotation.Nullable;
 import java.awt.Color;
+
+import javax.annotation.Nullable;
 
 import forestry.api.genetics.IClassification;
 

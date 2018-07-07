@@ -3,27 +3,22 @@ package com.reactioncraft;
 public class Todolist 
 {
 	/** This Class is just here as a list of things to fix **/
-	/* Wishlist
+	/* Wishlist After v7.0.0
 	 * 
 	 * Advancements
 	 * Drawbridge? Portcullis but vertical 
 	 * Add can Silk touch to desert coal core and gems
 	 * Recipe for Kingly Armour
 	 * Finish Vanilla Villager Trades
-	 * Chest, 
 	 * Treasure Piles? (Maybe)
 	 * Make the Scroll Act like a book.
-	 * Redesign corn item textures!
-	 * Make sure Banker Villager can Spawn in Bank House
-	 * EU - TO RF- To - MJ converter block.
 	 * Hireoglyph Recipes Changed to using machine?
 	 * Villager drop with meat cleaver
-	 * Longer Piston?
 	 * Fix Boreheads for Railcraft (When it updates to 1.12.2)
 	 * Make Frame Useful for forestry again?
 	 * Add bee species? that uses honeycomb and pollen comb?
 	 * Desert Portcullis (Possibly Change Gate to use the Rail Model)
-	 * Fix Jellyfish Movement
+	 * Fix Jellyfish Movement / Underwater
 	 * Way for mods to add bone drops
 	 *
 	 */
@@ -32,14 +27,15 @@ public class Todolist
 	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
 	 * Brick Oven, Freezer don't return buckets
 	 * Dis-allow capturing millenaire villagers (city forcibly respawns them anyway)
-	 * 
+	 * Chest
+	 * Longer Piston?
 	 */
 	
 	
 	/*
 	 * Coming in MC 1.13
 	 *  Columns and other Blocks that are not full will render as if inside of the fluid surrounding them!
-	 *  Sea-creepers!
+	 *  Sea-creepers!!
 	 */
 	
 	
@@ -86,6 +82,11 @@ public class Todolist
 	 * Re-Added Jellyfish (v7.0.0)
 	 * Added Statues (v7.0.0)
 	 * Added Compressed Gold Statue to Banker House (v7.0.0)
+	 * Redesign corn item textures! (v7.0.0)
+	 * Make sure Banker Villager can Spawn in Bank House (v7.0.0)
+	 * EU - TO RF- To - MJ converter block. (v7.0.0)
+	 * Ship in a bottle & Map in a bottle are now throwable Entities that "Break" (v7.0.0)
+	 * End Ores Generate (v7.0.0)
 	 * 
 	 */
 	
@@ -162,6 +163,7 @@ public class Todolist
 	 * Double Tall Grass now cooks in furnace to straw (v7.0.0)
 	 * Stone Slab Column now correctly mirrors stone double slabs (v7.0.0)
 	 * Actually Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v7.0.0)
+	 * Re-Organized Git Folders (7/7/2018)
 	 * 
 	 */
 }

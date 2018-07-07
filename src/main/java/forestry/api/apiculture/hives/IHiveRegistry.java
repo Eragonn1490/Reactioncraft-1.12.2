@@ -8,9 +8,8 @@ package forestry.api.apiculture.hives;
 import java.util.List;
 import java.util.Locale;
 
-import net.minecraft.util.IStringSerializable;
-
 import forestry.api.apiculture.IHiveDrop;
+import net.minecraft.util.IStringSerializable;
 
 public interface IHiveRegistry {
 

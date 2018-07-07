@@ -5,10 +5,9 @@
  ******************************************************************************/
 package forestry.api.multiblock;
 
-import net.minecraft.util.math.BlockPos;
-
 import forestry.api.core.ICamouflageHandler;
 import forestry.api.greenhouse.IGreenhouseHousing;
+import net.minecraft.util.math.BlockPos;
 
 public interface IGreenhouseController extends IMultiblockController, IGreenhouseHousing, ICamouflageHandler {
 	

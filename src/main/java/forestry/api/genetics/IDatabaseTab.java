@@ -2,12 +2,10 @@ package forestry.api.genetics;
 
 import javax.annotation.Nullable;
 
+import forestry.api.gui.IElementGenetic;
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import forestry.api.gui.IElementGenetic;
 
 /**
  * A tab of the database screen that shows some information about a {@link IIndividual}.

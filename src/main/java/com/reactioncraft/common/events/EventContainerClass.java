@@ -2,37 +2,48 @@ package com.reactioncraft.common.events;
 
 import java.util.Map;
 
-import javax.annotation.Nullable;
 import com.google.common.collect.ImmutableMap;
-import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.api.BoneDropMap;
-import com.reactioncraft.blocks.*;
-import com.reactioncraft.blocks.BlockBookshelf;
-import com.reactioncraft.blocks.enums.*;
-import com.reactioncraft.core.Logger;
-import com.reactioncraft.registration.instances.*;
-import com.reactioncraft.utils.constants;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.*;
+import com.reactioncraft.common.blocks.enums.EnumBookshelf;
+import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.registration.instances.PropertyIndex;
+import com.reactioncraft.common.utils.constants;
+import com.reactioncraft.common.blocks.BlockBookshelf;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.*;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.init.*;
-import net.minecraft.item.*;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntityBat;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityMooshroom;
+import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
-import net.minecraftforge.fluids.*;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import net.minecraftforge.fluids.IFluidBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventContainerClass
@@ -139,7 +150,7 @@ public class EventContainerClass
 
 				event.getEntityPlayer().setHeldItem(event.getHand(), transformBottle(event.getItemStack(), event.getEntityPlayer(), new ItemStack(ItemIndex.bowlwater)));
 
-				if(constants.deleteWaterBlock == true)
+				if(PropertyIndex.deleteWaterBlock == true)
 				{
 					event.getWorld().setBlockToAir(pos);
 				}
