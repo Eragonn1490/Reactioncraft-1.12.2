@@ -1,6 +1,7 @@
 package com.reactioncraft.common.containers;
 
-import com.builtbroken.energystorageblock.inventory.InventoryEnergyStorage;
+
+import com.reactioncraft.common.energystorageblock.inventory.InventoryEnergyStorage;
 import com.reactioncraft.common.tiles.TileEntityEnergyStorage;
 
 import net.minecraft.entity.player.EntityPlayer;

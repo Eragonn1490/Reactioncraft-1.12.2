@@ -19,5 +19,6 @@ public class TileEntityRegistry
         GameRegistry.registerTileEntity(TileEntityBookcaseChest.class,     constants.MODID+":bookcasechestbase");
         GameRegistry.registerTileEntity(TileEntityHiddenBookChest.class,   constants.MODID+":bookcasechest");
         GameRegistry.registerTileEntity(TileEntityHiddenScrollChest.class, constants.MODID+":scrollcasechest");
+        GameRegistry.registerTileEntity(TileEntityEnergyStorage.class,     constants.MODID+":energy_storage");
 	}
 }

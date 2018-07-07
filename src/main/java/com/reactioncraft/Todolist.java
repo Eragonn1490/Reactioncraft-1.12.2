@@ -29,6 +29,8 @@ public class Todolist
 	 * Dis-allow capturing millenaire villagers (city forcibly respawns them anyway)
 	 * Chest
 	 * Longer Piston?
+	 * Recipes
+	 * Fix Text from energy & wireless blocks
 	 */
 	
 	

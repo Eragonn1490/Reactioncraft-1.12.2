@@ -113,7 +113,7 @@ public class BlockRegistry
 		registerBlockItem(BlockIndex.reprogrammer, registryEvent);
 
 		//RF-EU-MJ Converter
-		//registerBlockItem(BlockIndex.bloodstoneEnergyBlock, registryEvent);
+		registerBlockItem(BlockIndex.bloodstoneEnergyBlock, registryEvent);
 
 		registerBlockItem(BlockIndex.enderportalframe,registryEvent);
 
@@ -326,7 +326,7 @@ public class BlockRegistry
 
 
 		//
-		//BlockIndex.bloodstoneEnergyBlock = (BlockBloodstoneConverter) register(new BlockBloodstoneConverter(Material.ROCK).setHardness(3.0F),"bloodstoneEnergyBlock",forgeRegistry);
+		BlockIndex.bloodstoneEnergyBlock = (BlockEnergyStorage) register(new BlockEnergyStorage().setHardness(3.0F),"bloodstoneEnergyBlock",forgeRegistry);
 
 
 		BlockIndex.enderportalframe= (BlockEndPortalFrame2) register(new BlockEndPortalFrame2().setCreativeTab(Reactioncraft.ReactioncraftTest),"end_portal_frame",forgeRegistry);

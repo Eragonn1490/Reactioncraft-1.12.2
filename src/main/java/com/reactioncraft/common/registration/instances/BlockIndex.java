@@ -82,7 +82,7 @@ public class BlockIndex
   	public static BlockBookcaseChest scrollshelfchest;
 
   	//BC IC2 RF Converter
-  	//public static BlockBloodstoneConverter bloodstoneEnergyBlock;
+  	public static BlockEnergyStorage bloodstoneEnergyBlock;
   	
   	//Tripwire Rail
   	public static BlockTripwirerail tripwirerail;

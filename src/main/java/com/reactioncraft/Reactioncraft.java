@@ -3,6 +3,8 @@ package com.reactioncraft;
 
 //Java
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.reactioncraft.api.ExclusionList;
 import com.reactioncraft.api.OreDictionaryRegistry;
@@ -11,6 +13,7 @@ import com.reactioncraft.common.creativetabs.RCBlockTab;
 import com.reactioncraft.common.creativetabs.RCFoodTab;
 import com.reactioncraft.common.creativetabs.RCItemTab;
 import com.reactioncraft.common.creativetabs.RCTestTab;
+import com.reactioncraft.common.energystorageblock.network.NetworkHandler;
 import com.reactioncraft.common.events.LootTableHandler;
 import com.reactioncraft.common.registration.BlockRegistry;
 import com.reactioncraft.common.registration.EntityRCRegistry;
@@ -25,6 +28,9 @@ import com.reactioncraft.common.utils.ReactioncraftConfiguration;
 import com.reactioncraft.common.utils.constants;
 import com.reactioncraft.common.world.BiomeHandler;
 import com.reactioncraft.common.world.Worldgen;
+import com.reactioncraft.core.BuildcraftProxy;
+import com.reactioncraft.core.EnergyModProxy;
+import com.reactioncraft.core.IC2Proxy;
 import com.reactioncraft.core.ServerProxy;
 
 //Minecraft
@@ -71,6 +77,9 @@ public class Reactioncraft
 
 	//For Wild_Card Values (Replace as it pops up)
 	public static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
+	
+	//Energy Proxies
+	public static List<EnergyModProxy> energyModProxies = new ArrayList();
 
 	//Setup Config Files
 	public static ReactioncraftConfiguration config, millenaireC;
@@ -81,6 +90,10 @@ public class Reactioncraft
 		Logger.setLogger(event.getModLog());
 		Logger.info("[Reactioncraft] Pre-initialization started");
 		CapabilityTriggerHz.register();
+		
+		NetworkHandler.init();
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new ServerProxy());
 
 		config = new ReactioncraftConfiguration(new File(event.getModConfigurationDirectory(), "Reactioncraft/Basemod.wizim"));
 
@@ -95,7 +108,6 @@ public class Reactioncraft
 			if (config.hasChanged()) { config.save(); }
 		}
 
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new ServerProxy());
 		proxy.registerRenderInformation();
 		MaterialIndex.initMaterials();
 
@@ -130,6 +142,8 @@ public class Reactioncraft
 		EventRegistry.eventInit();
 		GameRegistry.registerWorldGenerator(new Worldgen(), 3);
 		RecipesManager.registerRecipes();
+		
+		energyModProxies.forEach(proxy -> proxy.init());
 	}
 
 	@Mod.EventHandler
@@ -159,12 +173,14 @@ public class Reactioncraft
 		
 		if(constants.Buildcraft == true)
 		{
+			energyModProxies.add(BuildcraftProxy.INSTANCE);
 			System.out.println("[Reactioncraft] Found Buildcraft!");
 		} else { System.out.println("[Reactioncraft] Did not find Buildcraft!"); }
 		
 		
 		if(constants.IC2 == true)
 		{
+			 energyModProxies.add(IC2Proxy.INSTANCE);
 			System.out.println("[Reactioncraft] Found Industrialcraft 2!");
 		} else { System.out.println("[Reactioncraft] Did not find Industrialcraft 2!"); }
 
@@ -174,6 +190,7 @@ public class Reactioncraft
 			System.out.println("[Reactioncraft] Found RF-API!");
 		} else { System.out.println("[Reactioncraft] Did not find RF-API!"); }
 		
+		energyModProxies.forEach(proxy -> proxy.postInit());
 		
 		Logger.info("[Reactioncraft] has fully Loaded!");
 	}

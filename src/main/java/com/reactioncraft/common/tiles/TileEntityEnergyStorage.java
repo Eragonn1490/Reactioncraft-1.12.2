@@ -3,18 +3,17 @@ package com.reactioncraft.common.tiles;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.builtbroken.energystorageblock.EnergyStorageBlockMod;
-import com.builtbroken.energystorageblock.config.ConfigEnergyStorage;
-import com.builtbroken.energystorageblock.config.ConfigPowerSystem;
-import com.builtbroken.energystorageblock.energy.EnergyBlockStorage;
-import com.builtbroken.energystorageblock.energy.EnergySideState;
-import com.builtbroken.energystorageblock.energy.EnergySideWrapper;
-import com.builtbroken.energystorageblock.mods.EnergyModProxy;
-import com.builtbroken.energystorageblock.network.IDescMessageTile;
-import com.builtbroken.energystorageblock.network.MessageDesc;
-import com.builtbroken.energystorageblock.network.MessageTileEnergy;
-import com.builtbroken.energystorageblock.network.NetworkHandler;
-
+import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.common.energystorageblock.config.ConfigEnergyStorage;
+import com.reactioncraft.common.energystorageblock.config.ConfigPowerSystem;
+import com.reactioncraft.common.energystorageblock.energy.EnergyBlockStorage;
+import com.reactioncraft.common.energystorageblock.energy.EnergySideState;
+import com.reactioncraft.common.energystorageblock.energy.EnergySideWrapper;
+import com.reactioncraft.common.energystorageblock.network.IDescMessageTile;
+import com.reactioncraft.common.energystorageblock.network.MessageDesc;
+import com.reactioncraft.common.energystorageblock.network.MessageTileEnergy;
+import com.reactioncraft.common.energystorageblock.network.NetworkHandler;
+import com.reactioncraft.core.EnergyModProxy;
 import ic2.api.energy.tile.IEnergyAcceptor;
 import ic2.api.energy.tile.IEnergyEmitter;
 import ic2.api.energy.tile.IEnergySink;
@@ -448,13 +447,13 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
     public void invalidate()
     {
         super.invalidate();
-        EnergyStorageBlockMod.energyModProxies.forEach(proxy -> proxy.onTileInvalidate(this));
+        Reactioncraft.energyModProxies.forEach(proxy -> proxy.onTileInvalidate(this));
     }
 
     @Override
     public void validate()
     {
         super.validate();
-        EnergyStorageBlockMod.energyModProxies.forEach(proxy -> proxy.onTileValidate(this));
+        Reactioncraft.energyModProxies.forEach(proxy -> proxy.onTileValidate(this));
     }
 }

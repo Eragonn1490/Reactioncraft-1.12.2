@@ -1,0 +1,119 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "textures": {
+      "all": "energystorageblock:blocks/energy_storage_none"
+    }
+  },
+  "variants": {
+    "normal": [
+      {}
+    ],
+    "inventory": [
+      {}
+    ],
+    "up": {
+      "input": {
+        "textures": {
+          "up": "energystorageblock:blocks/energy_storage_input"
+        }
+      },
+      "output": {
+        "textures": {
+          "up": "energystorageblock:blocks/energy_storage_output"
+        }
+      },
+      "none": {
+        "textures": {
+          "up": "energystorageblock:blocks/energy_storage_none"
+        }
+      }
+    },
+    "down": {
+      "input": {
+        "textures": {
+          "down": "energystorageblock:blocks/energy_storage_input"
+        }
+      },
+      "output": {
+        "textures": {
+          "down": "energystorageblock:blocks/energy_storage_output"
+        }
+      },
+      "none": {
+        "textures": {
+          "down": "energystorageblock:blocks/energy_storage_none"
+        }
+      }
+    },
+    "north": {
+      "input": {
+        "textures": {
+          "north": "energystorageblock:blocks/energy_storage_input"
+        }
+      },
+      "output": {
+        "textures": {
+          "north": "energystorageblock:blocks/energy_storage_output"
+        }
+      },
+      "none": {
+        "textures": {
+          "north": "energystorageblock:blocks/energy_storage_none"
+        }
+      }
+    },
+    "south": {
+      "input": {
+        "textures": {
+          "south": "energystorageblock:blocks/energy_storage_input"
+        }
+      },
+      "output": {
+        "textures": {
+          "south": "energystorageblock:blocks/energy_storage_output"
+        }
+      },
+      "none": {
+        "textures": {
+          "south": "energystorageblock:blocks/energy_storage_none"
+        }
+      }
+    },
+    "east": {
+      "input": {
+        "textures": {
+          "east": "energystorageblock:blocks/energy_storage_input"
+        }
+      },
+      "output": {
+        "textures": {
+          "east": "energystorageblock:blocks/energy_storage_output"
+        }
+      },
+      "none": {
+        "textures": {
+          "east": "energystorageblock:blocks/energy_storage_none"
+        }
+      }
+    },
+    "west": {
+      "input": {
+        "textures": {
+          "west": "energystorageblock:blocks/energy_storage_input"
+        }
+      },
+      "output": {
+        "textures": {
+          "west": "energystorageblock:blocks/energy_storage_output"
+        }
+      },
+      "none": {
+        "textures": {
+          "west": "energystorageblock:blocks/energy_storage_none"
+        }
+      }
+    }
+  }
+}

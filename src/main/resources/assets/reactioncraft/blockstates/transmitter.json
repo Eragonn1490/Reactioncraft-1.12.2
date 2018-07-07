@@ -1,7 +1,19 @@
 {
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "blocks/planks_oak",
-        "side": "reactioncraft:blocks/empty"
+  "forge_marker": 1,
+  "defaults": {
+    "model": "reactioncraft:trigger_disabled"
+  },
+  "variants": {
+    "inventory": {
+      "model": "reactioncraft:trigger_disabled"
+    },
+    "powered": {
+      "false": {
+        "model": "reactioncraft:trigger_disabled"
+      },
+      "true": {
+        "model": "reactioncraft:trigger_enabled"
+      }
     }
+  }
 }

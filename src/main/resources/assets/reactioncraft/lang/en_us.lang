@@ -1,9 +1,31 @@
 #Energy Converter
-reactioncraft.energybridge.stored=Energy Stored: %s
-reactioncraft.info.set.new=Frequency is set to %s
+tile.reactioncraft.bloodstoneEnergyBlock.name=Energy Storage Block
+
+## Info keys for energy side set
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.up.input=Side up set to input energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.down.input=Side down set to input energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.north.input=Side north set to input energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.south.input=Side south set to input energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.east.input=Side east set to input energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.west.input=Side west set to input energy
+
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.up.output=Side up set to output energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.down.output=Side down set to output energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.north.output=Side north set to output energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.south.output=Side south set to output energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.east.output=Side east set to output energy
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.west.output=Side west set to output energy
+
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.up.none=Side up disconnected
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.down.none=Side down disconnected
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.north.none=Side north disconnected
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.south.none=Side south disconnected
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.east.none=Side east disconnected
+tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.west.none=Side west disconnected
 
 #transmitter items
 item.reactioncrafttrigger.clear.info.cleared=Cleared Frequency
+tile.reactioncraft.transmitter.info.set.new=Frequency Set
 
 #Villager Names
 entity.Villager.career1=Mherr

@@ -1,9 +1,8 @@
 package com.reactioncraft.common.ui;
 
-import com.builtbroken.energystorageblock.EnergyStorageBlockMod;
 import com.reactioncraft.common.containers.ContainerEnergyStorage;
 import com.reactioncraft.common.tiles.TileEntityEnergyStorage;
-
+import com.reactioncraft.common.utils.constants;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
  */
 public class GuiEnergyStorage extends GuiContainer
 {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(EnergyStorageBlockMod.DOMAIN, "textures/gui/energy.storage.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(constants.MODID, "textures/gui/energy.storage.png");
     private static final String ENERGY_FORMAT = "%,d FE";
 
     private final TileEntityEnergyStorage energyStorage;
