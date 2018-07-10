@@ -29,12 +29,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBookcaseChest extends Block
 {
-    public static final PropertyEnum<EnumChestType> VARIANT_PROP = PropertyEnum.create("variant", EnumChestType.class);
+    public static final PropertyEnum<EnumChestType> TYPE = PropertyEnum.create("type", EnumChestType.class);
 
     public BlockBookcaseChest()
     {
         super(Material.IRON);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT_PROP, EnumChestType.Book));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumChestType.Book));
         this.setHardness(3.0F);
         this.setCreativeTab(Reactioncraft.ReactioncraftTest);
     }
@@ -100,7 +100,7 @@ public class BlockBookcaseChest extends Block
     @Override
     public TileEntity createTileEntity(World world, IBlockState state)
     {
-        return state.getValue(VARIANT_PROP).makeEntity();
+        return state.getValue(TYPE).makeEntity();
     }
 
 
@@ -120,7 +120,7 @@ public class BlockBookcaseChest extends Block
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(VARIANT_PROP, EnumChestType.VALUES[meta]);
+        return this.getDefaultState().withProperty(TYPE, EnumChestType.VALUES[meta]);
     }
 
 
@@ -129,7 +129,7 @@ public class BlockBookcaseChest extends Block
     public int getMetaFromState(IBlockState blockState)
     {
 
-        return blockState.getValue(VARIANT_PROP).ordinal();
+        return blockState.getValue(TYPE).ordinal();
     }
 
 
@@ -137,7 +137,7 @@ public class BlockBookcaseChest extends Block
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, VARIANT_PROP);
+        return new BlockStateContainer(this, TYPE);
     }
 
 
@@ -167,7 +167,7 @@ public class BlockBookcaseChest extends Block
     @Override
     public int damageDropped(IBlockState state)
     {
-        return state.getValue(VARIANT_PROP).ordinal();
+        return state.getValue(TYPE).ordinal();
     }
 
 

@@ -8,6 +8,7 @@ import com.reactioncraft.common.registration.instances.BlockIndex;
 import com.reactioncraft.common.registration.instances.ItemIndex;
 import com.reactioncraft.common.registration.instances.PropertyIndex;
 import com.reactioncraft.common.utils.constants;
+import com.reactioncraft.api.ExclusionList;
 import com.reactioncraft.common.blocks.BlockBookshelf;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -36,11 +37,15 @@ import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fluids.IFluidBlock;
@@ -158,7 +163,6 @@ public class EventContainerClass
 		}
 	}
 
-
 	private ItemStack transformBottle(ItemStack input, EntityPlayer player, ItemStack stack) 
 	{
 		input.shrink(1);
@@ -179,6 +183,32 @@ public class EventContainerClass
 		}
 	}
 
-	//@SubscribeEvent
-	//public void onModEntityGetCaught(PlayerInteractEvent event){}
+	@SubscribeEvent
+	public void onEntityDrop(LivingDropsEvent event)
+	{
+		EntityLivingBase entity = event.getEntityLiving();
+		World world = entity.getEntityWorld();
+		BlockPos position = entity.getPosition();
+
+		double rand = event.getEntityLiving().getEntityWorld().rand.nextDouble();
+
+		try
+		{
+			if (event.getSource().getDamageType().equals("player"))
+			{
+				ItemStack e = ((EntityLivingBase)event.getSource().getTrueSource()).getHeldItemMainhand();
+
+				if (e.getItem() == ItemIndex.meat_cleaver && rand < 1.0D)
+				{
+					NBTTagCompound tag = new NBTTagCompound();
+					entity.writeToNBT(tag);
+					for(Object o : tag.getKeySet())
+					{
+						System.out.println((String) o);
+					}
+				}
+			}
+		}
+		catch (NullPointerException var6) {} //This line is an empty exception dont change.
+	}
 }

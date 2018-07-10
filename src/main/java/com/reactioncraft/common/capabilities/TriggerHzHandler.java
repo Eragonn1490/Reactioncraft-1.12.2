@@ -78,7 +78,8 @@ public class TriggerHzHandler
      *
      * @param tileEntityTrigger
      */
-    public void remove(final TileEntityTrigger tileEntityTrigger)
+    @SuppressWarnings("unlikely-arg-type")
+	public void remove(final TileEntityTrigger tileEntityTrigger)
     {
         if (tileEntityTrigger != null && tileToHz.containsKey(tileEntityTrigger))
         {

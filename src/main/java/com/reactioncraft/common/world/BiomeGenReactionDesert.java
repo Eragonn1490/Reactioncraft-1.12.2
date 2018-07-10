@@ -56,8 +56,8 @@ public class BiomeGenReactionDesert extends BiomeDesert
             blockState=worldIn.getBlockState(offset=offset.down());
         }
 
-            if (rand.nextInt(64)==1 && !cherryTrees.generate(worldIn, rand, offset.up())) {
-
+            if (rand.nextInt(64)==1 && !cherryTrees.generate(worldIn, rand, offset.up())) 
+            {
 //                    System.out.println(offset);
             }
             else{

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "reactioncraft:blocks/reprogrammer"
+        "all": "reactioncraft:blocks/tin_block"
     }
 }

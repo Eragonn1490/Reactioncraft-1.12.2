@@ -118,11 +118,11 @@ public class Worldgen implements IWorldGenerator
 		generateSilver(silver,  world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(4), 6);
 
 		//Desert Biome Generation
-		generateDesertCoal   (desertCoal, world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(7),  6);
-		generateDesertGem1   (darkBlueGem, world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(6),  6);
+		generateDesertCoal   (desertCoal,   world, random, chunkX * 16, chunkZ * 16, 16, 64, 4 + random.nextInt(7),  6);
+		generateDesertGem1   (darkBlueGem,  world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(6),  6);
 		generateDesertGem2   (lightBlueGem, world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(6),  6);
-		generateDesertGranite(granite, world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(10), 6);
-		generateDesertGold   (desertGold, world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(7),  6);
+		generateDesertGranite(granite,      world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(10), 6);
+		generateDesertGold   (desertGold,   world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(7),  6);
 	}
 
 	private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 

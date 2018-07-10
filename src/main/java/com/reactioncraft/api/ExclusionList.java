@@ -6,6 +6,7 @@ import java.util.List;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLiving;
 
 public class ExclusionList implements Iterable<String>
 {
@@ -29,9 +30,6 @@ public class ExclusionList implements Iterable<String>
 		this.addExclusion("WitherSkull");
 		this.addExclusion("Hydrolisc");
 		//To Add custom Exclusions to the mods
-
-		//Prevent Millenaire Villagers from causing weird issues
-		
 	}
 
 	public void addExclusion(String name)
@@ -54,6 +52,11 @@ public class ExclusionList implements Iterable<String>
 		list.add(EntityList.getEntityString(entity));
 	}
 
+	public void addExclusion(EntityLiving entity)
+	{
+		list.add(EntityList.getEntityString(entity));
+	}
+	
 	public void removeExclusion(Entity entity)
 	{
 		list.remove(EntityList.getEntityString(entity));

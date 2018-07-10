@@ -10,4 +10,5 @@ public class PropertyIndex
 	public static double distance;
 	public static int MaxEnergy;
 	public static boolean deleteWaterBlock;
+	public static boolean removeTripwireRail;
 }

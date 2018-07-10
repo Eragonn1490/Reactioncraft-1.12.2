@@ -1,18 +1,23 @@
 {
-    "type": "minecraft:crafting_shaped",
-	"group": "wah",
-    "pattern": [
-        "#X#"
-    ],
-    "key": {
-        "#": {
-            "item": "reactioncraft:rawcorn"
-        },
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "millenaire"
+		}
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#X#"
+	],
+	"key": {
+		"#": {
+			"item": "reactioncraft:rawcorn"
+		},
 		"X": {
-            "item": "minecraft:chicken"
-        }
-    },
-    "result": {
-        "item": "millenaire:wah"
-    }
+			"item": "minecraft:chicken"
+		}
+	},
+	"result": {
+		"item": "millenaire:wah"
+	}
 }

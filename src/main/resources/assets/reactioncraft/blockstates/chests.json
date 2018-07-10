@@ -1,0 +1,25 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_column",
+		"textures": {
+			"all": "reactioncraft:blocks/clear"
+		}
+	},
+	"variants": {
+		"type": {
+			"book": {
+				"textures": {
+					"end": "blocks/planks_oak",
+                    "side": "reactioncraft:blocks/partialFilledBookcase3"
+				}
+			},
+			"scroll": {
+				"textures": {
+					"end": "reactioncraft:blocks/css",
+                    "side": "reactioncraft:blocks/shelf3"
+				}
+			}
+		}
+	}
+}

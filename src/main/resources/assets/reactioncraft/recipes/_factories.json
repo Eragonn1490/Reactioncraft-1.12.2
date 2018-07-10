@@ -1,0 +1,6 @@
+{
+  "conditions": 
+  {
+    "tripwire_rail_disabled": "com.reactioncraft.common.recipes.JsonRecipeRemover"
+  }
+}

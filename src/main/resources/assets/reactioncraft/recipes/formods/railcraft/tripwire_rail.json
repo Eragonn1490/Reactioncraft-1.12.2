@@ -1,0 +1,31 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "railcraft"
+        }
+    ],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " A ",
+        "XBX"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:redstone_torch",
+            "data": 0
+        },
+        "B": {
+            "item": "minecraft:rail",
+            "data": 0
+        },
+        "X": {
+            "item": "minecraft:redstone",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "reactioncraft:tripwire_rail",
+        "data": 0
+    }
+}

@@ -1,0 +1,1600 @@
+{
+	"variants": {
+		"facing=north,half=top,shape=straight,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=north,half=top,shape=straight,type=1": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=2": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=3": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=4": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=north,half=top,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=0": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=1": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=2": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=3": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=4": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=north,half=top,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=0": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=1": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=2": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=3": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=4": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=north,half=top,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=0": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=1": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=2": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=3": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=4": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=north,half=top,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=0": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=1": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=2": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=3": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=4": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=north,half=top,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=0": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=1": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=2": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=3": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=4": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=north,half=bottom,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=0": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=1": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=2": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=4": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=0": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=1": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=2": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=4": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=north,half=bottom,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=0": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=1": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=2": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=4": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=0": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=1": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=2": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=4": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=north,half=bottom,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=south,half=top,shape=straight,type=1": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=2": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=3": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=4": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=south,half=top,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=0": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=1": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=2": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=3": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=4": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=south,half=top,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=0": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=1": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=2": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=3": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=4": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=south,half=top,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=0": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=1": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=2": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=3": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=4": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=south,half=top,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=0": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=1": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=2": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=3": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=4": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=south,half=top,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=0": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=1": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=2": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=3": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=4": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=south,half=bottom,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=0": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=1": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=2": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=4": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=0": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=1": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=2": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=4": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=south,half=bottom,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=0": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=1": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=2": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=4": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=0": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=1": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=2": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=4": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=south,half=bottom,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=west,half=top,shape=straight,type=1": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=2": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=3": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=4": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=west,half=top,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=0": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=1": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=2": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=3": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=4": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=west,half=top,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=0": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=1": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=2": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=3": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=4": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=west,half=top,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=0": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=1": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=2": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=3": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=4": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=west,half=top,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=0": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=1": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=2": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=3": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=4": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=west,half=top,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=0": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=1": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=2": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=3": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=4": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=west,half=bottom,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=0": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=1": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=2": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=4": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=0": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=1": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=2": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=4": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=west,half=bottom,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=0": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=1": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=2": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=4": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=0": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=1": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=2": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=4": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=west,half=bottom,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=top,shape=straight,type=1": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=2": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=3": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=4": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=east,half=top,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=top,shape=inner_left,type=1": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=2": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=3": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=4": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=east,half=top,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=top,shape=inner_right,type=1": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=2": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=3": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=4": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=east,half=top,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=top,shape=outer_left,type=1": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=2": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=3": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=4": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=east,half=top,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=top,shape=outer_right,type=1": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=2": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=3": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=4": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=east,half=top,shape=outer_right,type=WEATHERED": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=bottom,shape=straight,type=1": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=2": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=3": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=4": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=GOLD1": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=GOLD2": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=GOLD3": {
+			
+		},
+		"facing=east,half=bottom,shape=straight,type=WEATHERED": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=0": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=1": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=2": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=4": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=GOLD1": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=GOLD2": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=GOLD3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_left,type=WEATHERED": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=bottom,shape=inner_right,type=1": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=2": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=4": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=GOLD1": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=GOLD2": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=GOLD3": {
+			
+		},
+		"facing=east,half=bottom,shape=inner_right,type=WEATHERED": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=bottom,shape=outer_left,type=1": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=2": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=4": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=GOLD1": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=GOLD2": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=GOLD3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_left,type=WEATHERED": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=0": {
+			"textures": {
+                    "particle": "reactioncraft:blocks/css",
+                    "all": "reactioncraft:blocks/css"
+                }
+		},
+		"facing=east,half=bottom,shape=outer_right,type=1": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=2": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=4": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=DARK_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=LIGHT_BLUE1": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=LIGHT_BLUE2": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=LIGHT_BLUE3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=GOLD1": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=GOLD2": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=GOLD3": {
+			
+		},
+		"facing=east,half=bottom,shape=outer_right,type=WEATHERED": {
+			
+		}
+	}
+}

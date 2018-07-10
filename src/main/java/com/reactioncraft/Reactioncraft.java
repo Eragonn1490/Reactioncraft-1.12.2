@@ -184,6 +184,11 @@ public class Reactioncraft
 			System.out.println("[Reactioncraft] Found Industrialcraft 2!");
 		} else { System.out.println("[Reactioncraft] Did not find Industrialcraft 2!"); }
 
+		if(constants.railcraft == true)
+		{
+			System.out.println("[Reactioncraft] Found railcraft!");
+			
+		} else { System.out.println("[Reactioncraft] Did not find railcraft!"); }
 		
 		if(constants.loadedRf == true)
 		{

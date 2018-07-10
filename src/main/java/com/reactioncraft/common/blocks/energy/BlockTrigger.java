@@ -74,11 +74,11 @@ public class BlockTrigger extends Block implements ITileEntityProvider
                 }
                 return true;
             }
-            else if (stack.getItem() == Items.STICK) //Debug remove if you want
-            {
-                playerIn.sendMessage(new TextComponentTranslation(getUnlocalizedName() + ".info.triggered." + ((TileEntityTrigger) tile).isTriggered()));
-                return true;
-            }
+            //else if (stack.getItem() == Items.STICK) //Debug remove if you want
+            //{
+            //    playerIn.sendMessage(new TextComponentTranslation(getUnlocalizedName() + ".info.triggered." + ((TileEntityTrigger) tile).isTriggered()));
+            //    return true;
+            //}
 
         }
         return false;

@@ -12,7 +12,7 @@
         }
     },
     "result": {
-        "item": "reactioncraft:wirelessTransmitter",
+        "item": "reactioncraft:trigger_remote",
         "data": 0
     }
 }

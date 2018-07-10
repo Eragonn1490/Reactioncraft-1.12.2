@@ -6,6 +6,7 @@ import com.reactioncraft.common.capabilities.CapabilityTriggerHz;
 import com.reactioncraft.common.capabilities.ITriggerHz;
 import com.reactioncraft.common.capabilities.TriggerHzHandler;
 import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.registration.instances.PropertyIndex;
 import com.reactioncraft.common.tiles.TileEntityTrigger;
 import com.reactioncraft.common.utils.constants;
 import net.minecraft.client.util.ITooltipFlag;
@@ -38,13 +39,13 @@ import java.util.concurrent.ThreadLocalRandom;
 @Mod.EventBusSubscriber
 public class ItemTriggerRemote extends Item
 {
-    double range = 10;
+    double range = PropertyIndex.distance;
 
     public static final ResourceLocation REMOTE_CAP = new ResourceLocation(constants.MODID, "trigger.hz.remote");
 
     public ItemTriggerRemote()
     {
-        setUnlocalizedName(constants.MODID + "trigger.remote");
+        setUnlocalizedName("trigger_remote");
         setRegistryName(constants.MODID, "trigger_remote");
         setCreativeTab(Reactioncraft.ReactioncraftItems);
         setMaxStackSize(1);

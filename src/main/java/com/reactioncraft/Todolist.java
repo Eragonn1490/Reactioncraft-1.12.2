@@ -14,12 +14,10 @@ public class Todolist
 	 * Make the Scroll Act like a book.
 	 * Hireoglyph Recipes Changed to using machine?
 	 * Villager drop with meat cleaver
-	 * Fix Boreheads for Railcraft (When it updates to 1.12.2)
 	 * Make Frame Useful for forestry again?
 	 * Add bee species? that uses honeycomb and pollen comb?
 	 * Desert Portcullis (Possibly Change Gate to use the Rail Model)
 	 * Fix Jellyfish Movement / Underwater
-	 * Way for mods to add bone drops
 	 *
 	 */
 	
@@ -31,6 +29,11 @@ public class Todolist
 	 * Longer Piston?
 	 * Recipes
 	 * Fix Text from energy & wireless blocks
+	 * Stairs for desert blocks (Fix Textures)
+	 * Slabs for desert blocks (Fix Metadata , Fix Textures)
+	 * Way for mods to add bone drops
+	 * Railcraft Support (Will not work until railcraft publicly releases) (v7.0.0)
+	 * 
 	 */
 	
 	
@@ -89,6 +92,9 @@ public class Todolist
 	 * EU - TO RF- To - MJ converter block. (v7.0.0)
 	 * Ship in a bottle & Map in a bottle are now throwable Entities that "Break" (v7.0.0)
 	 * End Ores Generate (v7.0.0)
+	 * Re-Added Range to wireless Redstone Blocks (v7.0.0)
+	 * Fixed Mod Dependent Json Recipes (v7.0.0)
+	 * Added Json Recipe Remover (v7.0.0)
 	 * 
 	 */
 	
@@ -166,6 +172,6 @@ public class Todolist
 	 * Stone Slab Column now correctly mirrors stone double slabs (v7.0.0)
 	 * Actually Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v7.0.0)
 	 * Re-Organized Git Folders (7/7/2018)
-	 * 
+	 * Added More Levels to net (Removed Wood, Starting Level is now Leather, Final Level is now bloodstone) (v7.0.0)
 	 */
 }

@@ -8,6 +8,7 @@ import com.reactioncraft.common.blocks.ores.*;
 import com.reactioncraft.common.blocks.plants.*;
 import com.reactioncraft.common.blocks.rails.*;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 
 
@@ -34,6 +35,9 @@ public class BlockIndex
     public static BlockColumn column;
     public static BlockMiniColumn miniColumn;
     public static BlockSmallestColumn smallestColumn;
+    public static Block stairs;
+    public static BlockSlabsHalf   SlabHalf;
+	public static BlockSlabsDouble SlabDouble;
     
     //Regular Blocks
     public static BlockCherryTreeLog cherrywood;

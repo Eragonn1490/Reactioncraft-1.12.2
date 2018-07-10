@@ -28,7 +28,7 @@ public class RecipeRegistry
 	public static void netrecipyInit() 
 	{
 		//Below is the crafting Recipe's for making the multi-Level / extra use Nets.
-		Object[] levels = new Object[] {Blocks.PLANKS, Items.LEATHER, Items.IRON_INGOT, Items.GOLD_INGOT, Items.DIAMOND};
+		Object[] levels = new Object[] {Items.LEATHER, ItemIndex.ingotCopper, Items.IRON_INGOT, Items.GOLD_INGOT, Items.DIAMOND, ItemIndex.blackdiamond, ItemIndex.ingotbloodstone};
 		for (int i = 0; i < levels.length; ++i)
 		{
 			Object[] hiltRec = new Object[] {" XI", "XIX", "IX ", 'X', Items.STICK, 'I', levels[i]};

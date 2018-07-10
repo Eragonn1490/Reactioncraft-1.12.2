@@ -149,7 +149,7 @@ public class TileEntityBookcaseChest extends TileEntityBase implements ITickable
 
             if (state.getBlock() == BlockIndex.Bookcasechest)
             {
-                type = state.getValue(BlockBookcaseChest.VARIANT_PROP);
+                type = state.getValue(BlockBookcaseChest.TYPE);
             }
         }
         return type;

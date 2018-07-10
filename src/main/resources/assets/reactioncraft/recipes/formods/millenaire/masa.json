@@ -1,20 +1,25 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "group": "masa",
-    "pattern": [
-        " A ",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "reactioncraft:rawcorn"
-        },
-        "A": {
-            "item": "reactioncraft:churn",
-            "data": 32767
-        }
-    },
-    "result": {
-        "item": "millenaire:masa"
-    }
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "millenaire"
+		}
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" A ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "reactioncraft:rawcorn"
+		},
+		"A": {
+			"item": "reactioncraft:churn",
+			"data": 32767
+		}
+	},
+	"result": {
+		"item": "millenaire:masa"
+	}
 }

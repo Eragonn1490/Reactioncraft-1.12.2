@@ -91,9 +91,6 @@ public class ButcherEventClass
 						{
 							ItemStack drop = new ItemStack(ItemIndex.raw_human);
 							event.getEntityLiving().entityDropItem(drop, 0.0F);
-							Logger.info("Name 0 is " + deadEntity.getName());
-							Logger.info("Name 1 is " + deadEntity.getDisplayName());
-							Logger.info("Name 2 is " + deadEntity.getCustomNameTag());
 						}
 					}
 				}

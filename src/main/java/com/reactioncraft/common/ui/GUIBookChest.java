@@ -47,8 +47,8 @@ public class GUIBookChest extends GuiChest
      */
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
-        this.fontRenderer.drawString(this.lowerChestInventory.getDisplayName().getUnformattedText(), 8, 6, 4210752);
-        this.fontRenderer.drawString(this.upperChestInventory.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);
+    	this.fontRenderer.drawString("Bookcasechest", this.xSize / 2 - this.fontRenderer.getStringWidth("Bookcasechest") / 2, 6, 4210752);
+        this.fontRenderer.drawString("Inventory", 8, this.ySize - 96 + 2, 4210752);
     }
 
     /**

@@ -29,7 +29,7 @@ public class constants
 	public static final ResourceLocation LOCATION_BLOCKS_TEXTURE = new ResourceLocation("textures/atlas/blocks.png");
 	
 	//Check if mods are loaded
-	public static boolean IC2, Forestry, millenaire, Buildcraft, loadedRf;
+	public static boolean IC2, Forestry, millenaire, Buildcraft, loadedRf, railcraft;
 
 	/** Fake Player **/
 	WorldServer worldServer = DimensionManager.getWorld(0); // default world
@@ -41,8 +41,9 @@ public class constants
 	{
 		//Add Reactioncraft Config Stuff here
 		PropertyIndex.MaxEnergy = Reactioncraft.config.getInt("Energy", "Maximum Energy", 100000, 0, Integer.MAX_VALUE, "This is the max value of energy stored in the energy block");
-		PropertyIndex.distance  = Reactioncraft.config.getInt("Distance", "Maximum Distance", 10, 5, 32, "The range for activating the transceiver block");
+		PropertyIndex.distance  = Reactioncraft.config.getInt("Distance", "Maximum Distance", 10, 5, 64, "The range for activating the transceiver block (Anything Above 16 would be outside of the chunk results may vary Max of 64 blocks away)");
 		PropertyIndex.deleteWaterBlock = Reactioncraft.config.getBoolean("Water", "Delete Water?", false, "Should right clicking water with a bowl drain the block?");
+		PropertyIndex.removeTripwireRail = Reactioncraft.config.getBoolean("Railcraft Compatibility", "Railcraft Rail Recipe", railcraft, "This determines if rails are made with railcraft items or the default way");
 	}
 
 	public static void configmillenaire(File file)

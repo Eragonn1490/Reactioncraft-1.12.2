@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "reactioncraft:slab_bottom" },
+        "half=top": { "model": "reactioncraft:slab_top" }
+    }
+}

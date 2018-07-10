@@ -2,7 +2,6 @@ package com.reactioncraft.common.registration;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.blocks.*;
-import com.reactioncraft.common.blocks.BlockBookshelf;
 import com.reactioncraft.common.blocks.columns.*;
 import com.reactioncraft.common.blocks.energy.*;
 import com.reactioncraft.common.blocks.machines.*;
@@ -20,9 +19,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -76,7 +79,7 @@ public class BlockRegistry
 	{
 		//Vanilla Replacements
 		registerBlockItem(Blocks.BOOKSHELF, registryEvent);
-		Logger.info("Reactioncraft has successfully Replaced the bookshelf!");
+		Logger.info("[Reactioncraft] successfully Replaced the bookshelf!");
 
 		//Reactioncraft Blocks
 		registerBlockItem(BlockIndex.bloodstonebricks,registryEvent);
@@ -86,7 +89,7 @@ public class BlockRegistry
 		registerBlockItem(BlockIndex.rchive,          registryEvent);
 		registerBlockItem(BlockIndex.chainladder,     registryEvent);
 
-
+		
 		registerBlockItem(BlockIndex.freezer,  registryEvent);
 		registerBlockItem(BlockIndex.brickOven,registryEvent);
 		registerBlockItem(BlockIndex.claylizer,registryEvent);
@@ -119,9 +122,20 @@ public class BlockRegistry
 
 		//tripwire rail
 		registerBlockItem(BlockIndex.tripwirerail, registryEvent);
-
-
+		
+		//Slabs --> Make Metadata ASAP
+		ItemSlab slabs =new ItemSlab(BlockIndex.SlabHalf, BlockIndex.SlabHalf, BlockIndex.SlabDouble);	
+		slabs.setRegistryName(BlockIndex.SlabHalf.getRegistryName());
+		registryEvent.getRegistry().register(slabs);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(slabs ,"0");//,"1","2","3","4","5","6","7","8","9","10","11","12");//,"13","14","15");
+		
 		/** Metadata Blocks **/
+		//NOTICE there must exist json item model for each block-item
+		ItemMulti stairs = new ItemMulti(BlockIndex.stairs);
+		stairs.setRegistryName(BlockIndex.stairs.getRegistryName());
+		registryEvent.getRegistry().register(stairs);
+		Reactioncraft.proxy.setItemBlockWithMetadataInventoryModel(stairs ,"0","1");//,"2","3","4","5","6","7","8","9","10","11","12");//,"13","14","15");
+		
 		//NOTICE there must exist json item model for each block-item
 		ItemMulti chests = new ItemMulti(BlockIndex.Bookcasechest);
 		chests.setRegistryName(BlockIndex.Bookcasechest.getRegistryName());
@@ -247,8 +261,19 @@ public class BlockRegistry
 		BlockIndex.leverbookcase = (BlockBookcaseLever) register(new BlockBookcaseLever(Material.ROCK), "levers", forgeRegistry).setCreativeTab(Reactioncraft.Reactioncraft).setHardness(1.5F);
 		//Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "levers", BlockIndex.leverbookcase); //Debug Only
 		
+		//Chests
 		BlockIndex.Bookcasechest = (BlockBookcaseChest) register(new BlockBookcaseChest(), "chests", forgeRegistry);
-		Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "chests;", BlockIndex.Bookcasechest); //Debug Only
+		
+		//Slabs
+		//BlockIndex.slabs = (BlockSlabs) register((new BlockSlabs("slabs", Material.ROCK)).setHardness(3.0F),forgeRegistry);
+		BlockIndex.SlabHalf =   (BlockSlabsHalf)   register(new BlockSlabsHalf(),   "slab_half",   forgeRegistry);
+		BlockIndex.SlabDouble = (BlockSlabsDouble) register(new BlockSlabsDouble(), "slab_double", forgeRegistry);
+		Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "slab_half",   BlockIndex.SlabHalf); //Debug Only
+		Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "slab_double", BlockIndex.SlabDouble); //Debug Only
+		
+		//Stairs
+		BlockIndex.stairs =   (BlockStair)   register(new BlockStair(BlockIndex.desertBlocks.getDefaultState()),   "stairs",   forgeRegistry);
+		Generator.createJson("C:\\Users\\Test\\Desktop\\Generator Output", constants.MODID, "stairs", BlockIndex.stairs); //Debug Only
 
 		//Turn Desert Plants Into Metadata Blocks ^^
 
