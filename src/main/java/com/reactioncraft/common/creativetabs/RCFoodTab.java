@@ -1,6 +1,6 @@
 package com.reactioncraft.common.creativetabs;
 
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.item.ItemStack;
 

@@ -1,14 +1,13 @@
 package com.reactioncraft.common.capabilities;
 
+
+import com.reactioncraft.common.tiles.TileEntityTrigger;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import com.reactioncraft.common.tiles.TileEntityTrigger;
 
 /**
  * @see <a href="https://github.com/BuiltBrokenModding/VoltzEngine/blob/development/license.md">License</a> for what you can and can't do with the code.

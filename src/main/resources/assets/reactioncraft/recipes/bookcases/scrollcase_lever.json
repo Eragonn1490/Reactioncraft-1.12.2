@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW",
+        "SLS",
+        "WWW"
+    ],
+    "result": {
+        "item": "reactioncraft:levers",
+        "data" : 1
+    },
+    "key": {
+         "W": {
+            "item": "reactioncraft:desertblocks",
+            "data": 2
+        },
+        "L": {
+            "item": "minecraft:lever",
+            "data": 0
+        },
+        "S": {
+            "item": "reactioncraft:scroll",
+            "data": 0
+        }
+    }
+}

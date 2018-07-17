@@ -5,12 +5,10 @@
  ******************************************************************************/
 package forestry.api.mail;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 
-import javax.annotation.Nullable;
-
 import com.mojang.authlib.GameProfile;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 

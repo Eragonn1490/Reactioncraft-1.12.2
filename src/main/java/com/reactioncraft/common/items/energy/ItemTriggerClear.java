@@ -3,6 +3,7 @@ package com.reactioncraft.common.items.energy;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.capabilities.CapabilityTriggerHz;
+import com.reactioncraft.common.items.ItemBase;
 import com.reactioncraft.common.tiles.TileEntityTrigger;
 import com.reactioncraft.common.utils.constants;
 
@@ -21,12 +22,11 @@ import net.minecraft.world.World;
  * @see <a href="https://github.com/BuiltBrokenModding/VoltzEngine/blob/development/license.md">License</a> for what you can and can't do with the code.
  * Created by Dark(DarkGuardsman, Robert) on 6/25/2018.
  */
-public class ItemTriggerClear extends Item
+public class ItemTriggerClear extends ItemBase
 {
-    public ItemTriggerClear()
+    public ItemTriggerClear(String name)
     {
-        setUnlocalizedName(constants.MODID + "trigger.clear");
-        setRegistryName(constants.MODID, "trigger_clear");
+    	super(name);
         setCreativeTab(Reactioncraft.ReactioncraftItems);
         setMaxStackSize(1);
     }

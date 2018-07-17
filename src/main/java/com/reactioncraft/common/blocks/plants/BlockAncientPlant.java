@@ -1,6 +1,6 @@
 package com.reactioncraft.common.blocks.plants;
 
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.item.Item;
 

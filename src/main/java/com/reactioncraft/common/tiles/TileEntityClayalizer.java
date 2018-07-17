@@ -4,10 +4,11 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.api.ClayalizerRecipes;
 import com.reactioncraft.common.blocks.machines.BlockClayalizer;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 import com.reactioncraft.common.itemhandlers.ClaylizerItemHandler;
 import com.reactioncraft.common.itemhandlers.ItemHandler;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;

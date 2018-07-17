@@ -1,7 +1,7 @@
 package com.reactioncraft.common.containers;
 
 
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 import com.reactioncraft.common.tiles.TileEntityReprogrammer;
 
 import net.minecraft.entity.player.EntityPlayer;

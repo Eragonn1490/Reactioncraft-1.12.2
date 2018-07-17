@@ -7,6 +7,9 @@ package forestry.api.gui;
 
 import javax.annotation.Nullable;
 
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import forestry.api.genetics.IAllele;
 import forestry.api.genetics.IAlleleInteger;
 import forestry.api.genetics.IAlleleSpecies;
@@ -15,8 +18,7 @@ import forestry.api.genetics.IBreedingTracker;
 import forestry.api.genetics.IGeneticAnalyzer;
 import forestry.api.genetics.IGeneticAnalyzerProvider;
 import forestry.api.genetics.IMutation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import forestry.api.gui.style.ITextStyle;
 
 /**
  * A helper interface to create gui elements.
@@ -24,7 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public interface IGuiElementFactory {
 
-	IGeneticAnalyzer createAnalyzer(int xPos, int yPos, boolean rightBoarder, IGeneticAnalyzerProvider provider);
+	IGeneticAnalyzer createAnalyzer(IWindowElement window, int xPos, int yPos, boolean rightBoarder, IGeneticAnalyzerProvider provider);
 
 	/* GENETIC*/
 
@@ -33,6 +35,10 @@ public interface IGuiElementFactory {
 	 * @return The color code that forestry uses to show if a allele is dominant (true) or recessive (false).
 	 */
 	int getColorCoding(boolean dominant);
+
+	ITextStyle getStateStyle(boolean dominant);
+
+	ITextStyle getGuiStyle();
 
 	/**
 	 * @return Null if the mutation is secret and undiscovered. {@link IMutation#isSecret()}
@@ -57,5 +63,5 @@ public interface IGuiElementFactory {
 
 	IElementLayout createVertical(int xPos, int yPos, int width);
 
-	IElementGroup createPanel(int xPos, int yPos, int width, int height);
+	IElementGroup createPane(int xPos, int yPos, int width, int height);
 }

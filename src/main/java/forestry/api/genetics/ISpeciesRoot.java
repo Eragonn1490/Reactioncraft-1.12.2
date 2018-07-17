@@ -5,18 +5,18 @@
  ******************************************************************************/
 package forestry.api.genetics;
 
+import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import javax.annotation.Nullable;
-
-import com.mojang.authlib.GameProfile;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
+import com.mojang.authlib.GameProfile;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -70,13 +70,13 @@ public interface ISpeciesRoot {
 
 	IIndividual getMember(NBTTagCompound compound);
 	
-	<O extends Object, I extends IIndividual> void registerTranslator(Object translatorKey, IIndividualTranslator<I, O> translator);
+	<O, I extends IIndividual> void registerTranslator(Object translatorKey, IIndividualTranslator<I, O> translator);
 	
 	@Nullable
-	<O extends Object, I extends IIndividual> IIndividualTranslator<I, O> getTranslator(Object translatorKey);
+	<O, I extends IIndividual> IIndividualTranslator<I, O> getTranslator(Object translatorKey);
 
 	@Nullable
-	<O extends Object, I extends IIndividual> I translateMember(O objectToTranslator);
+	<O, I extends IIndividual> I translateMember(O objectToTranslator);
 
 	@Nullable
 	ISpeciesType getType(ItemStack itemStack);

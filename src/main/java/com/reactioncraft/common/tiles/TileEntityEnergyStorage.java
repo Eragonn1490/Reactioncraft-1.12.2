@@ -1,52 +1,33 @@
 package com.reactioncraft.common.tiles;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
-import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.energystorageblock.config.ConfigEnergyStorage;
-import com.reactioncraft.common.energystorageblock.config.ConfigPowerSystem;
-import com.reactioncraft.common.energystorageblock.energy.EnergyBlockStorage;
-import com.reactioncraft.common.energystorageblock.energy.EnergySideState;
-import com.reactioncraft.common.energystorageblock.energy.EnergySideWrapper;
-import com.reactioncraft.common.energystorageblock.network.IDescMessageTile;
-import com.reactioncraft.common.energystorageblock.network.MessageDesc;
-import com.reactioncraft.common.energystorageblock.network.MessageTileEnergy;
-import com.reactioncraft.common.energystorageblock.network.NetworkHandler;
-import com.reactioncraft.core.EnergyModProxy;
-import ic2.api.energy.tile.IEnergyAcceptor;
-import ic2.api.energy.tile.IEnergyEmitter;
-import ic2.api.energy.tile.IEnergySink;
-import ic2.api.energy.tile.IEnergySource;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
-import net.minecraftforge.fml.common.Optional;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemStackHandler;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import com.reactioncraft.common.energystorageblock.config.ConfigEnergyStorage;
+import com.reactioncraft.common.energystorageblock.energy.EnergySideState;
+import com.reactioncraft.common.energystorageblock.energy.EnergySideWrapper;
+import com.reactioncraft.common.energystorageblock.network.MessageDesc;
+import com.reactioncraft.common.energystorageblock.network.MessageTileEnergy;
+import com.reactioncraft.common.energystorageblock.network.NetworkHandler;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.core.EnergyModProxy;
 
 /**
  * @see <a href="https://github.com/BuiltBrokenModding/VoltzEngine/blob/development/license.md">License</a> for what you can and can't do with the code.
  * Created by Dark(DarkGuardsman, Robert) on 6/30/2018.
  */
-@Optional.InterfaceList({
-        @Optional.Interface(iface = "ic2.api.energy.tile.IEnergySink", modid = "ic2")
-})
-public class TileEntityEnergyStorage extends TileEntity implements ITickable, IEnergySink, IEnergySource, IDescMessageTile
+public class TileEntityEnergyStorage extends TileEntityEnergy implements ITickable
 {
     //NBT keys
-    public static final String NBT_ENERGY = "energy";
     public static final String NBT_ENERGY_SIDES = "energy_sides";
     public static final String NBT_INVENTORY = "inventory";
 
@@ -54,9 +35,6 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
     public static final int INVENTORY_SIZE = 2;
     public static final int SLOT_BATTERY_DISCHARGE = 0;
     public static final int SLOT_BATTERY_CHARGE = 1;
-
-    /** Main power storage */
-    public final EnergyBlockStorage energyStorage = new EnergyBlockStorage(this);
     /** Main inventory */
     public final ItemStackHandler inventory = new ItemStackHandler(INVENTORY_SIZE);
 
@@ -65,7 +43,7 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
 
     private int prevEnergy = -1;
     private boolean sendDescPacket = false;
-    private boolean markForRender = true;
+    private boolean markChanged = true;
 
     @Override
     public void update()
@@ -81,7 +59,7 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
                 //Output to charge item, second to allow users to charge items
                 chargeBattery();
                 //Last handle connected tiles
-                handlePowerTiles();
+                outputPowerToConnectedTiles();
             }
 
             if (sendDescPacket)
@@ -96,24 +74,26 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
                 NetworkHandler.sendToAllAround(this, new MessageTileEnergy(this, prevEnergy));
             }
         }
-        else if (markForRender)
-        {
-            markForRender = false;
 
+
+        if (markChanged)
+        {
+            markChanged = false;
+
+            //Mark dirty so tile saves
             markDirty();
 
-            //Update blocks so render changes
-            world.markAndNotifyBlock(pos,
-                    world.getChunkFromBlockCoords(getPos()),
-                    world.getBlockState(getPos()),
-                    world.getBlockState(getPos()), 3);
-        }
-    }
+            //Get block state
+            IBlockState currentState = world.getBlockState(getPos());
+            IBlockState actualState = BlockIndex.bloodstoneEnergyBlock.getActualState(currentState, world, getPos());
 
-    @Override
-    public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
-    {
-        return oldState.getBlock() != newSate.getBlock();
+            //Set block to force a full update
+            world.setBlockState(getPos(), actualState);
+
+            //Remove and re-add to IC2 network
+            invalidate();
+            validate();
+        }
     }
 
     protected void dischargeBattery()
@@ -176,46 +156,34 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
         }
     }
 
-    protected void handlePowerTiles()
-    {
-        for (EnumFacing enumFacing : EnumFacing.VALUES)
-        {
-            if (getEnergySideWrapper(enumFacing).sideState == EnergySideState.OUTPUT)
-            {
-                BlockPos pos = getPos().add(enumFacing.getDirectionVec());
-                if (world.isBlockLoaded(pos))
-                {
-                    TileEntity tileEntity = world.getTileEntity(pos);
-                    if (tileEntity != null)
-                    {
-                        if (tileEntity.hasCapability(CapabilityEnergy.ENERGY, enumFacing.getOpposite()))
-                        {
-                            IEnergyStorage cap = tileEntity.getCapability(CapabilityEnergy.ENERGY, enumFacing.getOpposite());
-                            if (cap != null)
-                            {
-                                int give = energyStorage.extractEnergy(ConfigEnergyStorage.OUTPUT_LIMIT, true);
-                                int taken = cap.receiveEnergy(give, false);
-                                energyStorage.extractEnergy(taken, false);
-                            }
-                        }
-                        else
-                        {
-                            EnergyModProxy.chargeTile(tileEntity, this, energyStorage, enumFacing.getOpposite());
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+    @Override
     public boolean canOutputEnergySide(EnumFacing side)
     {
         return getEnergySideWrapper(side).sideState == EnergySideState.OUTPUT;
     }
 
+    @Override
     public boolean canInputEnergySide(EnumFacing side)
     {
         return getEnergySideWrapper(side).sideState == EnergySideState.INPUT;
+    }
+
+    @Override
+    public int getInputLimit(EnumFacing side)
+    {
+        return ConfigEnergyStorage.INPUT_LIMIT;
+    }
+
+    @Override
+    public int getOutputLimit(EnumFacing side)
+    {
+        return ConfigEnergyStorage.OUTPUT_LIMIT;
+    }
+
+    @Override
+    public int getEnergyCapacity()
+    {
+        return ConfigEnergyStorage.CAPACITY;
     }
 
     public EnergySideState toggleEnergySide(EnumFacing side)
@@ -224,52 +192,19 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
         EnergySideWrapper wrapper = getEnergySideWrapper(side);
         wrapper.sideState = wrapper.sideState.next();
 
-        //Next tick send packet
+        //Next tick update and send packet
         sendDescPacket = true;
-
-        //Mark so the block saves
-        markDirty();
-
-        //Update blocks so wire connections change
-        world.markAndNotifyBlock(pos,
-                world.getChunkFromBlockCoords(getPos()),
-                world.getBlockState(getPos()),
-                world.getBlockState(getPos()), 3);
+        markChanged = true;
 
         //Return new state
         return wrapper.sideState;
     }
 
     @Override
-    public SPacketUpdateTileEntity getUpdatePacket()
-    {
-        return new SPacketUpdateTileEntity(pos, 0, getUpdateTag());
-    }
-
-    @Override
-    public NBTTagCompound getUpdateTag()
-    {
-        return writeToNBT(new NBTTagCompound());
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
-    {
-        readFromNBT(pkt.getNbtCompound());
-    }
-
-    @Override
-    public NBTTagCompound writeDescMessage(NBTTagCompound tagCompound)
-    {
-        return writeData(tagCompound);
-    }
-
-    @Override
     public void readDescMessage(NBTTagCompound tagCompound)
     {
-        readData(tagCompound);
-        markForRender = true;
+        super.readDescMessage(tagCompound);
+        markChanged = true;
     }
 
     @Override
@@ -287,10 +222,10 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
         return writeData(super.writeToNBT(compound));
     }
 
+    @Override
     protected void readData(NBTTagCompound compound)
     {
-        //Load energy
-        energyStorage.setEnergy(compound.getInteger(NBT_ENERGY));
+        super.readData(compound);
 
         //Load side data
         if (compound.hasKey(NBT_ENERGY_SIDES))
@@ -308,11 +243,9 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
         }
     }
 
+    @Override
     protected NBTTagCompound writeData(NBTTagCompound compound)
     {
-        //Save energy
-        compound.setInteger(NBT_ENERGY, energyStorage.getEnergyStored());
-
         //Save side data
         NBTTagCompound sideSave = new NBTTagCompound();
         for (EnumFacing facing : EnumFacing.VALUES)
@@ -325,22 +258,7 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
         }
         compound.setTag(NBT_ENERGY_SIDES, sideSave);
 
-        return compound;
-    }
-
-
-    @Override
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing)
-    {
-        if (capability == CapabilityEnergy.ENERGY)
-        {
-            if (facing != null)
-            {
-                return getEnergySideWrapper(facing).sideState != EnergySideState.NONE;
-            }
-            return true;
-        }
-        return super.hasCapability(capability, facing);
+        return super.writeData(compound);
     }
 
     @Override
@@ -358,102 +276,9 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable, IE
     {
         if (energySideWrapper[facing.ordinal()] == null)
         {
-            energySideWrapper[facing.ordinal()] = new EnergySideWrapper(energyStorage);
+            energySideWrapper[facing.ordinal()] = new EnergySideWrapper(this, facing);
+            markChanged = true;
         }
         return energySideWrapper[facing.ordinal()];
-    }
-
-    //<editor-fold desc="ic2 power">
-    @Override
-    @Optional.Method(modid = "ic2")
-    public double getDemandedEnergy()
-    {
-        if (ConfigPowerSystem.ENABLE_IC2)
-        {
-            int need = energyStorage.getMaxEnergyStored() - energyStorage.getEnergyStored();
-            return need / ConfigPowerSystem.FE_PER_EU;
-        }
-        return 0;
-    }
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public int getSinkTier()
-    {
-        return ConfigPowerSystem.ENABLE_IC2 ? 4 : 0;
-    }
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public double injectEnergy(EnumFacing directionFrom, double amount, double voltage)
-    {
-        if (ConfigPowerSystem.ENABLE_IC2)
-        {
-            int energy = (int) Math.floor(amount * ConfigPowerSystem.FE_PER_EU);
-            int received = energyStorage.receiveEnergy(energy, false);
-            return amount - (received / ConfigPowerSystem.FE_PER_EU);
-        }
-        return amount;
-    }
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public boolean acceptsEnergyFrom(IEnergyEmitter emitter, EnumFacing side)
-    {
-        return ConfigPowerSystem.ENABLE_IC2
-                && hasCapability(CapabilityEnergy.ENERGY, side)
-                && canInputEnergySide(side);
-    }
-
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public double getOfferedEnergy()
-    {
-        if (ConfigPowerSystem.ENABLE_IC2)
-        {
-            int out = energyStorage.extractEnergy(ConfigEnergyStorage.OUTPUT_LIMIT, true);
-            return out / ConfigPowerSystem.FE_PER_EU;
-        }
-        return 0;
-    }
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public void drawEnergy(double amount)
-    {
-        int energy = (int) Math.ceil(amount * ConfigPowerSystem.FE_PER_EU);
-        energyStorage.extractEnergy(energy, false);
-    }
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public int getSourceTier()
-    {
-        return 1; //Might need increased to allow more power flow
-    }
-
-    @Override
-    @Optional.Method(modid = "ic2")
-    public boolean emitsEnergyTo(IEnergyAcceptor receiver, EnumFacing side)
-    {
-        return ConfigPowerSystem.ENABLE_IC2
-                && hasCapability(CapabilityEnergy.ENERGY, side)
-                && canOutputEnergySide(side);
-    }
-    //</editor-fold>
-
-    @Override
-    public void invalidate()
-    {
-        super.invalidate();
-        Reactioncraft.energyModProxies.forEach(proxy -> proxy.onTileInvalidate(this));
-    }
-
-    @Override
-    public void validate()
-    {
-        super.validate();
-        Reactioncraft.energyModProxies.forEach(proxy -> proxy.onTileValidate(this));
     }
 }

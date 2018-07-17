@@ -1,13 +1,14 @@
 package ic2.api.energy.prefab;
 
-import ic2.api.energy.EnergyNet;
-import ic2.api.energy.tile.IEnergyAcceptor;
-import ic2.api.energy.tile.IEnergySource;
-import ic2.api.info.ILocatable;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import ic2.api.energy.EnergyNet;
+import ic2.api.energy.tile.IEnergyAcceptor;
+import ic2.api.energy.tile.IEnergySource;
+import ic2.api.info.ILocatable;
 
 /**
  * BasicSource is a simple delegate to add an ic2 energy source.

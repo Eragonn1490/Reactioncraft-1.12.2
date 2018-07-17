@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "reactioncraft:cherryPlanks",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "reactioncraft:item_cherry_door",
+    "count": 3
+  }
+}

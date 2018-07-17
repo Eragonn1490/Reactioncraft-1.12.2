@@ -7,6 +7,11 @@ package forestry.api.core;
 
 import java.util.Set;
 
+import net.minecraft.util.ResourceLocation;
+
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import forestry.api.climate.IClimateManager;
 import forestry.api.climate.IClimateStates;
 import forestry.api.farming.IFarmRegistry;
@@ -14,9 +19,6 @@ import forestry.api.farming.IFarmable;
 import forestry.api.farming.ISimpleFarmLogic;
 import forestry.api.modules.IModuleContainer;
 import forestry.api.modules.IModuleManager;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Forestry's API is divided into several subcategories to make it easier to understand.
@@ -24,7 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * If you need to distribute API files, try to only include the parts you are actually
  * using to minimize conflicts due to API changes.
  * <p>
- * .core     - Miscallenous base classes and interfaces as well as some basics for tools, armor, game modes and stuff needed by biome mods.
+ * .core     - Miscellaneous base classes and interfaces as well as some basics for tools, armor, game modes and stuff needed by biome mods.
  * .fuels    - Managers and classes to facilitate adding fuels to various engines and machines.
  * .recipes  - Managers and helpers to facilitate adding new recipes to various machines.
  * .storage  - Managers, events and interfaces for defining new backpacks and handling backpack behaviour.

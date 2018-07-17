@@ -8,9 +8,10 @@ package forestry.api.genetics;
 import java.util.Collection;
 import java.util.Collections;
 
-import forestry.api.apiculture.IBeekeepingMode;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
+
+import forestry.api.apiculture.IBeekeepingMode;
 
 /**
  * Keeps track of who bred, discovered, and researched which species in a world.

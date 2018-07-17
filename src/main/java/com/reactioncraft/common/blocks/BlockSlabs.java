@@ -3,7 +3,7 @@ package com.reactioncraft.common.blocks;
 import java.util.Random;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 import com.reactioncraft.common.utils.constants;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;

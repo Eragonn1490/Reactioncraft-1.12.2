@@ -5,49 +5,34 @@ package com.reactioncraft;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.reactioncraft.api.ExclusionList;
-import com.reactioncraft.api.OreDictionaryRegistry;
-import com.reactioncraft.common.capabilities.CapabilityTriggerHz;
-import com.reactioncraft.common.creativetabs.RCBlockTab;
-import com.reactioncraft.common.creativetabs.RCFoodTab;
-import com.reactioncraft.common.creativetabs.RCItemTab;
-import com.reactioncraft.common.creativetabs.RCTestTab;
-import com.reactioncraft.common.energystorageblock.network.NetworkHandler;
-import com.reactioncraft.common.events.LootTableHandler;
-import com.reactioncraft.common.registration.BlockRegistry;
-import com.reactioncraft.common.registration.EntityRCRegistry;
-import com.reactioncraft.common.registration.EventRegistry;
-import com.reactioncraft.common.registration.ItemRegistry;
-import com.reactioncraft.common.registration.MaterialIndex;
-import com.reactioncraft.common.registration.RecipesManager;
-import com.reactioncraft.common.registration.TileEntityRegistry;
-import com.reactioncraft.common.registration.Villagers;
-import com.reactioncraft.common.utils.Logger;
-import com.reactioncraft.common.utils.ReactioncraftConfiguration;
-import com.reactioncraft.common.utils.constants;
-import com.reactioncraft.common.world.BiomeHandler;
-import com.reactioncraft.common.world.Worldgen;
-import com.reactioncraft.core.BuildcraftProxy;
-import com.reactioncraft.core.EnergyModProxy;
-import com.reactioncraft.core.IC2Proxy;
-import com.reactioncraft.core.ServerProxy;
-
+import com.reactioncraft.api.*;
+import com.reactioncraft.common.blocks.*;
+import com.reactioncraft.common.blocks.columns.*;
+import com.reactioncraft.common.blocks.enums.*;
+import com.reactioncraft.common.capabilities.*;
+import com.reactioncraft.common.creativetabs.*;
+import com.reactioncraft.common.energystorageblock.network.*;
+import com.reactioncraft.common.events.*;
+import com.reactioncraft.common.instances.registration.*;
+import com.reactioncraft.common.tiles.*;
+import com.reactioncraft.common.utils.*;
+import com.reactioncraft.common.world.*;
+import com.reactioncraft.core.*;
+import com.reactioncraft.core.mods.*;
 //Minecraft
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumDyeColor;
 //Forge
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.registry.VillagerRegistry;
+import net.minecraftforge.fml.common.registry.*;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.server.FMLServerHandler;
 import net.minecraftforge.oredict.OreDictionary;
@@ -110,7 +95,6 @@ public class Reactioncraft
 
 		proxy.registerRenderInformation();
 		MaterialIndex.initMaterials();
-
 		MinecraftForge.EVENT_BUS.register(this);
 		MinecraftForge.EVENT_BUS.register(new BlockRegistry());
 		MinecraftForge.EVENT_BUS.register(new ItemRegistry());
@@ -140,16 +124,18 @@ public class Reactioncraft
 	public void init(FMLInitializationEvent event)
 	{
 		EventRegistry.eventInit();
-		GameRegistry.registerWorldGenerator(new Worldgen(), 3);
+		GameRegistry.registerWorldGenerator(new WorldGenOres(), 3);
+		GameRegistry.registerWorldGenerator(new WorldGenStructures(), 100);
 		RecipesManager.registerRecipes();
-		
 		energyModProxies.forEach(proxy -> proxy.init());
+		constants.wirelesstowerSetup();	
 	}
 
 	@Mod.EventHandler
 	public void modsLoaded(FMLPostInitializationEvent evt)
 	{
 		OreDictionaryRegistry.registerOres();
+		System.out.println("[Reactioncraft] Registered Blocks to Ore Dictionary!");
 		
 		if(constants.millenaire == true)
 		{	
@@ -161,7 +147,7 @@ public class Reactioncraft
 				File file = FMLServerHandler.instance().getServer().getDataDirectory().getAbsoluteFile();
 				constants.configmillenaire(file);
 			}
-			System.out.println("Millenaire integration loaded !");
+			System.out.println("[Reactioncraft] Millenaire integration loaded !");
 		} else {	System.out.println("[Reactioncraft] Did not find millenaire, added recipes disabled!"); }
 		
 		
@@ -188,7 +174,7 @@ public class Reactioncraft
 		{
 			System.out.println("[Reactioncraft] Found railcraft!");
 			
-		} else { System.out.println("[Reactioncraft] Did not find railcraft!"); }
+		} else { System.out.println("[Reactioncraft] Did not find Railcraft!"); }
 		
 		if(constants.loadedRf == true)
 		{

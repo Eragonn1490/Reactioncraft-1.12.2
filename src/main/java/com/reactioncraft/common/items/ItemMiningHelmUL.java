@@ -1,6 +1,6 @@
 package com.reactioncraft.common.items;
 
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 import com.reactioncraft.common.utils.constants;
 
 import net.minecraft.block.state.IBlockState;

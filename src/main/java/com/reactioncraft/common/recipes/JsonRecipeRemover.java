@@ -14,7 +14,7 @@ package com.reactioncraft.common.recipes;
 
 
 import com.google.gson.JsonObject;
-import com.reactioncraft.common.registration.instances.PropertyIndex;
+import com.reactioncraft.common.instances.PropertyIndex;
 
 import net.minecraft.util.JsonUtils;
 import net.minecraftforge.common.crafting.IConditionFactory;

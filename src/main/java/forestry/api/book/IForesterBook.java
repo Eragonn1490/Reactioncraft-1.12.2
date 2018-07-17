@@ -5,9 +5,8 @@
  ******************************************************************************/
 package forestry.api.book;
 
-import java.util.Collection;
-
 import javax.annotation.Nullable;
+import java.util.Collection;
 
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

@@ -2,9 +2,33 @@ package com.reactioncraft;
 
 public class Todolist 
 {
-	/** This Class is just here as a list of things to fix **/
-	/* Wishlist After v7.0.0
+	/* Final 7.0.0 Features
 	 * 
+	 * Bookcase Chests (Fix Tile Entities)
+	 * Statue Rotation 
+	 * 
+	 */
+	
+	/* Important Things to fix for +7.0.x
+	 * 
+	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
+	 * Brick Oven, Freezer don't return buckets
+	 * Dis-allow capturing millenaire villagers (city forcibly respawns them anyway)
+	 * Longer Piston?
+	 * Stairs for desert blocks (Fix Textures)
+	 * Slabs for desert blocks (Fix Metadata , Fix Textures)
+	 * Way for mods to add bone drops
+	 * Hireoglyph machine
+	 * Painted Block Machine
+	 * Fix Jellyfish Movement / Underwater
+	 * 
+	 */
+	
+	
+	/* Coming in MC 1.13 Version
+	 * 
+	 * Columns and other Blocks that are not full will render as if inside of the fluid surrounding them!
+	 * Sea-creepers!!
 	 * Advancements
 	 * Drawbridge? Portcullis but vertical 
 	 * Add can Silk touch to desert coal core and gems
@@ -12,35 +36,13 @@ public class Todolist
 	 * Finish Vanilla Villager Trades
 	 * Treasure Piles? (Maybe)
 	 * Make the Scroll Act like a book.
-	 * Hireoglyph Recipes Changed to using machine?
 	 * Villager drop with meat cleaver
 	 * Make Frame Useful for forestry again?
 	 * Add bee species? that uses honeycomb and pollen comb?
 	 * Desert Portcullis (Possibly Change Gate to use the Rail Model)
-	 * Fix Jellyfish Movement / Underwater
-	 *
-	 */
-	
-	/* Important Things to fix for 7.0.0
-	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
-	 * Brick Oven, Freezer don't return buckets
-	 * Dis-allow capturing millenaire villagers (city forcibly respawns them anyway)
-	 * Chest
-	 * Longer Piston?
-	 * Recipes
-	 * Fix Text from energy & wireless blocks
-	 * Stairs for desert blocks (Fix Textures)
-	 * Slabs for desert blocks (Fix Metadata , Fix Textures)
-	 * Way for mods to add bone drops
 	 * Railcraft Support (Will not work until railcraft publicly releases) (v7.0.0)
-	 * 
-	 */
-	
-	
-	/*
-	 * Coming in MC 1.13
-	 *  Columns and other Blocks that are not full will render as if inside of the fluid surrounding them!
-	 *  Sea-creepers!!
+	 * Electric Machines (possibility)
+	 *
 	 */
 	
 	
@@ -89,12 +91,20 @@ public class Todolist
 	 * Added Compressed Gold Statue to Banker House (v7.0.0)
 	 * Redesign corn item textures! (v7.0.0)
 	 * Make sure Banker Villager can Spawn in Bank House (v7.0.0)
-	 * EU - TO RF- To - MJ converter block. (v7.0.0)
+	 * EU -  FE - MJ converter block. (v7.0.0)
 	 * Ship in a bottle & Map in a bottle are now throwable Entities that "Break" (v7.0.0)
 	 * End Ores Generate (v7.0.0)
 	 * Re-Added Range to wireless Redstone Blocks (v7.0.0)
 	 * Fixed Mod Dependent Json Recipes (v7.0.0)
 	 * Added Json Recipe Remover (v7.0.0)
+	 * Added Corn field plot (v7.0.0)
+	 * Ship / Map in a bottle can now be fished with the fishing rod (v7.0.0)
+	 * Gold Dust can be Re-Macerated into Gold Dust for ic2 (v7.0.0)
+	 * Gold Dust can now be smelted into 3 gold nuggets (v7.0.0)
+	 * Recipe Json Files are organized into subfolders for easy modifications (v7.0.0)
+	 * Better Bookcase Recipes Fixed as json files (v7.0.0)
+	 * Added Wireless Energy Blocks
+	 * Added Structure Generation (Above & Underground)
 	 * 
 	 */
 	
@@ -152,6 +162,7 @@ public class Todolist
 	 * Re-Added Bones Drop to Millenaire Villagers (v6.3.1 , Broken v6.5.0)   (Fixed For-real this time v7.0.0)
 	 * Fixed Claylizer TE (6/28/18) (v7.0.0)
 	 * Fixed raw human drop with meat cleaver (v7.0.0)
+	 * Hammers no longer spawn iron shavings for items other then iron (v7.0.0)
 	 * 
 	 */
 	 
@@ -173,5 +184,8 @@ public class Todolist
 	 * Actually Stop Crawling Skeletons and Zombies from Spawning in Nether & End (v7.0.0)
 	 * Re-Organized Git Folders (7/7/2018)
 	 * Added More Levels to net (Removed Wood, Starting Level is now Leather, Final Level is now bloodstone) (v7.0.0)
+	 * Fix Text from energy & wireless blocks (v7.0.0)
+	 * Scrollshelf Recipe Actually Makes a full scrollshelf
+	 * 
 	 */
 }

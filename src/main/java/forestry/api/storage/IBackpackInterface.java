@@ -5,16 +5,17 @@
  ******************************************************************************/
 package forestry.api.storage;
 
+import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
-import javax.annotation.Nullable;
-
-import forestry.api.genetics.ISpeciesRoot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistryEntry;
+
+import forestry.api.genetics.ISpeciesRoot;
 
 /**
  * The Backpack Interface allows you to add items to Forestry backpacks or create your own backpacks.

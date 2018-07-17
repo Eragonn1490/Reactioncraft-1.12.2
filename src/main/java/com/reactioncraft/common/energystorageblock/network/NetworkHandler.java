@@ -1,6 +1,7 @@
 package com.reactioncraft.common.energystorageblock.network;
 
 import com.reactioncraft.common.utils.constants;
+
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;

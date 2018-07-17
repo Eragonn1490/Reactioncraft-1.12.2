@@ -2,7 +2,8 @@ package com.reactioncraft.common.tiles;
 
 import com.reactioncraft.common.blocks.*;
 import com.reactioncraft.common.blocks.enums.*;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -42,7 +43,7 @@ public class TileEntityBookcaseChest extends TileEntityBase implements ITickable
 	@Override
 	public int getSizeInventory() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 5;
 	}
 
 	@Override

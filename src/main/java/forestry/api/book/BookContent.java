@@ -7,11 +7,12 @@ package forestry.api.book;
 
 import javax.annotation.Nullable;
 
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import forestry.api.gui.IElementGroup;
 import forestry.api.gui.IGuiElement;
 import forestry.api.gui.IGuiElementFactory;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * The deserialized content data of a book page. It creates a gui element at the moment the entry gets opened.

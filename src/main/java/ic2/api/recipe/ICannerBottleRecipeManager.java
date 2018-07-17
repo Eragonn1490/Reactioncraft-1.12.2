@@ -1,8 +1,9 @@
 package ic2.api.recipe;
 
+import net.minecraft.item.ItemStack;
+
 import ic2.api.recipe.ICannerBottleRecipeManager.Input;
 import ic2.api.recipe.ICannerBottleRecipeManager.RawInput;
-import net.minecraft.item.ItemStack;
 
 public interface ICannerBottleRecipeManager extends IMachineRecipeManager<Input, ItemStack, RawInput> {
 	/**

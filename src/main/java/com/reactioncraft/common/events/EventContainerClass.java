@@ -4,9 +4,10 @@ import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 import com.reactioncraft.common.blocks.enums.EnumBookshelf;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
-import com.reactioncraft.common.registration.instances.PropertyIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
+import com.reactioncraft.common.instances.PropertyIndex;
+import com.reactioncraft.common.utils.Logger;
 import com.reactioncraft.common.utils.constants;
 import com.reactioncraft.api.ExclusionList;
 import com.reactioncraft.common.blocks.BlockBookshelf;
@@ -47,6 +48,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fluids.IFluidBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -54,6 +56,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class EventContainerClass
 {
 	static final String culture ="culture";
+	public static ExclusionList exclusionList = new ExclusionList();
 
 	private static Map<Object, Object> dropMap = ImmutableMap.builder()
 			//Add new drops for mobs below
@@ -183,32 +186,9 @@ public class EventContainerClass
 		}
 	}
 
-	@SubscribeEvent
-	public void onEntityDrop(LivingDropsEvent event)
+	//@SubscribeEvent
+	public void onEntityDrop()
 	{
-		EntityLivingBase entity = event.getEntityLiving();
-		World world = entity.getEntityWorld();
-		BlockPos position = entity.getPosition();
-
-		double rand = event.getEntityLiving().getEntityWorld().rand.nextDouble();
-
-		try
-		{
-			if (event.getSource().getDamageType().equals("player"))
-			{
-				ItemStack e = ((EntityLivingBase)event.getSource().getTrueSource()).getHeldItemMainhand();
-
-				if (e.getItem() == ItemIndex.meat_cleaver && rand < 1.0D)
-				{
-					NBTTagCompound tag = new NBTTagCompound();
-					entity.writeToNBT(tag);
-					for(Object o : tag.getKeySet())
-					{
-						System.out.println((String) o);
-					}
-				}
-			}
-		}
-		catch (NullPointerException var6) {} //This line is an empty exception dont change.
+		
 	}
 }

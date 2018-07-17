@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 
 import com.google.common.collect.Lists;
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;

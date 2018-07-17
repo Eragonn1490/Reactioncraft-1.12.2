@@ -5,9 +5,8 @@
  ******************************************************************************/
 package forestry.api.mail;
 
-import java.util.Locale;
-
 import javax.annotation.Nullable;
+import java.util.Locale;
 
 public enum EnumAddressee {
 	PLAYER, TRADER;

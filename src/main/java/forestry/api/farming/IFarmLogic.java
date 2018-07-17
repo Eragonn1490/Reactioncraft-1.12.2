@@ -7,7 +7,6 @@ package forestry.api.farming;
 
 import java.util.Collection;
 
-import forestry.api.core.ForestryAPI;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.item.ItemStack;
@@ -15,8 +14,11 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import forestry.api.core.ForestryAPI;
 
 /**
  * The IFarmLogic is used by farm blocks and multi-blocks to cultivate and harvest crops and plants.
@@ -98,9 +100,14 @@ public interface IFarmLogic {
 		return ForestryAPI.farmRegistry.createFakeInstance(this);
 	}
 
+	default boolean isManual(){
+		return false;
+	}
+
 	/**
 	 * @deprecated Since Forestry 5.8 logic instances are created at the constructor of the {@link IFarmProperties} and
-	 * have a immutable manual state. TODO Remove this method in 1.13
+	 * have a immutable manual state.
+	 * TODO Remove this method in 1.13
 	 */
 	@Deprecated
 	default IFarmLogic setManual(boolean manual){

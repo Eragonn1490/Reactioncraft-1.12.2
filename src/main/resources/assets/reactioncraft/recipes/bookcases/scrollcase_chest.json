@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW",
+        "SCS",
+        "WWW"
+    ],
+    "result": {
+        "item": "reactioncraft:chests",
+        "data" : 1
+    },
+    "key": {
+        "S": {
+            "item": "reactioncraft:scroll",
+            "data": 0
+        },
+        "C": {
+            "item": "minecraft:chest",
+            "data": 0
+        },
+        "W": {
+            "item": "reactioncraft:desertblocks",
+            "data": 2
+        }
+    }
+}

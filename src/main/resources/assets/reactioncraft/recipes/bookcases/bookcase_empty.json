@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "XXX",
+        "###"
+    ],
+    "result": {
+        "item": "reactioncraft:bookcases",
+        "data" : 0
+    },
+    "key": {
+        "#": {
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+        },
+        "X": {
+            "item": "minecraft:wooden_slab",
+            "data": 0
+        }
+    }
+}

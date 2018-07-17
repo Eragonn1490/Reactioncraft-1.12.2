@@ -1,7 +1,6 @@
 package com.reactioncraft.common.energystorageblock.energy;
 
 import com.google.common.collect.Lists;
-
 import net.minecraft.block.properties.PropertyEnum;
 
 /**

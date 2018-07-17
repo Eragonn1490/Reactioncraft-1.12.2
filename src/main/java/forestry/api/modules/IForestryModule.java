@@ -5,10 +5,9 @@
  ******************************************************************************/
 package forestry.api.modules;
 
+import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.Set;
-
-import javax.annotation.Nullable;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.util.ResourceLocation;

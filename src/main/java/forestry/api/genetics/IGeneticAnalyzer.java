@@ -1,7 +1,8 @@
 package forestry.api.genetics;
 
-import forestry.api.gui.IGuiElement;
 import net.minecraft.client.gui.GuiScreen;
+
+import forestry.api.gui.IGuiElement;
 
 public interface IGeneticAnalyzer extends IGuiElement {
 	IGeneticAnalyzerProvider getProvider();

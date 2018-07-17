@@ -1,7 +1,7 @@
 package com.reactioncraft.common.energystorageblock.network;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.energystorageblock.energy.EnergyBlockStorage;
+import com.reactioncraft.common.energystorageblock.energy.EnergyStorageTile;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -64,9 +64,9 @@ public class MessageTileEnergy extends MessageTile
                     if (tile != null && tile.hasCapability(CapabilityEnergy.ENERGY, null))
                     {
                         IEnergyStorage storage = tile.getCapability(CapabilityEnergy.ENERGY, null);
-                        if (storage instanceof EnergyBlockStorage)
+                        if (storage instanceof EnergyStorageTile)
                         {
-                            ((EnergyBlockStorage) storage).setEnergy(message.energy);
+                            ((EnergyStorageTile) storage).setEnergy(message.energy);
                         }
                     }
                 }

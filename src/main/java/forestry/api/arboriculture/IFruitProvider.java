@@ -5,10 +5,9 @@
  ******************************************************************************/
 package forestry.api.arboriculture;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Random;
-
-import javax.annotation.Nullable;
 
 import forestry.api.genetics.IFruitFamily;
 import net.minecraft.item.ItemStack;

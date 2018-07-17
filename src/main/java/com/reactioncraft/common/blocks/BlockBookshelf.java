@@ -2,7 +2,7 @@ package com.reactioncraft.common.blocks;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.blocks.enums.EnumBookshelf;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;

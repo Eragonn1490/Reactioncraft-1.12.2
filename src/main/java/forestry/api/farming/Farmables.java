@@ -5,11 +5,11 @@
  ******************************************************************************/
 package forestry.api.farming;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import net.minecraft.item.ItemStack;
 

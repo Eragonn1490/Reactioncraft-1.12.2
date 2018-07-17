@@ -1,14 +1,16 @@
 package com.reactioncraft.common.capabilities;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import com.reactioncraft.common.energystorageblock.config.ConfigPowerSystem;
-import com.reactioncraft.common.tiles.TileEntityEnergyStorage;
 import buildcraft.api.mj.MjAPI;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.energy.CapabilityEnergy;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import com.reactioncraft.common.energystorageblock.config.ConfigPowerSystem;
+import com.reactioncraft.common.tiles.TileEntityEnergyStorage;
 
 /**
  * @see <a href="https://github.com/BuiltBrokenModding/VoltzEngine/blob/development/license.md">License</a> for what you can and can't do with the code.

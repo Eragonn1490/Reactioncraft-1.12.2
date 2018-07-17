@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XY"
+    ],
+    "result": {
+        "item": "reactioncraft:gemdragonstone",
+        "count": 1,
+        "data": 0
+    },
+    "key": {
+        "X": {
+            "item": "reactioncraft:dragonstoneshard",
+            "data": 0
+        },
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "chisel"
+        }
+    }
+}

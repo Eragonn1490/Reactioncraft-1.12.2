@@ -5,7 +5,7 @@ import static net.minecraft.block.BlockEndPortalFrame.FACING;
 
 import java.util.Objects;
 
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 
 import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;

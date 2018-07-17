@@ -5,8 +5,8 @@ import static net.minecraft.block.BlockSapling.STAGE;
 import java.util.Random;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.world.BiomeGenReactionDesert;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.world.BiomeReactionDesert;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -59,7 +59,7 @@ public class BlockCherryTreeSapling extends BlockBush implements IGrowable
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
 		if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-		WorldGenerator worldgenerator = BiomeGenReactionDesert.cherryTrees;
+		WorldGenerator worldgenerator = BiomeReactionDesert.cherryTrees;
 
 		worldIn.setBlockState(pos,Blocks.AIR.getDefaultState());
 		if (!worldgenerator.generate(worldIn, rand, pos))

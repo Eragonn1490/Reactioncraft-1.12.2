@@ -4,9 +4,9 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.api.BrickOvenRecipes;
 import com.reactioncraft.common.blocks.machines.BlockBrickOven;
+import com.reactioncraft.common.instances.BlockIndex;
 import com.reactioncraft.common.itemhandlers.BrickOvenItemHandler;
 import com.reactioncraft.common.itemhandlers.ItemHandler;
-import com.reactioncraft.common.registration.instances.BlockIndex;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;

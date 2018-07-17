@@ -1,7 +1,7 @@
 package com.reactioncraft.common.blocks;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.block.state.IBlockState;

@@ -1,25 +1,26 @@
 package forestry.api.genetics;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.Collection;
 
-import javax.annotation.Nullable;
-
-import forestry.api.core.INbtReadable;
-import forestry.api.core.INbtWritable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.WorldServer;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import forestry.api.core.INbtReadable;
+import forestry.api.core.INbtWritable;
 
 public interface IFilterLogic extends INbtWritable, INbtReadable {
 	void writeGuiData(PacketBuffer data);
 
 	@SideOnly(Side.CLIENT)
-	void readGuiData(PacketBuffer data) throws IOException;
+	void readGuiData(PacketBuffer data);
 
 	Collection<EnumFacing> getValidDirections(ItemStack itemStack, EnumFacing from);
 

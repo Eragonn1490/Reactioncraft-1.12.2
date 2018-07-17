@@ -3,7 +3,7 @@ package com.reactioncraft.common.blocks.plants;
 import java.util.Random;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.BlockStateContainer;

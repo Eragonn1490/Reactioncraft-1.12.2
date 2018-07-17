@@ -5,9 +5,8 @@
  ******************************************************************************/
 package forestry.api.circuits;
 
-import java.util.Map;
-
 import javax.annotation.Nullable;
+import java.util.Map;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

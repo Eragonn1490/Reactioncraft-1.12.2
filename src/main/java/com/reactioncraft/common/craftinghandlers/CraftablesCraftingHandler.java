@@ -1,6 +1,6 @@
 package com.reactioncraft.common.craftinghandlers;
 
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -14,7 +14,6 @@ public class CraftablesCraftingHandler
         int G;
         ItemStack j;
         ItemStack k;
-        ItemStack irondust = new ItemStack(ItemIndex.ironShavings);
 
         for (G = 0; G < event.craftMatrix.getSizeInventory(); ++G)
         {
@@ -194,7 +193,6 @@ public class CraftablesCraftingHandler
                     }
 
                     event.craftMatrix.setInventorySlotContents(G, k);
-                    event.player.dropItem(irondust, true);
                 }
             }
         }
@@ -215,7 +213,6 @@ public class CraftablesCraftingHandler
                     }
 
                     event.craftMatrix.setInventorySlotContents(G, k);
-                    event.player.dropItem(irondust, true);
                 }
             }
         }

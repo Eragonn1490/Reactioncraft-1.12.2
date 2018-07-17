@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.blocks.BlockBase;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

@@ -20,8 +20,8 @@ public class BiomeHandler
 
 	private void registerBiomes(IForgeRegistry<Biome> biomes)
 	{
-		BiomeGenReactionDesert reactionDesert;
-		reactionDesert = new BiomeGenReactionDesert(new Biome.BiomeProperties("Reaction Desert")
+		BiomeReactionDesert reactionDesert;
+		reactionDesert = new BiomeReactionDesert(new Biome.BiomeProperties("Reaction Desert")
 				.setBaseHeight(0.125F)
 				.setHeightVariation(0.05F)
 				.setTemperature(2.0F)

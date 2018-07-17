@@ -5,8 +5,8 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;

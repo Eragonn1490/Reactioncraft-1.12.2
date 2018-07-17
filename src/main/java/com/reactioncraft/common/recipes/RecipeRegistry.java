@@ -2,7 +2,9 @@ package com.reactioncraft.common.recipes;
 
 import javax.annotation.Nullable;
 import com.reactioncraft.api.*;
-import com.reactioncraft.common.registration.instances.*;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
+import com.reactioncraft.common.instances.registration.*;
 import com.reactioncraft.common.utils.constants;
 import forestry.api.recipes.RecipeManagers;
 import ic2.api.item.IC2Items;
@@ -104,7 +106,7 @@ public class RecipeRegistry
 		GameRegistry.addSmelting(ItemIndex.bloodstonedust, new ItemStack(ItemIndex.ingotbloodstone), 0.5F);
 		GameRegistry.addSmelting(ItemIndex.bloodstoneclump, new ItemStack(ItemIndex.ingotbloodstone), 0.5F);
 		GameRegistry.addSmelting(ItemIndex.irondust, new ItemStack(ItemIndex.superheatedironingot, 2, 0), 0.5F);
-		GameRegistry.addSmelting(ItemIndex.goldDust, new ItemStack(Items.GOLD_INGOT), 0.1F);
+		GameRegistry.addSmelting(ItemIndex.goldDust, new ItemStack(Items.GOLD_NUGGET, 3), 0.1F);
 
 	}
 
@@ -143,6 +145,8 @@ public class RecipeRegistry
 
 	public static void ic2() 
 	{
+		rdustGold = IC2Items.getItem("crushed", "gold");
+		
 		//Bloodstone block to bloodstone dust
 		Recipes.macerator.addRecipe(Recipes.inputFactory.forOreDict("oreBloodstone", 1), null, false, new ItemStack[] { new ItemStack(ItemIndex.bloodstonedust, 3)});
 
@@ -158,11 +162,11 @@ public class RecipeRegistry
 		
 		//Nether Gold to Crushed Gold
 		Recipes.macerator.addRecipe(Recipes.inputFactory.forOreDict("oreNetherGoldOre", 1), null, false, new ItemStack[] { new ItemStack(ItemIndex.goldDust, 2)});
-
+		Recipes.macerator.addRecipe(Recipes.inputFactory.forOreDict("clump_gold", 1), null, false, new ItemStack[] { rdustGold });
+		
 		//Desert Gold to Crushed Gold
-		rdustGold = IC2Items.getItem("crushed", "gold");
 		Recipes.macerator.addRecipe(Recipes.inputFactory.forOreDict("oreDesertGold", 1), null, false, new ItemStack[] { rdustGold });
-		//Recipes.macerator.addRecipe(new RecipeInputOreDict("oreDesertGold", 1), null, new ItemStack[] { new ItemStack(dustGold.itemID, 2, 2)}); 
+		
 
 		//Silver Ore to Crushed Silver
 		rdustSilver = IC2Items.getItem("crushed", "silver");

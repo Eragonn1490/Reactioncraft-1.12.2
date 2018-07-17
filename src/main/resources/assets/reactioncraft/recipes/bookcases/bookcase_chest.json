@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW",
+        "BCB",
+        "WWW"
+    ],
+    "result": {
+        "item": "reactioncraft:chests",
+        "data" : 0
+    },
+    "key": {
+        "B": {
+            "item": "minecraft:book",
+            "data": 0
+        },
+        "C": {
+            "item": "minecraft:chest",
+            "data": 0
+        },
+        "W": {
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+        }
+    }
+}

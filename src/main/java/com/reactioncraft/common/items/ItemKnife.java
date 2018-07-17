@@ -2,9 +2,9 @@ package com.reactioncraft.common.items;
 
 
 import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 import com.reactioncraft.common.items.tools.ItemBaseSword;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
 import com.reactioncraft.common.utils.ItemModelProvider;
 
 import net.minecraft.block.state.IBlockState;

@@ -5,7 +5,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 import com.reactioncraft.common.tiles.TileEntityClayalizer;
 import com.reactioncraft.core.ServerProxy;
 

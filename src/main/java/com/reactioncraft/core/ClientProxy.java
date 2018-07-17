@@ -1,6 +1,7 @@
 package com.reactioncraft.core;
 
 import com.reactioncraft.common.entities.*;
+import com.reactioncraft.common.instances.ItemIndex;
 import com.reactioncraft.common.items.*;
 import com.reactioncraft.common.mobs.entities.*;
 import com.reactioncraft.common.mobs.models.*;
@@ -18,7 +19,6 @@ import com.reactioncraft.common.mobs.renders.RenderJellyfish;
 import com.reactioncraft.common.mobs.renders.RenderSeaCreeper;
 import com.reactioncraft.common.mobs.renders.RenderSkeletonCrawling;
 import com.reactioncraft.common.mobs.renders.RenderZombieCrawling;
-import com.reactioncraft.common.registration.instances.ItemIndex;
 import com.reactioncraft.common.utils.constants;
 
 import net.minecraft.client.Minecraft;

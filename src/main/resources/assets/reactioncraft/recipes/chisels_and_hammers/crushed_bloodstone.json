@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "XY"
+    ],
+    "result": {
+        "item": "reactioncraft:bloodstoneclump",
+        "count": 1,
+        "data": 0
+    },
+    "key": {
+        "X": {
+            "type": "forge:ore_dict",
+            "ore": "hammerT1"
+        },
+        "Y": {
+            "type": "forge:ore_dict",
+            "ore": "oreBloodstone"
+        }
+    }
+}

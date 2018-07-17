@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"# #",
+		"#D#",
+		"# #"
+	],
+	"key": {
+		"D": {
+			"type": "forge:ore_dict",
+			"ore": "doorWood"
+		},
+		"#": {
+			"item": "minecraft:bookshelf",
+			"data": 0
+		}
+	},
+	"result": {
+		"item": "reactioncraft:WoodenBookcasedoor",
+		"count": 3
+	}
+}

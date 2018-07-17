@@ -1,7 +1,7 @@
 package com.reactioncraft.common.energystorageblock.network;
 
-
 import com.reactioncraft.Reactioncraft;
+
 import io.netty.buffer.ByteBuf;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

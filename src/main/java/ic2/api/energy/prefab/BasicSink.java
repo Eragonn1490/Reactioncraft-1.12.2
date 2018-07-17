@@ -1,12 +1,13 @@
 package ic2.api.energy.prefab;
 
-import ic2.api.energy.tile.IEnergyEmitter;
-import ic2.api.energy.tile.IEnergySink;
-import ic2.api.info.ILocatable;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import ic2.api.energy.tile.IEnergyEmitter;
+import ic2.api.energy.tile.IEnergySink;
+import ic2.api.info.ILocatable;
 
 /**
  * BasicSink is a simple delegate to provide an ic2 energy sink.

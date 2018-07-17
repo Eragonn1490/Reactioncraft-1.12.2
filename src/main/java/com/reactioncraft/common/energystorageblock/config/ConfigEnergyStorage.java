@@ -8,7 +8,7 @@ import net.minecraftforge.common.config.Config;
  * @see <a href="https://github.com/BuiltBrokenModding/VoltzEngine/blob/development/license.md">License</a> for what you can and can't do with the code.
  * Created by Dark(DarkGuardsman, Robert) on 6/30/2018.
  */
-@Config(modid = constants.MODID, name = "energy_storage_mod/energy_storage_block")
+@Config(modid = constants.MODID, name = "Reactioncraft/energy_storage_block")
 @Config.LangKey("config.icbmclassic:battery.title")
 public class ConfigEnergyStorage
 {

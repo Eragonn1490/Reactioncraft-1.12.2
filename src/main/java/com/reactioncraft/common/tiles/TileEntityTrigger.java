@@ -1,5 +1,8 @@
 package com.reactioncraft.common.tiles;
 
+
+import com.reactioncraft.common.blocks.energy.BlockTrigger;
+import com.reactioncraft.common.capabilities.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -7,12 +10,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
-import javax.annotation.Nullable;
 
-import com.reactioncraft.common.blocks.energy.BlockTrigger;
-import com.reactioncraft.common.capabilities.CapabilityTriggerHz;
-import com.reactioncraft.common.capabilities.ITriggerHz;
-import com.reactioncraft.common.capabilities.TriggerHzHandler;
+import javax.annotation.Nullable;
 
 /**
  * @see <a href="https://github.com/BuiltBrokenModding/VoltzEngine/blob/development/license.md">License</a> for what you can and can't do with the code.

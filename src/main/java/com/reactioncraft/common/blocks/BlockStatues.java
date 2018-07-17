@@ -7,8 +7,8 @@ import javax.annotation.Nullable;
 
 import com.reactioncraft.common.blocks.enums.EnumEmptyBlocks;
 import com.reactioncraft.common.blocks.enums.EnumStatueBlocks;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -69,7 +69,7 @@ public class BlockStatues extends BlockBase
 
 			//up Down
 			double y1 = 0;
-			double y2 = 1.7;
+			double y2 = 1.0;
 
 			//Z axis
 			double z1 = 0.25;
@@ -88,7 +88,7 @@ public class BlockStatues extends BlockBase
 
 			//up Down
 			double y1 = 0;
-			double y2 = 2.0;
+			double y2 = 1.0;
 
 			//Z axis
 			double z1 = 0.25;
@@ -107,7 +107,7 @@ public class BlockStatues extends BlockBase
 
 			//up Down
 			double y1 = 0;
-			double y2 = 1.7;
+			double y2 = 1.0;
 
 			//Z axis
 			double z1 = 0.25;

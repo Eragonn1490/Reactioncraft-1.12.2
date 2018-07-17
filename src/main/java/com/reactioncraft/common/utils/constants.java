@@ -4,11 +4,23 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
-
 import com.mojang.authlib.GameProfile;
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.PropertyIndex;
+import com.reactioncraft.common.blocks.BlockEmpty;
+import com.reactioncraft.common.blocks.BlockStatues;
+import com.reactioncraft.common.blocks.columns.BlockColumn;
+import com.reactioncraft.common.blocks.columns.BlockMiniColumn;
+import com.reactioncraft.common.blocks.columns.BlockSmallestColumn;
+import com.reactioncraft.common.blocks.enums.EnumColumnTypes;
+import com.reactioncraft.common.blocks.enums.EnumEmptyBlocks;
+import com.reactioncraft.common.blocks.enums.EnumStatueBlocks;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.PropertyIndex;
+import com.reactioncraft.common.tiles.TileEntityWirelessController;
+import com.reactioncraft.core.EnergyModProxy;
 
 import ic2.api.info.Info;
 import net.minecraft.server.MinecraftServer;
@@ -27,6 +39,8 @@ public class constants
 	public static final String MCVersion = "1.12.2";
 	
 	public static final ResourceLocation LOCATION_BLOCKS_TEXTURE = new ResourceLocation("textures/atlas/blocks.png");
+	
+	public static List<EnergyModProxy> energyModProxies = new ArrayList();
 	
 	//Check if mods are loaded
 	public static boolean IC2, Forestry, millenaire, Buildcraft, loadedRf, railcraft;
@@ -149,5 +163,27 @@ public class constants
 			Buildcraft = true;
 		if(Loader.isModLoaded("redstoneflux"));
 			loadedRf = true;
+	}
+
+	public static void wirelesstowerSetup() 
+	{
+		TileEntityWirelessController.multiBlockLayout = new Object[]
+	               
+				{
+                	    //blockWirelessConnector //to ignore metadata use the instance
+                		BlockIndex.emptystatues.getDefaultState().withProperty(BlockEmpty.TYPE, EnumEmptyBlocks.COIL),
+                        BlockIndex.statues.getDefaultState().withProperty(BlockStatues.TYPE, EnumStatueBlocks.COIL), 
+                        BlockIndex.smallestColumn.getDefaultState().withProperty(BlockSmallestColumn.TYPE, EnumColumnTypes.Bloodstone),
+                        BlockIndex.smallestColumn.getDefaultState().withProperty(BlockSmallestColumn.TYPE, EnumColumnTypes.Bloodstone),
+                        BlockIndex.miniColumn.getDefaultState().withProperty(BlockMiniColumn.TYPE, EnumColumnTypes.Bloodstone),
+                        BlockIndex.miniColumn.getDefaultState().withProperty(BlockMiniColumn.TYPE, EnumColumnTypes.Bloodstone),
+                        BlockIndex.column.getDefaultState().withProperty(BlockColumn.TYPE, EnumColumnTypes.Bloodstone),
+                        BlockIndex.blockWirelessController, //Can still use normal blocks to ignore meta
+                        BlockIndex.blockWirelessConnector,
+                        BlockIndex.column.getDefaultState().withProperty(BlockColumn.TYPE, EnumColumnTypes.Bloodstone),
+                        BlockIndex.bloodstonebricks
+                };
+             
+        TileEntityWirelessController.multiBlockDeltaY = -3;//# of blocks below the controller block
 	}
 }

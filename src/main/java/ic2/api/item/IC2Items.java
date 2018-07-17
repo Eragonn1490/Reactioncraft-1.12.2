@@ -1,9 +1,11 @@
 package ic2.api.item;
 
-import ic2.api.info.Info;
 import net.minecraft.item.ItemStack;
+
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
+
+import ic2.api.info.Info;
 
 
 /**

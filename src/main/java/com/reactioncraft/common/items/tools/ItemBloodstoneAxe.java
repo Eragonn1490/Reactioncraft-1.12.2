@@ -1,7 +1,7 @@
 package com.reactioncraft.common.items.tools;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

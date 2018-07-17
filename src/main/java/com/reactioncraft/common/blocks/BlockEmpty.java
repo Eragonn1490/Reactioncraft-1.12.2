@@ -2,7 +2,7 @@ package com.reactioncraft.common.blocks;
 
 import com.reactioncraft.common.blocks.enums.EnumEmptyBlocks;
 import com.reactioncraft.common.blocks.enums.EnumStatueBlocks;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -47,7 +47,6 @@ public class BlockEmpty extends BlockBase
 		return BlockRenderLayer.CUTOUT;
 	}
 
-
 	@Override
 	public boolean canPlaceTorchOnTop(IBlockState state, IBlockAccess world, BlockPos pos) 
 	{
@@ -72,7 +71,7 @@ public class BlockEmpty extends BlockBase
 
 			//up Down
 			double y1 = 0;
-			double y2 = 1.0;
+			double y2 = 0.62;
 
 			//Z axis
 			double z1 = 0.25;
@@ -110,7 +109,7 @@ public class BlockEmpty extends BlockBase
 
 			//up Down
 			double y1 = 0;
-			double y2 = 1.0;
+			double y2 = 0.75;
 
 			//Z axis
 			double z1 = 0.25;
@@ -129,7 +128,7 @@ public class BlockEmpty extends BlockBase
 
 			//up Down
 			double y1 = 0;
-			double y2 = 1.0;
+			double y2 = 0.5;
 
 			//Z axis
 			double z1 = 0.0;

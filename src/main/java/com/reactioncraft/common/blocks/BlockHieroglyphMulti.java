@@ -2,8 +2,8 @@ package com.reactioncraft.common.blocks;
 
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.blocks.enums.EnumHieroGlyphs;
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

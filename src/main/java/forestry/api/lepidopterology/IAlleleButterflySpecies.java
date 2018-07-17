@@ -8,11 +8,14 @@ package forestry.api.lepidopterology;
 import java.util.Map;
 import java.util.Set;
 
-import forestry.api.genetics.IAlleleSpecies;
 import net.minecraft.item.ItemStack;
+
 import net.minecraftforge.common.BiomeDictionary;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import forestry.api.genetics.IAlleleSpecies;
 
 public interface IAlleleButterflySpecies extends IAlleleSpecies {
 

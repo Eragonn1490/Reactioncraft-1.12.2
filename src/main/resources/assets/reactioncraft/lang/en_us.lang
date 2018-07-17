@@ -1,7 +1,7 @@
 #Energy Converter
 tile.reactioncraft.bloodstoneEnergyBlock.name=Energy Storage Block
 
-## Info keys for energy side set
+## Info keys for energy block
 tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.up.input=Side up set to input energy
 tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.down.input=Side down set to input energy
 tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.north.input=Side north set to input energy
@@ -23,9 +23,24 @@ tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.south.none=Side sou
 tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.east.none=Side east disconnected
 tile.reactioncraft.bloodstoneEnergyBlock.info.power.side.set.west.none=Side west disconnected
 
+#wireless energy towers
+tile.reactioncraft.wireless.energy.connector.name=Wireless Connector
+tile.reactioncraft.wireless.energy.controller.name=Wireless Transmitter
+tile.reactioncraft.wireless.energy.connector.info.power=Energy: %d / %d FE
+tile.reactioncraft.wireless.energy.connector.info.power.true=Connector set to output power
+tile.reactioncraft.wireless.energy.connector.info.power.false=Connector set to input power
+
+tile.energystorageblock:wireless.energy.controller.info.set.new=Frequency is set to %s
+tile.energystorageblock:wireless.energy.controller.info.set.already=Frequency is already set, use a Zeroizer before setting a new value
+
 #transmitter items
-item.reactioncrafttrigger.clear.info.cleared=Cleared Frequency
-tile.reactioncraft.transmitter.info.set.new=Frequency Set
+item.reactioncraft.trigger_clear.info.cleared=Cleared Frequency
+tile.reactioncraft.transmitter.info.set.new=Frequency is set to %s
+tile.reactioncraft.transmitter.info.set.already=Frequency is already set, use a Zeroizer before setting a new frequency
+
+item.reactioncraft.trigger_remote.info.result.true=Trigger is activated
+item.reactioncraft.trigger_remote.info.result.false=Trigger is deactivated
+item.reactioncraft.trigger_remote.info.result=Activated %s blocks and Deactivated %s blocks
 
 #Villager Names
 entity.Villager.career1=Mherr
@@ -269,7 +284,7 @@ item.reactioncraft.moltensilver.name=Molten Silver
 item.reactioncraft.moltencopper.name=Molten Copper
 item.reactioncraft.moltenbronze.name=Molten Bronze
 item.reactioncraft.copperbucket.name=Copper Bucket
-item.reactioncraft.silverbucket.name=Silver Bucket
+item.reactioncraft.silver_bucket.name=Silver Bucket
 item.reactioncraft.bronzebucket.name=Bronze Bucket
 item.reactioncraft.goldbucket.name=Gold Bucket
 item.reactioncraft.ingotRefinedgold.name=Refined Gold Ingot

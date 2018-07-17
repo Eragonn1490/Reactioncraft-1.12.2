@@ -5,22 +5,23 @@
  ******************************************************************************/
 package forestry.api.apiculture;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Set;
 
-import javax.annotation.Nullable;
-
-import forestry.api.core.IErrorState;
-import forestry.api.genetics.IEffectData;
-import forestry.api.genetics.IIndividual;
-import forestry.api.genetics.IIndividualLiving;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import forestry.api.core.IErrorState;
+import forestry.api.genetics.IEffectData;
+import forestry.api.genetics.IIndividual;
+import forestry.api.genetics.IIndividualLiving;
 
 /**
  * Other implementations than Forestry's default one are not supported.

@@ -1,7 +1,7 @@
 package com.reactioncraft.common.blocks;
 
-import com.reactioncraft.common.registration.instances.BlockIndex;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;

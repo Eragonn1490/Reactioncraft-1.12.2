@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "BBB",
+        "###"
+    ],
+    "result": {
+        "item": "reactioncraft:bookcases",
+        "count": 1,
+        "data": 9
+    },
+    "key": {
+        "#": {
+            "item": "reactioncraft:desertblocks",
+            "data": 2
+        },
+        "B": {
+            "item": "minecraft:wooden_slab",
+            "data": 0
+        }
+    }
+}

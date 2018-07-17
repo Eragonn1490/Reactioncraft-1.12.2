@@ -1,6 +1,6 @@
 package com.reactioncraft.common.blocks.plants;
 
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.IBlockState;

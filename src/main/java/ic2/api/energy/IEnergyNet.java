@@ -2,11 +2,12 @@ package ic2.api.energy;
 
 import java.io.PrintStream;
 
-import ic2.api.energy.tile.IEnergyTile;
-import ic2.api.info.ILocatable;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import ic2.api.energy.tile.IEnergyTile;
+import ic2.api.info.ILocatable;
 
 /**
  * Interface representing the methods provided by the global EnergyNet class.

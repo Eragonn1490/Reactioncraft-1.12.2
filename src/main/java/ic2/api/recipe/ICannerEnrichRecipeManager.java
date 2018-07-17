@@ -1,9 +1,11 @@
 package ic2.api.recipe;
 
+import net.minecraft.item.ItemStack;
+
+import net.minecraftforge.fluids.FluidStack;
+
 import ic2.api.recipe.ICannerEnrichRecipeManager.Input;
 import ic2.api.recipe.ICannerEnrichRecipeManager.RawInput;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
 public interface ICannerEnrichRecipeManager extends IMachineRecipeManager<Input, FluidStack, RawInput> {
 	/**

@@ -3,7 +3,7 @@ package com.reactioncraft.common.blocks.ores;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.blocks.BlockBase;
 import com.reactioncraft.common.blocks.enums.EnumSurfaceOres;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

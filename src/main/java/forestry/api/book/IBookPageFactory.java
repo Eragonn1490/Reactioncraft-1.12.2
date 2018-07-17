@@ -7,9 +7,10 @@ package forestry.api.book;
 
 import java.util.Collection;
 
-import forestry.api.gui.IGuiElement;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import forestry.api.gui.IGuiElement;
 
 /**
  * A factory that creates book pages for a book entry.

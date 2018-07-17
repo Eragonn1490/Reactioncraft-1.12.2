@@ -3,7 +3,7 @@ package com.reactioncraft.common.events;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
-import com.reactioncraft.common.registration.instances.ItemIndex;
+import com.reactioncraft.common.instances.ItemIndex;
 import com.reactioncraft.common.utils.Logger;
 import com.reactioncraft.common.utils.constants;
 

@@ -11,8 +11,8 @@ import javax.annotation.Nullable;
 import com.reactioncraft.common.blocks.BlockStatues;
 import com.reactioncraft.common.blocks.enums.EnumStatueBlocks;
 import com.reactioncraft.common.blocks.machines.BlockClayalizer;
-import com.reactioncraft.common.registration.Villagers;
-import com.reactioncraft.common.registration.instances.BlockIndex;
+import com.reactioncraft.common.instances.BlockIndex;
+import com.reactioncraft.common.instances.registration.Villagers;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
@@ -93,7 +93,7 @@ public class VillageReactioncraftBank extends StructureVillagePieces.House1
 
 		// Floor
 		IBlockState slabFloor = Blocks.STONE_SLAB.getDefaultState();
-		IBlockState planksFloor = BlockIndex.cherryPlanks.getDefaultState();
+		IBlockState planksFloor = BlockIndex.cherry_planks.getDefaultState();
 		slabFloor.withProperty(BlockSlab.HALF, BlockSlab.EnumBlockHalf.BOTTOM);
 		fillWithBlocks(world, structBoundingBox, 2, 0, 1, 6, 0, 4, slabFloor, slabFloor, false);
 		fillWithBlocks(world, structBoundingBox, 1, 0, 1, 1, 0, 4, planksFloor, planksFloor, false);
