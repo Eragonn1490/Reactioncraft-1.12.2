@@ -104,8 +104,27 @@ public class Reactioncraft
 		EntityRCRegistry.registerVillagers();
 		EntityRCRegistry.registerMobs();
 		EntityRCRegistry.registerThrowableEntites();
-		constants.init();
+		constants.modsLoaded();
+		excludeMobs();
 	}	
+
+	private void excludeMobs() 
+	{
+		exclusionList.addExclusion("EnderDragon");
+		exclusionList.addExclusion("dragonPartHead");
+		exclusionList.addExclusion("dragonPartBody");
+		exclusionList.addExclusion("dragonPartTail1");
+		exclusionList.addExclusion("dragonPartTail2");
+		exclusionList.addExclusion("dragonPartTail3");
+		exclusionList.addExclusion("dragonPartWing1");
+		exclusionList.addExclusion("dragonPartWing2");
+		exclusionList.addExclusion("FallingSand");
+		exclusionList.addExclusion("Fireball");
+		exclusionList.addExclusion("PrimedTnt");
+		exclusionList.addExclusion("MinecartTNT");
+		exclusionList.addExclusion("WitherSkull");
+		//exclusionList.addExclusion("Hydrolisc");//Test Entity
+	}
 
 	private void clientorserver(FMLPreInitializationEvent event) 
 	{

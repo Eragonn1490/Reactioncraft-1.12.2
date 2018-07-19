@@ -98,7 +98,6 @@ public class ItemKnife extends ItemBaseSword implements ItemModelProvider
 
 	private Boolean checkInventory(Boolean hasbowl, EntityPlayer player) 
 	{
-
 		return hasbowl;
 	}
 

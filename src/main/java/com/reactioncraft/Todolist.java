@@ -5,15 +5,14 @@ public class Todolist
 	/* Final 7.0.0 Features
 	 * 
 	 * Bookcase Chests (Fix Tile Entities)
-	 * Statue Rotation 
+	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
 	 * 
 	 */
 	
 	/* Important Things to fix for +7.0.x
 	 * 
-	 * Fix Villager profession reset, NBT not stored? (Removes Profession if caught with net and respawned)
+	 * Statue Rotation 
 	 * Brick Oven, Freezer don't return buckets
-	 * Dis-allow capturing millenaire villagers (city forcibly respawns them anyway)
 	 * Longer Piston?
 	 * Stairs for desert blocks (Fix Textures)
 	 * Slabs for desert blocks (Fix Metadata , Fix Textures)
@@ -103,8 +102,8 @@ public class Todolist
 	 * Gold Dust can now be smelted into 3 gold nuggets (v7.0.0)
 	 * Recipe Json Files are organized into subfolders for easy modifications (v7.0.0)
 	 * Better Bookcase Recipes Fixed as json files (v7.0.0)
-	 * Added Wireless Energy Blocks
-	 * Added Structure Generation (Above & Underground)
+	 * Added Wireless Energy Blocks (v7.0.0)
+	 * Added Structure Generation (Above & Underground) (v7.0.0)
 	 * 
 	 */
 	
@@ -163,6 +162,9 @@ public class Todolist
 	 * Fixed Claylizer TE (6/28/18) (v7.0.0)
 	 * Fixed raw human drop with meat cleaver (v7.0.0)
 	 * Hammers no longer spawn iron shavings for items other then iron (v7.0.0)
+	 * Caught Mobs are now correctly removed from inventory upon spawning mob (v7.0.0)
+	 * Dis-allow capturing millenaire villagers to prevent a bug (city forcibly respawns them anyway) (v7.0.0)
+	 * Net API fully functioning!(v7.0.0)
 	 * 
 	 */
 	 

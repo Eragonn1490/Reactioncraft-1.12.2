@@ -72,14 +72,26 @@ public class ItemCaughtEntity extends ItemBase
     }
 
 	@Override
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
+	{
         ItemStack stack=player.getHeldItem(hand);
-        if (this.spawnCreature(worldIn, stack, pos.getX() + hitX, pos.getY() + hitY, pos.getZ() + hitZ) != null)
+        
+        if (!player.capabilities.isCreativeMode)
         {
-            stack.shrink(1);
-            return EnumActionResult.SUCCESS;
+        	 if (this.spawnCreature(worldIn, stack, pos.getX() + hitX, pos.getY() + hitY, pos.getZ() + hitZ) != null)
+             {
+        		 player.inventory.deleteStack(player.getHeldItem(hand));
+             }
         }
-
+        
+        else if (player.capabilities.isCreativeMode)
+        {
+        	 if (this.spawnCreature(worldIn, stack, pos.getX() + hitX, pos.getY() + hitY, pos.getZ() + hitZ) != null)
+             {
+        		 player.inventory.deleteStack(player.getHeldItem(hand));
+             }
+        }
+        
         return EnumActionResult.PASS;
     }
 

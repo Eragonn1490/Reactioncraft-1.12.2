@@ -44,35 +44,35 @@ public class WorldGenStructureTemplates extends WorldGenerator
 		switch (j) 
 		{
 			case 1:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_brown"));
-				Logger.info("3");
+				//Logger.info("3");
 				break;
 				
 			case 2:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_darkblue"));
-				Logger.info("4");
+				//Logger.info("4");
 				break;
 				
 			case 3:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_lightblue"));
-				Logger.info("5");
+				//Logger.info("5");
 				break;
 			
 			case 4:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_gold"));
-				Logger.info("6");
+				//Logger.info("6");
 				break;
 				
 			case 5:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_destroyed"));
-				Logger.info("7");
+				//Logger.info("7");
 				break;
 				
 			case 6:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":temple1"));
-				Logger.info("8");
+				//Logger.info("8");
 				break;
 				
 			case 7:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":tower_desert"));
-				Logger.info("9");
+				//Logger.info("9");
 				break;
 			
 			default: template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_brown"));
-				Logger.info("Default");
+				//Logger.info("Default");
 				break;
 		}
 

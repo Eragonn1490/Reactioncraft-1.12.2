@@ -31,11 +31,11 @@ public class ButcherEventClass
 
 	private static Map<Object, Object> dropMap = ImmutableMap.builder()
 			//Add new drops for mobs below
-			.put(EntityPig.class,     ItemIndex.pork_chunk)
-			.put(EntityChicken.class, ItemIndex.chicken_head)
-			.put(EntityCow.class,     ItemIndex.beef_chunk)
-			.put(EntityHorse.class,   ItemIndex.raw_horse)
-			.put(EntityPlayerMP.class,  ItemIndex.raw_human)
+			.put(EntityPig.class,        ItemIndex.pork_chunk)
+			.put(EntityChicken.class,    ItemIndex.chicken_head)
+			.put(EntityCow.class,        ItemIndex.beef_chunk)
+			.put(EntityHorse.class,      ItemIndex.raw_horse)
+			.put(EntityPlayerMP.class,   ItemIndex.raw_human)
 			.put(EntityRabbit.class,     Items.AIR)//Replace with something?
 			.put(EntityWitherSkeleton.class, Items.AIR) //Maybe Replace with Wither Rib ?
 

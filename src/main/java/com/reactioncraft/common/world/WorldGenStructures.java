@@ -44,8 +44,8 @@ public class WorldGenStructures implements IWorldGenerator
 	
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{
-		//if(rand2.nextFloat() < 0.01F)
-		//{
+		if(rand2.nextFloat() < 0.01F)
+		{
 			int y = getGroundFromAbove(world, blockX, blockZ);
 			BlockPos pos = new BlockPos(blockX, y, blockZ);
 			Biome biome = world.getBiome(pos);
@@ -57,22 +57,22 @@ public class WorldGenStructures implements IWorldGenerator
 				{	
 					case 1: WorldGenerator ingroundstructure = new WorldGenIngroundStructureTemplates();
 							ingroundstructure.generate(world, rand, pos);
-							Logger.info("Generated Inground at" + pos);
+							//Logger.info("Generated Inground at" + pos);
 							break;
 							
 					case 2: WorldGenerator undergroundstructure = new WorldGenUndergroundStructureTemplates();
 							undergroundstructure.generate(world, rand, pos);
-							Logger.info("Generated Underground at" + pos);
+							//Logger.info("Generated Underground at" + pos);
 							break;
 							
 					default: 
-							//WorldGenerator structure = new WorldGenStructureTemplates();
-							//structure.generate(world, rand, pos);
+							WorldGenerator structure = new WorldGenStructureTemplates();
+							structure.generate(world, rand, pos);
 							//Logger.info("Generated Default at" + pos);
 							break;
 				}
 			}
-		//}
+		}
 	}
 	
 	public static int getGround(World world, int x, int z)

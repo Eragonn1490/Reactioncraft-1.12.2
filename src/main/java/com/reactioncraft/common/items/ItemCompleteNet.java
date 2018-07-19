@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import com.google.common.collect.ImmutableSet;
 import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.common.instances.ItemIndex;
+import com.reactioncraft.common.items.net.MobCatcher;
 import com.reactioncraft.common.utils.ItemModelProvider;
 import com.reactioncraft.common.utils.constants;
 
@@ -87,58 +88,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	{
-		if (!player.world.isRemote && entity instanceof EntityLiving && !Reactioncraft.exclusionList.isExcluded(entity))
-		{
-			String entityId = entity.getName().toString();
-
-			NBTTagCompound entityTag = new NBTTagCompound();
-			entity.writeToNBTOptional(entityTag);
-			entityTag.removeTag("Pos");
-			entityTag.removeTag("Motion");
-			entityTag.removeTag("Rotation");
-			entityTag.removeTag("Dimension");
-			entityTag.removeTag("PortalCooldown");
-			entityTag.removeTag("InLove");
-			entityTag.removeTag("HurtTime");
-			entityTag.removeTag("DeathTime");
-			entityTag.removeTag("AttackTime");
-			entityTag.setString("name", entityId);
-			
-
-			ItemStack is = new ItemStack(ItemIndex.caught);
-			NBTTagCompound nbt = new NBTTagCompound();
-			nbt.setTag("EntityData", entityTag);
-			nbt.setString("name", entityId);
-
-
-			is.setTagCompound(nbt);
-			player.dropItem(is, false);
-
-			if(this.name.equals("creative_net"))
-			{
-				entity.setDead();
-				return true;
-			}
-			else if(!this.name.equals("creative_net"))
-			{
-				entity.setDead();
-				stack.attemptDamageItem(1,itemRand, (EntityPlayerMP) player);
-
-				if (stack.getItemDamage() >= stack.getMaxDamage())
-				{
-					stack.shrink(1);
-				}
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		else
-		{
-			return false;
-		}
+		return MobCatcher.catchEntities(stack, player, entity);
 	}
 
 	/**

@@ -49,11 +49,11 @@ public class WorldGenIngroundStructureTemplates extends WorldGenerator
 		switch (j) 
 		{
 			case 1:  template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_chest"));
-				Logger.info("1");
+				//Logger.info("1");
 				break;
 			
 			default: template = templatemanager.getTemplate(minecraftserver, new ResourceLocation(constants.MODID + ":obelisk_chest"));
-				Logger.info("Default");
+				//Logger.info("Default");
 				break;
 		}
 

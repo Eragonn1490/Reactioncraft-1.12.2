@@ -5,26 +5,25 @@ import net.minecraft.entity.*;
 
 public class ExclusionList implements Iterable<String>
 {
-	static final String culture  ="culture";
 	public static List<String> list = new ArrayList<String>();
 	
 	public ExclusionList()
 	{
-		this.addExclusion("EnderDragon");
-		this.addExclusion("dragonPartHead");
-		this.addExclusion("dragonPartBody");
-		this.addExclusion("dragonPartTail1");
-		this.addExclusion("dragonPartTail2");
-		this.addExclusion("dragonPartTail3");
-		this.addExclusion("dragonPartWing1");
-		this.addExclusion("dragonPartWing2");
-		this.addExclusion("FallingSand");
-		this.addExclusion("Fireball");
-		this.addExclusion("PrimedTnt");
-		this.addExclusion("MinecartTNT");
-		this.addExclusion("WitherSkull");
-		this.addExclusion("Hydrolisc");
-		//To Add custom Exclusions to the mods
+		//Example of Excluded Entites 
+		//this.addExclusion("EnderDragon");
+		//this.addExclusion("dragonPartHead");
+		//this.addExclusion("dragonPartBody");
+		//this.addExclusion("dragonPartTail1");
+		//this.addExclusion("dragonPartTail2");
+		//this.addExclusion("dragonPartTail3");
+		//this.addExclusion("dragonPartWing1");
+		//this.addExclusion("dragonPartWing2");
+		//this.addExclusion("FallingSand");
+		//this.addExclusion("Fireball");
+		//this.addExclusion("PrimedTnt");
+		//this.addExclusion("MinecartTNT");
+		//this.addExclusion("WitherSkull");
+		//this.addExclusion("Hydrolisc");
 	}
 
 	public void addExclusion(String name)

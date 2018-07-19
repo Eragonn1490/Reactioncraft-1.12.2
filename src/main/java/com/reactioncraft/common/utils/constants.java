@@ -151,7 +151,7 @@ public class constants
 		} catch (IOException e) { e.printStackTrace(); }
 	}
 
-	public static void init() 
+	public static void modsLoaded() 
 	{
 		if(Info.isIc2Available())
 			IC2=true;
